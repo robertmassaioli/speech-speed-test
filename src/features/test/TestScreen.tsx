@@ -13,7 +13,7 @@ import { calcCpm, calcWpm } from '../../engine/metrics'
 import { normalizeTokens } from '../../engine/normalize'
 import { tokenize } from '../../engine/tokenize'
 import type { MatchMode } from '../../engine/types'
-import { saveResult } from '../../storage/history'
+import { saveResult, FREQ_LIST_ID } from '../../storage/history'
 import type { TestResult } from '../results/types'
 
 type TestState = 'idle' | 'running'
@@ -249,6 +249,14 @@ export function TestScreen() {
           wpm,
           cpm,
           suspect,
+          composition: [
+            passage.composition.p1,
+            passage.composition.p2,
+            passage.composition.p3,
+            passage.composition.p4,
+          ],
+          difficultyBin: passage.difficulty,
+          frequencyListId: FREQ_LIST_ID,
         })
         const testResult: TestResult = {
           passageId: passage.id,
