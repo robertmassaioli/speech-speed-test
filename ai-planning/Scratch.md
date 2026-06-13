@@ -1,0 +1,1 @@
+I want to turn this entire directory into a git repository and commit everything except gitignore the scratch.md file
