@@ -89,6 +89,57 @@ const SOURCES = [
     id: 'silk-textile-weaving',
     text: 'Sericulture begins when silkworm cocoons are harvested and submerged in hot water for degumming, softening the sericin protein that binds each filament. The reeling operator draws several filaments together onto a bobbin, producing thrown silk of consistent denier. On the loom, the weaver first threads the warp yarns through the heddles and then through the reed, fixing the width and selvedge of the cloth. Each pass of the shuttle carries the weft thread across the shed, and the treadle controls which heddle rises to form the next opening. A plain weave interlaces each weft thread over and under single warp ends, while a twill or satin weave skips multiple ends to create a smoother, more lustrous surface. Once woven, the cloth is mordanted so that dye fixes permanently to the fibre.',
   },
+  // ── Batch 3 — easy ────────────────────────────────────────────────────────
+  {
+    id: 'seaside-waves-and-sand',
+    text: 'The sea moves in long, slow waves that wash over the sand and pull back again. Each wave leaves a thin line of white foam along the shore before the water draws it away. The sand is soft and warm near the top of the beach, where the sun has shone all day. Closer to the water, it turns cool and wet under your feet. Small shells lie here and there, some whole and some broken. The wind blows in from the sea and carries a fresh, salty smell. Gulls fly low over the water, and now and then one drops down to the surface. The sky is wide and blue, and the light is bright on the waves. It is a still, clear day by the sea.',
+  },
+  {
+    id: 'watching-snow-fall',
+    text: 'Snow falls slowly outside the window. The flakes are soft and white, drifting down from a grey sky. Inside the room it is warm, and the light is low and still. The glass is cold to the touch, but the air behind it feels safe and good. Each flake turns as it falls, catching a little light before it lands on the ground below. The snow covers everything it touches, layer by layer, building up into a thick white sheet. The street is quiet now, and no one is walking out there. From here, the whole world looks clean and still. It is a slow and peaceful thing to watch the snow fall.',
+  },
+  {
+    id: 'dog-playing-fetch',
+    text: 'A dog runs across the wide green field, ears flat against its head and legs moving fast over the long grass. The ball lands far ahead and the dog leaps after it, eyes fixed on the spot where it fell. It grabs the ball in its mouth and turns back, tail going from side to side as it comes running toward the person who threw it. The dog drops the ball at their feet and looks up, ready to go again. The person bends down, picks up the ball, and throws it far. The dog is off at once, sprinting hard across the open ground, ears back and nose low, chasing the ball as it rolls away through the short grass at the far end of the field.',
+  },
+  {
+    id: 'baker-making-bread',
+    text: 'A baker puts flour and water into a large bowl. She adds a little yeast and some salt, then mixes it all until it comes together into a soft mass. She tips the mass onto the table and starts to press and fold it with her hands. She works it back and forth, over and over, until it feels smooth. Then she forms it into a round ball and leaves it in the bowl to rest. The ball grows in the warm kitchen and gets much bigger over time. When it has grown enough she presses it flat, shapes it into a loaf, and slides it into the hot oven. The bread turns a deep golden color as it bakes. The good smell fills the whole room. She takes the loaf out and sets it on a rack to cool.',
+  },
+  // ── Batch 3 — medium ──────────────────────────────────────────────────────
+  {
+    id: 'city-street-market-morning',
+    text: 'The market square begins to fill before the sun is fully up. Vendors arrange fruit, bread, and flowers on long tables while shoppers drift in from the surrounding streets. The smell of fresh herbs and warm pastries spreads across the whole area. Traders call out to draw attention to their goods, and some customers stop to compare prices before deciding what to buy. A woman near the center sells coffee from a small cart and a steady line of people waits beside her. Children run between the stalls while adults browse slowly, picking up items and setting them back down. The noise of the crowd grows through the morning, mixing voices, footsteps, and the occasional sound of a vendor rearranging a display, until the whole square hums with the familiar rhythm of a busy market day.',
+  },
+  {
+    id: 'painter-in-the-studio',
+    text: 'The painter stands at her canvas, studying the scene before her. She has laid out her palette with colours she mixed earlier in the morning, working pigment into pigment until each shade felt right. She lifts her brush and draws it slowly across the surface, letting the tint spread and settle into the grain. The composition is almost there. A stroke of ochre in the lower corner gives the earth more weight. She steps back and looks at the whole thing, noticing where the light falls short and where the shadow needs more depth. Outside the studio window, the afternoon is turning golden, and she wants to catch that warmth before it fades from the scene.',
+  },
+  {
+    id: 'river-journey-by-small-boat',
+    text: 'The small boat moves with the current of the river, carried downstream at a gentle pace. Willows line both banks and their branches hang low over the water. A light stroke of the paddle from time to time keeps the boat on course. The river is wide and calm here, dark in the middle where it runs deepest. Birds stand in the shallows near the bank, watching the boat pass without moving. The air is cool and still. Further along, the river bends and the land on either side opens up into flat fields. The water grows faster over a stretch of gravel and the person at the paddle works harder to keep the boat straight and clear of the rocks below the surface.',
+  },
+  {
+    id: 'mountain-hiking-trail',
+    text: 'The trail winds up through thick forest before opening onto a wide ridge where the view reaches far in every direction. Above the trees the slope is covered in loose rock, and each step needs care as the stones shift underfoot. The summit looks close but the altitude makes every breath harder, and the hiker stops often to rest against a large stone. The path zigzags up the steepest parts, cutting across the slope to soften the climb. By midday the hiker reaches the top and stands looking down at forests, valleys, and ridges spread below. The descent is harder on the knees than the climb up, and the trail turns slippery where afternoon mist has settled on the rock. The hiker picks a careful way back down and into the shelter of the trees.',
+  },
+  // ── Batch 3 — hard ────────────────────────────────────────────────────────
+  {
+    id: 'redox-chemical-equilibrium',
+    text: 'In a redox reaction, one reagent loses electrons through oxidation while another gains them through reduction, and the stoichiometry of the balanced equation determines the molar ratio in which each reactant is consumed. A catalyst accelerates the reaction by lowering the activation energy without itself being consumed, allowing the substrate to reach the transition state more readily. Exothermic reactions release enthalpy to the surroundings, producing a negative change in enthalpy, while endothermic reactions absorb heat from the environment. When an electrolyte dissolves in solution, it dissociates into ions that carry charge and sustain current. At equilibrium, the forward and reverse reaction rates become equal, and the concentrations of reactants and products stabilize. Adding a precipitating agent shifts the equilibrium, driving insoluble product out of solution and altering the valence states of dissolved species.',
+  },
+  {
+    id: 'stellar-life-cycle',
+    text: 'A protostar forms when a dense cloud of gas and dust collapses under its own gravity, heating its core until nuclear fusion ignites. On the main sequence a star fuses hydrogen into helium, releasing energy that sustains its luminosity for billions of years. As hydrogen is depleted the star expands into a red giant, and stellar nucleosynthesis forges heavier elements in successive shells around the core. Massive stars end in a supernova, a catastrophic detonation that scatters these elements across the nebula and leaves behind a neutron star or pulsar. The photosphere and convective zone govern how energy escapes outward, while accretion of surrounding material can further alter the stellar remnant as it cools.',
+  },
+  {
+    id: 'carpentry-and-joinery',
+    text: 'Good joinery begins with reading the grain of the timber. Heartwood is denser than sapwood and holds a mortise tenon joint without splitting if the chisel follows the grain rather than cutting across it. A sharp plane removes thin shavings from the face of the board until the surface is flat and true. For a dovetail joint the woodworker scribes the angle with a marking gauge, saws the kerf close to the line, and removes the waste with a chisel and mallet. A rebate along the edge of a panel fits neatly into a dado cut across the grain of the adjoining piece. The router, guided by a jig, cuts a chamfer along the corner, and a spokeshave follows the curved sections where the router cannot reach. Each joint is clamped until the glue cures.',
+  },
+  {
+    id: 'brewing-and-fermentation',
+    text: 'Brewing begins with malted barley, where the grain is steeped, germinated, and kilned to develop enzymes capable of saccharification. The malt is milled and mixed with hot water in a mash tun, where amylase enzymes convert starches into fermentable sugars, producing a sweet liquid called wort. This wort is separated from the spent grain through a process called lautering, then sparged with hot water to rinse residual sugars. The clarified wort is boiled with hops, which contribute bitterness, aroma, and phenolic compounds that stabilise the beer. After cooling, yeast is pitched into the wort and fermentation begins, with the yeast consuming glucose and fructose and producing ethanol and carbon dioxide as byproducts. Attenuation describes the degree to which fermentable sugars are consumed, while flocculation refers to how readily yeast clumps and settles after fermentation completes.',
+  },
 ]
 
 const passages = SOURCES.map(({ id, text }) => {
