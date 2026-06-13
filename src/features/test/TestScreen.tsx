@@ -14,10 +14,17 @@ import { normalizeTokens } from '../../engine/normalize'
 import { tokenize } from '../../engine/tokenize'
 import type { MatchMode } from '../../engine/types'
 import { saveResult, FREQ_LIST_ID } from '../../storage/history'
-import type { TestResult } from '../results/types'
 
-type TestState = 'idle' | 'running'
+type TestState = 'idle' | 'running' | 'completed'
 type DifficultyFilter = 'all' | DifficultyBin
+
+interface CompletedResult {
+  wpm: number
+  cpm: number
+  elapsedSec: number
+}
+
+// ── Styled components ─────────────────────────────────────────────────────────
 
 const PassageBox = styled.div`
   background: #fff;
@@ -85,9 +92,14 @@ const Button = styled.button`
   background: #1a1a1a;
   color: #fff;
 
-  &:hover {
-    background: #333;
-  }
+  &:hover { background: #333; }
+`
+
+const SecondaryButton = styled(Button)`
+  background: #e8e8e8;
+  color: #1a1a1a;
+
+  &:hover { background: #d4d4d4; }
 `
 
 const Progress = styled.span`
@@ -136,6 +148,55 @@ const FilterRow = styled.div`
   color: #666;
 `
 
+// ── Results card ──────────────────────────────────────────────────────────────
+
+const ResultsCard = styled.div`
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+`
+
+const MetricsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+`
+
+const Metric = styled.div`
+  text-align: center;
+`
+
+const MetricValue = styled.div`
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+`
+
+const MetricLabel = styled.div`
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+`
+
+const ResultDetail = styled.p`
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 1.25rem;
+`
+
+const ResultActions = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+`
+
+// ── Logic ─────────────────────────────────────────────────────────────────────
+
 interface MatchState {
   matchedCount: number
   inputCount: number
@@ -156,6 +217,20 @@ const DIFFICULTY_LABELS: Record<DifficultyFilter, string> = {
   hard:   'Hard',
 }
 
+function formatTimer(ms: number): string {
+  const s = ms / 1000
+  const m = Math.floor(s / 60)
+  const ss = String(Math.floor(s % 60)).padStart(2, '0')
+  const f = Math.floor((s % 1) * 10)
+  return `${m}:${ss}.${f}`
+}
+
+function formatElapsed(sec: number): string {
+  return sec < 60 ? `${sec.toFixed(1)}s` : `${Math.floor(sec / 60)}m ${Math.round(sec % 60)}s`
+}
+
+// ── Component ─────────────────────────────────────────────────────────────────
+
 export function TestScreen() {
   const navigate = useNavigate()
   const [passage, setPassage] = useState<Passage>(() => getRandomPassage())
@@ -164,11 +239,11 @@ export function TestScreen() {
   const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>('all')
   const [input, setInput] = useState('')
   const [matchState, setMatchState] = useState<MatchState>(IDLE_MATCH)
+  const [completedResult, setCompletedResult] = useState<CompletedResult | null>(null)
   const startTimeRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const [elapsedMs, setElapsedMs] = useState(0)
 
-  // Passages available per difficulty (for disabling empty filter options).
   const availablePerDifficulty = useMemo(
     () => Object.fromEntries(
       DIFFICULTIES.map(d => [d, passagesForDifficulty(d).length])
@@ -197,31 +272,38 @@ export function TestScreen() {
     return () => clearInterval(id)
   }, [testState])
 
+  const resetToIdle = useCallback((nextPassage: Passage) => {
+    setPassage(nextPassage)
+    setTestState('idle')
+    setInput('')
+    setMatchState(IDLE_MATCH)
+    setCompletedResult(null)
+  }, [])
+
   const handleStart = useCallback(() => {
     setInput('')
     setMatchState(IDLE_MATCH)
+    setCompletedResult(null)
     startTimeRef.current = performance.now()
     setTestState('running')
     setTimeout(() => inputRef.current?.focus(), 0)
   }, [])
 
-  const pickNewPassage = useCallback((filter: DifficultyFilter) => {
-    const pool = filter === 'all' ? undefined : (filter as DifficultyBin)
-    setPassage(getRandomPassage(pool))
-    setTestState('idle')
-    setInput('')
-    setMatchState(IDLE_MATCH)
-  }, [])
+  const handleNewPassage = useCallback(() => {
+    const pool = difficultyFilter === 'all' ? undefined : (difficultyFilter as DifficultyBin)
+    resetToIdle(getRandomPassage(pool))
+  }, [difficultyFilter, resetToIdle])
+
+  const handleTryAgain = useCallback(() => {
+    resetToIdle(passage)
+  }, [passage, resetToIdle])
 
   const handleFilterChange = useCallback((d: DifficultyFilter) => {
     if (testState === 'running') return
     setDifficultyFilter(d)
-    pickNewPassage(d)
-  }, [testState, pickNewPassage])
-
-  const handleNewPassage = useCallback(() => {
-    pickNewPassage(difficultyFilter)
-  }, [difficultyFilter, pickNewPassage])
+    const pool = d === 'all' ? undefined : (d as DifficultyBin)
+    resetToIdle(getRandomPassage(pool))
+  }, [testState, resetToIdle])
 
   const handleInput = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -253,33 +335,18 @@ export function TestScreen() {
           difficultyBin: passage.difficulty,
           frequencyListId: FREQ_LIST_ID,
         })
-        const testResult: TestResult = {
-          passageId: passage.id,
-          wpm,
-          cpm,
-          elapsedSec,
-          wordCount: passage.wordCount,
-          charCount: passage.charCount,
-          mode,
-          difficulty: passage.difficulty,
-        }
-        navigate('/results', { state: testResult })
+        setCompletedResult({ wpm, cpm, elapsedSec })
+        setTestState('completed')
       }
     },
-    [passage, navigate, refTokens, mode],
+    [passage, refTokens, mode],
   )
 
+  const isRunning   = testState === 'running'
+  const isCompleted = testState === 'completed'
+  const isIdle      = testState === 'idle'
   const { matchedCount, inputCount } = matchState
-  const hasMismatch = testState === 'running' && inputCount > matchedCount
-
-  function formatTimer(ms: number): string {
-    const s = ms / 1000
-    const m = Math.floor(s / 60)
-    const ss = String(Math.floor(s % 60)).padStart(2, '0')
-    const f = Math.floor((s % 1) * 10)
-    return `${m}:${ss}.${f}`
-  }
-  const isRunning = testState === 'running'
+  const hasMismatch = isRunning && inputCount > matchedCount
 
   return (
     <div>
@@ -288,10 +355,11 @@ export function TestScreen() {
       <PassageBox>
         {rawTokens.map((token, i) => {
           const wordState =
-            !isRunning                            ? 'idle' :
-            i < matchedCount                      ? 'matched' :
-            i === matchedCount && hasMismatch     ? 'mismatch' :
-                                                    'upcoming'
+            isCompleted                               ? 'matched'  :
+            !isRunning                                ? 'idle'     :
+            i < matchedCount                          ? 'matched'  :
+            i === matchedCount && hasMismatch         ? 'mismatch' :
+                                                        'upcoming'
           return (
             <Word key={i} $state={wordState}>
               {token}{' '}
@@ -300,40 +368,71 @@ export function TestScreen() {
         })}
       </PassageBox>
 
-      <Controls>
-        <ToggleGroup>
-          {(['lexical', 'strict'] as MatchMode[]).map(m => (
-            <ToggleButton
-              key={m}
-              $active={mode === m}
-              $disabled={isRunning}
-              onClick={() => { if (!isRunning) setMode(m) }}
-            >
-              {m.charAt(0).toUpperCase() + m.slice(1)}
-            </ToggleButton>
-          ))}
-        </ToggleGroup>
+      {/* Completed: inline results */}
+      {isCompleted && completedResult && (
+        <ResultsCard>
+          <MetricsGrid>
+            <Metric>
+              <MetricValue>{completedResult.wpm}</MetricValue>
+              <MetricLabel>WPM</MetricLabel>
+            </Metric>
+            <Metric>
+              <MetricValue>{completedResult.cpm}</MetricValue>
+              <MetricLabel>CPM</MetricLabel>
+            </Metric>
+            <Metric>
+              <MetricValue>{formatElapsed(completedResult.elapsedSec)}</MetricValue>
+              <MetricLabel>Time</MetricLabel>
+            </Metric>
+          </MetricsGrid>
+          <ResultDetail>
+            {passage.wordCount} words · {passage.charCount} chars · {mode} mode · {passage.difficulty}
+          </ResultDetail>
+          <ResultActions>
+            <Button onClick={handleNewPassage}>New Passage</Button>
+            <SecondaryButton onClick={handleTryAgain}>Try Again</SecondaryButton>
+            <SecondaryButton onClick={() => navigate('/history')}>History</SecondaryButton>
+          </ResultActions>
+        </ResultsCard>
+      )}
 
-        {!isRunning && (
-          <>
-            <Button onClick={handleStart}>Start Test</Button>
-            <Button onClick={handleNewPassage} style={{ background: '#666' }}>
-              New Passage
-            </Button>
-          </>
-        )}
+      {/* Running / idle controls */}
+      {!isCompleted && (
+        <Controls>
+          <ToggleGroup>
+            {(['lexical', 'strict'] as MatchMode[]).map(m => (
+              <ToggleButton
+                key={m}
+                $active={mode === m}
+                $disabled={isRunning}
+                onClick={() => { if (!isRunning) setMode(m) }}
+              >
+                {m.charAt(0).toUpperCase() + m.slice(1)}
+              </ToggleButton>
+            ))}
+          </ToggleGroup>
 
-        {isRunning && (
-          <>
-            <Progress>{matchedCount} / {passage.wordCount} words matched</Progress>
-            <Button onClick={handleNewPassage} style={{ background: '#666' }}>
-              Abandon
-            </Button>
-          </>
-        )}
-      </Controls>
+          {isIdle && (
+            <>
+              <Button onClick={handleStart}>Start Test</Button>
+              <Button onClick={handleNewPassage} style={{ background: '#666' }}>
+                New Passage
+              </Button>
+            </>
+          )}
 
-      {!isRunning && (
+          {isRunning && (
+            <>
+              <Progress>{matchedCount} / {passage.wordCount} words matched</Progress>
+              <Button onClick={handleNewPassage} style={{ background: '#666' }}>
+                Abandon
+              </Button>
+            </>
+          )}
+        </Controls>
+      )}
+
+      {isIdle && (
         <>
           <FilterRow>
             <span>Difficulty:</span>

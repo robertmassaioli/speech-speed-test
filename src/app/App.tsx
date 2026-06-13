@@ -2,7 +2,6 @@ import { HashRouter, NavLink, Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from './GlobalStyle'
 import { TestScreen } from '../features/test/TestScreen'
-import { ResultsScreen } from '../features/results/ResultsScreen'
 import { HistoryScreen } from '../features/history/HistoryScreen'
 
 const Shell = styled.div`
@@ -57,7 +56,6 @@ export function App() {
         <Main>
           <Routes>
             <Route path="/" element={<TestScreen />} />
-            <Route path="/results" element={<ResultsScreen />} />
             <Route path="/history" element={<HistoryScreen />} />
           </Routes>
         </Main>
