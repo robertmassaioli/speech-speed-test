@@ -110,6 +110,15 @@ const Label = styled.p`
   margin: 0 0 0.4rem;
 `
 
+const TimerDisplay = styled.div`
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+`
+
 interface MatchState {
   matchedCount: number
   inputCount: number
@@ -133,6 +142,7 @@ export function TestScreen() {
   const startTimeRef = useRef<number>(0)
   const prevMatchedRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
+  const [elapsedMs, setElapsedMs] = useState(0)
 
   const rawTokens = useMemo(() => tokenize(passage.text), [passage.text])
   const refTokens = useMemo(
@@ -143,6 +153,17 @@ export function TestScreen() {
   useEffect(() => {
     setPassage(getRandomPassage())
   }, [])
+
+  useEffect(() => {
+    if (testState !== 'running') {
+      setElapsedMs(0)
+      return
+    }
+    const id = setInterval(() => {
+      setElapsedMs(performance.now() - startTimeRef.current)
+    }, 100)
+    return () => clearInterval(id)
+  }, [testState])
 
   const handleStart = useCallback(() => {
     setInput('')
@@ -203,6 +224,14 @@ export function TestScreen() {
 
   const { matchedCount, inputCount } = matchState
   const hasMismatch = testState === 'running' && inputCount > matchedCount
+
+  function formatTimer(ms: number): string {
+    const s = ms / 1000
+    const m = Math.floor(s / 60)
+    const ss = String(Math.floor(s % 60)).padStart(2, '0')
+    const f = Math.floor((s % 1) * 10)
+    return `${m}:${ss}.${f}`
+  }
   const isRunning = testState === 'running'
 
   return (
@@ -263,6 +292,7 @@ export function TestScreen() {
 
       {isRunning && (
         <>
+          <TimerDisplay>{formatTimer(elapsedMs)}</TimerDisplay>
           <Label>Dictate the passage above into the box:</Label>
           <InputArea
             ref={inputRef}
