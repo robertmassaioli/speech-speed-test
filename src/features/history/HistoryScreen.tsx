@@ -234,7 +234,7 @@ function confLabel(c: Confidence): string {
 function personalBests(results: StoredResult[]): Partial<Record<DifficultyBin, number>> {
   const bests: Partial<Record<DifficultyBin, number>> = {}
   for (const r of results) {
-    if (r.suspect || !r.difficultyBin) continue
+    if (!r.difficultyBin) continue
     const cur = bests[r.difficultyBin]
     if (cur === undefined || r.wpm > cur) bests[r.difficultyBin] = r.wpm
   }
@@ -549,18 +549,13 @@ export function HistoryScreen() {
                     ) : '—'}
                   </Td>
                   <Td>{r.mode}</Td>
-                  <Td $warn={r.suspect}>{r.wpm}{r.suspect ? ' *' : ''}</Td>
-                  <Td $warn={r.suspect}>{r.cpm}{r.suspect ? ' *' : ''}</Td>
+                  <Td>{r.wpm}</Td>
+                  <Td>{r.cpm}</Td>
                   <Td>{formatElapsed(r.elapsedSec)}</Td>
                 </tr>
               ))}
             </tbody>
           </Table>
-        )}
-        {results.some(r => r.suspect) && (
-          <p style={{ fontSize: '0.8rem', color: '#999', marginTop: '0.75rem' }}>
-            * Possible paste detected — excluded from Real WPM and personal bests.
-          </p>
         )}
       </Section>
     </div>

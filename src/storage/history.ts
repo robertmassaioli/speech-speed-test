@@ -13,7 +13,6 @@ export interface StoredResult {
   charsRaw: number
   wpm: number
   cpm: number
-  suspect: boolean
   // Added in Phase 2 — optional so old stored results remain valid.
   composition?: readonly [number, number, number, number]  // [p1, p2, p3, p4]
   difficultyBin?: DifficultyBin

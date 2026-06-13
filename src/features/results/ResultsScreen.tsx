@@ -41,16 +41,6 @@ const Detail = styled.p`
   margin: 0 0 0.5rem;
 `
 
-const SuspectBanner = styled.div`
-  font-size: 0.85rem;
-  color: #a05000;
-  background: #fff8ec;
-  border: 1px solid #f0c060;
-  border-radius: 4px;
-  padding: 0.5rem 0.75rem;
-  margin-bottom: 1rem;
-`
-
 const Actions = styled.div`
   display: flex;
   gap: 0.75rem;
@@ -120,11 +110,6 @@ export function ResultsScreen() {
         <Detail>
           {result.wordCount} words · {result.charCount} chars · {result.mode} mode · {result.difficulty}
         </Detail>
-        {result.suspect && (
-          <SuspectBanner>
-            Possible paste detected — this result was saved but is excluded from aggregate stats.
-          </SuspectBanner>
-        )}
         <Actions>
           <Button onClick={() => navigate('/')}>New Passage</Button>
           <SecondaryButton onClick={() => navigate(-1)}>Try Again</SecondaryButton>

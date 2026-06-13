@@ -165,7 +165,6 @@ export function TestScreen() {
   const [input, setInput] = useState('')
   const [matchState, setMatchState] = useState<MatchState>(IDLE_MATCH)
   const startTimeRef = useRef<number>(0)
-  const prevMatchedRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const [elapsedMs, setElapsedMs] = useState(0)
 
@@ -201,7 +200,6 @@ export function TestScreen() {
   const handleStart = useCallback(() => {
     setInput('')
     setMatchState(IDLE_MATCH)
-    prevMatchedRef.current = 0
     startTimeRef.current = performance.now()
     setTestState('running')
     setTimeout(() => inputRef.current?.focus(), 0)
@@ -232,8 +230,6 @@ export function TestScreen() {
 
       const inputTokens = normalizeTokens(tokenize(value), mode)
       const result = compareTokens(refTokens, inputTokens)
-      const suspect = result.isComplete && prevMatchedRef.current < 5
-      prevMatchedRef.current = result.matchedCount
       setMatchState(result)
 
       if (result.isComplete) {
@@ -248,7 +244,6 @@ export function TestScreen() {
           charsRaw: passage.charCount,
           wpm,
           cpm,
-          suspect,
           composition: [
             passage.composition.p1,
             passage.composition.p2,
@@ -266,7 +261,6 @@ export function TestScreen() {
           wordCount: passage.wordCount,
           charCount: passage.charCount,
           mode,
-          suspect,
           difficulty: passage.difficulty,
         }
         navigate('/results', { state: testResult })

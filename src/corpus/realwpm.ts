@@ -20,7 +20,6 @@ export interface RealWpmResult {
 export interface WpmInput {
   elapsedSec: number
   words: number
-  suspect: boolean
   difficultyBin?: DifficultyBin
   composition?: readonly [number, number, number, number]  // [p1, p2, p3, p4]
 }
@@ -56,7 +55,7 @@ function median(arr: readonly number[]): number {
 }
 
 export function computeRealWpm(inputs: WpmInput[]): RealWpmResult | null {
-  const eligible = inputs.filter(r => !r.suspect && r.difficultyBin != null && r.composition != null)
+  const eligible = inputs.filter(r => r.difficultyBin != null && r.composition != null)
   if (eligible.length === 0) return null
 
   // Estimate β1 from each result individually.
