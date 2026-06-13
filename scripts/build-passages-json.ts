@@ -140,6 +140,11 @@ const SOURCES = [
     id: 'brewing-and-fermentation',
     text: 'Brewing begins with malted barley, where the grain is steeped, germinated, and kilned to develop enzymes capable of saccharification. The malt is milled and mixed with hot water in a mash tun, where amylase enzymes convert starches into fermentable sugars, producing a sweet liquid called wort. This wort is separated from the spent grain through a process called lautering, then sparged with hot water to rinse residual sugars. The clarified wort is boiled with hops, which contribute bitterness, aroma, and phenolic compounds that stabilise the beer. After cooling, yeast is pitched into the wort and fermentation begins, with the yeast consuming glucose and fructose and producing ethanol and carbon dioxide as byproducts. Attenuation describes the degree to which fermentable sugars are consumed, while flocculation refers to how readily yeast clumps and settles after fermentation completes.',
   },
+  // ── Batch 4 — hard ────────────────────────────────────────────────────────
+  {
+    id: 'glassblowing',
+    text: 'The glassblower gathers molten glass on the end of the blowing iron by rotating it in the furnace mouth. Once a sufficient gather has collected, the blower rolls it on the marver, a flat steel table, to chill the outer skin and centre the mass. A puff of air through the iron inflates the gather into a small bubble called the parison. The blower returns the piece to the glory hole to reheat it, then shapes the expanding form with wooden paddles and jacks while keeping the iron in constant rotation. A pontil rod is attached to the base so the blowing iron can be broken away, and the open rim is trimmed with shears. The finished piece goes into the annealing oven, where it cools slowly over several hours to relieve the internal stress that rapid cooling would leave in the glass.',
+  },
 ]
 
 const passages = SOURCES.map(({ id, text }) => {

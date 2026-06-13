@@ -317,5 +317,16 @@
       "t4": 50,
       "total": 135
     }
+  },
+  {
+    "id": "glassblowing",
+    "text": "The glassblower gathers molten glass on the end of the blowing iron by rotating it in the furnace mouth. Once a sufficient gather has collected, the blower rolls it on the marver, a flat steel table, to chill the outer skin and centre the mass. A puff of air through the iron inflates the gather into a small bubble called the parison. The blower returns the piece to the glory hole to reheat it, then shapes the expanding form with wooden paddles and jacks while keeping the iron in constant rotation. A pontil rod is attached to the base so the blowing iron can be broken away, and the open rim is trimmed with shears. The finished piece goes into the annealing oven, where it cools slowly over several hours to relieve the internal stress that rapid cooling would leave in the glass.",
+    "composition": {
+      "t1": 56,
+      "t2": 19,
+      "t3": 44,
+      "t4": 22,
+      "total": 141
+    }
   }
 ]
