@@ -1,9 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { getRandomPassage, type Passage } from '../../corpus/passages'
-import { matchText } from '../../engine/match'
+import { compareTokens } from '../../engine/match'
 import { calcCpm, calcWpm } from '../../engine/metrics'
+import { normalizeTokens } from '../../engine/normalize'
+import { tokenize } from '../../engine/tokenize'
 import { saveResult } from '../../storage/history'
 import type { TestResult } from '../results/types'
 
@@ -15,9 +17,17 @@ const PassageBox = styled.div`
   border-radius: 8px;
   padding: 1.5rem;
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 1.9;
   margin-bottom: 1.5rem;
-  white-space: pre-wrap;
+`
+
+const Word = styled.span<{ $state: 'matched' | 'mismatch' | 'upcoming' | 'idle' }>`
+  color: ${p =>
+    p.$state === 'matched'  ? '#2a7a2a' :
+    p.$state === 'mismatch' ? '#c0392b' :
+    p.$state === 'upcoming' ? '#999'    :
+    'inherit'};
+  font-weight: ${p => p.$state === 'mismatch' ? '600' : 'inherit'};
 `
 
 const Controls = styled.div`
@@ -70,15 +80,30 @@ const Label = styled.p`
   margin: 0 0 0.4rem;
 `
 
+interface MatchState {
+  matchedCount: number
+  inputCount: number
+  isComplete: boolean
+}
+
+const IDLE_MATCH: MatchState = { matchedCount: 0, inputCount: 0, isComplete: false }
+
 export function TestScreen() {
   const navigate = useNavigate()
   const [passage, setPassage] = useState<Passage>(() => getRandomPassage())
-  const [state, setState] = useState<TestState>('idle')
+  const [testState, setTestState] = useState<TestState>('idle')
   const [input, setInput] = useState('')
-  const [matchedCount, setMatchedCount] = useState(0)
+  const [matchState, setMatchState] = useState<MatchState>(IDLE_MATCH)
   const startTimeRef = useRef<number>(0)
   const prevMatchedRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
+
+  // Pre-compute the reference token stream once per passage
+  const rawTokens = useMemo(() => tokenize(passage.text), [passage.text])
+  const refTokens = useMemo(
+    () => normalizeTokens(rawTokens, 'lexical'),
+    [rawTokens],
+  )
 
   useEffect(() => {
     setPassage(getRandomPassage())
@@ -86,10 +111,10 @@ export function TestScreen() {
 
   const handleStart = useCallback(() => {
     setInput('')
-    setMatchedCount(0)
+    setMatchState(IDLE_MATCH)
     prevMatchedRef.current = 0
     startTimeRef.current = performance.now()
-    setState('running')
+    setTestState('running')
     setTimeout(() => inputRef.current?.focus(), 0)
   }, [])
 
@@ -98,10 +123,11 @@ export function TestScreen() {
       const value = e.target.value
       setInput(value)
 
-      const result = matchText(passage.text, value, 'lexical')
+      const inputTokens = normalizeTokens(tokenize(value), 'lexical')
+      const result = compareTokens(refTokens, inputTokens)
       const suspect = result.isComplete && prevMatchedRef.current < 5
       prevMatchedRef.current = result.matchedCount
-      setMatchedCount(result.matchedCount)
+      setMatchState(result)
 
       if (result.isComplete) {
         const elapsedSec = (performance.now() - startTimeRef.current) / 1000
@@ -130,22 +156,40 @@ export function TestScreen() {
         navigate('/results', { state: testResult })
       }
     },
-    [passage, navigate],
+    [passage, navigate, refTokens],
   )
 
   const handleNewPassage = useCallback(() => {
     setPassage(getRandomPassage())
-    setState('idle')
+    setTestState('idle')
     setInput('')
-    setMatchedCount(0)
+    setMatchState(IDLE_MATCH)
   }, [])
+
+  const { matchedCount, inputCount } = matchState
+  const hasMismatch = testState === 'running' && inputCount > matchedCount
 
   return (
     <div>
       <h1>Speed Test</h1>
-      <PassageBox>{passage.text}</PassageBox>
 
-      {state === 'idle' && (
+      <PassageBox>
+        {rawTokens.map((token, i) => {
+          const wordState =
+            testState === 'idle'       ? 'idle' :
+            i < matchedCount           ? 'matched' :
+            i === matchedCount && hasMismatch ? 'mismatch' :
+            testState === 'running'    ? 'upcoming' :
+            'idle'
+          return (
+            <Word key={i} $state={wordState}>
+              {token}{' '}
+            </Word>
+          )
+        })}
+      </PassageBox>
+
+      {testState === 'idle' && (
         <Controls>
           <Button onClick={handleStart}>Start Test</Button>
           <Button onClick={handleNewPassage} style={{ background: '#666' }}>
@@ -154,7 +198,7 @@ export function TestScreen() {
         </Controls>
       )}
 
-      {state === 'running' && (
+      {testState === 'running' && (
         <>
           <Controls>
             <Progress>

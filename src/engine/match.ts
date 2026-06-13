@@ -19,6 +19,7 @@ export function compareTokens(refTokens: string[], inputTokens: string[]): Token
   return {
     matchedCount,
     totalCount: total,
+    inputCount: inputTokens.length,
     isComplete,
     firstMismatchIndex: isComplete ? null : matchedCount,
   }
