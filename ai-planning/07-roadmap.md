@@ -8,13 +8,40 @@
 - Hash routing, app shell, empty screens (Test / Results / History).
 - **Exit criteria:** a blank app deploys live to GitHub Pages.
 
-### Phase 1 — MVP single‑mode test (the cut line)
-- ~30–60 hand‑seeded passages (`data/passages.json`) spanning Easy/Medium/Hard, with precomputed composition vectors.
-- Frequency list baked into `data/frequency.json` (one source chosen).
-- **Matching engine**: tokenise → normalise → compare → completion predicate, **Lexical mode only** first, then Strict. Heavy unit tests.
-- Test flow with start‑on‑click timing; WPM + CPM results.
-- `localStorage` history + results table.
-- **Exit criteria:** you can dictate a passage, auto‑complete, and see WPM/CPM saved to history.
+### Phase 1a — Minimal working test loop
+- 1–2 hard-coded passages (plain text, no classification yet).
+- Lexical matching engine: tokenise → normalise (basic) → compare → completion predicate. Unit tests green before wiring UI.
+- Test screen: passage display, Start button, text input, auto‑complete trigger.
+- Results screen: WPM + CPM + elapsed time.
+- **Exit criteria:** you can complete a dictation test and see your speed.
+
+### Phase 1b — Persistence
+- `localStorage` schema + history module (see [06](./06-history-and-storage.md)).
+- Save each result after completion.
+- History screen: reverse-chronological results table.
+- **Exit criteria:** results survive page refresh.
+
+### Phase 1c — Matching polish
+- Strict mode (case-sensitive, no punctuation stripping).
+- Sentence-terminator rules: statement (`.`/`!` interchangeable) vs question (`?` distinct).
+- Abbreviation/decimal exclusions (`Dr.`, `3.14` are not sentence breaks).
+- Number canonicalisation (custom implementation).
+- Live progress highlighting: correct prefix highlighted, first mismatch flagged.
+- Unit tests covering all doc‑03 edge cases.
+- **Exit criteria:** both modes correct; UI shows live progress through the passage.
+
+### Phase 1d — Frequency pipeline + composition infrastructure
+- Script: `google-10000-english-no-swears.txt` → `data/frequency.json` + `data/frequency-meta.json`.
+- Tier lookup module (`src/corpus/tiers.ts`).
+- Script: passage text + frequency list → composition vectors → `data/passages.json`.
+- Difficulty bin shown in results; passage filter by difficulty on test screen.
+- **Exit criteria:** frequency data is wired up and difficulty is a first-class concept.
+
+### Phase 1e — Passage creation (incremental)
+- Passages are added **one at a time**, each authored to a specific difficulty target (Easy / Medium / Hard).
+- Each passage is run through the classification script and appended to `data/passages.json`.
+- Build up to ~30–60 passages spanning the full difficulty range.
+- **Exit criteria:** corpus is large and varied enough for meaningful testing.
 
 ### Phase 2 — Real WPM (Method A) + history viz
 - Difficulty‑binned harmonic estimate (Method A in [05](./05-realwpm.md)).
