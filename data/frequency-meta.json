@@ -1,0 +1,12 @@
+{
+  "source": "google-10000-english-no-swears.txt",
+  "sourceUrl": "https://github.com/first20hours/google-10000-english/blob/master/google-10000-english-no-swears.txt",
+  "sourceCommit": "bdf4c221bc120b0b7f6c3f1eff1cc1abb975f8d8",
+  "wordCount": 9894,
+  "tierThresholds": {
+    "T1_max": 100,
+    "T2_max": 1000,
+    "T3_max": null
+  },
+  "generatedAt": "2026-06-13T20:39:13.096Z"
+}
