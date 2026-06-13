@@ -6,4 +6,5 @@ export interface TestResult {
   wordCount: number
   charCount: number
   mode: 'lexical' | 'strict'
+  suspect: boolean
 }

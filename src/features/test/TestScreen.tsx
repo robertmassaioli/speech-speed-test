@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { getRandomPassage, type Passage } from '../../corpus/passages'
 import { matchText } from '../../engine/match'
 import { calcCpm, calcWpm } from '../../engine/metrics'
+import { saveResult } from '../../storage/history'
 import type { TestResult } from '../results/types'
 
 type TestState = 'idle' | 'running'
@@ -76,6 +77,7 @@ export function TestScreen() {
   const [input, setInput] = useState('')
   const [matchedCount, setMatchedCount] = useState(0)
   const startTimeRef = useRef<number>(0)
+  const prevMatchedRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
@@ -85,6 +87,7 @@ export function TestScreen() {
   const handleStart = useCallback(() => {
     setInput('')
     setMatchedCount(0)
+    prevMatchedRef.current = 0
     startTimeRef.current = performance.now()
     setState('running')
     setTimeout(() => inputRef.current?.focus(), 0)
@@ -96,18 +99,33 @@ export function TestScreen() {
       setInput(value)
 
       const result = matchText(passage.text, value, 'lexical')
+      const suspect = result.isComplete && prevMatchedRef.current < 5
+      prevMatchedRef.current = result.matchedCount
       setMatchedCount(result.matchedCount)
 
       if (result.isComplete) {
         const elapsedSec = (performance.now() - startTimeRef.current) / 1000
+        const wpm = calcWpm(passage.wordCount, elapsedSec)
+        const cpm = calcCpm(passage.charCount, elapsedSec)
+        saveResult({
+          passageId: passage.id,
+          mode: 'lexical',
+          elapsedSec,
+          words: passage.wordCount,
+          charsRaw: passage.charCount,
+          wpm,
+          cpm,
+          suspect,
+        })
         const testResult: TestResult = {
           passageId: passage.id,
-          wpm: calcWpm(passage.wordCount, elapsedSec),
-          cpm: calcCpm(passage.charCount, elapsedSec),
+          wpm,
+          cpm,
           elapsedSec,
           wordCount: passage.wordCount,
           charCount: passage.charCount,
           mode: 'lexical',
+          suspect,
         }
         navigate('/results', { state: testResult })
       }

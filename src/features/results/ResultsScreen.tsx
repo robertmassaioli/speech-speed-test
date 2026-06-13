@@ -38,12 +38,23 @@ const MetricLabel = styled.div`
 const Detail = styled.p`
   font-size: 0.85rem;
   color: #888;
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.5rem;
+`
+
+const SuspectBanner = styled.div`
+  font-size: 0.85rem;
+  color: #a05000;
+  background: #fff8ec;
+  border: 1px solid #f0c060;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
 `
 
 const Actions = styled.div`
   display: flex;
   gap: 0.75rem;
+  margin-top: 1.5rem;
 `
 
 const Button = styled.button`
@@ -85,7 +96,7 @@ export function ResultsScreen() {
   }
 
   const elapsed = result.elapsedSec < 60
-    ? `${result.elapsedSec.toFixed(1)} s`
+    ? `${result.elapsedSec.toFixed(1)}s`
     : `${Math.floor(result.elapsedSec / 60)}m ${Math.round(result.elapsedSec % 60)}s`
 
   return (
@@ -109,9 +120,15 @@ export function ResultsScreen() {
         <Detail>
           {result.wordCount} words · {result.charCount} chars · {result.mode} mode
         </Detail>
+        {result.suspect && (
+          <SuspectBanner>
+            Possible paste detected — this result was saved but is excluded from aggregate stats.
+          </SuspectBanner>
+        )}
         <Actions>
           <Button onClick={() => navigate('/')}>New Passage</Button>
           <SecondaryButton onClick={() => navigate(-1)}>Try Again</SecondaryButton>
+          <SecondaryButton onClick={() => navigate('/history')}>History</SecondaryButton>
         </Actions>
       </Card>
     </div>
