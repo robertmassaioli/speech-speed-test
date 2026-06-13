@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { getRandomPassage, type Passage } from '../../corpus/passages'
+import {
+  DIFFICULTIES,
+  getRandomPassage,
+  passagesForDifficulty,
+  type DifficultyBin,
+  type Passage,
+} from '../../corpus/passages'
 import { compareTokens } from '../../engine/match'
 import { calcCpm, calcWpm } from '../../engine/metrics'
 import { normalizeTokens } from '../../engine/normalize'
@@ -11,6 +17,7 @@ import { saveResult } from '../../storage/history'
 import type { TestResult } from '../results/types'
 
 type TestState = 'idle' | 'running'
+type DifficultyFilter = 'all' | DifficultyBin
 
 const PassageBox = styled.div`
   background: #fff;
@@ -36,16 +43,17 @@ const Controls = styled.div`
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 `
 
-const ModeToggle = styled.div`
+const ToggleGroup = styled.div`
   display: flex;
   border: 1px solid #ccc;
   border-radius: 6px;
   overflow: hidden;
 `
 
-const ModeButton = styled.button<{ $active: boolean; $disabled: boolean }>`
+const ToggleButton = styled.button<{ $active: boolean; $disabled: boolean }>`
   padding: 0.45rem 1rem;
   font-size: 0.9rem;
   font-weight: 500;
@@ -119,6 +127,15 @@ const TimerDisplay = styled.div`
   margin-bottom: 1rem;
 `
 
+const FilterRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+`
+
 interface MatchState {
   matchedCount: number
   inputCount: number
@@ -132,17 +149,33 @@ const MODE_HINTS: Record<MatchMode, string> = {
   strict:  'Exact match: case, punctuation, and spacing must be verbatim.',
 }
 
+const DIFFICULTY_LABELS: Record<DifficultyFilter, string> = {
+  all:    'All',
+  easy:   'Easy',
+  medium: 'Medium',
+  hard:   'Hard',
+}
+
 export function TestScreen() {
   const navigate = useNavigate()
   const [passage, setPassage] = useState<Passage>(() => getRandomPassage())
   const [testState, setTestState] = useState<TestState>('idle')
   const [mode, setMode] = useState<MatchMode>('lexical')
+  const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>('all')
   const [input, setInput] = useState('')
   const [matchState, setMatchState] = useState<MatchState>(IDLE_MATCH)
   const startTimeRef = useRef<number>(0)
   const prevMatchedRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const [elapsedMs, setElapsedMs] = useState(0)
+
+  // Passages available per difficulty (for disabling empty filter options).
+  const availablePerDifficulty = useMemo(
+    () => Object.fromEntries(
+      DIFFICULTIES.map(d => [d, passagesForDifficulty(d).length])
+    ) as Record<DifficultyBin, number>,
+    [],
+  )
 
   const rawTokens = useMemo(() => tokenize(passage.text), [passage.text])
   const refTokens = useMemo(
@@ -173,6 +206,24 @@ export function TestScreen() {
     setTestState('running')
     setTimeout(() => inputRef.current?.focus(), 0)
   }, [])
+
+  const pickNewPassage = useCallback((filter: DifficultyFilter) => {
+    const pool = filter === 'all' ? undefined : (filter as DifficultyBin)
+    setPassage(getRandomPassage(pool))
+    setTestState('idle')
+    setInput('')
+    setMatchState(IDLE_MATCH)
+  }, [])
+
+  const handleFilterChange = useCallback((d: DifficultyFilter) => {
+    if (testState === 'running') return
+    setDifficultyFilter(d)
+    pickNewPassage(d)
+  }, [testState, pickNewPassage])
+
+  const handleNewPassage = useCallback(() => {
+    pickNewPassage(difficultyFilter)
+  }, [difficultyFilter, pickNewPassage])
 
   const handleInput = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -208,19 +259,13 @@ export function TestScreen() {
           charCount: passage.charCount,
           mode,
           suspect,
+          difficulty: passage.difficulty,
         }
         navigate('/results', { state: testResult })
       }
     },
     [passage, navigate, refTokens, mode],
   )
-
-  const handleNewPassage = useCallback(() => {
-    setPassage(getRandomPassage())
-    setTestState('idle')
-    setInput('')
-    setMatchState(IDLE_MATCH)
-  }, [])
 
   const { matchedCount, inputCount } = matchState
   const hasMismatch = testState === 'running' && inputCount > matchedCount
@@ -254,18 +299,18 @@ export function TestScreen() {
       </PassageBox>
 
       <Controls>
-        <ModeToggle>
+        <ToggleGroup>
           {(['lexical', 'strict'] as MatchMode[]).map(m => (
-            <ModeButton
+            <ToggleButton
               key={m}
               $active={mode === m}
               $disabled={isRunning}
               onClick={() => { if (!isRunning) setMode(m) }}
             >
               {m.charAt(0).toUpperCase() + m.slice(1)}
-            </ModeButton>
+            </ToggleButton>
           ))}
-        </ModeToggle>
+        </ToggleGroup>
 
         {!isRunning && (
           <>
@@ -287,7 +332,28 @@ export function TestScreen() {
       </Controls>
 
       {!isRunning && (
-        <ModeHint>{MODE_HINTS[mode]}</ModeHint>
+        <>
+          <FilterRow>
+            <span>Difficulty:</span>
+            <ToggleGroup>
+              {(['all', ...DIFFICULTIES] as DifficultyFilter[]).map(d => {
+                const isEmpty = d !== 'all' && availablePerDifficulty[d as DifficultyBin] === 0
+                return (
+                  <ToggleButton
+                    key={d}
+                    $active={difficultyFilter === d}
+                    $disabled={isEmpty}
+                    onClick={() => handleFilterChange(d)}
+                    title={isEmpty ? 'No passages available at this difficulty' : undefined}
+                  >
+                    {DIFFICULTY_LABELS[d]}
+                  </ToggleButton>
+                )
+              })}
+            </ToggleGroup>
+          </FilterRow>
+          <ModeHint>{MODE_HINTS[mode]}</ModeHint>
+        </>
       )}
 
       {isRunning && (

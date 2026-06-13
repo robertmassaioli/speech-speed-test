@@ -118,7 +118,7 @@ export function ResultsScreen() {
           </Metric>
         </Metrics>
         <Detail>
-          {result.wordCount} words · {result.charCount} chars · {result.mode} mode
+          {result.wordCount} words · {result.charCount} chars · {result.mode} mode · {result.difficulty}
         </Detail>
         {result.suspect && (
           <SuspectBanner>

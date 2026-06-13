@@ -1,25 +1,50 @@
 import { countTokens } from '../engine/tokenize'
+import { type Composition, type DifficultyBin, difficultyBin } from './tiers'
+import rawPassages from '../../data/passages.json'
+
+export type { DifficultyBin }
 
 export interface Passage {
   id: string
   text: string
   wordCount: number
   charCount: number
+  composition: Composition
+  difficulty: DifficultyBin
 }
 
-const RAW_PASSAGES = [
-  {
-    id: 'bunny-and-duck',
-    text: 'Bella the bunny lived at the edge of a wide green meadow. Every morning she would hop down to the pond to watch the sun rise over the water. One day she found a small duck sitting alone on the bank. His name was Pip, and he looked very sad. So the two of them set off together. Bella hopped through the tall grass and Pip waddled along beside her. They crossed a little wooden bridge and followed the stream around a bend. Then Pip stopped. He lifted his head and listened. From somewhere ahead came the soft sound of splashing and quacking. Bella smiled and waved her paw. From that day on, the bunny and the duck met every morning at the pond, and neither of them was ever lonely again.',
-  },
-]
+interface PassageRaw {
+  id: string
+  text: string
+  composition: { t1: number; t2: number; t3: number; t4: number; total: number }
+}
 
-export const PASSAGES: Passage[] = RAW_PASSAGES.map(p => ({
-  ...p,
-  wordCount: countTokens(p.text),
-  charCount: p.text.length,
-}))
+function fromCounts(c: PassageRaw['composition']): Composition {
+  const { t1, t2, t3, t4, total } = c
+  if (total === 0) return { t1: 0, t2: 0, t3: 0, t4: 0, total: 0, p1: 0, p2: 0, p3: 0, p4: 0 }
+  return { t1, t2, t3, t4, total, p1: t1/total, p2: t2/total, p3: t3/total, p4: t4/total }
+}
 
-export function getRandomPassage(): Passage {
-  return PASSAGES[Math.floor(Math.random() * PASSAGES.length)]
+export const PASSAGES: Passage[] = (rawPassages as PassageRaw[]).map(p => {
+  const composition = fromCounts(p.composition)
+  return {
+    id: p.id,
+    text: p.text,
+    wordCount: countTokens(p.text),
+    charCount: p.text.length,
+    composition,
+    difficulty: difficultyBin(composition),
+  }
+})
+
+export const DIFFICULTIES: DifficultyBin[] = ['easy', 'medium', 'hard']
+
+export function passagesForDifficulty(difficulty: DifficultyBin): Passage[] {
+  return PASSAGES.filter(p => p.difficulty === difficulty)
+}
+
+export function getRandomPassage(difficulty?: DifficultyBin): Passage {
+  const pool = difficulty ? passagesForDifficulty(difficulty) : PASSAGES
+  const effective = pool.length > 0 ? pool : PASSAGES
+  return effective[Math.floor(Math.random() * effective.length)]
 }

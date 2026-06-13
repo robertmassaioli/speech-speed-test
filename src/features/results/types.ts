@@ -1,3 +1,7 @@
+import type { DifficultyBin } from '../../corpus/passages'
+
+export type { DifficultyBin }
+
 export interface TestResult {
   passageId: string
   wpm: number
@@ -7,4 +11,5 @@ export interface TestResult {
   charCount: number
   mode: 'lexical' | 'strict'
   suspect: boolean
+  difficulty: DifficultyBin
 }
