@@ -6,6 +6,7 @@ import { compareTokens } from '../../engine/match'
 import { calcCpm, calcWpm } from '../../engine/metrics'
 import { normalizeTokens } from '../../engine/normalize'
 import { tokenize } from '../../engine/tokenize'
+import type { MatchMode } from '../../engine/types'
 import { saveResult } from '../../storage/history'
 import type { TestResult } from '../results/types'
 
@@ -35,6 +36,35 @@ const Controls = styled.div`
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+`
+
+const ModeToggle = styled.div`
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+`
+
+const ModeButton = styled.button<{ $active: boolean; $disabled: boolean }>`
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: ${p => p.$disabled ? 'default' : 'pointer'};
+  background: ${p => p.$active ? '#1a1a1a' : '#f5f5f5'};
+  color: ${p => p.$active ? '#fff' : p.$disabled ? '#bbb' : '#555'};
+  opacity: ${p => p.$disabled && !p.$active ? 0.5 : 1};
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: ${p => p.$disabled || p.$active ? undefined : '#e8e8e8'};
+  }
+`
+
+const ModeHint = styled.p`
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0 0 1rem;
 `
 
 const Button = styled.button`
@@ -88,21 +118,26 @@ interface MatchState {
 
 const IDLE_MATCH: MatchState = { matchedCount: 0, inputCount: 0, isComplete: false }
 
+const MODE_HINTS: Record<MatchMode, string> = {
+  lexical: 'Ignores case, punctuation, and number formatting — measures dictation speed.',
+  strict:  'Exact match: case, punctuation, and spacing must be verbatim.',
+}
+
 export function TestScreen() {
   const navigate = useNavigate()
   const [passage, setPassage] = useState<Passage>(() => getRandomPassage())
   const [testState, setTestState] = useState<TestState>('idle')
+  const [mode, setMode] = useState<MatchMode>('lexical')
   const [input, setInput] = useState('')
   const [matchState, setMatchState] = useState<MatchState>(IDLE_MATCH)
   const startTimeRef = useRef<number>(0)
   const prevMatchedRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
-  // Pre-compute the reference token stream once per passage
   const rawTokens = useMemo(() => tokenize(passage.text), [passage.text])
   const refTokens = useMemo(
-    () => normalizeTokens(rawTokens, 'lexical'),
-    [rawTokens],
+    () => normalizeTokens(rawTokens, mode),
+    [rawTokens, mode],
   )
 
   useEffect(() => {
@@ -123,7 +158,7 @@ export function TestScreen() {
       const value = e.target.value
       setInput(value)
 
-      const inputTokens = normalizeTokens(tokenize(value), 'lexical')
+      const inputTokens = normalizeTokens(tokenize(value), mode)
       const result = compareTokens(refTokens, inputTokens)
       const suspect = result.isComplete && prevMatchedRef.current < 5
       prevMatchedRef.current = result.matchedCount
@@ -135,7 +170,7 @@ export function TestScreen() {
         const cpm = calcCpm(passage.charCount, elapsedSec)
         saveResult({
           passageId: passage.id,
-          mode: 'lexical',
+          mode,
           elapsedSec,
           words: passage.wordCount,
           charsRaw: passage.charCount,
@@ -150,13 +185,13 @@ export function TestScreen() {
           elapsedSec,
           wordCount: passage.wordCount,
           charCount: passage.charCount,
-          mode: 'lexical',
+          mode,
           suspect,
         }
         navigate('/results', { state: testResult })
       }
     },
-    [passage, navigate, refTokens],
+    [passage, navigate, refTokens, mode],
   )
 
   const handleNewPassage = useCallback(() => {
@@ -168,6 +203,7 @@ export function TestScreen() {
 
   const { matchedCount, inputCount } = matchState
   const hasMismatch = testState === 'running' && inputCount > matchedCount
+  const isRunning = testState === 'running'
 
   return (
     <div>
@@ -176,11 +212,10 @@ export function TestScreen() {
       <PassageBox>
         {rawTokens.map((token, i) => {
           const wordState =
-            testState === 'idle'       ? 'idle' :
-            i < matchedCount           ? 'matched' :
-            i === matchedCount && hasMismatch ? 'mismatch' :
-            testState === 'running'    ? 'upcoming' :
-            'idle'
+            !isRunning                            ? 'idle' :
+            i < matchedCount                      ? 'matched' :
+            i === matchedCount && hasMismatch     ? 'mismatch' :
+                                                    'upcoming'
           return (
             <Word key={i} $state={wordState}>
               {token}{' '}
@@ -189,25 +224,45 @@ export function TestScreen() {
         })}
       </PassageBox>
 
-      {testState === 'idle' && (
-        <Controls>
-          <Button onClick={handleStart}>Start Test</Button>
-          <Button onClick={handleNewPassage} style={{ background: '#666' }}>
-            New Passage
-          </Button>
-        </Controls>
-      )}
+      <Controls>
+        <ModeToggle>
+          {(['lexical', 'strict'] as MatchMode[]).map(m => (
+            <ModeButton
+              key={m}
+              $active={mode === m}
+              $disabled={isRunning}
+              onClick={() => { if (!isRunning) setMode(m) }}
+            >
+              {m.charAt(0).toUpperCase() + m.slice(1)}
+            </ModeButton>
+          ))}
+        </ModeToggle>
 
-      {testState === 'running' && (
-        <>
-          <Controls>
-            <Progress>
-              {matchedCount} / {passage.wordCount} words matched
-            </Progress>
+        {!isRunning && (
+          <>
+            <Button onClick={handleStart}>Start Test</Button>
+            <Button onClick={handleNewPassage} style={{ background: '#666' }}>
+              New Passage
+            </Button>
+          </>
+        )}
+
+        {isRunning && (
+          <>
+            <Progress>{matchedCount} / {passage.wordCount} words matched</Progress>
             <Button onClick={handleNewPassage} style={{ background: '#666' }}>
               Abandon
             </Button>
-          </Controls>
+          </>
+        )}
+      </Controls>
+
+      {!isRunning && (
+        <ModeHint>{MODE_HINTS[mode]}</ModeHint>
+      )}
+
+      {isRunning && (
+        <>
           <Label>Dictate the passage above into the box:</Label>
           <InputArea
             ref={inputRef}
