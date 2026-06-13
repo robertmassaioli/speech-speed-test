@@ -12,32 +12,49 @@ const Shell = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 1.5rem;
+  gap: var(--space-3);
   align-items: center;
-  padding: 0.75rem 1.5rem;
-  background: #fff;
-  border-bottom: 1px solid #e0e0e0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--purple-900);
 
   a {
-    color: #555;
+    color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+
+    &:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
 
     &.active {
-      color: #1a1a1a;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.15);
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
+  }
+
+  *:focus-visible {
+    outline-color: rgba(255, 255, 255, 0.7);
   }
 `
 
 const AppTitle = styled.span`
   font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
   margin-right: auto;
+  letter-spacing: -0.01em;
 `
 
 const Main = styled.main`
   flex: 1;
-  padding: 2rem 1.5rem;
+  padding: var(--space-4) var(--space-3);
   max-width: 900px;
   width: 100%;
   margin: 0 auto;

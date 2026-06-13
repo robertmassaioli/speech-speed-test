@@ -24,186 +24,275 @@ interface CompletedResult {
   elapsedSec: number
 }
 
-// ── Styled components ─────────────────────────────────────────────────────────
+// ── Difficulty colours ────────────────────────────────────────────────────────
+
+const DIFF_BG: Record<DifficultyBin, string> = {
+  easy:   'var(--diff-easy-bg)',
+  medium: 'var(--diff-med-bg)',
+  hard:   'var(--diff-hard-bg)',
+}
+const DIFF_TEXT: Record<DifficultyBin, string> = {
+  easy:   'var(--diff-easy-text)',
+  medium: 'var(--diff-med-text)',
+  hard:   'var(--diff-hard-text)',
+}
+
+// ── Passage area ─────────────────────────────────────────────────────────────
+
+const PassageMeta = styled.div`
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+  min-height: 1.75rem;
+`
+
+const DiffBadge = styled.span<{ $diff: DifficultyBin }>`
+  background: ${p => DIFF_BG[p.$diff]};
+  color: ${p => DIFF_TEXT[p.$diff]};
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+`
+
+const MetaText = styled.span`
+  font-size: 0.82rem;
+  color: var(--neutral-600);
+`
+
+const TimerBadge = styled.div`
+  margin-left: auto;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  background: var(--purple-900);
+  color: #fff;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+`
 
 const PassageBox = styled.div`
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-200);
+  border-left: 4px solid var(--purple-100);
   border-radius: 8px;
-  padding: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.9;
-  margin-bottom: 1.5rem;
+  padding: var(--space-3);
+  font-size: 1.15rem;
+  font-family: Georgia, ui-serif, serif;
+  line-height: 1.7;
+  max-height: 420px;
+  overflow-y: auto;
 `
 
 const Word = styled.span<{ $state: 'matched' | 'mismatch' | 'upcoming' | 'idle' }>`
   color: ${p =>
-    p.$state === 'matched'  ? '#2a7a2a' :
-    p.$state === 'mismatch' ? '#c0392b' :
-    p.$state === 'upcoming' ? '#999'    :
+    p.$state === 'matched'  ? '#166534' :
+    p.$state === 'mismatch' ? '#991b1b' :
+    p.$state === 'upcoming' ? '#aaa'    :
     'inherit'};
+  text-decoration: ${p => p.$state === 'matched' ? 'underline' : 'none'};
+  text-decoration-color: ${p => p.$state === 'matched' ? '#166534' : 'transparent'};
+  text-underline-offset: 2px;
   font-weight: ${p => p.$state === 'mismatch' ? '600' : 'inherit'};
 `
 
-const Controls = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
+const ProgressTrack = styled.div`
+  height: 4px;
+  background: var(--neutral-200);
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+  margin-bottom: var(--space-3);
 `
+
+const ProgressFill = styled.div<{ $pct: number }>`
+  height: 100%;
+  width: ${p => p.$pct}%;
+  background: var(--purple-600);
+  border-radius: inherit;
+  transition: width 0.15s ease;
+`
+
+// ── Buttons ───────────────────────────────────────────────────────────────────
+
+const PrimaryButton = styled.button`
+  padding: 0.65rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--purple-600);
+  color: #fff;
+  transition: background 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    background: var(--purple-700);
+    box-shadow: 0 0 0 3px var(--purple-100);
+  }
+`
+
+const OutlineButton = styled.button`
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 2px solid var(--purple-600);
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--purple-600);
+  transition: background 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    background: var(--purple-50);
+    box-shadow: 0 0 0 3px var(--purple-100);
+  }
+`
+
+const AbandonLink = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--neutral-600);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.15s;
+
+  &:hover { color: var(--neutral-900); }
+`
+
+// ── Segmented controls ────────────────────────────────────────────────────────
 
 const ToggleGroup = styled.div`
   display: flex;
-  border: 1px solid #ccc;
+  border: 1px solid var(--neutral-200);
   border-radius: 6px;
   overflow: hidden;
+  background: #fff;
 `
 
 const ToggleButton = styled.button<{ $active: boolean; $disabled: boolean }>`
-  padding: 0.45rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   border: none;
   cursor: ${p => p.$disabled ? 'default' : 'pointer'};
-  background: ${p => p.$active ? '#1a1a1a' : '#f5f5f5'};
-  color: ${p => p.$active ? '#fff' : p.$disabled ? '#bbb' : '#555'};
+  background: ${p => p.$active ? 'var(--purple-600)' : 'transparent'};
+  color: ${p => p.$active ? '#fff' : p.$disabled ? '#ccc' : 'var(--neutral-700)'};
   opacity: ${p => p.$disabled && !p.$active ? 0.5 : 1};
   transition: background 0.15s, color 0.15s;
 
   &:hover {
-    background: ${p => p.$disabled || p.$active ? undefined : '#e8e8e8'};
+    background: ${p => p.$disabled || p.$active ? undefined : 'var(--purple-50)'};
   }
 `
 
-const ModeHint = styled.p`
-  font-size: 0.8rem;
-  color: #888;
-  margin: 0 0 1rem;
-`
+// ── Controls row ─────────────────────────────────────────────────────────────
 
-const Button = styled.button`
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background: #1a1a1a;
-  color: #fff;
-
-  &:hover { background: #333; }
-`
-
-const SecondaryButton = styled(Button)`
-  background: #e8e8e8;
-  color: #1a1a1a;
-
-  &:hover { background: #d4d4d4; }
-`
-
-const Progress = styled.span`
-  font-size: 0.9rem;
-  color: #666;
-`
-
-const InputArea = styled.textarea`
-  width: 100%;
-  min-height: 120px;
-  padding: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  border: 2px solid #1a1a1a;
-  border-radius: 6px;
-  resize: vertical;
-  font-family: inherit;
-
-  &:focus {
-    outline: none;
-    border-color: #555;
-  }
-`
-
-const Label = styled.p`
-  font-size: 0.85rem;
-  color: #666;
-  margin: 0 0 0.4rem;
-`
-
-const TimerDisplay = styled.div`
-  font-size: 2.4rem;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.03em;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
+const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
 `
 
 const FilterRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
   font-size: 0.85rem;
-  color: #666;
+  color: var(--neutral-600);
 `
 
-// ── Results card ──────────────────────────────────────────────────────────────
+const ModeHint = styled.p`
+  font-size: 0.8rem;
+  color: var(--neutral-600);
+  margin: 0 0 var(--space-2);
+`
+
+const Label = styled.p`
+  font-size: 0.85rem;
+  color: var(--neutral-600);
+  margin: 0 0 var(--space-1);
+`
+
+const InputArea = styled.textarea`
+  width: 100%;
+  min-height: 110px;
+  padding: var(--space-2);
+  font-size: 1rem;
+  line-height: 1.6;
+  border: 2px solid var(--neutral-200);
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.15s;
+
+  &:focus {
+    outline: none;
+    border-color: var(--purple-600);
+    box-shadow: 0 0 0 3px var(--purple-100);
+  }
+`
+
+// ── Results card ─────────────────────────────────────────────────────────────
 
 const ResultsCard = styled.div`
-  background: #fff;
-  border: 1px solid #ddd;
+  background: var(--purple-50);
+  border: 1px solid var(--purple-100);
+  border-top: 4px solid var(--purple-600);
   border-radius: 8px;
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-3);
 `
 
 const MetricsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
 `
 
 const Metric = styled.div`
   text-align: center;
 `
 
-const MetricValue = styled.div`
-  font-size: 2.5rem;
+const MetricValue = styled.div<{ $primary?: boolean }>`
+  font-size: ${p => p.$primary ? '3rem' : '2.2rem'};
   font-weight: 700;
   line-height: 1;
+  color: ${p => p.$primary ? 'var(--purple-900)' : 'var(--neutral-900)'};
 `
 
 const MetricLabel = styled.div`
-  font-size: 0.8rem;
-  color: #666;
+  font-size: 0.75rem;
+  color: var(--neutral-600);
   margin-top: 0.3rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 `
 
 const ResultDetail = styled.p`
   font-size: 0.85rem;
-  color: #888;
-  margin: 0 0 1.25rem;
+  color: var(--neutral-600);
+  margin: 0 0 var(--space-3);
+  text-align: center;
 `
 
 const ResultActions = styled.div`
   display: flex;
-  gap: 0.75rem;
+  gap: var(--space-2);
   flex-wrap: wrap;
+  justify-content: center;
 `
 
-// ── Logic ─────────────────────────────────────────────────────────────────────
-
-interface MatchState {
-  matchedCount: number
-  inputCount: number
-  isComplete: boolean
-}
-
-const IDLE_MATCH: MatchState = { matchedCount: 0, inputCount: 0, isComplete: false }
+// ── Helpers ───────────────────────────────────────────────────────────────────
 
 const MODE_HINTS: Record<MatchMode, string> = {
   lexical: 'Ignores case, punctuation, and number formatting — measures dictation speed.',
@@ -228,6 +317,14 @@ function formatTimer(ms: number): string {
 function formatElapsed(sec: number): string {
   return sec < 60 ? `${sec.toFixed(1)}s` : `${Math.floor(sec / 60)}m ${Math.round(sec % 60)}s`
 }
+
+interface MatchState {
+  matchedCount: number
+  inputCount: number
+  isComplete: boolean
+}
+
+const IDLE_MATCH: MatchState = { matchedCount: 0, inputCount: 0, isComplete: false }
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
@@ -347,19 +444,27 @@ export function TestScreen() {
   const isIdle      = testState === 'idle'
   const { matchedCount, inputCount } = matchState
   const hasMismatch = isRunning && inputCount > matchedCount
+  const progressPct = passage.wordCount > 0 ? (matchedCount / passage.wordCount) * 100 : 0
 
   return (
     <div>
-      <h1>Speed Test</h1>
+      {/* Passage metadata row — replaces the old <h1> */}
+      <PassageMeta>
+        <DiffBadge $diff={passage.difficulty}>{passage.difficulty}</DiffBadge>
+        <MetaText>{passage.wordCount} words</MetaText>
+        {isRunning && (
+          <TimerBadge>{formatTimer(elapsedMs)}</TimerBadge>
+        )}
+      </PassageMeta>
 
       <PassageBox>
         {rawTokens.map((token, i) => {
           const wordState =
-            isCompleted                               ? 'matched'  :
-            !isRunning                                ? 'idle'     :
-            i < matchedCount                          ? 'matched'  :
-            i === matchedCount && hasMismatch         ? 'mismatch' :
-                                                        'upcoming'
+            isCompleted                           ? 'matched'  :
+            !isRunning                            ? 'idle'     :
+            i < matchedCount                      ? 'matched'  :
+            i === matchedCount && hasMismatch     ? 'mismatch' :
+                                                    'upcoming'
           return (
             <Word key={i} $state={wordState}>
               {token}{' '}
@@ -368,13 +473,20 @@ export function TestScreen() {
         })}
       </PassageBox>
 
+      {/* Progress bar — only during running */}
+      {isRunning && (
+        <ProgressTrack>
+          <ProgressFill $pct={progressPct} />
+        </ProgressTrack>
+      )}
+
       {/* Completed: inline results */}
       {isCompleted && completedResult && (
         <ResultsCard>
           <MetricsGrid>
             <Metric>
-              <MetricValue>{completedResult.wpm}</MetricValue>
-              <MetricLabel>WPM</MetricLabel>
+              <MetricValue $primary>{completedResult.wpm}</MetricValue>
+              <MetricLabel>✓ WPM</MetricLabel>
             </Metric>
             <Metric>
               <MetricValue>{completedResult.cpm}</MetricValue>
@@ -389,51 +501,40 @@ export function TestScreen() {
             {passage.wordCount} words · {passage.charCount} chars · {mode} mode · {passage.difficulty}
           </ResultDetail>
           <ResultActions>
-            <Button onClick={handleNewPassage}>New Passage</Button>
-            <SecondaryButton onClick={handleTryAgain}>Try Again</SecondaryButton>
-            <SecondaryButton onClick={() => navigate('/history')}>History</SecondaryButton>
+            <PrimaryButton onClick={handleNewPassage}>New Passage</PrimaryButton>
+            <OutlineButton onClick={handleTryAgain}>Try Again</OutlineButton>
+            <OutlineButton onClick={() => navigate('/history')}>History</OutlineButton>
           </ResultActions>
         </ResultsCard>
       )}
 
-      {/* Running / idle controls */}
-      {!isCompleted && (
+      {/* Running controls — stripped down */}
+      {isRunning && (
         <Controls>
-          <ToggleGroup>
-            {(['lexical', 'strict'] as MatchMode[]).map(m => (
-              <ToggleButton
-                key={m}
-                $active={mode === m}
-                $disabled={isRunning}
-                onClick={() => { if (!isRunning) setMode(m) }}
-              >
-                {m.charAt(0).toUpperCase() + m.slice(1)}
-              </ToggleButton>
-            ))}
-          </ToggleGroup>
-
-          {isIdle && (
-            <>
-              <Button onClick={handleStart}>Start Test</Button>
-              <Button onClick={handleNewPassage} style={{ background: '#666' }}>
-                New Passage
-              </Button>
-            </>
-          )}
-
-          {isRunning && (
-            <>
-              <Progress>{matchedCount} / {passage.wordCount} words matched</Progress>
-              <Button onClick={handleNewPassage} style={{ background: '#666' }}>
-                Abandon
-              </Button>
-            </>
-          )}
+          <AbandonLink onClick={handleNewPassage}>✕ Abandon</AbandonLink>
         </Controls>
       )}
 
+      {/* Idle controls */}
       {isIdle && (
         <>
+          <Controls>
+            <ToggleGroup>
+              {(['lexical', 'strict'] as MatchMode[]).map(m => (
+                <ToggleButton
+                  key={m}
+                  $active={mode === m}
+                  $disabled={false}
+                  onClick={() => setMode(m)}
+                >
+                  {m.charAt(0).toUpperCase() + m.slice(1)}
+                </ToggleButton>
+              ))}
+            </ToggleGroup>
+            <PrimaryButton onClick={handleStart}>Start Test</PrimaryButton>
+            <OutlineButton onClick={handleNewPassage}>New Passage</OutlineButton>
+          </Controls>
+
           <FilterRow>
             <span>Difficulty:</span>
             <ToggleGroup>
@@ -453,13 +554,14 @@ export function TestScreen() {
               })}
             </ToggleGroup>
           </FilterRow>
+
           <ModeHint>{MODE_HINTS[mode]}</ModeHint>
         </>
       )}
 
+      {/* Dictation textarea — only when running */}
       {isRunning && (
         <>
-          <TimerDisplay>{formatTimer(elapsedMs)}</TimerDisplay>
           <Label>Dictate the passage above into the box:</Label>
           <InputArea
             ref={inputRef}
