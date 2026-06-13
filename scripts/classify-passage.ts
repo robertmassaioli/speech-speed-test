@@ -40,6 +40,9 @@ if (/;/.test(text)) {
 if (/:/.test(text)) {
   warnings.push('colons — STT rarely emits these')
 }
+if (/-[a-zA-Z]/.test(text)) {
+  warnings.push('hyphenated compounds — normalizer joins them into one token; STT emits two separate words')
+}
 
 // ── Report ──────────────────────────────────────────────────────────────────
 
