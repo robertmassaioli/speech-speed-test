@@ -170,6 +170,69 @@ const StatsGrid = styled.div`
 
 // ── Real WPM ─────────────────────────────────────────────────────────────────
 
+const ExplainDetails = styled.details`
+  margin-top: var(--space-2);
+  font-size: 0.8rem;
+
+  & > summary {
+    cursor: pointer;
+    color: var(--accent);
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    user-select: none;
+
+    &::before {
+      content: '▸';
+      display: inline-block;
+      transition: transform 0.15s;
+    }
+  }
+
+  &[open] > summary::before {
+    transform: rotate(90deg);
+  }
+`
+
+const ExplainBody = styled.div`
+  margin-top: var(--space-2);
+  padding: var(--space-2);
+  background: var(--surface-subtle);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+
+  p { margin: 0 0 var(--space-1); }
+  p:last-child { margin-bottom: 0; }
+`
+
+const ExplainFormula = styled.p`
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.78rem;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  color: var(--text-primary);
+  overflow-x: auto;
+  white-space: nowrap;
+`
+
+const ExplainTierRow = styled.div`
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 0.4rem;
+  align-items: baseline;
+  margin-bottom: 0.2rem;
+  font-size: 0.78rem;
+`
+
+const TierLabel = styled.span`
+  font-weight: 700;
+  color: var(--text-primary);
+`
+
 const RealWpmCard = styled.div`
   background: var(--surface-raised);
   border: 1px solid var(--border);
@@ -623,6 +686,50 @@ export function HistoryScreen() {
                   </>
                 )}
               </RealWpmCard>
+
+              {realWpm !== null && (
+                <ExplainDetails>
+                  <summary>How is this calculated?</summary>
+                  <ExplainBody>
+                    <p>
+                      Each word in a passage belongs to one of four frequency tiers based on the
+                      Google top-10,000 English words list. You speak faster on familiar words,
+                      so each tier gets its own speed estimate:
+                    </p>
+                    <div style={{ margin: 'var(--space-1) 0' }}>
+                      <ExplainTierRow>
+                        <TierLabel>T1</TierLabel>
+                        <span>top-100 words ("the", "is", "and"…)</span>
+                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.s.speed} WPM</span>
+                      </ExplainTierRow>
+                      <ExplainTierRow>
+                        <TierLabel>T2</TierLabel>
+                        <span>ranks 101–1,000 ("city", "answer"…)</span>
+                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.m.speed} WPM</span>
+                      </ExplainTierRow>
+                      <ExplainTierRow>
+                        <TierLabel>T3</TierLabel>
+                        <span>ranks 1,001–9,894 (less common)</span>
+                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.l.speed} WPM</span>
+                      </ExplainTierRow>
+                      <ExplainTierRow>
+                        <TierLabel>T4</TierLabel>
+                        <span>not in top 10,000 (rare / technical)</span>
+                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.f.speed} WPM</span>
+                      </ExplainTierRow>
+                    </div>
+                    <p>
+                      T1 speed is estimated from your {realWpm.contributing} test
+                      result{realWpm.contributing !== 1 ? 's' : ''} using their word-frequency
+                      compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
+                    </p>
+                    <p>The headline is a weighted average matching typical passage composition:</p>
+                    <ExplainFormula>
+                      0.50 × {realWpm.s.speed} + 0.40 × {realWpm.m.speed} + 0.09 × {realWpm.l.speed} + 0.01 × {realWpm.f.speed} = {realWpm.realWpm}
+                    </ExplainFormula>
+                  </ExplainBody>
+                </ExplainDetails>
+              )}
             </div>
 
             <div>
