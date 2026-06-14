@@ -161,7 +161,7 @@ const StatsGrid = styled.div`
   display: grid;
   grid-template-columns: 55fr 45fr;
   gap: var(--space-3);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 
   @media (max-width: 620px) {
     grid-template-columns: 1fr;
@@ -171,7 +171,7 @@ const StatsGrid = styled.div`
 // ── Real WPM ─────────────────────────────────────────────────────────────────
 
 const ExplainDetails = styled.details`
-  margin-top: var(--space-2);
+  margin-bottom: var(--space-3);
   font-size: 0.8rem;
 
   & > summary {
@@ -686,50 +686,6 @@ export function HistoryScreen() {
                   </>
                 )}
               </RealWpmCard>
-
-              {realWpm !== null && (
-                <ExplainDetails>
-                  <summary>How is this calculated?</summary>
-                  <ExplainBody>
-                    <p>
-                      Each word in a passage belongs to one of four frequency tiers based on the
-                      Google top-10,000 English words list. You speak faster on familiar words,
-                      so each tier gets its own speed estimate:
-                    </p>
-                    <div style={{ margin: 'var(--space-1) 0' }}>
-                      <ExplainTierRow>
-                        <TierLabel>T1</TierLabel>
-                        <span>top-100 words ("the", "is", "and"…)</span>
-                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.s.speed} WPM</span>
-                      </ExplainTierRow>
-                      <ExplainTierRow>
-                        <TierLabel>T2</TierLabel>
-                        <span>ranks 101–1,000 ("city", "answer"…)</span>
-                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.m.speed} WPM</span>
-                      </ExplainTierRow>
-                      <ExplainTierRow>
-                        <TierLabel>T3</TierLabel>
-                        <span>ranks 1,001–9,894 (less common)</span>
-                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.l.speed} WPM</span>
-                      </ExplainTierRow>
-                      <ExplainTierRow>
-                        <TierLabel>T4</TierLabel>
-                        <span>not in top 10,000 (rare / technical)</span>
-                        <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.f.speed} WPM</span>
-                      </ExplainTierRow>
-                    </div>
-                    <p>
-                      T1 speed is estimated from your {realWpm.contributing} test
-                      result{realWpm.contributing !== 1 ? 's' : ''} using their word-frequency
-                      compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
-                    </p>
-                    <p>The headline is a weighted average matching typical passage composition:</p>
-                    <ExplainFormula>
-                      0.50 × {realWpm.s.speed} + 0.40 × {realWpm.m.speed} + 0.09 × {realWpm.l.speed} + 0.01 × {realWpm.f.speed} = {realWpm.realWpm}
-                    </ExplainFormula>
-                  </ExplainBody>
-                </ExplainDetails>
-              )}
             </div>
 
             <div>
@@ -755,6 +711,50 @@ export function HistoryScreen() {
               </BestCard>
             </div>
           </StatsGrid>
+
+          {realWpm !== null && (
+            <ExplainDetails>
+              <summary>How is this calculated?</summary>
+              <ExplainBody>
+                <p>
+                  Each word in a passage belongs to one of four frequency tiers based on the
+                  Google top-10,000 English words list. You speak faster on familiar words,
+                  so each tier gets its own speed estimate:
+                </p>
+                <div style={{ margin: 'var(--space-1) 0' }}>
+                  <ExplainTierRow>
+                    <TierLabel>T1</TierLabel>
+                    <span>top-100 words ("the", "is", "and"…)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.s.speed} WPM</span>
+                  </ExplainTierRow>
+                  <ExplainTierRow>
+                    <TierLabel>T2</TierLabel>
+                    <span>ranks 101–1,000 ("city", "answer"…)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.m.speed} WPM</span>
+                  </ExplainTierRow>
+                  <ExplainTierRow>
+                    <TierLabel>T3</TierLabel>
+                    <span>ranks 1,001–9,894 (less common)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.l.speed} WPM</span>
+                  </ExplainTierRow>
+                  <ExplainTierRow>
+                    <TierLabel>T4</TierLabel>
+                    <span>not in top 10,000 (rare / technical)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm.f.speed} WPM</span>
+                  </ExplainTierRow>
+                </div>
+                <p>
+                  T1 speed is estimated from your {realWpm.contributing} test
+                  result{realWpm.contributing !== 1 ? 's' : ''} using their word-frequency
+                  compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
+                </p>
+                <p>The headline is a weighted average matching typical passage composition:</p>
+                <ExplainFormula>
+                  0.50 × {realWpm.s.speed} + 0.40 × {realWpm.m.speed} + 0.09 × {realWpm.l.speed} + 0.01 × {realWpm.f.speed} = {realWpm.realWpm}
+                </ExplainFormula>
+              </ExplainBody>
+            </ExplainDetails>
+          )}
 
           <ChartSection>
             <SectionTitle>Trend</SectionTitle>
