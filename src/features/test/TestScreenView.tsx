@@ -2,14 +2,16 @@ import { useMemo } from 'react'
 import styled from 'styled-components'
 import {
   DIFFICULTIES,
+  SIZES,
   type DifficultyBin,
   type Passage,
+  type SizeVariant,
 } from '../../corpus/passages'
 import { compareTokens } from '../../engine/match'
 import { normalizeTokens } from '../../engine/normalize'
 import { tokenize } from '../../engine/tokenize'
 import type { MatchMode } from '../../engine/types'
-import type { DifficultyFilter } from '../../storage/settings'
+import type { DifficultyFilter, SizeFilter } from '../../storage/settings'
 
 type TestState = 'idle' | 'running' | 'completed'
 
@@ -302,6 +304,13 @@ const DIFFICULTY_LABELS: Record<DifficultyFilter, string> = {
   hard:   'Hard',
 }
 
+const SIZE_LABELS: Record<SizeVariant, string> = {
+  small:   'Small',
+  medium:  'Medium',
+  large:   'Large',
+  xlarge:  'XL',
+}
+
 function formatTimer(ms: number): string {
   const s = ms / 1000
   const m = Math.floor(s / 60)
@@ -321,13 +330,15 @@ export interface TestScreenViewProps {
   testState: TestState
   mode: MatchMode
   difficultyFilter: DifficultyFilter
-  availablePerDifficulty: Record<DifficultyBin, number>
+  sizeFilter: SizeFilter
+  availablePerSizeAndDifficulty: Record<SizeVariant, Record<DifficultyBin, number>>
   input: string
   completedResult: CompletedResult | null
   elapsedMs: number
   inputRef?: React.RefObject<HTMLTextAreaElement | null>
   onModeChange: (mode: MatchMode) => void
   onDifficultyFilterChange: (d: DifficultyFilter) => void
+  onSizeFilterChange: (s: SizeFilter) => void
   onStart: () => void
   onInput: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
   onNewPassage: () => void
@@ -342,13 +353,15 @@ export function TestScreenView({
   testState,
   mode,
   difficultyFilter,
-  availablePerDifficulty,
+  sizeFilter,
+  availablePerSizeAndDifficulty,
   input,
   completedResult,
   elapsedMs,
   inputRef,
   onModeChange,
   onDifficultyFilterChange,
+  onSizeFilterChange,
   onStart,
   onInput,
   onNewPassage,
@@ -390,16 +403,44 @@ export function TestScreenView({
           </FilterRow>
 
           <FilterRow>
+            <span>Size:</span>
+            <ToggleGroup>
+              {SIZES.map(size => {
+                // Dim if no passages exist for this size given the current difficulty filter
+                const count = difficultyFilter === 'all'
+                  ? DIFFICULTIES.reduce((sum, d) => sum + availablePerSizeAndDifficulty[size][d], 0)
+                  : availablePerSizeAndDifficulty[size][difficultyFilter as DifficultyBin]
+                const isEmpty = count === 0
+                return (
+                  <ToggleButton
+                    key={size}
+                    $active={sizeFilter === size}
+                    $disabled={isEmpty}
+                    onClick={() => !isEmpty && onSizeFilterChange(size)}
+                    title={isEmpty ? 'No passages available at this size' : undefined}
+                  >
+                    {SIZE_LABELS[size]}
+                  </ToggleButton>
+                )
+              })}
+            </ToggleGroup>
+          </FilterRow>
+
+          <FilterRow>
             <span>Difficulty:</span>
             <ToggleGroup>
               {(['all', ...DIFFICULTIES] as DifficultyFilter[]).map(d => {
-                const isEmpty = d !== 'all' && availablePerDifficulty[d as DifficultyBin] === 0
+                // Dim if no passages exist for this difficulty given the current size filter
+                const count = d === 'all'
+                  ? DIFFICULTIES.reduce((sum, diff) => sum + availablePerSizeAndDifficulty[sizeFilter][diff], 0)
+                  : availablePerSizeAndDifficulty[sizeFilter][d as DifficultyBin]
+                const isEmpty = count === 0
                 return (
                   <ToggleButton
                     key={d}
                     $active={difficultyFilter === d}
                     $disabled={isEmpty}
-                    onClick={() => onDifficultyFilterChange(d)}
+                    onClick={() => !isEmpty && onDifficultyFilterChange(d)}
                     title={isEmpty ? 'No passages available at this difficulty' : undefined}
                   >
                     {DIFFICULTY_LABELS[d]}

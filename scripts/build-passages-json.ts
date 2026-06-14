@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { buildTierMap, computeComposition } from '../src/corpus/tiers.ts'
+import { buildTierMap, computeComposition, difficultyBin } from '../src/corpus/tiers.ts'
 import { tokenize } from '../src/engine/tokenize.ts'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -147,19 +147,149 @@ const SOURCES = [
   },
 ]
 
-const passages = SOURCES.map(({ id, text }) => {
+type SizeVariant = 'small' | 'medium' | 'large' | 'xlarge'
+
+interface PassageEntry {
+  id: string
+  sizeVariant: SizeVariant
+  text: string
+  composition: { t1: number; t2: number; t3: number; t4: number; total: number }
+}
+
+function countWords(text: string): number {
+  return text.split(/\s+/).filter(Boolean).length
+}
+
+function splitSentences(text: string): string[] {
+  // Split at sentence boundaries: period/bang/question followed by a space and uppercase
+  const parts: string[] = []
+  const re = /[^.!?]+[.!?]+/g
+  let m: RegExpExecArray | null
+  while ((m = re.exec(text)) !== null) {
+    const s = m[0].trim()
+    if (s) parts.push(s)
+  }
+  return parts.length > 0 ? parts : [text]
+}
+
+function buildSmall(sentences: string[], targetMin = 40): string {
+  const result: string[] = []
+  let wc = 0
+  for (const s of sentences) {
+    const sw = countWords(s)
+    result.push(s)
+    wc += sw
+    if (wc >= targetMin) break
+  }
+  return result.join(' ')
+}
+
+function buildLarge(sentenceLists: string[][], targetMin = 175, targetMax = 225): string {
+  const result: string[] = []
+  let wc = 0
+  outer: for (const sentences of sentenceLists) {
+    for (const s of sentences) {
+      const sw = countWords(s)
+      if (wc >= targetMin && wc + sw > targetMax) break outer
+      result.push(s)
+      wc += sw
+    }
+  }
+  return result.join(' ')
+}
+
+function buildXL(sentenceLists: string[][], targetMin = 350, targetMax = 450): string {
+  const result: string[] = []
+  let wc = 0
+  outer: for (const sentences of sentenceLists) {
+    for (const s of sentences) {
+      const sw = countWords(s)
+      if (wc >= targetMin && wc + sw > targetMax) break outer
+      result.push(s)
+      wc += sw
+    }
+  }
+  return result.join(' ')
+}
+
+function makeEntry(id: string, sizeVariant: SizeVariant, text: string): PassageEntry {
   const comp = computeComposition(tokenize(text), tierMap)
   return {
     id,
+    sizeVariant,
     text,
     composition: { t1: comp.t1, t2: comp.t2, t3: comp.t3, t4: comp.t4, total: comp.total },
   }
+}
+
+// ── Phase 1: compute composition and bin for each source ──────────────────────
+
+type BinName = 'easy' | 'medium' | 'hard'
+
+interface SourceWithMeta {
+  id: string
+  text: string
+  sentences: string[]
+  bin: BinName
+}
+
+const sourcesWithMeta: SourceWithMeta[] = SOURCES.map(({ id, text }) => {
+  const tokens = tokenize(text)
+  const comp = computeComposition(tokens, tierMap)
+  const bin = difficultyBin(comp)
+  return { id, text, sentences: splitSentences(text), bin }
 })
 
-const outPath = resolve(ROOT, 'data/passages.json')
+// Group by bin (preserving insertion order within each bin)
+const byBin: Record<BinName, SourceWithMeta[]> = { easy: [], medium: [], hard: [] }
+for (const s of sourcesWithMeta) byBin[s.bin].push(s)
+
+// ── Phase 2: emit all variants ────────────────────────────────────────────────
+
+const passages: PassageEntry[] = []
+
+for (const src of sourcesWithMeta) {
+  // Small: opening sentences until ~50 words
+  const smallText = buildSmall(src.sentences)
+  passages.push(makeEntry(`${src.id}-sm`, 'small', smallText))
+
+  // Medium: full text, original ID (backward-compatible with stored history)
+  passages.push(makeEntry(src.id, 'medium', src.text))
+}
+
+// Large (175–225 w): pairs within each bin
+for (const bin of Object.values(byBin)) {
+  for (let i = 0; i + 1 < bin.length; i += 2) {
+    const a = bin[i], b = bin[i + 1]
+    const text = buildLarge([a.sentences, b.sentences])
+    passages.push(makeEntry(`${a.id}-lg`, 'large', text))
+  }
+}
+
+// XL (350–450 w): triples within each bin
+for (const bin of Object.values(byBin)) {
+  for (let i = 0; i + 2 < bin.length; i += 3) {
+    const a = bin[i], b = bin[i + 1], c = bin[i + 2]
+    const text = buildXL([a.sentences, b.sentences, c.sentences])
+    passages.push(makeEntry(`${a.id}-xl`, 'xlarge', text))
+  }
+}
+
+// ── Phase 3: write output ─────────────────────────────────────────────────────
+
+const ROOT_PATH = resolve(__dirname, '..')
+const outPath = resolve(ROOT_PATH, 'data/passages.json')
 writeFileSync(outPath, JSON.stringify(passages, null, 2) + '\n')
 console.log(`Wrote ${passages.length} passage(s) → ${outPath}`)
+
+const variantCounts: Record<SizeVariant, number> = { small: 0, medium: 0, large: 0, xlarge: 0 }
+for (const p of passages) variantCounts[p.sizeVariant]++
+console.log(`  small: ${variantCounts.small}  medium: ${variantCounts.medium}  large: ${variantCounts.large}  xlarge: ${variantCounts.xlarge}`)
+console.log()
+
 for (const p of passages) {
   const { t1, t2, t3, t4, total } = p.composition
-  console.log(`  ${p.id}: T1=${t1} T2=${t2} T3=${t3} T4=${t4} total=${total}`)
+  const wc = countWords(p.text)
+  const bin = difficultyBin({ t1, t2, t3, t4, total, p1: t1/total, p2: t2/total, p3: t3/total, p4: t4/total })
+  console.log(`  [${p.sizeVariant.padEnd(6)}] ${p.id.padEnd(40)} wc=${String(wc).padStart(3)}  bin=${bin}  T4=${(t4/total).toFixed(3)}`)
 }
