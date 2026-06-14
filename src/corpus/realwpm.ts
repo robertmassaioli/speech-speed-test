@@ -43,8 +43,10 @@ const W4 = 0.01
 const MIN_SPEED = 5    // WPM floor — clamp unrealistic estimates
 const MIN_RESULTS_FOR_HIGH = 3
 
+// Weighted harmonic mean: time adds linearly, speed does not.
+// 1/WPM = p1/v1 + p2/v2 + p3/v3 + p4/v4
 export function computeHeadline(s: number, m: number, l: number, f: number): number {
-  return W1 * s + W2 * m + W3 * l + W4 * f
+  return 1 / (W1 / s + W2 / m + W3 / l + W4 / f)
 }
 
 function median(arr: readonly number[]): number {

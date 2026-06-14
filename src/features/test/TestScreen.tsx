@@ -58,7 +58,7 @@ export function TestScreen() {
   }, [testState])
 
   useEffect(() => {
-    saveSettings({ mode, difficulty: difficultyFilter })
+    saveSettings({ ...loadSettings(), mode, difficulty: difficultyFilter })
   }, [mode, difficultyFilter])
 
   const resetToIdle = useCallback((nextPassage: Passage) => {

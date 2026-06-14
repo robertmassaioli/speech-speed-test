@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { computeRealWpm } from '../../corpus/realwpm'
 import type { DifficultyBin } from '../../corpus/tiers'
@@ -30,7 +30,6 @@ export function HistoryScreen() {
   const [confirmClear, setConfirmClear] = useState(false)
   const [importError, setImportError] = useState<string | null>(null)
   const [explainerOpen, setExplainerOpen] = useState(() => loadSettings().explainerOpen)
-  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const handleToggleExplainer = useCallback(() => {
     setExplainerOpen(prev => {

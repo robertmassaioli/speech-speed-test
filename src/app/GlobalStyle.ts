@@ -43,4 +43,7 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: var(--accent);
   }
+
+  /* KaTeX: inherit text colour so dark-mode tokens apply */
+  .katex { color: inherit; }
 `

@@ -99,6 +99,16 @@ export const ExplainerOpen: Story = {
   args: { ...withResultsArgs, explainerOpen: true },
 }
 
+export const ExplainerOpenNoData: Story = {
+  args: {
+    ...emptyArgs,
+    results: RESULTS_WITHOUT_COMPOSITION,
+    realWpm: computeRealWpm(RESULTS_WITHOUT_COMPOSITION),
+    bests: personalBests(RESULTS_WITHOUT_COMPOSITION),
+    explainerOpen: true,
+  },
+}
+
 export const ConfirmingClear: Story = {
   args: { ...withResultsArgs, confirmClear: true },
 }

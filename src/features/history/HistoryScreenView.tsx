@@ -1,3 +1,5 @@
+import katex from 'katex'
+import 'katex/dist/katex.min.css'
 import { useRef } from 'react'
 import styled from 'styled-components'
 import { type Confidence, type RealWpmResult } from '../../corpus/realwpm'
@@ -225,31 +227,6 @@ const ExplainBody = styled.div`
   p:last-child { margin-bottom: 0; }
 `
 
-const ExplainFormula = styled.p`
-  font-family: ui-monospace, SFMono-Regular, monospace;
-  font-size: 0.78rem;
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.4rem 0.6rem;
-  color: var(--text-primary);
-  overflow-x: auto;
-  white-space: nowrap;
-`
-
-const ExplainTierRow = styled.div`
-  display: grid;
-  grid-template-columns: 3rem 1fr auto;
-  gap: 0.4rem;
-  align-items: baseline;
-  margin-bottom: 0.2rem;
-  font-size: 0.78rem;
-`
-
-const TierLabel = styled.span`
-  font-weight: 700;
-  color: var(--text-primary);
-`
 
 const ExplainNote = styled.p`
   font-size: 0.75rem;
@@ -258,10 +235,80 @@ const ExplainNote = styled.p`
   background: var(--diff-med-bg);
   border-radius: 4px;
   padding: 0.3rem 0.6rem;
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
 `
 
-const EXAMPLE = { s: 130, m: 100, l: 72, f: 52, headline: 112.0 }
+const StepList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+`
+
+const StepCard = styled.div`
+  display: flex;
+  gap: var(--space-2);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: var(--space-2);
+`
+
+const StepNumber = styled.div`
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-fill);
+  color: var(--text-on-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+`
+
+const StepContent = styled.div`
+  flex: 1;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+
+  p { margin: 0 0 var(--space-1); }
+  p:last-child { margin-bottom: 0; }
+`
+
+const StepHighlight = styled.strong`
+  color: var(--text-primary);
+  font-weight: 700;
+`
+
+function headlineLatex(v1: number, v2: number, v3: number, v4: number, headline: number): string {
+  return [
+    '\\begin{aligned}',
+    '\\text{Real WPM} &= \\frac{1}{\\dfrac{0.50}{T_1} + \\dfrac{0.40}{T_2} + \\dfrac{0.09}{T_3} + \\dfrac{0.01}{T_4}} \\\\[8pt]',
+    `&= \\frac{1}{\\dfrac{0.50}{${v1}} + \\dfrac{0.40}{${v2}} + \\dfrac{0.09}{${v3}} + \\dfrac{0.01}{${v4}}} \\\\[4pt]`,
+    `&\\approx ${headline}`,
+    '\\end{aligned}',
+  ].join('\n')
+}
+
+const KatexWrap = styled.div`
+  overflow-x: auto;
+  .katex-display { text-align: left; margin: 0.4em 0; }
+  .katex-html { width: fit-content; }
+`
+
+function KatexDisplay({ tex }: { tex: string }) {
+  const html = katex.renderToString(tex, {
+    throwOnError: false,
+    displayMode: true,
+    output: 'htmlAndMathml',
+  })
+  return <KatexWrap dangerouslySetInnerHTML={{ __html: html }} />
+}
+
+const EXAMPLE = { s: 130, m: 100, l: 72, f: 52, headline: 107.7 }
 
 const RealWpmCard = styled.div`
   background: var(--surface-raised);
@@ -729,61 +776,123 @@ export function HistoryScreenView({
             </div>
           </StatsGrid>
 
-          {explainerOpen && (
-            <ExplainSection>
-              <ExplainBody>
-                {realWpm === null && (
-                  <ExplainNote>
-                    Example numbers shown below — they will be replaced with your actual speeds
-                    once you have completed enough tests with composition data.
-                  </ExplainNote>
-                )}
-                <p>
-                  Each word in a passage belongs to one of four frequency tiers based on the
-                  Google top-10,000 English words list. You speak faster on familiar words,
-                  so each tier gets its own speed estimate:
-                </p>
-                <div style={{ margin: 'var(--space-1) 0' }}>
-                  <ExplainTierRow>
-                    <TierLabel>T1</TierLabel>
-                    <span>top-100 words ("the", "is", "and"…)</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.s.speed ?? EXAMPLE.s} WPM</span>
-                  </ExplainTierRow>
-                  <ExplainTierRow>
-                    <TierLabel>T2</TierLabel>
-                    <span>ranks 101–1,000 ("city", "answer"…)</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.m.speed ?? EXAMPLE.m} WPM</span>
-                  </ExplainTierRow>
-                  <ExplainTierRow>
-                    <TierLabel>T3</TierLabel>
-                    <span>ranks 1,001–9,894 (less common)</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.l.speed ?? EXAMPLE.l} WPM</span>
-                  </ExplainTierRow>
-                  <ExplainTierRow>
-                    <TierLabel>T4</TierLabel>
-                    <span>not in top 10,000 (rare / technical)</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.f.speed ?? EXAMPLE.f} WPM</span>
-                  </ExplainTierRow>
-                </div>
-                {realWpm !== null ? (
-                  <p>
-                    T1 speed is estimated from your {realWpm.contributing} test
-                    result{realWpm.contributing !== 1 ? 's' : ''} using their word-frequency
-                    compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
+          {explainerOpen && (() => {
+            const v1 = realWpm?.s.speed ?? EXAMPLE.s
+            const v2 = realWpm?.m.speed ?? EXAMPLE.m
+            const v3 = realWpm?.l.speed ?? EXAMPLE.l
+            const v4 = realWpm?.f.speed ?? EXAMPLE.f
+            const headline = realWpm?.realWpm ?? EXAMPLE.headline
+            const latest = results.find(r => r.composition != null && r.difficultyBin != null)
+            const pct = (p: number) => Math.round(p * 100)
+            return (
+              <ExplainSection>
+                <ExplainBody>
+                  {realWpm === null && (
+                    <ExplainNote>
+                      Example numbers shown below — complete more tests to see your actual speeds.
+                    </ExplainNote>
+                  )}
+                  <p style={{ margin: '0 0 var(--space-2)', fontSize: '0.78rem', lineHeight: 1.5 }}>
+                    Words are ranked by frequency in the Google top-10,000 list and split into four tiers:{' '}
+                    <strong style={{ color: 'var(--text-primary)' }}>T1</strong> (top 100: "the", "and", "is"),{' '}
+                    <strong style={{ color: 'var(--text-primary)' }}>T2</strong> (101–1,000: "city", "water"),{' '}
+                    <strong style={{ color: 'var(--text-primary)' }}>T3</strong> (1,001–9,894: less common),{' '}
+                    <strong style={{ color: 'var(--text-primary)' }}>T4</strong> (not in the list: rare or technical).
                   </p>
-                ) : (
-                  <p>
-                    T1 speed is estimated from your test results using their word-frequency
-                    compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
-                  </p>
-                )}
-                <p>The headline is a weighted average matching typical passage composition:</p>
-                <ExplainFormula>
-                  0.50 × {realWpm?.s.speed ?? EXAMPLE.s} + 0.40 × {realWpm?.m.speed ?? EXAMPLE.m} + 0.09 × {realWpm?.l.speed ?? EXAMPLE.l} + 0.01 × {realWpm?.f.speed ?? EXAMPLE.f} = {realWpm?.realWpm ?? EXAMPLE.headline}
-                </ExplainFormula>
-              </ExplainBody>
-            </ExplainSection>
-          )}
+                  <StepList>
+                    <StepCard>
+                      <StepNumber>1</StepNumber>
+                      <StepContent>
+                        {latest ? (
+                          <>
+                            <p>
+                              Every passage has a pre-counted word composition. Your most
+                              recent <strong style={{ color: 'var(--text-primary)' }}>{latest.difficultyBin}</strong> test
+                              ran at <StepHighlight>{latest.wpm} WPM</StepHighlight> on a passage
+                              that was{' '}
+                              {pct(latest.composition![0])}% T1,{' '}
+                              {pct(latest.composition![1])}% T2,{' '}
+                              {pct(latest.composition![2])}% T3,{' '}
+                              {pct(latest.composition![3])}% T4.
+                              The app uses that known mix and your overall speed to work
+                              backwards: it finds the T1 speed that — combined with fixed
+                              ratios for T2–T4 (1.3×, 1.8×, 2.5× slower) — would produce
+                              exactly your recorded WPM on that passage.
+                            </p>
+                            <p>
+                              Each of your{' '}
+                              <StepHighlight>{realWpm!.contributing} test result{realWpm!.contributing !== 1 ? 's' : ''}</StepHighlight>{' '}
+                              with composition data produces its own T1 estimate this way.
+                              The T1 speed you see is the median of all of them, which
+                              smooths out unusually fast or slow runs. T2, T3, and T4 are
+                              then derived from that median using the same fixed ratios.
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <p>
+                              Every passage has a pre-counted word composition — for example,
+                              50% T1, 40% T2, 9% T3, 1% T4. The app uses that known mix and
+                              your overall WPM to work backwards: it finds the T1 speed that
+                              — combined with fixed ratios for T2–T4 (1.3×, 1.8×, 2.5×
+                              slower) — would produce exactly your recorded WPM on that
+                              passage.
+                            </p>
+                            <p>
+                              Each test result with composition data produces its own T1
+                              estimate this way. The T1 speed you see is the median of all
+                              of them. T2, T3, and T4 are then derived from that median
+                              using the same fixed ratios.
+                            </p>
+                          </>
+                        )}
+                      </StepContent>
+                    </StepCard>
+
+                    <StepCard>
+                      <StepNumber>2</StepNumber>
+                      <StepContent>
+                        <p>
+                          You dictate the 100 most common English words at about{' '}
+                          <StepHighlight>{v1} WPM</StepHighlight>. These words — "the", "of",
+                          "and", "is" — make up roughly half of everything you ever dictate.
+                        </p>
+                      </StepContent>
+                    </StepCard>
+
+                    <StepCard>
+                      <StepNumber>3</StepNumber>
+                      <StepContent>
+                        <p>
+                          Words outside the top 10,000 (T4) come in at{' '}
+                          <StepHighlight>{v4} WPM</StepHighlight> — 2.5× slower. That ratio
+                          is borrowed from speech research on syllable frequency, and the app
+                          holds it fixed rather than trying to measure it directly (there
+                          aren't enough rare words in any single passage to estimate it
+                          reliably).
+                        </p>
+                      </StepContent>
+                    </StepCard>
+
+                    <StepCard>
+                      <StepNumber>4</StepNumber>
+                      <StepContent>
+                        <p>
+                          A typical passage is 50% T1, 40% T2, 9% T3, 1% T4. Your headline
+                          is the speed you would achieve on exactly that mix. Because faster
+                          tiers save less time than slower tiers cost —{' '}
+                          <StepHighlight>time adds, speed doesn't</StepHighlight> — the
+                          correct formula inverts a weighted sum of time-per-word values
+                          (the harmonic mean):
+                        </p>
+                        <KatexDisplay tex={headlineLatex(v1, v2, v3, v4, headline)} />
+                      </StepContent>
+                    </StepCard>
+                  </StepList>
+                </ExplainBody>
+              </ExplainSection>
+            )
+          })()}
 
           <ChartSection>
             <SectionTitle>Trend</SectionTitle>

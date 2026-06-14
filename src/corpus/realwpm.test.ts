@@ -2,8 +2,9 @@ import { describe, expect, test } from 'vitest'
 import { computeHeadline, computeRealWpm, type WpmInput } from './realwpm'
 
 describe('computeHeadline', () => {
-  test('doc sanity check: s=70 m=40 l=10 f=50 → 52.4', () => {
-    expect(computeHeadline(70, 40, 10, 50)).toBeCloseTo(52.4, 5)
+  test('harmonic mean: s=70 m=40 l=10 f=50 → ~37.96', () => {
+    // 1 / (0.50/70 + 0.40/40 + 0.09/10 + 0.01/50) ≈ 37.962
+    expect(computeHeadline(70, 40, 10, 50)).toBeCloseTo(37.962, 2)
   })
 
   test('uniform 100 WPM across all tiers → 100', () => {
