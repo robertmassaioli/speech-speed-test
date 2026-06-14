@@ -162,30 +162,35 @@ const StatsGrid = styled.div`
 
 // ── Real WPM ─────────────────────────────────────────────────────────────────
 
-const ExplainSection = styled.div`
-  margin-bottom: var(--space-3);
-  font-size: 0.8rem;
+const RealWpmHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
 `
 
-const SwitchRow = styled.button`
+const ExplainToggleRow = styled.button`
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: 0.5rem;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  color: var(--text-primary);
-  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   user-select: none;
 `
 
 const SwitchTrack = styled.span<{ $on: boolean }>`
   position: relative;
   display: inline-block;
-  width: 44px;
-  height: 24px;
-  border-radius: 12px;
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
   background: ${p => p.$on ? 'var(--accent-fill)' : 'var(--border)'};
   transition: background 0.2s;
   flex-shrink: 0;
@@ -194,13 +199,18 @@ const SwitchTrack = styled.span<{ $on: boolean }>`
 const SwitchThumb = styled.span<{ $on: boolean }>`
   position: absolute;
   top: 3px;
-  left: ${p => p.$on ? '23px' : '3px'};
-  width: 18px;
-  height: 18px;
+  left: ${p => p.$on ? '19px' : '3px'};
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.25);
   transition: left 0.2s;
+`
+
+const ExplainSection = styled.div`
+  margin-bottom: var(--space-3);
+  font-size: 0.8rem;
 `
 
 const ExplainBody = styled.div`
@@ -649,7 +659,15 @@ export function HistoryScreenView({
         <>
           <StatsGrid>
             <div>
-              <SectionTitle>Your Real WPM</SectionTitle>
+              <RealWpmHeader>
+                <SectionTitle style={{ margin: 0 }}>Your Real WPM</SectionTitle>
+                <ExplainToggleRow onClick={onToggleExplainer}>
+                  Explain
+                  <SwitchTrack $on={explainerOpen}>
+                    <SwitchThumb $on={explainerOpen} />
+                  </SwitchTrack>
+                </ExplainToggleRow>
+              </RealWpmHeader>
               <RealWpmCard>
                 {realWpm === null ? (
                   <RealWpmEmpty>Take a test with composition data to see your Real WPM.</RealWpmEmpty>
@@ -711,14 +729,8 @@ export function HistoryScreenView({
             </div>
           </StatsGrid>
 
-          <ExplainSection>
-            <SwitchRow onClick={onToggleExplainer}>
-              <SwitchTrack $on={explainerOpen}>
-                <SwitchThumb $on={explainerOpen} />
-              </SwitchTrack>
-              How is this calculated?
-            </SwitchRow>
-            {explainerOpen && (
+          {explainerOpen && (
+            <ExplainSection>
               <ExplainBody>
                 {realWpm === null && (
                   <ExplainNote>
@@ -770,8 +782,8 @@ export function HistoryScreenView({
                   0.50 × {realWpm?.s.speed ?? EXAMPLE.s} + 0.40 × {realWpm?.m.speed ?? EXAMPLE.m} + 0.09 × {realWpm?.l.speed ?? EXAMPLE.l} + 0.01 × {realWpm?.f.speed ?? EXAMPLE.f} = {realWpm?.realWpm ?? EXAMPLE.headline}
                 </ExplainFormula>
               </ExplainBody>
-            )}
-          </ExplainSection>
+            </ExplainSection>
+          )}
 
           <ChartSection>
             <SectionTitle>Trend</SectionTitle>
