@@ -268,7 +268,7 @@ const RealWpmCard = styled.div`
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: var(--space-3);
-  height: 100%;
+  flex: 1;
 `
 
 const RealWpmHeadline = styled.div`
@@ -357,7 +357,7 @@ const BestCard = styled.div`
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: var(--space-3);
-  height: 100%;
+  flex: 1;
 `
 
 const BestGrid = styled.div`
@@ -658,7 +658,7 @@ export function HistoryScreenView({
       ) : (
         <>
           <StatsGrid>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
               <RealWpmHeader>
                 <SectionTitle style={{ margin: 0 }}>Your Real WPM</SectionTitle>
                 <ExplainToggleRow onClick={onToggleExplainer}>
@@ -705,7 +705,7 @@ export function HistoryScreenView({
               </RealWpmCard>
             </div>
 
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
               <SectionTitle>Personal Bests</SectionTitle>
               <BestCard>
                 <BestGrid>
