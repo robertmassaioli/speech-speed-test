@@ -43,17 +43,15 @@ const W4 = 0.01
 const MIN_SPEED = 5    // WPM floor — clamp unrealistic estimates
 const MIN_RESULTS_FOR_HIGH = 3
 
+// Word count below which a result contributes reduced bin coverage.
+// Small passages (~50 words) produce noisier β1 estimates (noise ∝ 1/√words).
+const SMALL_WORD_THRESHOLD = 70
+const SMALL_BIN_WEIGHT = 0.5  // counts as half a bin for confidence purposes
+
 // Weighted harmonic mean: time adds linearly, speed does not.
 // 1/WPM = p1/v1 + p2/v2 + p3/v3 + p4/v4
 export function computeHeadline(s: number, m: number, l: number, f: number): number {
   return 1 / (W1 / s + W2 / m + W3 / l + W4 / f)
-}
-
-function median(arr: readonly number[]): number {
-  if (arr.length === 0) return 0
-  const sorted = arr.slice().sort((a, b) => a - b)
-  const mid = Math.floor(sorted.length / 2)
-  return sorted.length % 2 === 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2
 }
 
 export function computeRealWpm(inputs: WpmInput[]): RealWpmResult | null {
@@ -70,7 +68,15 @@ export function computeRealWpm(inputs: WpmInput[]): RealWpmResult | null {
     return (r.elapsedSec / r.words) / w
   })
 
-  const β1 = Math.max(median(β1Estimates), 1 / 500)  // cap at 500 WPM
+  // Word-count-weighted mean: larger passages contribute more since they produce
+  // more accurate β1 estimates (noise ∝ 1/√words).
+  const totalWeight = eligible.reduce((sum, r) => sum + r.words, 0)
+  const β1 = Math.max(
+    totalWeight > 0
+      ? β1Estimates.reduce((sum, est, i) => sum + est * eligible[i].words, 0) / totalWeight
+      : β1Estimates[0],
+    1 / 500,
+  )
 
   const v1 = Math.max(MIN_SPEED, 60 / β1)
   const v2 = Math.max(MIN_SPEED, 60 / (B2_RATIO * β1))
@@ -79,11 +85,19 @@ export function computeRealWpm(inputs: WpmInput[]): RealWpmResult | null {
 
   const rawHeadline = computeHeadline(v1, v2, v3, v4)
 
-  // s confidence: more diverse bin coverage → better β1 estimate.
-  const binsWithData = new Set(eligible.map(r => r.difficultyBin!)).size
+  // s confidence: bin diversity weighted by passage length.
+  // Short passages (<70 words) contribute 0.5 rather than 1.0 per bin because their
+  // β1 estimates carry higher variance and should not fully satisfy bin coverage.
+  const binContributions = new Map<DifficultyBin, number>()
+  for (const r of eligible) {
+    const contrib = r.words < SMALL_WORD_THRESHOLD ? SMALL_BIN_WEIGHT : 1.0
+    const existing = binContributions.get(r.difficultyBin!) ?? 0
+    binContributions.set(r.difficultyBin!, Math.max(existing, contrib))
+  }
+  const totalCoverage = [...binContributions.values()].reduce((a, b) => a + b, 0)
   const sConf: Confidence =
-    binsWithData >= 3 ? 'high' :
-    binsWithData >= 2 ? 'medium' :
+    totalCoverage >= 3 ? 'high' :
+    totalCoverage >= 2 ? 'medium' :
     'low'
 
   const binCounts = new Map<DifficultyBin, number>()

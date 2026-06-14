@@ -2,10 +2,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   DIFFICULTIES,
+  SIZES,
   getRandomPassage,
-  passagesForDifficulty,
+  passagesForSize,
   type DifficultyBin,
   type Passage,
+  type SizeVariant,
 } from '../../corpus/passages'
 import { compareTokens } from '../../engine/match'
 import { calcCpm, calcWpm } from '../../engine/metrics'
@@ -13,27 +15,41 @@ import { normalizeTokens } from '../../engine/normalize'
 import { tokenize } from '../../engine/tokenize'
 import type { MatchMode } from '../../engine/types'
 import { saveResult, FREQ_LIST_ID } from '../../storage/history'
-import { loadSettings, saveSettings, type DifficultyFilter } from '../../storage/settings'
+import { loadSettings, saveSettings, type DifficultyFilter, type SizeFilter } from '../../storage/settings'
 import { type CompletedResult, TestScreenView } from './TestScreenView'
 
 type TestState = 'idle' | 'running' | 'completed'
 
 export function TestScreen() {
   const navigate = useNavigate()
-  const [passage, setPassage] = useState<Passage>(() => getRandomPassage())
-  const [testState, setTestState] = useState<TestState>('idle')
   const [mode, setMode] = useState<MatchMode>(() => loadSettings().mode)
   const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>(() => loadSettings().difficulty)
+  const [sizeFilter, setSizeFilter] = useState<SizeFilter>(() => loadSettings().passageSize)
+  const [passage, setPassage] = useState<Passage>(() => {
+    const s = loadSettings()
+    return getRandomPassage(
+      s.passageSize,
+      s.difficulty === 'all' ? undefined : s.difficulty as DifficultyBin,
+    )
+  })
+  const [testState, setTestState] = useState<TestState>('idle')
   const [input, setInput] = useState('')
   const [completedResult, setCompletedResult] = useState<CompletedResult | null>(null)
   const startTimeRef = useRef<number>(0)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const [elapsedMs, setElapsedMs] = useState(0)
 
-  const availablePerDifficulty = useMemo(
+  // Pre-compute availability: how many passages exist for each (size, difficulty) combo.
+  // Used by the view to dim unavailable filter combinations.
+  const availablePerSizeAndDifficulty = useMemo(
     () => Object.fromEntries(
-      DIFFICULTIES.map(d => [d, passagesForDifficulty(d).length])
-    ) as Record<DifficultyBin, number>,
+      SIZES.map(size => [
+        size,
+        Object.fromEntries(
+          DIFFICULTIES.map(d => [d, passagesForSize(size, d).length])
+        ) as Record<DifficultyBin, number>,
+      ])
+    ) as Record<SizeVariant, Record<DifficultyBin, number>>,
     [],
   )
 
@@ -41,10 +57,6 @@ export function TestScreen() {
     () => normalizeTokens(tokenize(passage.text), mode),
     [passage.text, mode],
   )
-
-  useEffect(() => {
-    setPassage(getRandomPassage())
-  }, [])
 
   useEffect(() => {
     if (testState !== 'running') {
@@ -58,8 +70,8 @@ export function TestScreen() {
   }, [testState])
 
   useEffect(() => {
-    saveSettings({ ...loadSettings(), mode, difficulty: difficultyFilter })
-  }, [mode, difficultyFilter])
+    saveSettings({ ...loadSettings(), mode, difficulty: difficultyFilter, passageSize: sizeFilter })
+  }, [mode, difficultyFilter, sizeFilter])
 
   const resetToIdle = useCallback((nextPassage: Passage) => {
     setPassage(nextPassage)
@@ -77,9 +89,9 @@ export function TestScreen() {
   }, [])
 
   const handleNewPassage = useCallback(() => {
-    const pool = difficultyFilter === 'all' ? undefined : (difficultyFilter as DifficultyBin)
-    resetToIdle(getRandomPassage(pool))
-  }, [difficultyFilter, resetToIdle])
+    const diff = difficultyFilter === 'all' ? undefined : difficultyFilter as DifficultyBin
+    resetToIdle(getRandomPassage(sizeFilter, diff))
+  }, [difficultyFilter, sizeFilter, resetToIdle])
 
   const handleTryAgain = useCallback(() => {
     resetToIdle(passage)
@@ -88,9 +100,16 @@ export function TestScreen() {
   const handleFilterChange = useCallback((d: DifficultyFilter) => {
     if (testState === 'running') return
     setDifficultyFilter(d)
-    const pool = d === 'all' ? undefined : (d as DifficultyBin)
-    resetToIdle(getRandomPassage(pool))
-  }, [testState, resetToIdle])
+    const diff = d === 'all' ? undefined : d as DifficultyBin
+    resetToIdle(getRandomPassage(sizeFilter, diff))
+  }, [testState, sizeFilter, resetToIdle])
+
+  const handleSizeChange = useCallback((size: SizeFilter) => {
+    if (testState === 'running') return
+    setSizeFilter(size)
+    const diff = difficultyFilter === 'all' ? undefined : difficultyFilter as DifficultyBin
+    resetToIdle(getRandomPassage(size, diff))
+  }, [testState, difficultyFilter, resetToIdle])
 
   const handleInput = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -134,13 +153,15 @@ export function TestScreen() {
       testState={testState}
       mode={mode}
       difficultyFilter={difficultyFilter}
-      availablePerDifficulty={availablePerDifficulty}
+      sizeFilter={sizeFilter}
+      availablePerSizeAndDifficulty={availablePerSizeAndDifficulty}
       input={input}
       completedResult={completedResult}
       elapsedMs={elapsedMs}
       inputRef={inputRef}
       onModeChange={setMode}
       onDifficultyFilterChange={handleFilterChange}
+      onSizeFilterChange={handleSizeChange}
       onStart={handleStart}
       onInput={handleInput}
       onNewPassage={handleNewPassage}

@@ -1,8 +1,10 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { buildTierMap, computeComposition } from '../src/corpus/tiers.ts'
+import { buildTierMap, computeComposition, difficultyBin } from '../src/corpus/tiers.ts'
 import { tokenize } from '../src/engine/tokenize.ts'
+
+type RawSource = { id: string; text: string }
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
@@ -13,7 +15,7 @@ const tierMap = buildTierMap(
 
 // Source of truth for passage texts.  Composition is computed from the tier map;
 // wordCount and charCount are derived at browser load time from text.
-const SOURCES = [
+const INLINE_SOURCES: RawSource[] = [
   {
     id: 'bunny-and-duck',
     text: 'Bella the bunny lived at the edge of a wide green meadow. Every morning she would hop down to the pond to watch the sun rise over the water. One day she found a small duck sitting alone on the bank. His name was Pip, and he looked very sad. So the two of them set off together. Bella hopped through the tall grass and Pip waddled along beside her. They crossed a little wooden bridge and followed the stream around a bend. Then Pip stopped. He lifted his head and listened. From somewhere ahead came the soft sound of splashing and quacking. Bella smiled and waved her paw. From that day on, the bunny and the duck met every morning at the pond, and neither of them was ever lonely again.',
@@ -32,7 +34,8 @@ const SOURCES = [
   },
   {
     id: 'coral-reef-biome',
-    text: 'Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Storm-generated turbulence fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the plankton-rich thermocline, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest.',
+    // "Storm-generated" → "Turbulence from storms"; "plankton-rich" → "dense with plankton" to avoid intra-word hyphens
+    text: 'Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Turbulence from storms fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the thermocline dense with plankton, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest.',
   },
   // ── Batch 2 — easy ────────────────────────────────────────────────────────
   {
@@ -147,19 +150,156 @@ const SOURCES = [
   },
 ]
 
-const passages = SOURCES.map(({ id, text }) => {
+// Story passages imported from stories/ directory via scripts/import-stories.ts
+const storyPassages: RawSource[] = JSON.parse(
+  readFileSync(resolve(ROOT, 'data/story-passages.json'), 'utf-8')
+)
+
+const SOURCES: RawSource[] = [...INLINE_SOURCES, ...storyPassages]
+
+type SizeVariant = 'small' | 'medium' | 'large' | 'xlarge'
+
+interface PassageEntry {
+  id: string
+  sizeVariant: SizeVariant
+  text: string
+  composition: { t1: number; t2: number; t3: number; t4: number; total: number }
+}
+
+function countWords(text: string): number {
+  return text.split(/\s+/).filter(Boolean).length
+}
+
+function splitSentences(text: string): string[] {
+  // Split at sentence boundaries: period/bang/question followed by a space and uppercase
+  const parts: string[] = []
+  const re = /[^.!?]+[.!?]+/g
+  let m: RegExpExecArray | null
+  while ((m = re.exec(text)) !== null) {
+    const s = m[0].trim()
+    if (s) parts.push(s)
+  }
+  return parts.length > 0 ? parts : [text]
+}
+
+function buildSmall(sentences: string[], targetMin = 40): string {
+  const result: string[] = []
+  let wc = 0
+  for (const s of sentences) {
+    const sw = countWords(s)
+    result.push(s)
+    wc += sw
+    if (wc >= targetMin) break
+  }
+  return result.join(' ')
+}
+
+function buildLarge(sentenceLists: string[][], targetMin = 175, targetMax = 225): string {
+  const result: string[] = []
+  let wc = 0
+  outer: for (const sentences of sentenceLists) {
+    for (const s of sentences) {
+      const sw = countWords(s)
+      if (wc >= targetMin && wc + sw > targetMax) break outer
+      result.push(s)
+      wc += sw
+    }
+  }
+  return result.join(' ')
+}
+
+function buildXL(sentenceLists: string[][], targetMin = 350, targetMax = 450): string {
+  const result: string[] = []
+  let wc = 0
+  outer: for (const sentences of sentenceLists) {
+    for (const s of sentences) {
+      const sw = countWords(s)
+      if (wc >= targetMin && wc + sw > targetMax) break outer
+      result.push(s)
+      wc += sw
+    }
+  }
+  return result.join(' ')
+}
+
+function makeEntry(id: string, sizeVariant: SizeVariant, text: string): PassageEntry {
   const comp = computeComposition(tokenize(text), tierMap)
   return {
     id,
+    sizeVariant,
     text,
     composition: { t1: comp.t1, t2: comp.t2, t3: comp.t3, t4: comp.t4, total: comp.total },
   }
+}
+
+// ── Phase 1: compute composition and bin for each source ──────────────────────
+
+type BinName = 'easy' | 'medium' | 'hard'
+
+interface SourceWithMeta {
+  id: string
+  text: string
+  sentences: string[]
+  bin: BinName
+}
+
+const sourcesWithMeta: SourceWithMeta[] = SOURCES.map(({ id, text }) => {
+  const tokens = tokenize(text)
+  const comp = computeComposition(tokens, tierMap)
+  const bin = difficultyBin(comp)
+  return { id, text, sentences: splitSentences(text), bin }
 })
 
-const outPath = resolve(ROOT, 'data/passages.json')
+// Group by bin (preserving insertion order within each bin)
+const byBin: Record<BinName, SourceWithMeta[]> = { easy: [], medium: [], hard: [] }
+for (const s of sourcesWithMeta) byBin[s.bin].push(s)
+
+// ── Phase 2: emit all variants ────────────────────────────────────────────────
+
+const passages: PassageEntry[] = []
+
+for (const src of sourcesWithMeta) {
+  // Small: opening sentences until ~50 words
+  const smallText = buildSmall(src.sentences)
+  passages.push(makeEntry(`${src.id}-sm`, 'small', smallText))
+
+  // Medium: full text, original ID (backward-compatible with stored history)
+  passages.push(makeEntry(src.id, 'medium', src.text))
+}
+
+// Large (175–225 w): pairs within each bin
+for (const bin of Object.values(byBin)) {
+  for (let i = 0; i + 1 < bin.length; i += 2) {
+    const a = bin[i], b = bin[i + 1]
+    const text = buildLarge([a.sentences, b.sentences])
+    passages.push(makeEntry(`${a.id}-lg`, 'large', text))
+  }
+}
+
+// XL (350–450 w): triples within each bin
+for (const bin of Object.values(byBin)) {
+  for (let i = 0; i + 2 < bin.length; i += 3) {
+    const a = bin[i], b = bin[i + 1], c = bin[i + 2]
+    const text = buildXL([a.sentences, b.sentences, c.sentences])
+    passages.push(makeEntry(`${a.id}-xl`, 'xlarge', text))
+  }
+}
+
+// ── Phase 3: write output ─────────────────────────────────────────────────────
+
+const ROOT_PATH = resolve(__dirname, '..')
+const outPath = resolve(ROOT_PATH, 'data/passages.json')
 writeFileSync(outPath, JSON.stringify(passages, null, 2) + '\n')
 console.log(`Wrote ${passages.length} passage(s) → ${outPath}`)
+
+const variantCounts: Record<SizeVariant, number> = { small: 0, medium: 0, large: 0, xlarge: 0 }
+for (const p of passages) variantCounts[p.sizeVariant]++
+console.log(`  small: ${variantCounts.small}  medium: ${variantCounts.medium}  large: ${variantCounts.large}  xlarge: ${variantCounts.xlarge}`)
+console.log()
+
 for (const p of passages) {
   const { t1, t2, t3, t4, total } = p.composition
-  console.log(`  ${p.id}: T1=${t1} T2=${t2} T3=${t3} T4=${t4} total=${total}`)
+  const wc = countWords(p.text)
+  const bin = difficultyBin({ t1, t2, t3, t4, total, p1: t1/total, p2: t2/total, p3: t3/total, p4: t4/total })
+  console.log(`  [${p.sizeVariant.padEnd(6)}] ${p.id.padEnd(40)} wc=${String(wc).padStart(3)}  bin=${bin}  T4=${(t4/total).toFixed(3)}`)
 }
