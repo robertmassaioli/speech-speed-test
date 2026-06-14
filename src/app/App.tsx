@@ -1,7 +1,7 @@
 import { HashRouter, NavLink, Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
 import { GlobalStyle } from './GlobalStyle'
-import { useTheme, HUE_FILLS, DARK_ICONS, type HueTheme } from './useTheme'
+import { useTheme, HUE_FILLS, DARK_OPTIONS, type HueTheme } from './useTheme'
 import { TestScreen } from '../features/test/TestScreen'
 import { HistoryScreen } from '../features/history/HistoryScreen'
 
@@ -76,21 +76,31 @@ const Swatch = styled.button<{ $color: string; $active: boolean }>`
   }
 `
 
-const DarkToggle = styled.button`
-  background: none;
+const DarkPicker = styled.div`
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 4px;
+`
+
+const DarkOption = styled.button<{ $active: boolean }>`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   border: none;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  line-height: 1;
-  margin-left: 4px;
-  transition: color 0.15s, background 0.15s;
+  background: ${p => p.$active ? 'rgba(255, 255, 255, 0.22)' : 'transparent'};
+  color: ${p => p.$active ? '#fff' : 'rgba(255, 255, 255, 0.65)'};
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
 
   &:hover {
+    background: ${p => p.$active ? 'rgba(255, 255, 255, 0.22)' : 'rgba(255, 255, 255, 0.1)'};
     color: #fff;
-    background: rgba(255, 255, 255, 0.1);
   }
 `
 
@@ -105,7 +115,7 @@ const Main = styled.main`
 const HUES: HueTheme[] = ['purple', 'blue', 'orange', 'red']
 
 export function App() {
-  const { hue, darkPref, setHue, cycleDarkPref } = useTheme()
+  const { hue, darkPref, setHue, setDarkPref } = useTheme()
 
   return (
     <HashRouter>
@@ -125,12 +135,18 @@ export function App() {
                 title={`${h.charAt(0).toUpperCase() + h.slice(1)} theme`}
               />
             ))}
-            <DarkToggle
-              onClick={cycleDarkPref}
-              title={`Colour scheme: ${darkPref}. Click to cycle.`}
-            >
-              {DARK_ICONS[darkPref]}
-            </DarkToggle>
+            <DarkPicker>
+              {DARK_OPTIONS.map(({ pref, icon, label }) => (
+                <DarkOption
+                  key={pref}
+                  $active={darkPref === pref}
+                  onClick={() => setDarkPref(pref)}
+                  title={label}
+                >
+                  {icon} {label}
+                </DarkOption>
+              ))}
+            </DarkPicker>
           </ThemeSwitcher>
         </Nav>
         <Main>

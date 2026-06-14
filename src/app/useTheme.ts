@@ -51,15 +51,12 @@ export function useTheme() {
     localStorage.setItem('sst-theme', h)
   }
 
-  function cycleDarkPref() {
-    const next: DarkPref =
-      darkPref === 'auto'  ? 'dark'  :
-      darkPref === 'dark'  ? 'light' : 'auto'
-    setDarkPrefState(next)
-    localStorage.setItem('sst-dark', next)
+  function setDarkPref(pref: DarkPref) {
+    setDarkPrefState(pref)
+    localStorage.setItem('sst-dark', pref)
   }
 
-  return { hue, darkPref, effectiveDark, setHue, cycleDarkPref }
+  return { hue, darkPref, effectiveDark, setHue, setDarkPref }
 }
 
 export const HUE_FILLS: Record<HueTheme, string> = {
@@ -69,8 +66,8 @@ export const HUE_FILLS: Record<HueTheme, string> = {
   red:    '#dc2626',
 }
 
-export const DARK_ICONS: Record<DarkPref, string> = {
-  auto:  '◐',
-  dark:  '☽',
-  light: '☀',
-}
+export const DARK_OPTIONS: { pref: DarkPref; icon: string; label: string }[] = [
+  { pref: 'light', icon: '☀', label: 'Light' },
+  { pref: 'auto',  icon: '◐', label: 'Auto'  },
+  { pref: 'dark',  icon: '☽', label: 'Dark'  },
+]
