@@ -5,6 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Speech Speed Test</title>
+    <script>
+      (function () {
+        var SURFACES = {
+          purple: ['#f0effe', '#0d0b1a'],
+          blue:   ['#eff6ff', '#0a0f1e'],
+          orange: ['#fff7ed', '#18130e'],
+          red:    ['#fff1f2', '#180b0b'],
+        };
+        var t = localStorage.getItem('sst-theme') || 'purple';
+        var d = localStorage.getItem('sst-dark') || 'auto';
+        var dark = d === 'dark' || (d === 'auto' && window.matchMedia('(prefers-color-scheme:dark)').matches);
+        var colors = SURFACES[t] || SURFACES['purple'];
+        document.documentElement.setAttribute('data-theme', t);
+        if (dark) document.documentElement.setAttribute('data-dark', '');
+        document.documentElement.style.background = dark ? colors[1] : colors[0];
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

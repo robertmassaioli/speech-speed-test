@@ -59,7 +59,7 @@ const DiffBadge = styled.span<{ $diff: DifficultyBin }>`
 
 const MetaText = styled.span`
   font-size: 0.82rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
 `
 
 const TimerBadge = styled.div`
@@ -68,16 +68,16 @@ const TimerBadge = styled.div`
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.03em;
-  background: var(--purple-900);
-  color: #fff;
+  background: var(--accent-fill);
+  color: var(--text-on-accent);
   padding: 0.2rem 0.7rem;
   border-radius: 20px;
 `
 
 const PassageBox = styled.div`
-  background: var(--neutral-50);
-  border: 1px solid var(--neutral-200);
-  border-left: 4px solid var(--purple-100);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-muted);
   border-radius: 8px;
   padding: var(--space-3);
   font-size: 1.15rem;
@@ -89,19 +89,19 @@ const PassageBox = styled.div`
 
 const Word = styled.span<{ $state: 'matched' | 'mismatch' | 'upcoming' | 'idle' }>`
   color: ${p =>
-    p.$state === 'matched'  ? '#166534' :
-    p.$state === 'mismatch' ? '#991b1b' :
-    p.$state === 'upcoming' ? '#aaa'    :
+    p.$state === 'matched'  ? 'var(--word-matched)'  :
+    p.$state === 'mismatch' ? 'var(--word-mismatch)' :
+    p.$state === 'upcoming' ? 'var(--word-upcoming)'  :
     'inherit'};
   text-decoration: ${p => p.$state === 'matched' ? 'underline' : 'none'};
-  text-decoration-color: ${p => p.$state === 'matched' ? '#166534' : 'transparent'};
+  text-decoration-color: ${p => p.$state === 'matched' ? 'var(--word-matched)' : 'transparent'};
   text-underline-offset: 2px;
   font-weight: ${p => p.$state === 'mismatch' ? '600' : 'inherit'};
 `
 
 const ProgressTrack = styled.div`
   height: 4px;
-  background: var(--neutral-200);
+  background: var(--border);
   border-radius: 0 0 6px 6px;
   overflow: hidden;
   margin-bottom: var(--space-3);
@@ -110,7 +110,7 @@ const ProgressTrack = styled.div`
 const ProgressFill = styled.div<{ $pct: number }>`
   height: 100%;
   width: ${p => p.$pct}%;
-  background: var(--purple-600);
+  background: var(--accent-fill);
   border-radius: inherit;
   transition: width 0.15s ease;
 `
@@ -124,13 +124,13 @@ const PrimaryButton = styled.button`
   border: 2px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  background: var(--purple-600);
-  color: #fff;
+  background: var(--accent-fill);
+  color: var(--text-on-accent);
   transition: background 0.15s, box-shadow 0.15s;
 
   &:hover {
-    background: var(--purple-700);
-    box-shadow: 0 0 0 3px var(--purple-100);
+    background: var(--accent-fill-hover);
+    box-shadow: 0 0 0 3px var(--accent-muted);
   }
 `
 
@@ -138,16 +138,16 @@ const OutlineButton = styled.button`
   padding: 0.6rem 1.4rem;
   font-size: 0.95rem;
   font-weight: 600;
-  border: 2px solid var(--purple-600);
+  border: 2px solid var(--accent);
   border-radius: 6px;
   cursor: pointer;
   background: transparent;
-  color: var(--purple-600);
+  color: var(--accent);
   transition: background 0.15s, box-shadow 0.15s;
 
   &:hover {
-    background: var(--purple-50);
-    box-shadow: 0 0 0 3px var(--purple-100);
+    background: var(--accent-subtle);
+    box-shadow: 0 0 0 3px var(--accent-muted);
   }
 `
 
@@ -156,22 +156,22 @@ const AbandonLink = styled.button`
   border: none;
   cursor: pointer;
   font-size: 0.9rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   padding: 0.3rem 0.5rem;
   border-radius: 4px;
   transition: color 0.15s;
 
-  &:hover { color: var(--neutral-900); }
+  &:hover { color: var(--text-primary); }
 `
 
 // ── Segmented controls ────────────────────────────────────────────────────────
 
 const ToggleGroup = styled.div`
   display: flex;
-  border: 1px solid var(--neutral-200);
+  border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
-  background: #fff;
+  background: var(--surface-raised);
 `
 
 const ToggleButton = styled.button<{ $active: boolean; $disabled: boolean }>`
@@ -180,13 +180,13 @@ const ToggleButton = styled.button<{ $active: boolean; $disabled: boolean }>`
   font-weight: 500;
   border: none;
   cursor: ${p => p.$disabled ? 'default' : 'pointer'};
-  background: ${p => p.$active ? 'var(--purple-600)' : 'transparent'};
-  color: ${p => p.$active ? '#fff' : p.$disabled ? '#ccc' : 'var(--neutral-700)'};
+  background: ${p => p.$active ? 'var(--accent-fill)' : 'transparent'};
+  color: ${p => p.$active ? 'var(--text-on-accent)' : 'var(--text-secondary)'};
   opacity: ${p => p.$disabled && !p.$active ? 0.5 : 1};
   transition: background 0.15s, color 0.15s;
 
   &:hover {
-    background: ${p => p.$disabled || p.$active ? undefined : 'var(--purple-50)'};
+    background: ${p => p.$disabled || p.$active ? undefined : 'var(--accent-subtle)'};
   }
 `
 
@@ -206,18 +206,18 @@ const FilterRow = styled.div`
   gap: var(--space-1);
   margin-bottom: var(--space-2);
   font-size: 0.85rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
 `
 
 const ModeHint = styled.p`
   font-size: 0.8rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin: 0 0 var(--space-2);
 `
 
 const Label = styled.p`
   font-size: 0.85rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin: 0 0 var(--space-1);
 `
 
@@ -227,26 +227,27 @@ const InputArea = styled.textarea`
   padding: var(--space-2);
   font-size: 1rem;
   line-height: 1.6;
-  border: 2px solid var(--neutral-200);
+  border: 2px solid var(--border);
   border-radius: 6px;
   resize: vertical;
   font-family: inherit;
-  background: #fff;
+  background: var(--surface-raised);
+  color: var(--text-primary);
   transition: border-color 0.15s;
 
   &:focus {
     outline: none;
-    border-color: var(--purple-600);
-    box-shadow: 0 0 0 3px var(--purple-100);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-muted);
   }
 `
 
 // ── Results card ─────────────────────────────────────────────────────────────
 
 const ResultsCard = styled.div`
-  background: var(--purple-50);
-  border: 1px solid var(--purple-100);
-  border-top: 4px solid var(--purple-600);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-muted);
+  border-top: 4px solid var(--accent);
   border-radius: 8px;
   padding: var(--space-3) var(--space-4);
   margin-bottom: var(--space-3);
@@ -267,12 +268,12 @@ const MetricValue = styled.div<{ $primary?: boolean }>`
   font-size: ${p => p.$primary ? '3rem' : '2.2rem'};
   font-weight: 700;
   line-height: 1;
-  color: ${p => p.$primary ? 'var(--purple-900)' : 'var(--neutral-900)'};
+  color: ${p => p.$primary ? 'var(--accent)' : 'var(--text-primary)'};
 `
 
 const MetricLabel = styled.div`
   font-size: 0.75rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin-top: 0.3rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -280,7 +281,7 @@ const MetricLabel = styled.div`
 
 const ResultDetail = styled.p`
   font-size: 0.85rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin: 0 0 var(--space-3);
   text-align: center;
 `
@@ -448,7 +449,6 @@ export function TestScreen() {
 
   return (
     <div>
-      {/* Passage metadata row — replaces the old <h1> */}
       <PassageMeta>
         <DiffBadge $diff={passage.difficulty}>{passage.difficulty}</DiffBadge>
         <MetaText>{passage.wordCount} words</MetaText>
@@ -473,14 +473,12 @@ export function TestScreen() {
         })}
       </PassageBox>
 
-      {/* Progress bar — only during running */}
       {isRunning && (
         <ProgressTrack>
           <ProgressFill $pct={progressPct} />
         </ProgressTrack>
       )}
 
-      {/* Completed: inline results */}
       {isCompleted && completedResult && (
         <ResultsCard>
           <MetricsGrid>
@@ -508,14 +506,12 @@ export function TestScreen() {
         </ResultsCard>
       )}
 
-      {/* Running controls — stripped down */}
       {isRunning && (
         <Controls>
           <AbandonLink onClick={handleNewPassage}>✕ Abandon</AbandonLink>
         </Controls>
       )}
 
-      {/* Idle controls */}
       {isIdle && (
         <>
           <Controls>
@@ -559,7 +555,6 @@ export function TestScreen() {
         </>
       )}
 
-      {/* Dictation textarea — only when running */}
       {isRunning && (
         <>
           <Label>Dictate the passage above into the box:</Label>

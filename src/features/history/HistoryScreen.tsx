@@ -34,13 +34,13 @@ const PrimaryButton = styled.button`
   border: 2px solid transparent;
   border-radius: 6px;
   cursor: pointer;
-  background: var(--purple-600);
-  color: #fff;
+  background: var(--accent-fill);
+  color: var(--text-on-accent);
   transition: background 0.15s, box-shadow 0.15s;
 
   &:hover {
-    background: var(--purple-700);
-    box-shadow: 0 0 0 3px var(--purple-100);
+    background: var(--accent-fill-hover);
+    box-shadow: 0 0 0 3px var(--accent-muted);
   }
 `
 
@@ -48,28 +48,34 @@ const OutlineButton = styled.button`
   padding: 0.5rem 1.1rem;
   font-size: 0.9rem;
   font-weight: 600;
-  border: 2px solid var(--neutral-200);
+  border: 2px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
-  background: #fff;
-  color: var(--neutral-700);
-  transition: border-color 0.15s, box-shadow 0.15s;
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  transition: border-color 0.15s, color 0.15s, box-shadow 0.15s;
 
   &:hover {
-    border-color: var(--purple-600);
-    color: var(--purple-600);
-    box-shadow: 0 0 0 3px var(--purple-100);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-muted);
   }
 `
 
-const DangerButton = styled(OutlineButton)`
-  color: #991b1b;
-  border-color: #fca5a5;
+const DangerButton = styled.button`
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--diff-hard-bg);
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--surface-raised);
+  color: var(--diff-hard-text);
+  transition: border-color 0.15s, box-shadow 0.15s;
 
   &:hover {
-    border-color: #991b1b;
-    color: #991b1b;
-    box-shadow: 0 0 0 3px #fee2e2;
+    border-color: var(--diff-hard-text);
+    box-shadow: 0 0 0 3px var(--diff-hard-bg);
   }
 `
 
@@ -77,24 +83,28 @@ const DangerButton = styled(OutlineButton)`
 
 const StorageBanner = styled.div`
   font-size: 0.85rem;
-  color: #92400e;
-  background: #fef9c3;
-  border: 1px solid #fde68a;
+  color: var(--diff-med-text);
+  background: var(--diff-med-bg);
+  border: 1px solid var(--diff-med-text);
   border-radius: 6px;
   padding: var(--space-1) var(--space-2);
   margin-bottom: var(--space-3);
 `
 
-const ErrorBanner = styled(StorageBanner)`
-  color: #991b1b;
-  background: #fee2e2;
-  border-color: #fca5a5;
+const ErrorBanner = styled.div`
+  font-size: 0.85rem;
+  color: var(--diff-hard-text);
+  background: var(--diff-hard-bg);
+  border: 1px solid var(--diff-hard-text);
+  border-radius: 6px;
+  padding: var(--space-1) var(--space-2);
+  margin-bottom: var(--space-3);
 `
 
 const SectionTitle = styled.h2`
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin: 0 0 var(--space-2);
@@ -103,8 +113,8 @@ const SectionTitle = styled.h2`
 // ── Empty state ───────────────────────────────────────────────────────────────
 
 const EmptyState = styled.div`
-  background: #fff;
-  border: 1px solid var(--neutral-200);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: var(--space-5) var(--space-4);
   text-align: center;
@@ -115,7 +125,7 @@ const EmptyIcon = styled.div`
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--purple-100);
+  background: var(--accent-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,13 +136,13 @@ const EmptyIcon = styled.div`
 const EmptyTitle = styled.p`
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--neutral-900);
+  color: var(--text-primary);
   margin-bottom: var(--space-1);
 `
 
 const EmptyDesc = styled.p`
   font-size: 0.9rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin-bottom: var(--space-3);
   max-width: 360px;
   margin-left: auto;
@@ -161,8 +171,8 @@ const StatsGrid = styled.div`
 // ── Real WPM ─────────────────────────────────────────────────────────────────
 
 const RealWpmCard = styled.div`
-  background: #fff;
-  border: 1px solid var(--neutral-200);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: var(--space-3);
   height: 100%;
@@ -179,12 +189,12 @@ const RealWpmValue = styled.span`
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--purple-900);
+  color: var(--accent);
 `
 
 const RealWpmUnit = styled.span`
   font-size: 0.85rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 `
@@ -198,7 +208,7 @@ const TierGrid = styled.div`
 
 const TierCell = styled.div`
   text-align: center;
-  background: var(--neutral-50);
+  background: var(--surface-subtle);
   border-radius: 6px;
   padding: 0.5rem 0.25rem;
 `
@@ -206,12 +216,12 @@ const TierCell = styled.div`
 const TierSpeed = styled.div`
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--neutral-900);
+  color: var(--text-primary);
 `
 
 const TierName = styled.div`
   font-size: 0.65rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-top: 0.15rem;
@@ -222,14 +232,14 @@ const TierConf = styled.div<{ $conf: Confidence }>`
   color: ${p =>
     p.$conf === 'high'   ? 'var(--diff-easy-text)'  :
     p.$conf === 'medium' ? 'var(--diff-med-text)'   :
-    '#bbb'};
+    'var(--text-secondary)'};
   margin-top: 0.2rem;
 `
 
 const NudgeLine = styled.p`
   font-size: 0.8rem;
-  color: var(--neutral-700);
-  background: var(--purple-50);
+  color: var(--text-primary);
+  background: var(--accent-subtle);
   border-radius: 4px;
   padding: 0.35rem 0.6rem;
   margin: 0;
@@ -237,12 +247,12 @@ const NudgeLine = styled.p`
 
 const ConfLegend = styled.p`
   font-size: 0.72rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin: var(--space-1) 0 0;
 `
 
 const RealWpmEmpty = styled.p`
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin: 0;
 `
@@ -250,8 +260,8 @@ const RealWpmEmpty = styled.p`
 // ── Personal bests ────────────────────────────────────────────────────────────
 
 const BestCard = styled.div`
-  background: #fff;
-  border: 1px solid var(--neutral-200);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: var(--space-3);
   height: 100%;
@@ -282,12 +292,12 @@ const BestDiffLabel = styled.span<{ $diff: DifficultyBin }>`
 const BestValue = styled.span`
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--neutral-900);
+  color: var(--text-primary);
 `
 
 const BestUnit = styled.span`
   font-size: 0.75rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   margin-left: 0.25rem;
 `
 
@@ -298,8 +308,8 @@ const ChartSection = styled.div`
 `
 
 const ChartWrap = styled.div`
-  background: #fff;
-  border: 1px solid var(--neutral-200);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: var(--space-2);
   overflow: hidden;
@@ -318,7 +328,7 @@ const Toolbar = styled.div`
 
 const ToolbarCount = styled.span`
   font-size: 0.85rem;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
 `
 
 const ToolbarActions = styled.div`
@@ -331,29 +341,29 @@ const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   font-size: 0.875rem;
-  background: #fff;
+  background: var(--surface-raised);
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--neutral-200);
+  border: 1px solid var(--border);
 `
 
 const Th = styled.th`
   text-align: left;
   padding: 0.6rem var(--space-2);
-  background: var(--neutral-50);
-  border-bottom: 1px solid var(--neutral-200);
+  background: var(--surface-subtle);
+  border-bottom: 1px solid var(--border);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--neutral-600);
+  color: var(--text-secondary);
   white-space: nowrap;
 `
 
 const Td = styled.td<{ $dim?: boolean }>`
   padding: 0.55rem var(--space-2);
-  border-bottom: 1px solid #f3f4f6;
-  color: ${p => p.$dim ? 'var(--neutral-600)' : 'var(--neutral-900)'};
+  border-bottom: 1px solid var(--border);
+  color: ${p => p.$dim ? 'var(--text-secondary)' : 'var(--text-primary)'};
 `
 
 const DiffBadgeSmall = styled.span<{ $diff: DifficultyBin }>`
@@ -412,7 +422,7 @@ function TrendChart({ results }: { results: StoredResult[] }) {
   if (chartable.length < 2) {
     return (
       <ChartWrap>
-        <p style={{ textAlign: 'center', color: 'var(--neutral-600)', margin: '2rem 0', fontSize: '0.875rem' }}>
+        <p style={{ textAlign: 'center', color: 'var(--text-secondary)', margin: '2rem 0', fontSize: '0.875rem' }}>
           Complete at least 2 tests to see a trend chart.
         </p>
       </ChartWrap>
@@ -434,7 +444,9 @@ function TrendChart({ results }: { results: StoredResult[] }) {
     easy: [], medium: [], hard: [],
   }
   const DIFF_SVG_COLOR: Record<DifficultyBin, string> = {
-    easy: '#166534', medium: '#854d0e', hard: '#991b1b',
+    easy:   'var(--diff-easy-text)',
+    medium: 'var(--diff-med-text)',
+    hard:   'var(--diff-hard-text)',
   }
   chartable.forEach((r, i) => {
     const bin = r.difficultyBin
@@ -452,15 +464,15 @@ function TrendChart({ results }: { results: StoredResult[] }) {
         {ticks.map(v => (
           <g key={v}>
             <line x1={PAD.left} y1={yPos(v)} x2={PAD.left + IW} y2={yPos(v)}
-              stroke="#f3f4f6" strokeWidth="1" />
+              stroke="var(--chart-grid)" strokeWidth="1" />
             <text x={PAD.left - 6} y={yPos(v)} textAnchor="end" dominantBaseline="middle"
-              fontSize="11" fill="#9ca3af">{v}</text>
+              fontSize="11" fill="var(--chart-axis)">{v}</text>
           </g>
         ))}
-        <line x1={PAD.left} y1={PAD.top} x2={PAD.left} y2={PAD.top + IH} stroke="#e5e7eb" strokeWidth="1" />
-        <line x1={PAD.left} y1={PAD.top + IH} x2={PAD.left + IW} y2={PAD.top + IH} stroke="#e5e7eb" strokeWidth="1" />
+        <line x1={PAD.left} y1={PAD.top} x2={PAD.left} y2={PAD.top + IH} stroke="var(--chart-grid)" strokeWidth="1" />
+        <line x1={PAD.left} y1={PAD.top + IH} x2={PAD.left + IW} y2={PAD.top + IH} stroke="var(--chart-grid)" strokeWidth="1" />
         <text x={10} y={PAD.top + IH / 2} textAnchor="middle" dominantBaseline="middle"
-          fontSize="11" fill="#9ca3af" transform={`rotate(-90, 10, ${PAD.top + IH / 2})`}>WPM</text>
+          fontSize="11" fill="var(--chart-axis)" transform={`rotate(-90, 10, ${PAD.top + IH / 2})`}>WPM</text>
 
         {(['easy', 'medium', 'hard'] as DifficultyBin[]).map(bin => {
           const pts = byDiff[bin]
@@ -473,13 +485,13 @@ function TrendChart({ results }: { results: StoredResult[] }) {
 
         {chartable.map((r, i) => (
           <circle key={r.id} cx={xPos(i).toFixed(1)} cy={yPos(r.wpm).toFixed(1)} r="4"
-            fill={r.difficultyBin ? DIFF_SVG_COLOR[r.difficultyBin] : '#9ca3af'} opacity="0.85" />
+            fill={r.difficultyBin ? DIFF_SVG_COLOR[r.difficultyBin] : 'var(--chart-axis)'} opacity="0.85" />
         ))}
 
         {(['easy', 'medium', 'hard'] as DifficultyBin[]).map((bin, i) => (
           <g key={bin} transform={`translate(${PAD.left + i * 80}, ${CH - 14})`}>
             <circle cx="5" cy="5" r="4" fill={DIFF_SVG_COLOR[bin]} />
-            <text x="14" y="9" fontSize="11" fill="#6b7280" dominantBaseline="middle" textAnchor="start">
+            <text x="14" y="9" fontSize="11" fill="var(--chart-axis)" dominantBaseline="middle" textAnchor="start">
               {bin.charAt(0).toUpperCase() + bin.slice(1)}
             </text>
           </g>
@@ -542,8 +554,8 @@ export function HistoryScreen() {
       <h1 style={{
         fontSize: '1.6rem',
         fontWeight: 700,
-        color: 'var(--neutral-900)',
-        borderLeft: '4px solid var(--purple-600)',
+        color: 'var(--text-primary)',
+        borderLeft: '4px solid var(--accent)',
         paddingLeft: 'var(--space-2)',
         marginBottom: 'var(--space-3)',
       }}>History</h1>
@@ -556,7 +568,6 @@ export function HistoryScreen() {
       )}
 
       {!hasResults ? (
-        /* ── Empty state ─────────────────────────────────────── */
         <>
           <EmptyState>
             <EmptyIcon>🎙</EmptyIcon>
@@ -573,11 +584,8 @@ export function HistoryScreen() {
             style={{ display: 'none' }} onChange={handleImportFile} />
         </>
       ) : (
-        /* ── Stats + table ───────────────────────────────────── */
         <>
-          {/* Two-column stats */}
           <StatsGrid>
-            {/* Left: Real WPM */}
             <div>
               <SectionTitle>Your Real WPM</SectionTitle>
               <RealWpmCard>
@@ -617,7 +625,6 @@ export function HistoryScreen() {
               </RealWpmCard>
             </div>
 
-            {/* Right: Personal Bests */}
             <div>
               <SectionTitle>Personal Bests</SectionTitle>
               <BestCard>
@@ -632,7 +639,7 @@ export function HistoryScreen() {
                             <BestUnit>WPM</BestUnit>
                           </>
                         ) : (
-                          <span style={{ color: 'var(--neutral-600)', fontSize: '0.9rem' }}>—</span>
+                          <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>—</span>
                         )}
                       </div>
                     </BestRow>
@@ -642,13 +649,11 @@ export function HistoryScreen() {
             </div>
           </StatsGrid>
 
-          {/* Trend chart */}
           <ChartSection>
             <SectionTitle>Trend</SectionTitle>
             <TrendChart results={results} />
           </ChartSection>
 
-          {/* History table */}
           <div>
             <Toolbar>
               <ToolbarCount>{results.length} result{results.length !== 1 ? 's' : ''}</ToolbarCount>
