@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url'
 import { buildTierMap, computeComposition, difficultyBin } from '../src/corpus/tiers.ts'
 import { tokenize } from '../src/engine/tokenize.ts'
 
+type RawSource = { id: string; text: string }
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
 
@@ -13,7 +15,7 @@ const tierMap = buildTierMap(
 
 // Source of truth for passage texts.  Composition is computed from the tier map;
 // wordCount and charCount are derived at browser load time from text.
-const SOURCES = [
+const INLINE_SOURCES: RawSource[] = [
   {
     id: 'bunny-and-duck',
     text: 'Bella the bunny lived at the edge of a wide green meadow. Every morning she would hop down to the pond to watch the sun rise over the water. One day she found a small duck sitting alone on the bank. His name was Pip, and he looked very sad. So the two of them set off together. Bella hopped through the tall grass and Pip waddled along beside her. They crossed a little wooden bridge and followed the stream around a bend. Then Pip stopped. He lifted his head and listened. From somewhere ahead came the soft sound of splashing and quacking. Bella smiled and waved her paw. From that day on, the bunny and the duck met every morning at the pond, and neither of them was ever lonely again.',
@@ -32,7 +34,8 @@ const SOURCES = [
   },
   {
     id: 'coral-reef-biome',
-    text: 'Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Storm-generated turbulence fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the plankton-rich thermocline, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest.',
+    // "Storm-generated" → "Turbulence from storms"; "plankton-rich" → "dense with plankton" to avoid intra-word hyphens
+    text: 'Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Turbulence from storms fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the thermocline dense with plankton, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest.',
   },
   // ── Batch 2 — easy ────────────────────────────────────────────────────────
   {
@@ -146,6 +149,13 @@ const SOURCES = [
     text: 'The glassblower gathers molten glass on the end of the blowing iron by rotating it in the furnace mouth. Once a sufficient gather has collected, the blower rolls it on the marver, a flat steel table, to chill the outer skin and centre the mass. A puff of air through the iron inflates the gather into a small bubble called the parison. The blower returns the piece to the glory hole to reheat it, then shapes the expanding form with wooden paddles and jacks while keeping the iron in constant rotation. A pontil rod is attached to the base so the blowing iron can be broken away, and the open rim is trimmed with shears. The finished piece goes into the annealing oven, where it cools slowly over several hours to relieve the internal stress that rapid cooling would leave in the glass.',
   },
 ]
+
+// Story passages imported from stories/ directory via scripts/import-stories.ts
+const storyPassages: RawSource[] = JSON.parse(
+  readFileSync(resolve(ROOT, 'data/story-passages.json'), 'utf-8')
+)
+
+const SOURCES: RawSource[] = [...INLINE_SOURCES, ...storyPassages]
 
 type SizeVariant = 'small' | 'medium' | 'large' | 'xlarge'
 

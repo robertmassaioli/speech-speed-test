@@ -110,13 +110,13 @@
   {
     "id": "coral-reef-biome",
     "sizeVariant": "medium",
-    "text": "Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Storm-generated turbulence fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the plankton-rich thermocline, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest.",
+    "text": "Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Turbulence from storms fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the thermocline dense with plankton, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest.",
     "composition": {
-      "t1": 29,
+      "t1": 31,
       "t2": 8,
-      "t3": 21,
+      "t3": 22,
       "t4": 76,
-      "total": 134
+      "total": 137
     }
   },
   {
@@ -720,6 +720,1206 @@
     }
   },
   {
+    "id": "traveling-cloud-sm",
+    "sizeVariant": "small",
+    "text": "Luma was a small, fluffy cloud who never liked to move. While the other clouds drifted across the sky, exploring mountains, oceans, and cities, Luma stayed in the same quiet corner. “I like it here,” Luma would say. “It is safe.",
+    "composition": {
+      "t1": 15,
+      "t2": 5,
+      "t3": 13,
+      "t4": 7,
+      "total": 40
+    }
+  },
+  {
+    "id": "traveling-cloud",
+    "sizeVariant": "medium",
+    "text": "Luma was a small, fluffy cloud who never liked to move. While the other clouds drifted across the sky, exploring mountains, oceans, and cities, Luma stayed in the same quiet corner. “I like it here,” Luma would say. “It is safe.” One day, a strong wind came rushing through the sky. It gently pushed Luma along. At first, Luma felt scared. “I do not want to go,” Luma whispered. But as Luma drifted, something surprising happened. Below, Luma saw sparkling rivers, tall green forests, and children flying kites. The world was bigger and more beautiful than Luma had ever imagined. Soon, Luma met other clouds who shared stories of where they had been. They laughed and floated together, and Luma began to enjoy the journey. By the time the wind slowed, Luma realized something important. “Moving is not so scary,” Luma said. “It helps me see new things and make new friends.” From that day on, Luma no longer stayed in one place.",
+    "composition": {
+      "t1": 53,
+      "t2": 32,
+      "t3": 46,
+      "t4": 30,
+      "total": 161
+    }
+  },
+  {
+    "id": "robot-who-learned-to-laugh-sm",
+    "sizeVariant": "small",
+    "text": "Robo was a helpful robot who could clean, cook, and even solve puzzles. But there was one thing Robo could not do. Robo did not understand jokes. Whenever the children laughed, Robo would ask, “Why is that funny? ” but no one could explain it in a way Robo understood.",
+    "composition": {
+      "t1": 20,
+      "t2": 9,
+      "t3": 12,
+      "t4": 8,
+      "total": 49
+    }
+  },
+  {
+    "id": "robot-who-learned-to-laugh",
+    "sizeVariant": "medium",
+    "text": "Robo was a helpful robot who could clean, cook, and even solve puzzles. But there was one thing Robo could not do. Robo did not understand jokes. Whenever the children laughed, Robo would ask, “Why is that funny?” but no one could explain it in a way Robo understood. So Robo set out on a journey. Robo listened carefully to people telling jokes. Robo watched smiles, giggles, and laughter. One day, Robo met a boy named Sam who said, “I will help you.” Instead of explaining jokes, Sam showed Robo how people felt when they heard them. They laughed together, played games, and shared silly moments. Slowly, Robo began to notice something. Jokes were not just about words. They were about feelings. Then one day, Sam slipped on a pile of leaves and laughed. Robo paused, then made a small sound. “Ha.” Sam smiled. “You are learning.” Soon, Robo could laugh along with others, even if Robo did not understand every joke perfectly.",
+    "composition": {
+      "t1": 56,
+      "t2": 34,
+      "t3": 40,
+      "t4": 32,
+      "total": 162
+    }
+  },
+  {
+    "id": "forest-after-the-storm-sm",
+    "sizeVariant": "small",
+    "text": "In a peaceful forest, animals lived happily together. There was Mia the squirrel, Ben the beaver, and Leo the deer. One night, a great storm came. Wind howled, rain poured, and trees shook. When morning arrived, the forest was messy and broken.",
+    "composition": {
+      "t1": 12,
+      "t2": 5,
+      "t3": 17,
+      "t4": 8,
+      "total": 42
+    }
+  },
+  {
+    "id": "forest-after-the-storm",
+    "sizeVariant": "medium",
+    "text": "In a peaceful forest, animals lived happily together. There was Mia the squirrel, Ben the beaver, and Leo the deer. One night, a great storm came. Wind howled, rain poured, and trees shook. When morning arrived, the forest was messy and broken. Mia’s tree was damaged. Ben’s dam had fallen apart. Leo’s favorite meadow was covered in branches. At first, everyone felt sad and overwhelmed. “We cannot fix this,” Mia said. But Ben spoke up. “We can, if we work together.” So they began. Ben rebuilt the dam with help from Leo, who carried heavy branches. Mia gathered small twigs and leaves. Birds helped by finding lost materials. It was not easy, but little by little, the forest began to heal. Soon, the dam was strong again. Trees were cleared, and new homes were built. The animals looked around proudly. “We did this together,” Leo said.",
+    "composition": {
+      "t1": 47,
+      "t2": 24,
+      "t3": 54,
+      "t4": 21,
+      "total": 146
+    }
+  },
+  {
+    "id": "young-inventor-sm",
+    "sizeVariant": "small",
+    "text": "Tara loved inventing things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt. Tara quickly built a machine to water it perfectly.",
+    "composition": {
+      "t1": 8,
+      "t2": 16,
+      "t3": 15,
+      "t4": 9,
+      "total": 48
+    }
+  },
+  {
+    "id": "young-inventor",
+    "sizeVariant": "medium",
+    "text": "Tara loved inventing things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt. Tara quickly built a machine to water it perfectly. But the plant still looked weak. “I do not understand,” Tara said. Her grandmother smiled. “Some things need time.” Tara watched the plant carefully. She gave it sunlight, water, and care each day. Slowly, the plant grew strong again. Tara realized that not every problem could be fixed with a quick invention. “Some things need patience,” she said. From then on, Tara still invented amazing things, but she also learned when to slow down.",
+    "composition": {
+      "t1": 27,
+      "t2": 38,
+      "t3": 35,
+      "t4": 21,
+      "total": 121
+    }
+  },
+  {
+    "id": "lost-star-sm",
+    "sizeVariant": "small",
+    "text": "One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and alone. “I need to go home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry,” Lily said.",
+    "composition": {
+      "t1": 11,
+      "t2": 9,
+      "t3": 15,
+      "t4": 7,
+      "total": 42
+    }
+  },
+  {
+    "id": "lost-star",
+    "sizeVariant": "medium",
+    "text": "One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and alone. “I need to go home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry,” Lily said. “I will help you.” Lily tried many things. She climbed a hill, built a tall stack of stones, and even made a kite to carry Nia upward. Nothing worked. Days passed, but Lily did not give up. Finally, they met an old owl who said, “Stars return when they are ready. Be patient.” One quiet night, Nia began to glow brighter than ever. Slowly, Nia lifted into the sky. “Thank you,” Nia called. Lily waved. She felt happy, even though she would miss her new friend.",
+    "composition": {
+      "t1": 38,
+      "t2": 27,
+      "t3": 39,
+      "t4": 23,
+      "total": 127
+    }
+  },
+  {
+    "id": "magical-garden-sm",
+    "sizeVariant": "small",
+    "text": "Tom only liked plain food. He refused to try anything new. One day, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me? ” A strawberry added, “We might surprise you.",
+    "composition": {
+      "t1": 15,
+      "t2": 12,
+      "t3": 11,
+      "t4": 3,
+      "total": 41
+    }
+  },
+  {
+    "id": "magical-garden",
+    "sizeVariant": "medium",
+    "text": "Tom only liked plain food. He refused to try anything new. One day, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me?” A strawberry added, “We might surprise you.” Tom hesitated but took a small bite. “That is sweet!” He tried more. Each food had a different taste and story. By the end of the day, Tom was smiling. “I did not know food could be this fun.” When he returned home, Tom asked to try new meals.",
+    "composition": {
+      "t1": 33,
+      "t2": 26,
+      "t3": 23,
+      "t4": 7,
+      "total": 89
+    }
+  },
+  {
+    "id": "dragon-who-could-not-fly-sm",
+    "sizeVariant": "small",
+    "text": "Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small. ” Dax practiced jumping. Then gliding. Each day, Dax improved a little.",
+    "composition": {
+      "t1": 8,
+      "t2": 11,
+      "t3": 11,
+      "t4": 13,
+      "total": 43
+    }
+  },
+  {
+    "id": "dragon-who-could-not-fly",
+    "sizeVariant": "medium",
+    "text": "Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small.” Dax practiced jumping. Then gliding. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit. But one day, Dax flapped hard and lifted off the ground. “I am flying!” Dax shouted. It was not perfect, but it was enough.",
+    "composition": {
+      "t1": 20,
+      "t2": 18,
+      "t3": 18,
+      "t4": 19,
+      "total": 75
+    }
+  },
+  {
+    "id": "arguing-siblings-sm",
+    "sizeVariant": "small",
+    "text": "Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “This way is better,” Lena said. “No, mine is,” Max replied. Soon, nothing was getting done.",
+    "composition": {
+      "t1": 14,
+      "t2": 12,
+      "t3": 9,
+      "t4": 6,
+      "total": 41
+    }
+  },
+  {
+    "id": "arguing-siblings",
+    "sizeVariant": "medium",
+    "text": "Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “This way is better,” Lena said. “No, mine is,” Max replied. Soon, nothing was getting done. Finally, they decided to listen to each other. Lena designed the structure. Max gathered materials. As they worked together, the treehouse slowly took shape. When it was finished, they both smiled. “We did it together,” Max said.",
+    "composition": {
+      "t1": 27,
+      "t2": 20,
+      "t3": 18,
+      "t4": 13,
+      "total": 78
+    }
+  },
+  {
+    "id": "forgotten-book-sm",
+    "sizeVariant": "small",
+    "text": "In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery.",
+    "composition": {
+      "t1": 18,
+      "t2": 8,
+      "t3": 17,
+      "t4": 2,
+      "total": 45
+    }
+  },
+  {
+    "id": "forgotten-book",
+    "sizeVariant": "medium",
+    "text": "In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery. “This is perfect,” the child said. For the first time, Pip felt proud.",
+    "composition": {
+      "t1": 25,
+      "t2": 10,
+      "t3": 21,
+      "t4": 2,
+      "total": 58
+    }
+  },
+  {
+    "id": "penguin-who-found-his-strength-sm",
+    "sizeVariant": "small",
+    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm.",
+    "composition": {
+      "t1": 18,
+      "t2": 10,
+      "t3": 7,
+      "t4": 6,
+      "total": 41
+    }
+  },
+  {
+    "id": "penguin-who-found-his-strength",
+    "sizeVariant": "medium",
+    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. “You saved us,” they said. Pico realized that being different was not a weakness.",
+    "composition": {
+      "t1": 28,
+      "t2": 16,
+      "t3": 15,
+      "t4": 9,
+      "total": 68
+    }
+  },
+  {
+    "id": "teen-anonymous-app-sm",
+    "sizeVariant": "small",
+    "text": "A quiet student named Lila downloaded a school app where people posted anonymous confessions. At first, she just read them late at night, fascinated by how honest everyone seemed when no one knew their name. Eventually, she started posting too, small things at first, then sharper comments about people she barely knew.",
+    "composition": {
+      "t1": 12,
+      "t2": 20,
+      "t3": 14,
+      "t4": 5,
+      "total": 51
+    }
+  },
+  {
+    "id": "teen-anonymous-app",
+    "sizeVariant": "medium",
+    "text": "A quiet student named Lila downloaded a school app where people posted anonymous confessions. At first, she just read them late at night, fascinated by how honest everyone seemed when no one knew their name. Eventually, she started posting too, small things at first, then sharper comments about people she barely knew. The likes came quickly. It felt good to be noticed, even invisibly. One day, a rumor appeared about a classmate. It spread faster than anything Lila had seen. Screenshots, whispers, sideways glances in class. The student stopped showing up. Lila realized the rumor had started from a post she had written as a joke. She stared at her phone, refreshing the feed, watching the damage grow. For the first time, the app felt heavy in her hands. That night, she typed a new post, fingers shaking, and hovered over the submit button. This time, it was not a joke.",
+    "composition": {
+      "t1": 47,
+      "t2": 41,
+      "t3": 42,
+      "t4": 20,
+      "total": 150
+    }
+  },
+  {
+    "id": "teen-viral-stunts-sm",
+    "sizeVariant": "small",
+    "text": "Ethan wanted to be known. Every video he posted had to be bigger than the last. At first it was harmless pranks and challenges, but views dropped unless he pushed further. Climbing higher, jumping farther, risking more. His followers loved it.",
+    "composition": {
+      "t1": 17,
+      "t2": 9,
+      "t3": 9,
+      "t4": 6,
+      "total": 41
+    }
+  },
+  {
+    "id": "teen-viral-stunts",
+    "sizeVariant": "medium",
+    "text": "Ethan wanted to be known. Every video he posted had to be bigger than the last. At first it was harmless pranks and challenges, but views dropped unless he pushed further. Climbing higher, jumping farther, risking more. His followers loved it. Comments flooded in telling him to go even bigger. One afternoon, he set up his camera for a stunt he had barely practiced. The fall came fast. Pain replaced the rush, and the next thing he knew, he was in a hospital bed with a broken leg and a silent phone. Days passed. Then weeks. Without constant uploads, his followers moved on. The numbers dropped. Bored and restless, he started sketching, something he had not done in years. His sister joined him sometimes. They laughed more than he expected. When he finally picked up his phone again, he hesitated before recording. For the first time, he wondered who he was without the screen watching.",
+    "composition": {
+      "t1": 63,
+      "t2": 28,
+      "t3": 41,
+      "t4": 23,
+      "total": 155
+    }
+  },
+  {
+    "id": "teen-scholarship-sm",
+    "sizeVariant": "small",
+    "text": "Maya and Jordan had been inseparable for years. When the final year scholarship was announced, they both applied, both confident. At first, they helped each other prepare. Shared notes, practiced interviews. Then small things changed. Maya “forgot” to send a document.",
+    "composition": {
+      "t1": 11,
+      "t2": 12,
+      "t3": 10,
+      "t4": 8,
+      "total": 41
+    }
+  },
+  {
+    "id": "teen-scholarship",
+    "sizeVariant": "medium",
+    "text": "Maya and Jordan had been inseparable for years. When the final year scholarship was announced, they both applied, both confident. At first, they helped each other prepare. Shared notes, practiced interviews. Then small things changed. Maya “forgot” to send a document. Jordan gave vague advice instead of real help. Neither mentioned it. The tension grew quietly. They smiled in public, competed in private. By the time interviews came, both were more focused on beating the other than doing their best. When results were announced, neither of their names was called. They stood side by side in the hallway afterward, the silence louder than any argument. All the small choices added up, and now there was nothing to show for it. Maya finally spoke, but not about the scholarship.",
+    "composition": {
+      "t1": 49,
+      "t2": 27,
+      "t3": 33,
+      "t4": 19,
+      "total": 128
+    }
+  },
+  {
+    "id": "teen-gaming-identity-sm",
+    "sizeVariant": "small",
+    "text": "Noah felt unstoppable in the game. Online, he was a leader, respected, powerful. People listened to him. Real life felt smaller in comparison, slower and less forgiving. He spent every spare hour logged in. Then one morning, the servers went down.",
+    "composition": {
+      "t1": 12,
+      "t2": 6,
+      "t3": 14,
+      "t4": 9,
+      "total": 41
+    }
+  },
+  {
+    "id": "teen-gaming-identity",
+    "sizeVariant": "medium",
+    "text": "Noah felt unstoppable in the game. Online, he was a leader, respected, powerful. People listened to him. Real life felt smaller in comparison, slower and less forgiving. He spent every spare hour logged in. Then one morning, the servers went down. At first, it seemed temporary. Hours turned into days. An announcement finally confirmed it. The game was gone. Noah sat staring at his screen, refreshing out of habit. There was nowhere to log in. Without the game, time stretched awkwardly. He did not know what to do with himself. Conversations at school felt harder than any boss fight. One afternoon, he wandered outside and joined a group playing basketball. He missed shots, stumbled, laughed awkwardly. But no one kicked him out. They just kept playing. That night, he still reached for his computer, then paused. For the first time, he did not feel like he was logging out of his real life.",
+    "composition": {
+      "t1": 58,
+      "t2": 27,
+      "t3": 45,
+      "t4": 23,
+      "total": 153
+    }
+  },
+  {
+    "id": "teen-ai-shortcuts-sm",
+    "sizeVariant": "small",
+    "text": "Sophie discovered early that AI tools could do her assignments in seconds. Essays, summaries, even problem sets. She checked them quickly, submitted them, and watched her grades climb. Teachers praised her. Classmates asked for help. She smiled and played along.",
+    "composition": {
+      "t1": 9,
+      "t2": 11,
+      "t3": 13,
+      "t4": 6,
+      "total": 39
+    }
+  },
+  {
+    "id": "teen-ai-shortcuts",
+    "sizeVariant": "medium",
+    "text": "Sophie discovered early that AI tools could do her assignments in seconds. Essays, summaries, even problem sets. She checked them quickly, submitted them, and watched her grades climb. Teachers praised her. Classmates asked for help. She smiled and played along. Months passed. The work got harder. One day, during a timed test without access to her usual tools, she stared at the questions. They looked familiar, but her mind felt blank. Her hand hovered over the page. Around her, pens scratched steadily. For the first time, she felt the gap between what she had submitted and what she actually knew. After school, she opened her laptop, but not to generate answers. She pulled up the basics, starting from the beginning. It felt slow and frustrating. But it was the first time the work felt like it belonged to her.",
+    "composition": {
+      "t1": 43,
+      "t2": 37,
+      "t3": 43,
+      "t4": 15,
+      "total": 138
+    }
+  },
+  {
+    "id": "teen-new-school-sm",
+    "sizeVariant": "small",
+    "text": "When Alex transferred schools, he decided to be someone new. More confident, more interesting. He exaggerated stories, invented experiences, polished every detail. People liked him. He was invited to things quickly. But every conversation became a careful act. He had to remember what he had told each person.",
+    "composition": {
+      "t1": 14,
+      "t2": 12,
+      "t3": 16,
+      "t4": 6,
+      "total": 48
+    }
+  },
+  {
+    "id": "teen-new-school",
+    "sizeVariant": "medium",
+    "text": "When Alex transferred schools, he decided to be someone new. More confident, more interesting. He exaggerated stories, invented experiences, polished every detail. People liked him. He was invited to things quickly. But every conversation became a careful act. He had to remember what he had told each person. Small contradictions started slipping through. His new friends began asking questions that went deeper than his stories could handle. One afternoon, someone laughed and called out one of his inconsistencies. The group went quiet. Alex felt the weight of every lie at once. Later, sitting alone, he replayed everything in his head. The version of himself he had built felt fragile now. The next day, when someone asked him a simple question, he paused before answering. This time, he did not reach for a better story.",
+    "composition": {
+      "t1": 45,
+      "t2": 35,
+      "t3": 39,
+      "t4": 15,
+      "total": 134
+    }
+  },
+  {
+    "id": "teen-overcommitted-sm",
+    "sizeVariant": "small",
+    "text": "Priya said yes to everything. Extra projects, helping friends, family responsibilities, clubs. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed. Then sleep slipped. Assignments piled up.",
+    "composition": {
+      "t1": 8,
+      "t2": 15,
+      "t3": 13,
+      "t4": 6,
+      "total": 42
+    }
+  },
+  {
+    "id": "teen-overcommitted",
+    "sizeVariant": "medium",
+    "text": "Priya said yes to everything. Extra projects, helping friends, family responsibilities, clubs. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed. Then sleep slipped. Assignments piled up. She forgot small things, then bigger ones. One day, she missed a major deadline. Not because she did not care, but because she simply ran out of time. The disappointment hit harder than she expected. That evening, she sat with her list of commitments and realized it was impossible to do all of them well. Something had to change. The next time someone asked for help, she hesitated. Saying no felt uncomfortable, almost wrong. But also, a little relieving.",
+    "composition": {
+      "t1": 34,
+      "t2": 38,
+      "t3": 37,
+      "t4": 12,
+      "total": 121
+    }
+  },
+  {
+    "id": "teen-group-chat-sm",
+    "sizeVariant": "small",
+    "text": "It started as a joke. A group chat without Sam, just for “fun. ” They shared memes, made light comments, nothing serious. At first. Over time, the tone shifted. Small jokes turned sharper. Screenshots were shared. Conversations about Sam replaced conversations with him.",
+    "composition": {
+      "t1": 11,
+      "t2": 11,
+      "t3": 14,
+      "t4": 5,
+      "total": 41
+    }
+  },
+  {
+    "id": "teen-group-chat",
+    "sizeVariant": "medium",
+    "text": "It started as a joke. A group chat without Sam, just for “fun.” They shared memes, made light comments, nothing serious. At first. Over time, the tone shifted. Small jokes turned sharper. Screenshots were shared. Conversations about Sam replaced conversations with him. Meanwhile, in the main chat, everything seemed normal. One day, Sam stopped replying. Then stopped showing up to hang out. Someone in the group noticed. They scrolled back through the messages in the private chat, seeing them differently now. The jokes did not look harmless anymore. When they finally reached out, the silence on the other end felt heavier than expected.",
+    "composition": {
+      "t1": 32,
+      "t2": 25,
+      "t3": 32,
+      "t4": 13,
+      "total": 102
+    }
+  },
+  {
+    "id": "teen-avoiding-failure-sm",
+    "sizeVariant": "small",
+    "text": "Lucas avoided anything he might fail at. New sports, harder classes, even small challenges. If he did not try, he could not mess up. It worked, in a way. He stayed comfortable. Then a group project forced him into unfamiliar territory.",
+    "composition": {
+      "t1": 11,
+      "t2": 14,
+      "t3": 11,
+      "t4": 5,
+      "total": 41
+    }
+  },
+  {
+    "id": "teen-avoiding-failure",
+    "sizeVariant": "medium",
+    "text": "Lucas avoided anything he might fail at. New sports, harder classes, even small challenges. If he did not try, he could not mess up. It worked, in a way. He stayed comfortable. Then a group project forced him into unfamiliar territory. Presenting, building, speaking up. Things he had always sidestepped. He stumbled through it. Forgot lines, made mistakes, felt his face burn in front of the class. But something unexpected happened. It ended, and the world did not. Afterward, a classmate told him it was not as bad as he thought. That night, Lucas thought about how much energy he had spent avoiding moments like that. And how, despite everything, he was still standing.",
+    "composition": {
+      "t1": 37,
+      "t2": 36,
+      "t3": 28,
+      "t4": 13,
+      "total": 114
+    }
+  },
+  {
+    "id": "teen-misjudging-sm",
+    "sizeVariant": "small",
+    "text": "Emma had heard enough about Ryan to form a clear picture. Difficult, rude, not worth the effort. She avoided him without thinking twice. When they were assigned to work together, she was annoyed. At first, their conversations were short and stiff.",
+    "composition": {
+      "t1": 14,
+      "t2": 12,
+      "t3": 7,
+      "t4": 8,
+      "total": 41
+    }
+  },
+  {
+    "id": "teen-misjudging",
+    "sizeVariant": "medium",
+    "text": "Emma had heard enough about Ryan to form a clear picture. Difficult, rude, not worth the effort. She avoided him without thinking twice. When they were assigned to work together, she was annoyed. At first, their conversations were short and stiff. But as the project went on, she noticed things that did not match the stories. He listened carefully. He put in effort. He was quieter than expected, not hostile. One afternoon, he mentioned something about his past that explained more than any rumor had. Emma realized how quickly she had accepted a version of him without ever checking if it was true. By the time the project ended, the person she thought she knew had been replaced by someone more real, and far more complex.",
+    "composition": {
+      "t1": 49,
+      "t2": 37,
+      "t3": 27,
+      "t4": 13,
+      "total": 126
+    }
+  },
+  {
+    "id": "real-accidental-feature-sm",
+    "sizeVariant": "small",
+    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it.",
+    "composition": {
+      "t1": 17,
+      "t2": 12,
+      "t3": 9,
+      "t4": 4,
+      "total": 42
+    }
+  },
+  {
+    "id": "real-accidental-feature",
+    "sizeVariant": "medium",
+    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed. Then again. And again. Users were posting screenshots. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It was not intentional. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He read comments. “Finally, software that feels human.” “Please don’t remove this.” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak.” It was not entirely a lie.",
+    "composition": {
+      "t1": 63,
+      "t2": 43,
+      "t3": 47,
+      "t4": 31,
+      "total": 184
+    }
+  },
+  {
+    "id": "real-planned-spontaneity-sm",
+    "sizeVariant": "small",
+    "text": "Maya suggested it casually. “Let’s do a proper weekend like we used to. No plans. Just vibes. ” By Saturday morning, they had a shared document, a grocery list, and three backup plans in case it rained. At 11 AM, they sat on the floor eating cereal, trying to recreate the effortless feeling of being nineteen.",
+    "composition": {
+      "t1": 18,
+      "t2": 10,
+      "t3": 14,
+      "t4": 11,
+      "total": 53
+    }
+  },
+  {
+    "id": "real-planned-spontaneity",
+    "sizeVariant": "medium",
+    "text": "Maya suggested it casually. “Let’s do a proper weekend like we used to. No plans. Just vibes.” By Saturday morning, they had a shared document, a grocery list, and three backup plans in case it rained. At 11 AM, they sat on the floor eating cereal, trying to recreate the effortless feeling of being nineteen. Back then, time stretched. Now, it felt scheduled. “Should we go out?” Jess asked. “We could,” Maya said, already checking opening hours. They watched an old movie they used to love. Halfway through, they both reached for their phones. No one said anything. In the afternoon, they walked through a park, trying to be spontaneous. It turned into a conversation about rent increases, career moves, and whether anyone actually enjoyed their job or just tolerated it. By evening, they ordered takeaway and sat on the balcony. “It’s still nice,” Jess said. “Yeah,” Maya replied. “Just different.” They realized it was not that fun had disappeared. It had just changed shape. Less chaotic, more intentional. Less loud, more layered. The weekend did not feel like the past. But it felt honest.",
+    "composition": {
+      "t1": 56,
+      "t2": 44,
+      "t3": 51,
+      "t4": 32,
+      "total": 183
+    }
+  },
+  {
+    "id": "real-honest-feedback-sm",
+    "sizeVariant": "small",
+    "text": "Ethan had rehearsed the conversation three times before calling Liam into the meeting room. Liam was easy to like. Quick with jokes, always positive, never defensive. Which made this harder. “So,” Ethan began, “I wanted to talk about your recent work.",
+    "composition": {
+      "t1": 12,
+      "t2": 15,
+      "t3": 8,
+      "t4": 5,
+      "total": 40
+    }
+  },
+  {
+    "id": "real-honest-feedback",
+    "sizeVariant": "medium",
+    "text": "Ethan had rehearsed the conversation three times before calling Liam into the meeting room. Liam was easy to like. Quick with jokes, always positive, never defensive. Which made this harder. “So,” Ethan began, “I wanted to talk about your recent work.” Liam nodded, smiling. “Yeah, for sure.” Ethan hesitated. The truth felt heavy. Deadlines missed. Details overlooked. Nothing catastrophic, just consistently not enough. “You’re great to work with,” Ethan said first, and immediately regretted it. It sounded like a preface. Liam’s smile tightened slightly. “But we need to see more consistency,” Ethan continued. “There have been a few things slipping through.” There was a pause. Not awkward, just quiet. “Okay,” Liam said. “That’s fair.” No defensiveness. No excuses. Just acceptance. That somehow made it worse. After the meeting, Ethan sat alone, replaying it. He wondered if he had been too soft. Or too vague. Later that afternoon, Liam sent a message. “Thanks for the feedback. I’ve started fixing a few things already.” Ethan stared at the screen. Being honest had not broken anything. If anything, it had cleared something unspoken. He realized leadership was less about having the perfect words, and more about saying the necessary ones.",
+    "composition": {
+      "t1": 62,
+      "t2": 48,
+      "t3": 47,
+      "t4": 39,
+      "total": 196
+    }
+  },
+  {
+    "id": "real-apartment-traces-sm",
+    "sizeVariant": "small",
+    "text": "The apartment was mostly clean, but not empty. In the back of a kitchen drawer, Alex found a single key with no label. In the wardrobe, a forgotten jacket, too small to be his. On the top shelf, a box of photos, left behind.",
+    "composition": {
+      "t1": 18,
+      "t2": 13,
+      "t3": 10,
+      "t4": 3,
+      "total": 44
+    }
+  },
+  {
+    "id": "real-apartment-traces",
+    "sizeVariant": "medium",
+    "text": "The apartment was mostly clean, but not empty. In the back of a kitchen drawer, Alex found a single key with no label. In the wardrobe, a forgotten jacket, too small to be his. On the top shelf, a box of photos, left behind. He told himself he should throw them out. Instead, he sat on the floor and looked. A beach trip. A birthday cake. A blurry group shot in a living room that looked suspiciously like this one. The previous tenant had lived a full life here. Not in a dramatic way. Just in small, ordinary moments. Alex started noticing other things. A faint mark on the wall where something once hung. A loose tile near the sink. Evidence of routines he would never fully understand. At night, the apartment felt less like a blank space and more like a continuation. He wondered what traces he would leave behind. What someone else might find. Whether they would pause, like he had, and try to piece together a life from fragments. On Sunday, he packed the photos back into the box. He did not throw them away. Not yet.",
+    "composition": {
+      "t1": 69,
+      "t2": 51,
+      "t3": 47,
+      "t4": 18,
+      "total": 185
+    }
+  },
+  {
+    "id": "real-getting-a-dog-sm",
+    "sizeVariant": "small",
+    "text": "The conversation started as a joke. “We should get a dog,” Sam said, scrolling through photos. “Absolutely not,” Priya replied, without looking up. Ten minutes later, they were deep in discussion. Size, breed, apartment rules, walking schedules. “It’s a lot of responsibility,” Priya said.",
+    "composition": {
+      "t1": 14,
+      "t2": 13,
+      "t3": 12,
+      "t4": 5,
+      "total": 44
+    }
+  },
+  {
+    "id": "real-getting-a-dog",
+    "sizeVariant": "medium",
+    "text": "The conversation started as a joke. “We should get a dog,” Sam said, scrolling through photos. “Absolutely not,” Priya replied, without looking up. Ten minutes later, they were deep in discussion. Size, breed, apartment rules, walking schedules. “It’s a lot of responsibility,” Priya said. “So is everything,” Sam countered. That was the real conversation. A dog meant routine. Early mornings. Less spontaneity. It meant planning weekends differently. Thinking ahead. “Are we ready for that?” Priya asked. Sam shrugged. “Are we ever ready for anything?” They sat in silence for a moment. It was not really about the dog. It was about what came next. Stability, maybe. Or just a shift away from the flexibility they had quietly relied on. That night, Priya sent Sam a link. “Just looking,” she wrote. The next morning, Sam replied with another. They had not decided anything. But something had changed. The idea no longer felt abstract.",
+    "composition": {
+      "t1": 47,
+      "t2": 38,
+      "t3": 48,
+      "t4": 18,
+      "total": 151
+    }
+  },
+  {
+    "id": "real-delivery-driver-sm",
+    "sizeVariant": "small",
+    "text": "Noah liked the quiet between deliveries. The brief walks from his car to someone else’s front door. The small glimpses into lives he would never fully see. A brightly lit house with music playing. A dim apartment where someone opened the door just enough to take the bag.",
+    "composition": {
+      "t1": 13,
+      "t2": 12,
+      "t3": 16,
+      "t4": 5,
+      "total": 46
+    }
+  },
+  {
+    "id": "real-delivery-driver",
+    "sizeVariant": "medium",
+    "text": "Noah liked the quiet between deliveries. The brief walks from his car to someone else’s front door. The small glimpses into lives he would never fully see. A brightly lit house with music playing. A dim apartment where someone opened the door just enough to take the bag. “Thanks,” a woman said once, making eye contact longer than expected. Another time, a kid answered, grinning. “You’re the food guy!” Noah laughed. “That’s me.” Each interaction lasted seconds, but they added up. Tiny connections, stitched across a long night. Around midnight, he delivered to an office building. A man in a suit, tie loosened, took the bag. “Long night?” Noah asked. “Yeah,” the man said. “You too?” Noah nodded. For a moment, they stood there, equal in exhaustion. “Take care,” the man said. “You too.” Driving away, Noah realized how strange it was. He was part of people’s routines, but only at the edges. Not fully seen. Not fully known. And somehow, that felt okay.",
+    "composition": {
+      "t1": 48,
+      "t2": 33,
+      "t3": 55,
+      "t4": 25,
+      "total": 161
+    }
+  },
+  {
+    "id": "real-app-detox-sm",
+    "sizeVariant": "small",
+    "text": "Deleting the apps took less than a minute. Emma expected it to feel dramatic. It did not. Just a quiet absence. The first day, she reached for her phone constantly. Waiting in line. Sitting on the couch. Even during conversations.",
+    "composition": {
+      "t1": 13,
+      "t2": 10,
+      "t3": 10,
+      "t4": 7,
+      "total": 40
+    }
+  },
+  {
+    "id": "real-app-detox",
+    "sizeVariant": "medium",
+    "text": "Deleting the apps took less than a minute. Emma expected it to feel dramatic. It did not. Just a quiet absence. The first day, she reached for her phone constantly. Waiting in line. Sitting on the couch. Even during conversations. By day three, something shifted. She noticed how often she filled silence with scrolling. Without it, moments stretched. Sometimes uncomfortably. She started paying attention differently. To how long a walk actually felt. To how conversations unfolded without interruption. At dinner, she did not check her phone once. Her friend noticed. “You seem present,” he said. Emma laughed. “I deleted everything.” “Everything?” “Everything.” By the end of the week, she felt both lighter and slightly disconnected. Like she had stepped out of a fast moving stream. When she reinstalled the apps, nothing had changed. Same posts. Same updates. But she had. She hesitated before opening them. For the first time, it felt like a choice.",
+    "composition": {
+      "t1": 39,
+      "t2": 46,
+      "t3": 41,
+      "t4": 27,
+      "total": 153
+    }
+  },
+  {
+    "id": "real-online-colleague-sm",
+    "sizeVariant": "small",
+    "text": "They had worked together for over a year, but only through messages. “Quick sync? ” “Looks good to me. ” “Pushed a fix. ” When they finally met in person, both smiled too formally. “You’re taller than I expected,” Jenna said.",
+    "composition": {
+      "t1": 10,
+      "t2": 11,
+      "t3": 7,
+      "t4": 9,
+      "total": 37
+    }
+  },
+  {
+    "id": "real-online-colleague",
+    "sizeVariant": "medium",
+    "text": "They had worked together for over a year, but only through messages. “Quick sync?” “Looks good to me.” “Pushed a fix.” When they finally met in person, both smiled too formally. “You’re taller than I expected,” Jenna said. “You type faster than I thought,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation. On Slack, pauses meant thinking. In person, they felt like silence. “So,” Jenna said, “how was your flight?” “Good,” Mark answered. “Yours?” They both laughed. It felt scripted. Later, during a meeting, something clicked. They slipped back into familiar patterns. Finishing each other’s thoughts. Building ideas quickly. The medium had changed, but the connection was still there. Afterward, they grabbed coffee. This time, the conversation flowed more naturally. Less about filling space, more about continuing something already built. By the end, the awkwardness had faded. They were the same team. Just in a different format.",
+    "composition": {
+      "t1": 42,
+      "t2": 43,
+      "t3": 43,
+      "t4": 30,
+      "total": 158
+    }
+  },
+  {
+    "id": "real-3d-print-sm",
+    "sizeVariant": "small",
+    "text": "Lucas spent three weeks perfecting it. A small, intricate 3D print. Designed from scratch. Tuned settings, tested materials, adjusted tolerances. It was for his friend Olivia. A custom phone stand based on a joke they had shared months ago. When he finally handed it to her, he felt a quiet pride.",
+    "composition": {
+      "t1": 13,
+      "t2": 12,
+      "t3": 15,
+      "t4": 8,
+      "total": 48
+    }
+  },
+  {
+    "id": "real-3d-print",
+    "sizeVariant": "medium",
+    "text": "Lucas spent three weeks perfecting it. A small, intricate 3D print. Designed from scratch. Tuned settings, tested materials, adjusted tolerances. It was for his friend Olivia. A custom phone stand based on a joke they had shared months ago. When he finally handed it to her, he felt a quiet pride. “That’s so cool,” she said, turning it over. “Did you buy this?” Lucas paused. “I made it.” “Oh wow,” she said, smiling. “That’s impressive.” But the moment had already passed. She set it down gently, like any other object. Later, Lucas wondered why it bothered him. She liked it. She appreciated it. But she had not seen the process. The failed prints. The small decisions. To her, it was a thing. To him, it was hours of thought. A few days later, she sent him a photo. The stand on her desk, holding her phone. “Using it every day,” she wrote. Lucas smiled. Maybe appreciation did not always look like recognition.",
+    "composition": {
+      "t1": 45,
+      "t2": 53,
+      "t3": 41,
+      "t4": 18,
+      "total": 157
+    }
+  },
+  {
+    "id": "real-group-trip-sm",
+    "sizeVariant": "small",
+    "text": "Planning the trip was easy. Group chat, shared links, excited messages. Actually agreeing on details was not. “Let’s do something relaxed,” Tom said. “I want activities,” Sarah replied. “I just need a break,” Alex added. Dates shifted. Budgets stretched. Expectations diverged.",
+    "composition": {
+      "t1": 7,
+      "t2": 12,
+      "t3": 6,
+      "t4": 14,
+      "total": 39
+    }
+  },
+  {
+    "id": "real-group-trip",
+    "sizeVariant": "medium",
+    "text": "Planning the trip was easy. Group chat, shared links, excited messages. Actually agreeing on details was not. “Let’s do something relaxed,” Tom said. “I want activities,” Sarah replied. “I just need a break,” Alex added. Dates shifted. Budgets stretched. Expectations diverged. By the time they booked anything, the excitement had dulled slightly. On the trip, the differences became clearer. Some woke early. Others slept in. Some wanted to explore. Others wanted to rest. Small tensions surfaced. Nothing dramatic, just subtle misalignments. One evening, they sat together, quieter than expected. “This is not what I pictured,” Sarah admitted. “Yeah,” Tom said. “Same.” Alex shrugged. “It’s still good though.” And it was. Just not in the way they imagined. The trip was less about shared experience and more about understanding how much they had changed. Friendship had not disappeared. It had simply evolved.",
+    "composition": {
+      "t1": 37,
+      "t2": 30,
+      "t3": 32,
+      "t4": 39,
+      "total": 138
+    }
+  },
+  {
+    "id": "real-no-spend-month-sm",
+    "sizeVariant": "small",
+    "text": "The first week was easy. “No spending” sounded extreme, but manageable. Cook at home, skip coffee, avoid impulse buys. By week two, the cracks showed. Convenience had been invisible until it was gone. No quick lunches. No last minute purchases.",
+    "composition": {
+      "t1": 10,
+      "t2": 12,
+      "t3": 11,
+      "t4": 7,
+      "total": 40
+    }
+  },
+  {
+    "id": "real-no-spend-month",
+    "sizeVariant": "medium",
+    "text": "The first week was easy. “No spending” sounded extreme, but manageable. Cook at home, skip coffee, avoid impulse buys. By week two, the cracks showed. Convenience had been invisible until it was gone. No quick lunches. No last minute purchases. Every decision required planning. Emma noticed how often she spent money to save time. Or effort. Cooking became routine. Slower, but satisfying. She also noticed boredom. Shopping had filled gaps she had not recognized. Without it, she had to find other ways to occupy herself. Reading. Walking. Calling friends. By the end of the month, she had saved more than expected. But more importantly, she understood her habits differently. Spending was not just about things. It was about structure. When the month ended, she allowed herself a small purchase. It felt deliberate. Not automatic.",
+    "composition": {
+      "t1": 35,
+      "t2": 41,
+      "t3": 39,
+      "t4": 19,
+      "total": 134
+    }
+  },
+  {
+    "id": "real-gaming-after-baby-sm",
+    "sizeVariant": "small",
+    "text": "After the baby arrived, everything shifted. Time became fragmented. Sleep unpredictable. Ryan tried to hold onto his evening gaming sessions. A small piece of his old routine. At first, it worked. Short sessions, headphones on, volume low. But interruptions were constant.",
+    "composition": {
+      "t1": 9,
+      "t2": 6,
+      "t3": 16,
+      "t4": 9,
+      "total": 40
+    }
+  },
+  {
+    "id": "real-gaming-after-baby",
+    "sizeVariant": "medium",
+    "text": "After the baby arrived, everything shifted. Time became fragmented. Sleep unpredictable. Ryan tried to hold onto his evening gaming sessions. A small piece of his old routine. At first, it worked. Short sessions, headphones on, volume low. But interruptions were constant. A cry. A bottle. A moment that could not wait. He found himself pausing mid game, often. At first, it was frustrating. Later, it became normal. One night, he realized he had not played in days. Instead, he had learned new rhythms. Small routines built around someone else’s needs. When he finally picked up the controller again, it felt different. Less urgent. Less necessary. Still enjoyable, just smaller. He did not mind as much as he expected. Something else had taken priority.",
+    "composition": {
+      "t1": 31,
+      "t2": 25,
+      "t3": 43,
+      "t4": 20,
+      "total": 119
+    }
+  },
+  {
+    "id": "real-wedding-alone-sm",
+    "sizeVariant": "small",
+    "text": "Weddings were strange alone. Clara watched couples arrive together, effortlessly paired. She found her seat, smiled politely, and prepared for a long evening. At first, conversations were surface level. Names, jobs, how they knew the couple. Then, slowly, they deepened.",
+    "composition": {
+      "t1": 11,
+      "t2": 7,
+      "t3": 13,
+      "t4": 9,
+      "total": 40
+    }
+  },
+  {
+    "id": "real-wedding-alone",
+    "sizeVariant": "medium",
+    "text": "Weddings were strange alone. Clara watched couples arrive together, effortlessly paired. She found her seat, smiled politely, and prepared for a long evening. At first, conversations were surface level. Names, jobs, how they knew the couple. Then, slowly, they deepened. A woman at her table spoke about changing careers at 29. A man shared a story about moving cities without knowing anyone. Clara listened, then shared her own experiences. Without a familiar group, she was more open. More willing to engage. By dessert, the table felt less like strangers. Just people, temporarily connected. As the night ended, they exchanged brief goodbyes. No promises to stay in touch. Just appreciation for the moment. Walking home, Clara felt unexpectedly full. Being alone had not meant being isolated. It had meant being available.",
+    "composition": {
+      "t1": 31,
+      "t2": 32,
+      "t3": 41,
+      "t4": 23,
+      "total": 127
+    }
+  },
+  {
+    "id": "real-startup-pivot-sm",
+    "sizeVariant": "small",
+    "text": "The numbers were not bad. But they were not good enough. Early traction had given Leo confidence. Now, growth had plateaued. “Maybe we pivot,” his co founder suggested. Leo resisted. The idea had been his. The direction, his vision. Changing it felt like admitting failure.",
+    "composition": {
+      "t1": 15,
+      "t2": 8,
+      "t3": 12,
+      "t4": 10,
+      "total": 45
+    }
+  },
+  {
+    "id": "real-startup-pivot",
+    "sizeVariant": "medium",
+    "text": "The numbers were not bad. But they were not good enough. Early traction had given Leo confidence. Now, growth had plateaued. “Maybe we pivot,” his co founder suggested. Leo resisted. The idea had been his. The direction, his vision. Changing it felt like admitting failure. But the data was clear. Users were not engaging the way they expected. “Are we building what we want,” his co founder asked, “or what people need?” Leo did not answer immediately. That night, he reviewed everything. Feedback, metrics, assumptions. He realized how much of the product was shaped by preference, not evidence. The next morning, he said, “Let’s try something different.” It was not a dramatic shift. Just a change in focus. But it felt significant. Letting go of the original idea was harder than starting from scratch. But it also felt more honest.",
+    "composition": {
+      "t1": 52,
+      "t2": 31,
+      "t3": 40,
+      "t4": 17,
+      "total": 140
+    }
+  },
+  {
+    "id": "real-online-to-real-sm",
+    "sizeVariant": "small",
+    "text": "It started with a comment on a forum. Then a reply. Then a conversation. Over months, messages became routine. Daily check ins. Shared thoughts. They knew each other’s habits, preferences, small details. But they had never met. “Maybe we should,” she suggested one day.",
+    "composition": {
+      "t1": 9,
+      "t2": 16,
+      "t3": 14,
+      "t4": 5,
+      "total": 44
+    }
+  },
+  {
+    "id": "real-online-to-real",
+    "sizeVariant": "medium",
+    "text": "It started with a comment on a forum. Then a reply. Then a conversation. Over months, messages became routine. Daily check ins. Shared thoughts. They knew each other’s habits, preferences, small details. But they had never met. “Maybe we should,” she suggested one day. He hesitated. Online, everything felt controlled. Curated. Meeting would make it real. And uncertain. “What if it’s different?” he asked. “It probably will be,” she said. That was the point. They chose a date. A place. In the days leading up, he found himself overthinking. Replaying conversations. Imagining outcomes. When the day arrived, he almost canceled. But he did not. Seeing her in person was both familiar and new. The same voice. The same humor. Just present. The conversation picked up where it had left off. Not perfect. Not seamless. But real. And that was enough.",
+    "composition": {
+      "t1": 38,
+      "t2": 43,
+      "t3": 40,
+      "t4": 18,
+      "total": 139
+    }
+  },
+  {
+    "id": "msg-sprint-planning-sm",
+    "sizeVariant": "small",
+    "text": "“Alright team, let’s kick off planning. The main thing I want from this session is a realistic, agreed view of what we can deliver next sprint, not an aspirational wish list. Product has called out two priorities, improving onboarding conversion and stabilising the reporting backend.",
+    "composition": {
+      "t1": 16,
+      "t2": 10,
+      "t3": 12,
+      "t4": 6,
+      "total": 44
+    }
+  },
+  {
+    "id": "msg-sprint-planning",
+    "sizeVariant": "medium",
+    "text": "“Alright team, let’s kick off planning. The main thing I want from this session is a realistic, agreed view of what we can deliver next sprint, not an aspirational wish list. Product has called out two priorities, improving onboarding conversion and stabilising the reporting backend. For onboarding, the new signup flow and the A B test framework are top of the list. For reporting, we need to address the timeout issues on the aggregated stats endpoint before we stack more features on it. As we go through the backlog, I’d like us to challenge anything that feels ambiguous or risky. If a ticket is under specified or touches unknown parts of the system, call it out and we’ll either refine it here or push it out. I’d rather we commit to fewer, well understood items than overfill the sprint and carry half of them. When you estimate, think about testing, code review, and potential integration hiccups, not just writing the code. Once we have rough sizes, we’ll look at total capacity and draw a clear line for what is in and what is out. The goal is to get to the end of the sprint with no surprises and no rollover.”",
+    "composition": {
+      "t1": 91,
+      "t2": 45,
+      "t3": 42,
+      "t4": 20,
+      "total": 198
+    }
+  },
+  {
+    "id": "msg-blood-test-results-sm",
+    "sizeVariant": "small",
+    "text": "“Hi Sarah, thanks for coming in today. I wanted to walk you through your recent blood test results and make sure you understand what they mean and what we should do next. Overall, most of your results are within the normal range, which is good news.",
+    "composition": {
+      "t1": 21,
+      "t2": 15,
+      "t3": 7,
+      "t4": 2,
+      "total": 45
+    }
+  },
+  {
+    "id": "msg-blood-test-results",
+    "sizeVariant": "medium",
+    "text": "“Hi Sarah, thanks for coming in today. I wanted to walk you through your recent blood test results and make sure you understand what they mean and what we should do next. Overall, most of your results are within the normal range, which is good news. Your kidney and liver function look fine, and your electrolytes are stable. There are two things I want to focus on. First, your cholesterol is higher than we’d like, particularly your LDL, which is sometimes called the ‘bad’ cholesterol. That doesn’t mean there’s an emergency, but it does increase your long term risk of heart disease if we leave it as is. Second, your fasting blood sugar is in the pre diabetic range. Again, not diabetes yet, but a clear warning sign. My recommendation is that we start with lifestyle changes, adjusting your diet, increasing physical activity, and looking at weight management if needed. I’ll give you some written guidance and a referral to a dietitian if you’d like. We’ll repeat these tests in about three months to see how things are tracking. If the numbers are still high at that point, we can talk about whether medication makes sense. How does that sound to you so far?”",
+    "composition": {
+      "t1": 89,
+      "t2": 54,
+      "t3": 44,
+      "t4": 14,
+      "total": 201
+    }
+  },
+  {
+    "id": "msg-teacher-email-sm",
+    "sizeVariant": "small",
+    "text": "“Dear Mr and Mrs Lee, I wanted to take a moment to update you on Emma’s progress in Year 4 and suggest a few ways you can support her learning at home. Overall, Emma is a curious and engaged student who participates well in class discussions and works cooperatively with her peers.",
+    "composition": {
+      "t1": 20,
+      "t2": 12,
+      "t3": 13,
+      "t4": 5,
+      "total": 50
+    }
+  },
+  {
+    "id": "msg-teacher-email",
+    "sizeVariant": "medium",
+    "text": "“Dear Mr and Mrs Lee, I wanted to take a moment to update you on Emma’s progress in Year 4 and suggest a few ways you can support her learning at home. Overall, Emma is a curious and engaged student who participates well in class discussions and works cooperatively with her peers. In literacy, Emma reads fluently and shows good comprehension when we talk about stories, but she sometimes rushes through written responses and leaves out detail. At home, you might encourage her to slow down by asking follow up questions such as ‘why do you think that?’ or ‘can you give an example from the story?’ In mathematics, she has a solid grasp of addition and subtraction, and we are currently working on multiplication tables. Regular practice with times tables, even five to ten minutes a day, will help build her confidence. Socially, Emma is kind and inclusive, and other students enjoy working with her. I am very pleased with her attitude in class. If you have any questions or would like to schedule a meeting to discuss this in more detail, please let me know and we can arrange a suitable time. Kind regards, Ms Johnson”",
+    "composition": {
+      "t1": 82,
+      "t2": 54,
+      "t3": 43,
+      "t4": 16,
+      "total": 195
+    }
+  },
+  {
+    "id": "msg-project-status-sm",
+    "sizeVariant": "small",
+    "text": "“Thanks everyone for joining the status update. I want to be transparent about where we are, what risks we’re facing, and what that means for our delivery dates. The short version is that we are about two weeks behind the original schedule, and we have one significant risk that could extend that further if we don’t address it.",
+    "composition": {
+      "t1": 30,
+      "t2": 14,
+      "t3": 12,
+      "t4": 1,
+      "total": 57
+    }
+  },
+  {
+    "id": "msg-project-status",
+    "sizeVariant": "medium",
+    "text": "“Thanks everyone for joining the status update. I want to be transparent about where we are, what risks we’re facing, and what that means for our delivery dates. The short version is that we are about two weeks behind the original schedule, and we have one significant risk that could extend that further if we don’t address it. The delay is mainly due to the integration issues with the third party payment provider. Their API changed mid implementation, which forced us to rework parts of our integration layer and retest. The team has resolved the core issues, but we still have a backlog of regression tests to complete before I’m comfortable with a full launch. The key risk is load testing. We haven’t yet validated how the system behaves under peak traffic conditions. If we discover serious performance problems there, we’ll need time to fix them. My proposal is that we formally move the launch date out by two weeks and treat load testing as a top priority in the next sprint. In parallel, we’ll keep stakeholders updated with a short written summary twice a week so there are no surprises. I’d like to pause here for questions and to confirm you’re comfortable with this revised plan.”",
+    "composition": {
+      "t1": 88,
+      "t2": 54,
+      "t3": 51,
+      "t4": 12,
+      "total": 205
+    }
+  },
+  {
+    "id": "msg-property-inspection-sm",
+    "sizeVariant": "small",
+    "text": "“Hi James, just a quick update on the open home schedule for your property at 24 Oak Street. We’ve locked in two inspections for this weekend, Saturday at eleven in the morning and Sunday at two thirty in the afternoon.",
+    "composition": {
+      "t1": 18,
+      "t2": 7,
+      "t3": 10,
+      "t4": 4,
+      "total": 39
+    }
+  },
+  {
+    "id": "msg-property-inspection",
+    "sizeVariant": "medium",
+    "text": "“Hi James, just a quick update on the open home schedule for your property at 24 Oak Street. We’ve locked in two inspections for this weekend, Saturday at eleven in the morning and Sunday at two thirty in the afternoon. I’ll arrive about 20 minutes early each day to open up, turn on all the lights, and make sure everything is presented at its best. After each inspection, I’ll send you a summary of how many groups attended, the general level of interest, and any specific feedback on price, presentation, or concerns. If there are recurring themes, we can talk about small adjustments, such as tweaking the styling or revisiting the guide price. So far, the online listing has had solid views and a good number of saves, which is encouraging. I’ll also be following up directly with a few buyers who have requested more information to encourage them to attend this weekend. If you need to change any of the times, or if there’s anything you’d like me to highlight to buyers, just let me know today and I’ll incorporate it into my walkthrough.”",
+    "composition": {
+      "t1": 82,
+      "t2": 50,
+      "t3": 39,
+      "t4": 12,
+      "total": 183
+    }
+  },
+  {
+    "id": "msg-customer-support-sm",
+    "sizeVariant": "small",
+    "text": "“Hi Maria, Thank you for reaching out and for taking the time to describe what happened. I’m really sorry that your experience with our latest software update has been frustrating, especially the crashes you described while preparing your client reports.",
+    "composition": {
+      "t1": 19,
+      "t2": 8,
+      "t3": 9,
+      "t4": 4,
+      "total": 40
+    }
+  },
+  {
+    "id": "msg-customer-support",
+    "sizeVariant": "medium",
+    "text": "“Hi Maria, Thank you for reaching out and for taking the time to describe what happened. I’m really sorry that your experience with our latest software update has been frustrating, especially the crashes you described while preparing your client reports. That is not the level of reliability we aim to provide. I’ve reviewed your account and the error logs you attached. It looks like the issue is related to a conflict between the new reporting module and older saved templates. Our engineering team is already working on a fix, and we expect to include it in a patch early next week. In the meantime, there’s a workaround that should prevent further crashes, if you create a new template from scratch and copy your content into it, the reports should generate correctly. Given the impact this has had on your work, I’ve added a one month credit to your subscription and flagged your account so we can notify you as soon as the patch is live. I really appreciate your patience while we sort this out. If the workaround doesn’t help or you run into any other problems, please reply directly to this email and I’ll prioritise your case. Kind regards, Daniel Customer Support”",
+    "composition": {
+      "t1": 91,
+      "t2": 50,
+      "t3": 44,
+      "t4": 17,
+      "total": 202
+    }
+  },
+  {
+    "id": "msg-sales-pricing-sm",
+    "sizeVariant": "small",
+    "text": "“Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best. Based on what you told me about having a team of around 15 people and wanting to roll this out across two departments, you’re right in between our Standard and Professional tiers.",
+    "composition": {
+      "t1": 30,
+      "t2": 16,
+      "t3": 13,
+      "t4": 6,
+      "total": 65
+    }
+  },
+  {
+    "id": "msg-sales-pricing",
+    "sizeVariant": "medium",
+    "text": "“Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best. Based on what you told me about having a team of around 15 people and wanting to roll this out across two departments, you’re right in between our Standard and Professional tiers. The Standard plan is 25 dollars per user per month and includes the core features, project boards, basic reporting, and email support. It works well for smaller teams that don’t need advanced permissions or integrations. The Professional plan is 40 dollars per user per month, but it adds single sign on, advanced reporting, and priority support, as well as the integrations with your existing CRM and Slack. Given your focus on visibility across departments and your need to integrate with your current tools, I’d recommend starting with the Professional plan for your core 15 users. We can then add or remove seats monthly as your usage becomes clearer. To reduce your risk, I can also offer a 30 day opt out clause on the annual contract so you can step back if it doesn’t meet expectations. How does that option sound compared to what you had in mind?”",
+    "composition": {
+      "t1": 83,
+      "t2": 61,
+      "t3": 48,
+      "t4": 15,
+      "total": 207
+    }
+  },
+  {
+    "id": "msg-nurse-discharge-sm",
+    "sizeVariant": "small",
+    "text": "“Alright Mr Thompson, before you go home I want to run through your discharge instructions and make sure everything is clear. I’ll also give you a printed copy, but please stop me and ask questions at any point. First, your medication.",
+    "composition": {
+      "t1": 15,
+      "t2": 15,
+      "t3": 7,
+      "t4": 3,
+      "total": 40
+    }
+  },
+  {
+    "id": "msg-nurse-discharge",
+    "sizeVariant": "medium",
+    "text": "“Alright Mr Thompson, before you go home I want to run through your discharge instructions and make sure everything is clear. I’ll also give you a printed copy, but please stop me and ask questions at any point. First, your medication. You’ll be taking the new blood pressure tablet once a day in the morning, ideally at the same time each day. Take it with a glass of water, with or without food. If you ever miss a dose, just take the next one at the usual time, don’t double up. Keep an eye out for dizziness when you stand up quickly, especially in the first week. Second, your wound care. Keep the dressing clean and dry for the next 48 hours, and then you can gently shower over it. Pat it dry, don’t rub. If you notice increased redness, swelling, warmth, or any discharge with an unpleasant smell, call your GP or come back to the emergency department. Finally, if you develop chest pain, shortness of breath, or feel faint, call emergency services immediately. For anything less urgent, use the phone number on this sheet to reach the ward or contact your GP. Can you tell me, in your own words, how you’ll take the new medication?”",
+    "composition": {
+      "t1": 90,
+      "t2": 49,
+      "t3": 46,
+      "t4": 19,
+      "total": 204
+    }
+  },
+  {
+    "id": "msg-lecturer-assignment-sm",
+    "sizeVariant": "small",
+    "text": "“Hi everyone, I’ve seen a few questions about Assignment 2, so I’d like to clarify the requirements and deadlines here for everyone. The assignment is due at eleven fifty nine at night next Friday via the LMS submission link. Late submissions will incur a 5 percent penalty per day, up to a maximum of five days.",
+    "composition": {
+      "t1": 21,
+      "t2": 14,
+      "t3": 13,
+      "t4": 5,
+      "total": 53
+    }
+  },
+  {
+    "id": "msg-lecturer-assignment",
+    "sizeVariant": "medium",
+    "text": "“Hi everyone, I’ve seen a few questions about Assignment 2, so I’d like to clarify the requirements and deadlines here for everyone. The assignment is due at eleven fifty nine at night next Friday via the LMS submission link. Late submissions will incur a 5 percent penalty per day, up to a maximum of five days. After that, we can only accept work with an approved extension. If you need an extension, please email me at least two days before the due date, with a brief explanation. In terms of content, the key focus is on your ability to apply the concepts from Weeks 4 and 5, data modelling, normalisation, and basic query design. You do not need to build a full application. A well structured data model, clear assumptions, and correctly written SQL queries will score much higher than an overcomplicated solution with weak justification. I’ve uploaded a sample report outline and a checklist you can use to review your work before submitting. I strongly recommend running your queries on the sample database we provided to verify they return the expected results. If anything is still unclear after reading the updated brief and checklist, please post your questions in the ‘Assignment 2 Q&A’ thread rather than emailing me individually so everyone can see the answers. Best, Dr Patel”",
+    "composition": {
+      "t1": 80,
+      "t2": 60,
+      "t3": 55,
+      "t4": 14,
+      "total": 209
+    }
+  },
+  {
+    "id": "msg-release-notes-sm",
+    "sizeVariant": "small",
+    "text": "“Release notes, Version 3. 4. 0 Thanks for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header.",
+    "composition": {
+      "t1": 13,
+      "t2": 9,
+      "t3": 15,
+      "t4": 7,
+      "total": 44
+    }
+  },
+  {
+    "id": "msg-release-notes",
+    "sizeVariant": "medium",
+    "text": "“Release notes, Version 3.4.0 Thanks for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - CSV export for reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next.”",
+    "composition": {
+      "t1": 63,
+      "t2": 54,
+      "t3": 43,
+      "t4": 18,
+      "total": 178
+    }
+  },
+  {
+    "id": "msg-portfolio-review-sm",
+    "sizeVariant": "small",
+    "text": "“Hi John, Thanks for coming in today. I’d like to walk through how your portfolio has performed over the past 12 months and what that means for our strategy going forward. Overall, your portfolio is up about 6 percent for the year.",
+    "composition": {
+      "t1": 20,
+      "t2": 10,
+      "t3": 7,
+      "t4": 3,
+      "total": 40
+    }
+  },
+  {
+    "id": "msg-portfolio-review",
+    "sizeVariant": "medium",
+    "text": "“Hi John, Thanks for coming in today. I’d like to walk through how your portfolio has performed over the past 12 months and what that means for our strategy going forward. Overall, your portfolio is up about 6 percent for the year. That’s slightly below the broader market, which returned around 8 percent, but broadly in line with the level of risk we’ve chosen. Your Australian equities have done reasonably well, particularly the larger, dividend paying companies. The area that has lagged is the international shares component, mainly due to currency movements and some volatility in the technology sector. Your defensive assets, like bonds and cash, have done their job of smoothing out the ups and downs, especially during the market dip earlier in the year. The key question is whether your current mix still matches your goals and comfort with risk. You mentioned that retirement is about eight years away and that you’d prefer to avoid big swings, even if that means slightly lower returns. With that in mind, I’d suggest shifting a small portion out of higher risk international shares into more stable income producing assets. I’ll prepare a short statement of advice outlining the proposed changes, the fees, and the risks, and send it to you for review. Once you’re comfortable, we can implement the changes over the next few weeks.”",
+    "composition": {
+      "t1": 87,
+      "t2": 55,
+      "t3": 61,
+      "t4": 18,
+      "total": 221
+    }
+  },
+  {
+    "id": "msg-lawyer-status-sm",
+    "sizeVariant": "small",
+    "text": "“Dear Ms Collins, I am writing to update you on the current status of your employment dispute matter and outline the next steps. Since our last meeting, we have received the employer’s formal response to your claim. As expected, they deny any wrongdoing and argue that your redundancy was purely due to restructuring.",
+    "composition": {
+      "t1": 24,
+      "t2": 10,
+      "t3": 13,
+      "t4": 5,
+      "total": 52
+    }
+  },
+  {
+    "id": "msg-lawyer-status",
+    "sizeVariant": "medium",
+    "text": "“Dear Ms Collins, I am writing to update you on the current status of your employment dispute matter and outline the next steps. Since our last meeting, we have received the employer’s formal response to your claim. As expected, they deny any wrongdoing and argue that your redundancy was purely due to restructuring. However, there are inconsistencies between their written response and the internal emails we obtained through disclosure, particularly regarding the selection criteria used. The mediation session originally scheduled for the 12th has now been confirmed for the 19th, to allow both parties additional time to prepare. Mediation is an important opportunity to explore a negotiated settlement without the cost and uncertainty of proceeding to a full hearing. In our pre mediation submission, we will highlight the discrepancies in the employer’s evidence and the impact the dismissal has had on you, both financially and personally. My recommendation is that we attend the mediation with a clear minimum acceptable settlement in mind, but remain open to reasonable compromise. I will call you later this week to discuss what that minimum looks like and to answer any questions you may have. In the meantime, please let me know if there have been any changes to your employment or financial situation since we last spoke. Yours sincerely, David Nguyen Solicitor”",
+    "composition": {
+      "t1": 97,
+      "t2": 39,
+      "t3": 60,
+      "t4": 20,
+      "total": 216
+    }
+  },
+  {
+    "id": "msg-safety-briefing-sm",
+    "sizeVariant": "small",
+    "text": "“Alright team, before we start today I want to go over the new safety procedures and make sure we’re all on the same page. This will only take a few minutes, but it’s important. First, from today onward, high visibility vests and safety glasses are mandatory at all times on site, not just in the active work zones.",
+    "composition": {
+      "t1": 26,
+      "t2": 22,
+      "t3": 5,
+      "t4": 4,
+      "total": 57
+    }
+  },
+  {
+    "id": "msg-safety-briefing",
+    "sizeVariant": "medium",
+    "text": "“Alright team, before we start today I want to go over the new safety procedures and make sure we’re all on the same page. This will only take a few minutes, but it’s important. First, from today onward, high visibility vests and safety glasses are mandatory at all times on site, not just in the active work zones. We had a near miss last week when a delivery truck entered the site and a worker wasn’t clearly visible. That’s not acceptable, and we’re not going to wait for an actual injury before we change our behaviour. Second, for anyone working at height, harnesses must be clipped on at all times, with no exceptions. If you see someone not clipped in, call it out immediately, regardless of their role or level of experience. We’re all responsible for each other’s safety here. Third, if something looks unsafe, I want you to stop work and talk to your supervisor. You will not get in trouble for raising a safety concern, even if it turns out to be nothing. Finally, we’ll be doing a quick toolbox talk every Monday morning to review any incidents and lessons from the previous week. If you have suggestions for improving safety, bring them to me or your foreman at any time.”",
+    "composition": {
+      "t1": 98,
+      "t2": 57,
+      "t3": 41,
+      "t4": 15,
+      "total": 211
+    }
+  },
+  {
+    "id": "msg-ux-findings-sm",
+    "sizeVariant": "small",
+    "text": "“Thanks for joining. I’d like to share the key findings from the last round of usability testing on the new onboarding flow and suggest some design changes. We tested with eight participants, all within our target user profile. The good news is that everyone understood the overall goal of the flow and was able to complete it within a few minutes.",
+    "composition": {
+      "t1": 28,
+      "t2": 15,
+      "t3": 15,
+      "t4": 3,
+      "total": 61
+    }
+  },
+  {
+    "id": "msg-ux-findings",
+    "sizeVariant": "medium",
+    "text": "“Thanks for joining. I’d like to share the key findings from the last round of usability testing on the new onboarding flow and suggest some design changes. We tested with eight participants, all within our target user profile. The good news is that everyone understood the overall goal of the flow and was able to complete it within a few minutes. However, three recurring issues stood out. First, the account creation step is causing confusion. Six out of eight users hesitated when asked to choose between ‘team’ and ‘individual’ accounts, and two chose the wrong option, then backed out when they realised. A simple description under each option and setting ‘individual’ as the default would likely reduce that friction. Second, the permissions screen is overwhelming. Users described it as ‘a wall of text’ and tended to accept the defaults without reading. We could improve this by grouping related permissions and using clearer headings and icons. Third, the progress indicator disappears on mobile after the first step, which makes users unsure how many steps remain. Keeping a simple three step progress bar visible throughout would help. I’ll share a short summary with proposed design tweaks after this meeting. I’d love to hear your thoughts on feasibility and any technical constraints we should consider before updating the designs.”",
+    "composition": {
+      "t1": 79,
+      "t2": 56,
+      "t3": 57,
+      "t4": 23,
+      "total": 215
+    }
+  },
+  {
+    "id": "msg-campaign-results-sm",
+    "sizeVariant": "small",
+    "text": "“Thanks for making the time. I’d like to walk you through the results of the Q2 lead generation campaign and what we recommend for the next quarter. The campaign ran for eight weeks across paid search, social, and email. Overall, we generated 1,200 marketing qualified leads, which is a 30 percent increase compared to Q1.",
+    "composition": {
+      "t1": 23,
+      "t2": 10,
+      "t3": 16,
+      "t4": 2,
+      "total": 51
+    }
+  },
+  {
+    "id": "msg-campaign-results",
+    "sizeVariant": "medium",
+    "text": "“Thanks for making the time. I’d like to walk you through the results of the Q2 lead generation campaign and what we recommend for the next quarter. The campaign ran for eight weeks across paid search, social, and email. Overall, we generated 1,200 marketing qualified leads, which is a 30 percent increase compared to Q1. The cost per lead dropped from 85 dollars to 62 dollars, mainly due to better targeting and improved ad creative on LinkedIn. However, not all channels performed equally. Paid search delivered the highest volume but lower quality, with a lower conversion rate from lead to opportunity. LinkedIn delivered fewer leads, but they were significantly more likely to progress through the pipeline. Our nurtured email sequences also played a key role in moving leads from initial interest to demo requests. Based on this, my recommendation is that we reallocate part of the paid search budget towards LinkedIn and expand the email nurture program with more role specific content. I’ve included a slide summarising the ROI by channel and a forecast of what we’d expect if we make those adjustments. I’m happy to answer questions about the numbers, the creative we used, or how this aligns with the sales team’s feedback.”",
+    "composition": {
+      "t1": 81,
+      "t2": 33,
+      "t3": 70,
+      "t4": 13,
+      "total": 197
+    }
+  },
+  {
     "id": "sunny-hillside-stream-lg",
     "sizeVariant": "large",
     "text": "The sun comes up slowly over the green hills and light falls across the wide field below. A soft wind moves through the long grass and the tops of the trees begin to sway. Birds sit in the high branches and call out into the clear air. A small stream runs along the far edge of the field where the ground is wet and dark. Tall reeds grow by the water and bend when the wind picks up. The sky turns a deep blue and the few white clouds drift toward the far hills. The whole place feels still and calm. Now and then a leaf falls and turns as it goes down to the ground. Every morning she makes a cup of tea and sits at the table by the window. She puts her hands around the warm cup and looks out at the street. The light comes in slow and soft. After a few minutes she gets up and goes to the kitchen to make some food. She takes bread from the bag on the counter and puts it in the pan. When the bread is ready she puts it on a plate and takes it back to the table. She sits down again and eats in the quiet of the room.",
@@ -777,6 +1977,54 @@
       "t3": 70,
       "t4": 8,
       "total": 215
+    }
+  },
+  {
+    "id": "magical-garden-lg",
+    "sizeVariant": "large",
+    "text": "Tom only liked plain food. He refused to try anything new. One day, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me? ” A strawberry added, “We might surprise you. ” Tom hesitated but took a small bite. “That is sweet! ” He tried more. Each food had a different taste and story. By the end of the day, Tom was smiling. “I did not know food could be this fun. ” When he returned home, Tom asked to try new meals. In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery. “This is perfect,” the child said. For the first time, Pip felt proud.",
+    "composition": {
+      "t1": 58,
+      "t2": 36,
+      "t3": 44,
+      "t4": 9,
+      "total": 147
+    }
+  },
+  {
+    "id": "msg-blood-test-results-lg",
+    "sizeVariant": "large",
+    "text": "“Hi Sarah, thanks for coming in today. I wanted to walk you through your recent blood test results and make sure you understand what they mean and what we should do next. Overall, most of your results are within the normal range, which is good news. Your kidney and liver function look fine, and your electrolytes are stable. There are two things I want to focus on. First, your cholesterol is higher than we’d like, particularly your LDL, which is sometimes called the ‘bad’ cholesterol. That doesn’t mean there’s an emergency, but it does increase your long term risk of heart disease if we leave it as is. Second, your fasting blood sugar is in the pre diabetic range. Again, not diabetes yet, but a clear warning sign. My recommendation is that we start with lifestyle changes, adjusting your diet, increasing physical activity, and looking at weight management if needed. I’ll give you some written guidance and a referral to a dietitian if you’d like. We’ll repeat these tests in about three months to see how things are tracking. If the numbers are still high at that point, we can talk about whether medication makes sense. How does that sound to you so far? “Thanks everyone for joining the status update.",
+    "composition": {
+      "t1": 91,
+      "t2": 56,
+      "t3": 46,
+      "t4": 15,
+      "total": 208
+    }
+  },
+  {
+    "id": "msg-property-inspection-lg",
+    "sizeVariant": "large",
+    "text": "“Hi James, just a quick update on the open home schedule for your property at 24 Oak Street. We’ve locked in two inspections for this weekend, Saturday at eleven in the morning and Sunday at two thirty in the afternoon. I’ll arrive about 20 minutes early each day to open up, turn on all the lights, and make sure everything is presented at its best. After each inspection, I’ll send you a summary of how many groups attended, the general level of interest, and any specific feedback on price, presentation, or concerns. If there are recurring themes, we can talk about small adjustments, such as tweaking the styling or revisiting the guide price. So far, the online listing has had solid views and a good number of saves, which is encouraging. I’ll also be following up directly with a few buyers who have requested more information to encourage them to attend this weekend. If you need to change any of the times, or if there’s anything you’d like me to highlight to buyers, just let me know today and I’ll incorporate it into my walkthrough. “Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best.",
+    "composition": {
+      "t1": 98,
+      "t2": 59,
+      "t3": 47,
+      "t4": 13,
+      "total": 217
+    }
+  },
+  {
+    "id": "msg-lecturer-assignment-lg",
+    "sizeVariant": "large",
+    "text": "“Hi everyone, I’ve seen a few questions about Assignment 2, so I’d like to clarify the requirements and deadlines here for everyone. The assignment is due at eleven fifty nine at night next Friday via the LMS submission link. Late submissions will incur a 5 percent penalty per day, up to a maximum of five days. After that, we can only accept work with an approved extension. If you need an extension, please email me at least two days before the due date, with a brief explanation. In terms of content, the key focus is on your ability to apply the concepts from Weeks 4 and 5, data modelling, normalisation, and basic query design. You do not need to build a full application. A well structured data model, clear assumptions, and correctly written SQL queries will score much higher than an overcomplicated solution with weak justification. I’ve uploaded a sample report outline and a checklist you can use to review your work before submitting. I strongly recommend running your queries on the sample database we provided to verify they return the expected results. If anything is still unclear after reading the updated brief and checklist, please post your questions in the ‘Assignment 2 Q&A’ thread rather than emailing me individually so everyone can see the answers.",
+    "composition": {
+      "t1": 80,
+      "t2": 59,
+      "t3": 54,
+      "t4": 13,
+      "total": 206
     }
   },
   {
@@ -840,15 +2088,135 @@
     }
   },
   {
+    "id": "penguin-who-found-his-strength-lg",
+    "sizeVariant": "large",
+    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. “You saved us,” they said. Pico realized that being different was not a weakness. A quiet student named Lila downloaded a school app where people posted anonymous confessions. At first, she just read them late at night, fascinated by how honest everyone seemed when no one knew their name. Eventually, she started posting too, small things at first, then sharper comments about people she barely knew. The likes came quickly. It felt good to be noticed, even invisibly. One day, a rumor appeared about a classmate. It spread faster than anything Lila had seen. Screenshots, whispers, sideways glances in class. The student stopped showing up. Lila realized the rumor had started from a post she had written as a joke. She stared at her phone, refreshing the feed, watching the damage grow. For the first time, the app felt heavy in her hands. That night, she typed a new post, fingers shaking, and hovered over the submit button. This time, it was not a joke.",
+    "composition": {
+      "t1": 75,
+      "t2": 57,
+      "t3": 57,
+      "t4": 29,
+      "total": 218
+    }
+  },
+  {
+    "id": "teen-ai-shortcuts-lg",
+    "sizeVariant": "large",
+    "text": "Sophie discovered early that AI tools could do her assignments in seconds. Essays, summaries, even problem sets. She checked them quickly, submitted them, and watched her grades climb. Teachers praised her. Classmates asked for help. She smiled and played along. Months passed. The work got harder. One day, during a timed test without access to her usual tools, she stared at the questions. They looked familiar, but her mind felt blank. Her hand hovered over the page. Around her, pens scratched steadily. For the first time, she felt the gap between what she had submitted and what she actually knew. After school, she opened her laptop, but not to generate answers. She pulled up the basics, starting from the beginning. It felt slow and frustrating. But it was the first time the work felt like it belonged to her. When Alex transferred schools, he decided to be someone new. More confident, more interesting. He exaggerated stories, invented experiences, polished every detail. People liked him. He was invited to things quickly. But every conversation became a careful act. He had to remember what he had told each person. Small contradictions started slipping through. His new friends began asking questions that went deeper than his stories could handle. One afternoon, someone laughed and called out one of his inconsistencies. The group went quiet.",
+    "composition": {
+      "t1": 68,
+      "t2": 56,
+      "t3": 71,
+      "t4": 25,
+      "total": 220
+    }
+  },
+  {
+    "id": "teen-overcommitted-lg",
+    "sizeVariant": "large",
+    "text": "Priya said yes to everything. Extra projects, helping friends, family responsibilities, clubs. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed. Then sleep slipped. Assignments piled up. She forgot small things, then bigger ones. One day, she missed a major deadline. Not because she did not care, but because she simply ran out of time. The disappointment hit harder than she expected. That evening, she sat with her list of commitments and realized it was impossible to do all of them well. Something had to change. The next time someone asked for help, she hesitated. Saying no felt uncomfortable, almost wrong. But also, a little relieving. It started as a joke. A group chat without Sam, just for “fun. ” They shared memes, made light comments, nothing serious. At first. Over time, the tone shifted. Small jokes turned sharper. Screenshots were shared. Conversations about Sam replaced conversations with him. Meanwhile, in the main chat, everything seemed normal. One day, Sam stopped replying. Then stopped showing up to hang out. Someone in the group noticed. They scrolled back through the messages in the private chat, seeing them differently now. The jokes did not look harmless anymore. When they finally reached out, the silence on the other end felt heavier than expected.",
+    "composition": {
+      "t1": 66,
+      "t2": 63,
+      "t3": 69,
+      "t4": 25,
+      "total": 223
+    }
+  },
+  {
+    "id": "teen-avoiding-failure-lg",
+    "sizeVariant": "large",
+    "text": "Lucas avoided anything he might fail at. New sports, harder classes, even small challenges. If he did not try, he could not mess up. It worked, in a way. He stayed comfortable. Then a group project forced him into unfamiliar territory. Presenting, building, speaking up. Things he had always sidestepped. He stumbled through it. Forgot lines, made mistakes, felt his face burn in front of the class. But something unexpected happened. It ended, and the world did not. Afterward, a classmate told him it was not as bad as he thought. That night, Lucas thought about how much energy he had spent avoiding moments like that. And how, despite everything, he was still standing. Emma had heard enough about Ryan to form a clear picture. Difficult, rude, not worth the effort. She avoided him without thinking twice. When they were assigned to work together, she was annoyed. At first, their conversations were short and stiff. But as the project went on, she noticed things that did not match the stories. He listened carefully. He put in effort. He was quieter than expected, not hostile. One afternoon, he mentioned something about his past that explained more than any rumor had. Emma realized how quickly she had accepted a version of him without ever checking if it was true.",
+    "composition": {
+      "t1": 77,
+      "t2": 64,
+      "t3": 50,
+      "t4": 26,
+      "total": 217
+    }
+  },
+  {
+    "id": "real-apartment-traces-lg",
+    "sizeVariant": "large",
+    "text": "The apartment was mostly clean, but not empty. In the back of a kitchen drawer, Alex found a single key with no label. In the wardrobe, a forgotten jacket, too small to be his. On the top shelf, a box of photos, left behind. He told himself he should throw them out. Instead, he sat on the floor and looked. A beach trip. A birthday cake. A blurry group shot in a living room that looked suspiciously like this one. The previous tenant had lived a full life here. Not in a dramatic way. Just in small, ordinary moments. Alex started noticing other things. A faint mark on the wall where something once hung. A loose tile near the sink. Evidence of routines he would never fully understand. At night, the apartment felt less like a blank space and more like a continuation. He wondered what traces he would leave behind. What someone else might find. Whether they would pause, like he had, and try to piece together a life from fragments. On Sunday, he packed the photos back into the box. He did not throw them away. Not yet. The conversation started as a joke. “We should get a dog,” Sam said, scrolling through photos. “Absolutely not,” Priya replied, without looking up. Ten minutes later, they were deep in discussion.",
+    "composition": {
+      "t1": 81,
+      "t2": 61,
+      "t3": 53,
+      "t4": 21,
+      "total": 216
+    }
+  },
+  {
+    "id": "real-3d-print-lg",
+    "sizeVariant": "large",
+    "text": "Lucas spent three weeks perfecting it. A small, intricate 3D print. Designed from scratch. Tuned settings, tested materials, adjusted tolerances. It was for his friend Olivia. A custom phone stand based on a joke they had shared months ago. When he finally handed it to her, he felt a quiet pride. “That’s so cool,” she said, turning it over. “Did you buy this? ” Lucas paused. “I made it. ” “Oh wow,” she said, smiling. “That’s impressive. ” But the moment had already passed. She set it down gently, like any other object. Later, Lucas wondered why it bothered him. She liked it. She appreciated it. But she had not seen the process. The failed prints. The small decisions. To her, it was a thing. To him, it was hours of thought. A few days later, she sent him a photo. The stand on her desk, holding her phone. “Using it every day,” she wrote. Lucas smiled. Maybe appreciation did not always look like recognition. The numbers were not bad. But they were not good enough. Early traction had given Leo confidence. Now, growth had plateaued. “Maybe we pivot,” his co founder suggested. Leo resisted. The idea had been his. The direction, his vision. Changing it felt like admitting failure. But the data was clear. Users were not engaging the way they expected.",
+    "composition": {
+      "t1": 66,
+      "t2": 64,
+      "t3": 56,
+      "t4": 29,
+      "total": 215
+    }
+  },
+  {
+    "id": "real-online-to-real-lg",
+    "sizeVariant": "large",
+    "text": "It started with a comment on a forum. Then a reply. Then a conversation. Over months, messages became routine. Daily check ins. Shared thoughts. They knew each other’s habits, preferences, small details. But they had never met. “Maybe we should,” she suggested one day. He hesitated. Online, everything felt controlled. Curated. Meeting would make it real. And uncertain. “What if it’s different? ” he asked. “It probably will be,” she said. That was the point. They chose a date. A place. In the days leading up, he found himself overthinking. Replaying conversations. Imagining outcomes. When the day arrived, he almost canceled. But he did not. Seeing her in person was both familiar and new. The same voice. The same humor. Just present. The conversation picked up where it had left off. Not perfect. Not seamless. But real. And that was enough. “Alright team, let’s kick off planning. The main thing I want from this session is a realistic, agreed view of what we can deliver next sprint, not an aspirational wish list. Product has called out two priorities, improving onboarding conversion and stabilising the reporting backend. For onboarding, the new signup flow and the A B test framework are top of the list. For reporting, we need to address the timeout issues on the aggregated stats endpoint before we stack more features on it.",
+    "composition": {
+      "t1": 72,
+      "t2": 61,
+      "t3": 58,
+      "t4": 28,
+      "total": 219
+    }
+  },
+  {
+    "id": "msg-teacher-email-lg",
+    "sizeVariant": "large",
+    "text": "“Dear Mr and Mrs Lee, I wanted to take a moment to update you on Emma’s progress in Year 4 and suggest a few ways you can support her learning at home. Overall, Emma is a curious and engaged student who participates well in class discussions and works cooperatively with her peers. In literacy, Emma reads fluently and shows good comprehension when we talk about stories, but she sometimes rushes through written responses and leaves out detail. At home, you might encourage her to slow down by asking follow up questions such as ‘why do you think that? ’ or ‘can you give an example from the story? ’ In mathematics, she has a solid grasp of addition and subtraction, and we are currently working on multiplication tables. Regular practice with times tables, even five to ten minutes a day, will help build her confidence. Socially, Emma is kind and inclusive, and other students enjoy working with her. I am very pleased with her attitude in class. If you have any questions or would like to schedule a meeting to discuss this in more detail, please let me know and we can arrange a suitable time. “Hi Maria, Thank you for reaching out and for taking the time to describe what happened.",
+    "composition": {
+      "t1": 91,
+      "t2": 54,
+      "t3": 45,
+      "t4": 17,
+      "total": 207
+    }
+  },
+  {
+    "id": "msg-nurse-discharge-lg",
+    "sizeVariant": "large",
+    "text": "“Alright Mr Thompson, before you go home I want to run through your discharge instructions and make sure everything is clear. I’ll also give you a printed copy, but please stop me and ask questions at any point. First, your medication. You’ll be taking the new blood pressure tablet once a day in the morning, ideally at the same time each day. Take it with a glass of water, with or without food. If you ever miss a dose, just take the next one at the usual time, don’t double up. Keep an eye out for dizziness when you stand up quickly, especially in the first week. Second, your wound care. Keep the dressing clean and dry for the next 48 hours, and then you can gently shower over it. Pat it dry, don’t rub. If you notice increased redness, swelling, warmth, or any discharge with an unpleasant smell, call your GP or come back to the emergency department. Finally, if you develop chest pain, shortness of breath, or feel faint, call emergency services immediately. For anything less urgent, use the phone number on this sheet to reach the ward or contact your GP. Can you tell me, in your own words, how you’ll take the new medication? “Release notes, Version 3. 4. 0 Thanks for using our app.",
+    "composition": {
+      "t1": 92,
+      "t2": 50,
+      "t3": 48,
+      "t4": 22,
+      "total": 212
+    }
+  },
+  {
+    "id": "msg-portfolio-review-lg",
+    "sizeVariant": "large",
+    "text": "“Hi John, Thanks for coming in today. I’d like to walk through how your portfolio has performed over the past 12 months and what that means for our strategy going forward. Overall, your portfolio is up about 6 percent for the year. That’s slightly below the broader market, which returned around 8 percent, but broadly in line with the level of risk we’ve chosen. Your Australian equities have done reasonably well, particularly the larger, dividend paying companies. The area that has lagged is the international shares component, mainly due to currency movements and some volatility in the technology sector. Your defensive assets, like bonds and cash, have done their job of smoothing out the ups and downs, especially during the market dip earlier in the year. The key question is whether your current mix still matches your goals and comfort with risk. You mentioned that retirement is about eight years away and that you’d prefer to avoid big swings, even if that means slightly lower returns. With that in mind, I’d suggest shifting a small portion out of higher risk international shares into more stable income producing assets. I’ll prepare a short statement of advice outlining the proposed changes, the fees, and the risks, and send it to you for review. Once you’re comfortable, we can implement the changes over the next few weeks.",
+    "composition": {
+      "t1": 87,
+      "t2": 55,
+      "t3": 61,
+      "t4": 18,
+      "total": 221
+    }
+  },
+  {
     "id": "coral-reef-biome-lg",
     "sizeVariant": "large",
-    "text": "Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Storm-generated turbulence fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the plankton-rich thermocline, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest. Medieval masons dressed each block of ashlar with iron chisels, working each face to a flat and even surface before setting it in lime mortar. At corners, large quoins were laid in alternating stretcher and header bond to tie the wall and resist lateral thrust. Above doorways and window openings, a lintel of dressed stone or a row of wedge shaped voussoirs formed an arch that transferred the load to the piers on either side. Corbels of projecting masonry supported timber floor beams where no column could stand below.",
+    "text": "Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Turbulence from storms fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the thermocline dense with plankton, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest. Medieval masons dressed each block of ashlar with iron chisels, working each face to a flat and even surface before setting it in lime mortar. At corners, large quoins were laid in alternating stretcher and header bond to tie the wall and resist lateral thrust. Above doorways and window openings, a lintel of dressed stone or a row of wedge shaped voussoirs formed an arch that transferred the load to the piers on either side.",
     "composition": {
       "t1": 56,
-      "t2": 22,
-      "t3": 49,
-      "t4": 96,
-      "total": 223
+      "t2": 19,
+      "t3": 45,
+      "t4": 92,
+      "total": 212
     }
   },
   {
@@ -900,6 +2268,126 @@
     }
   },
   {
+    "id": "traveling-cloud-lg",
+    "sizeVariant": "large",
+    "text": "Luma was a small, fluffy cloud who never liked to move. While the other clouds drifted across the sky, exploring mountains, oceans, and cities, Luma stayed in the same quiet corner. “I like it here,” Luma would say. “It is safe. ” One day, a strong wind came rushing through the sky. It gently pushed Luma along. At first, Luma felt scared. “I do not want to go,” Luma whispered. But as Luma drifted, something surprising happened. Below, Luma saw sparkling rivers, tall green forests, and children flying kites. The world was bigger and more beautiful than Luma had ever imagined. Soon, Luma met other clouds who shared stories of where they had been. They laughed and floated together, and Luma began to enjoy the journey. By the time the wind slowed, Luma realized something important. “Moving is not so scary,” Luma said. “It helps me see new things and make new friends. ” From that day on, Luma no longer stayed in one place. Robo was a helpful robot who could clean, cook, and even solve puzzles. But there was one thing Robo could not do. Robo did not understand jokes. Whenever the children laughed, Robo would ask, “Why is that funny? ” but no one could explain it in a way Robo understood. So Robo set out on a journey.",
+    "composition": {
+      "t1": 76,
+      "t2": 43,
+      "t3": 59,
+      "t4": 39,
+      "total": 217
+    }
+  },
+  {
+    "id": "forest-after-the-storm-lg",
+    "sizeVariant": "large",
+    "text": "In a peaceful forest, animals lived happily together. There was Mia the squirrel, Ben the beaver, and Leo the deer. One night, a great storm came. Wind howled, rain poured, and trees shook. When morning arrived, the forest was messy and broken. Mia’s tree was damaged. Ben’s dam had fallen apart. Leo’s favorite meadow was covered in branches. At first, everyone felt sad and overwhelmed. “We cannot fix this,” Mia said. But Ben spoke up. “We can, if we work together. ” So they began. Ben rebuilt the dam with help from Leo, who carried heavy branches. Mia gathered small twigs and leaves. Birds helped by finding lost materials. It was not easy, but little by little, the forest began to heal. Soon, the dam was strong again. Trees were cleared, and new homes were built. The animals looked around proudly. “We did this together,” Leo said. Tara loved inventing things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt. Tara quickly built a machine to water it perfectly. But the plant still looked weak. “I do not understand,” Tara said. Her grandmother smiled. “Some things need time. ” Tara watched the plant carefully.",
+    "composition": {
+      "t1": 60,
+      "t2": 44,
+      "t3": 78,
+      "t4": 35,
+      "total": 217
+    }
+  },
+  {
+    "id": "lost-star-lg",
+    "sizeVariant": "large",
+    "text": "One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and alone. “I need to go home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry,” Lily said. “I will help you. ” Lily tried many things. She climbed a hill, built a tall stack of stones, and even made a kite to carry Nia upward. Nothing worked. Days passed, but Lily did not give up. Finally, they met an old owl who said, “Stars return when they are ready. Be patient. ” One quiet night, Nia began to glow brighter than ever. Slowly, Nia lifted into the sky. “Thank you,” Nia called. Lily waved. She felt happy, even though she would miss her new friend. Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small. ” Dax practiced jumping. Then gliding. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit. But one day, Dax flapped hard and lifted off the ground. “I am flying! ” Dax shouted. It was not perfect, but it was enough.",
+    "composition": {
+      "t1": 58,
+      "t2": 45,
+      "t3": 57,
+      "t4": 42,
+      "total": 202
+    }
+  },
+  {
+    "id": "arguing-siblings-lg",
+    "sizeVariant": "large",
+    "text": "Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “This way is better,” Lena said. “No, mine is,” Max replied. Soon, nothing was getting done. Finally, they decided to listen to each other. Lena designed the structure. Max gathered materials. As they worked together, the treehouse slowly took shape. When it was finished, they both smiled. “We did it together,” Max said. Ethan wanted to be known. Every video he posted had to be bigger than the last. At first it was harmless pranks and challenges, but views dropped unless he pushed further. Climbing higher, jumping farther, risking more. His followers loved it. Comments flooded in telling him to go even bigger. One afternoon, he set up his camera for a stunt he had barely practiced. The fall came fast. Pain replaced the rush, and the next thing he knew, he was in a hospital bed with a broken leg and a silent phone. Days passed. Then weeks. Without constant uploads, his followers moved on. The numbers dropped. Bored and restless, he started sketching, something he had not done in years. His sister joined him sometimes. They laughed more than he expected. When he finally picked up his phone again, he hesitated before recording.",
+    "composition": {
+      "t1": 81,
+      "t2": 47,
+      "t3": 57,
+      "t4": 35,
+      "total": 220
+    }
+  },
+  {
+    "id": "teen-scholarship-lg",
+    "sizeVariant": "large",
+    "text": "Maya and Jordan had been inseparable for years. When the final year scholarship was announced, they both applied, both confident. At first, they helped each other prepare. Shared notes, practiced interviews. Then small things changed. Maya “forgot” to send a document. Jordan gave vague advice instead of real help. Neither mentioned it. The tension grew quietly. They smiled in public, competed in private. By the time interviews came, both were more focused on beating the other than doing their best. When results were announced, neither of their names was called. They stood side by side in the hallway afterward, the silence louder than any argument. All the small choices added up, and now there was nothing to show for it. Maya finally spoke, but not about the scholarship. Noah felt unstoppable in the game. Online, he was a leader, respected, powerful. People listened to him. Real life felt smaller in comparison, slower and less forgiving. He spent every spare hour logged in. Then one morning, the servers went down. At first, it seemed temporary. Hours turned into days. An announcement finally confirmed it. The game was gone. Noah sat staring at his screen, refreshing out of habit. There was nowhere to log in. Without the game, time stretched awkwardly. He did not know what to do with himself.",
+    "composition": {
+      "t1": 82,
+      "t2": 42,
+      "t3": 59,
+      "t4": 35,
+      "total": 218
+    }
+  },
+  {
+    "id": "real-accidental-feature-lg",
+    "sizeVariant": "large",
+    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed. Then again. And again. Users were posting screenshots. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It was not intentional. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He read comments. “Finally, software that feels human. ” “Please don’t remove this. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie. Maya suggested it casually. “Let’s do a proper weekend like we used to. No plans. Just vibes.",
+    "composition": {
+      "t1": 69,
+      "t2": 45,
+      "t3": 51,
+      "t4": 36,
+      "total": 201
+    }
+  },
+  {
+    "id": "real-honest-feedback-lg",
+    "sizeVariant": "large",
+    "text": "Ethan had rehearsed the conversation three times before calling Liam into the meeting room. Liam was easy to like. Quick with jokes, always positive, never defensive. Which made this harder. “So,” Ethan began, “I wanted to talk about your recent work. ” Liam nodded, smiling. “Yeah, for sure. ” Ethan hesitated. The truth felt heavy. Deadlines missed. Details overlooked. Nothing catastrophic, just consistently not enough. “You’re great to work with,” Ethan said first, and immediately regretted it. It sounded like a preface. Liam’s smile tightened slightly. “But we need to see more consistency,” Ethan continued. “There have been a few things slipping through. ” There was a pause. Not awkward, just quiet. “Okay,” Liam said. “That’s fair. ” No defensiveness. No excuses. Just acceptance. That somehow made it worse. After the meeting, Ethan sat alone, replaying it. He wondered if he had been too soft. Or too vague. Later that afternoon, Liam sent a message. “Thanks for the feedback. I’ve started fixing a few things already. ” Ethan stared at the screen. Being honest had not broken anything. If anything, it had cleared something unspoken. He realized leadership was less about having the perfect words, and more about saying the necessary ones. Noah liked the quiet between deliveries. The brief walks from his car to someone else’s front door.",
+    "composition": {
+      "t1": 67,
+      "t2": 51,
+      "t3": 53,
+      "t4": 42,
+      "total": 213
+    }
+  },
+  {
+    "id": "real-app-detox-lg",
+    "sizeVariant": "large",
+    "text": "Deleting the apps took less than a minute. Emma expected it to feel dramatic. It did not. Just a quiet absence. The first day, she reached for her phone constantly. Waiting in line. Sitting on the couch. Even during conversations. By day three, something shifted. She noticed how often she filled silence with scrolling. Without it, moments stretched. Sometimes uncomfortably. She started paying attention differently. To how long a walk actually felt. To how conversations unfolded without interruption. At dinner, she did not check her phone once. Her friend noticed. “You seem present,” he said. Emma laughed. “I deleted everything. ” “Everything? ” “Everything. ” By the end of the week, she felt both lighter and slightly disconnected. Like she had stepped out of a fast moving stream. When she reinstalled the apps, nothing had changed. Same posts. Same updates. But she had. She hesitated before opening them. For the first time, it felt like a choice. They had worked together for over a year, but only through messages. “Quick sync? ” “Looks good to me. ” “Pushed a fix. ” When they finally met in person, both smiled too formally. “You’re taller than I expected,” Jenna said. “You type faster than I thought,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation.",
+    "composition": {
+      "t1": 56,
+      "t2": 63,
+      "t3": 58,
+      "t4": 39,
+      "total": 216
+    }
+  },
+  {
+    "id": "real-group-trip-lg",
+    "sizeVariant": "large",
+    "text": "Planning the trip was easy. Group chat, shared links, excited messages. Actually agreeing on details was not. “Let’s do something relaxed,” Tom said. “I want activities,” Sarah replied. “I just need a break,” Alex added. Dates shifted. Budgets stretched. Expectations diverged. By the time they booked anything, the excitement had dulled slightly. On the trip, the differences became clearer. Some woke early. Others slept in. Some wanted to explore. Others wanted to rest. Small tensions surfaced. Nothing dramatic, just subtle misalignments. One evening, they sat together, quieter than expected. “This is not what I pictured,” Sarah admitted. “Yeah,” Tom said. “Same. ” Alex shrugged. “It’s still good though. ” And it was. Just not in the way they imagined. The trip was less about shared experience and more about understanding how much they had changed. Friendship had not disappeared. It had simply evolved. The first week was easy. “No spending” sounded extreme, but manageable. Cook at home, skip coffee, avoid impulse buys. By week two, the cracks showed. Convenience had been invisible until it was gone. No quick lunches. No last minute purchases. Every decision required planning. Emma noticed how often she spent money to save time. Or effort. Cooking became routine. Slower, but satisfying. She also noticed boredom. Shopping had filled gaps she had not recognized.",
+    "composition": {
+      "t1": 54,
+      "t2": 53,
+      "t3": 54,
+      "t4": 51,
+      "total": 212
+    }
+  },
+  {
+    "id": "real-gaming-after-baby-lg",
+    "sizeVariant": "large",
+    "text": "After the baby arrived, everything shifted. Time became fragmented. Sleep unpredictable. Ryan tried to hold onto his evening gaming sessions. A small piece of his old routine. At first, it worked. Short sessions, headphones on, volume low. But interruptions were constant. A cry. A bottle. A moment that could not wait. He found himself pausing mid game, often. At first, it was frustrating. Later, it became normal. One night, he realized he had not played in days. Instead, he had learned new rhythms. Small routines built around someone else’s needs. When he finally picked up the controller again, it felt different. Less urgent. Less necessary. Still enjoyable, just smaller. He did not mind as much as he expected. Something else had taken priority. Weddings were strange alone. Clara watched couples arrive together, effortlessly paired. She found her seat, smiled politely, and prepared for a long evening. At first, conversations were surface level. Names, jobs, how they knew the couple. Then, slowly, they deepened. A woman at her table spoke about changing careers at 29. A man shared a story about moving cities without knowing anyone. Clara listened, then shared her own experiences. Without a familiar group, she was more open. More willing to engage. By dessert, the table felt less like strangers. Just people, temporarily connected. As the night ended, they exchanged brief goodbyes.",
+    "composition": {
+      "t1": 56,
+      "t2": 48,
+      "t3": 75,
+      "t4": 38,
+      "total": 217
+    }
+  },
+  {
     "id": "sunny-hillside-stream-xl",
     "sizeVariant": "xlarge",
     "text": "The sun comes up slowly over the green hills and light falls across the wide field below. A soft wind moves through the long grass and the tops of the trees begin to sway. Birds sit in the high branches and call out into the clear air. A small stream runs along the far edge of the field where the ground is wet and dark. Tall reeds grow by the water and bend when the wind picks up. The sky turns a deep blue and the few white clouds drift toward the far hills. The whole place feels still and calm. Now and then a leaf falls and turns as it goes down to the ground. Every morning she makes a cup of tea and sits at the table by the window. She puts her hands around the warm cup and looks out at the street. The light comes in slow and soft. After a few minutes she gets up and goes to the kitchen to make some food. She takes bread from the bag on the counter and puts it in the pan. When the bread is ready she puts it on a plate and takes it back to the table. She sits down again and eats in the quiet of the room. Then she picks up her book and reads for a while before the day gets going. The sky grows dark and the stars come out one by one. The moon is low and its light falls soft on the land below. A cold wind moves through the long grass and the trees stand still at the edge of the field. Far above, the deep black of night stretches wide from one end of the sky to the other. No clouds pass and no birds call. The air is clear and the stars shine bright and hard. The moon moves slow across the sky and its pale light covers the ground in a thin white glow. All things rest and the world is still and quiet under the wide night sky.",
@@ -933,6 +2421,42 @@
       "t3": 107,
       "t4": 20,
       "total": 368
+    }
+  },
+  {
+    "id": "baker-making-bread-xl",
+    "sizeVariant": "xlarge",
+    "text": "A baker puts flour and water into a large bowl. She adds a little yeast and some salt, then mixes it all until it comes together into a soft mass. She tips the mass onto the table and starts to press and fold it with her hands. She works it back and forth, over and over, until it feels smooth. Then she forms it into a round ball and leaves it in the bowl to rest. The ball grows in the warm kitchen and gets much bigger over time. When it has grown enough she presses it flat, shapes it into a loaf, and slides it into the hot oven. The bread turns a deep golden color as it bakes. The good smell fills the whole room. She takes the loaf out and sets it on a rack to cool. Tom only liked plain food. He refused to try anything new. One day, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me? ” A strawberry added, “We might surprise you. ” Tom hesitated but took a small bite. “That is sweet! ” He tried more. Each food had a different taste and story. By the end of the day, Tom was smiling. “I did not know food could be this fun. ” When he returned home, Tom asked to try new meals. In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery. “This is perfect,” the child said. For the first time, Pip felt proud.",
+    "composition": {
+      "t1": 115,
+      "t2": 66,
+      "t3": 88,
+      "t4": 17,
+      "total": 286
+    }
+  },
+  {
+    "id": "msg-blood-test-results-xl",
+    "sizeVariant": "xlarge",
+    "text": "“Hi Sarah, thanks for coming in today. I wanted to walk you through your recent blood test results and make sure you understand what they mean and what we should do next. Overall, most of your results are within the normal range, which is good news. Your kidney and liver function look fine, and your electrolytes are stable. There are two things I want to focus on. First, your cholesterol is higher than we’d like, particularly your LDL, which is sometimes called the ‘bad’ cholesterol. That doesn’t mean there’s an emergency, but it does increase your long term risk of heart disease if we leave it as is. Second, your fasting blood sugar is in the pre diabetic range. Again, not diabetes yet, but a clear warning sign. My recommendation is that we start with lifestyle changes, adjusting your diet, increasing physical activity, and looking at weight management if needed. I’ll give you some written guidance and a referral to a dietitian if you’d like. We’ll repeat these tests in about three months to see how things are tracking. If the numbers are still high at that point, we can talk about whether medication makes sense. How does that sound to you so far? “Thanks everyone for joining the status update. I want to be transparent about where we are, what risks we’re facing, and what that means for our delivery dates. The short version is that we are about two weeks behind the original schedule, and we have one significant risk that could extend that further if we don’t address it. The delay is mainly due to the integration issues with the third party payment provider. Their API changed mid implementation, which forced us to rework parts of our integration layer and retest. The team has resolved the core issues, but we still have a backlog of regression tests to complete before I’m comfortable with a full launch. The key risk is load testing. We haven’t yet validated how the system behaves under peak traffic conditions. If we discover serious performance problems there, we’ll need time to fix them. My proposal is that we formally move the launch date out by two weeks and treat load testing as a top priority in the next sprint. In parallel, we’ll keep stakeholders updated with a short written summary twice a week so there are no surprises. I’d like to pause here for questions and to confirm you’re comfortable with this revised plan. “Hi James, just a quick update on the open home schedule for your property at 24 Oak Street.",
+    "composition": {
+      "t1": 185,
+      "t2": 113,
+      "t3": 97,
+      "t4": 28,
+      "total": 423
+    }
+  },
+  {
+    "id": "msg-sales-pricing-xl",
+    "sizeVariant": "xlarge",
+    "text": "“Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best. Based on what you told me about having a team of around 15 people and wanting to roll this out across two departments, you’re right in between our Standard and Professional tiers. The Standard plan is 25 dollars per user per month and includes the core features, project boards, basic reporting, and email support. It works well for smaller teams that don’t need advanced permissions or integrations. The Professional plan is 40 dollars per user per month, but it adds single sign on, advanced reporting, and priority support, as well as the integrations with your existing CRM and Slack. Given your focus on visibility across departments and your need to integrate with your current tools, I’d recommend starting with the Professional plan for your core 15 users. We can then add or remove seats monthly as your usage becomes clearer. To reduce your risk, I can also offer a 30 day opt out clause on the annual contract so you can step back if it doesn’t meet expectations. How does that option sound compared to what you had in mind? “Hi everyone, I’ve seen a few questions about Assignment 2, so I’d like to clarify the requirements and deadlines here for everyone. The assignment is due at eleven fifty nine at night next Friday via the LMS submission link. Late submissions will incur a 5 percent penalty per day, up to a maximum of five days. After that, we can only accept work with an approved extension. If you need an extension, please email me at least two days before the due date, with a brief explanation. In terms of content, the key focus is on your ability to apply the concepts from Weeks 4 and 5, data modelling, normalisation, and basic query design. You do not need to build a full application. A well structured data model, clear assumptions, and correctly written SQL queries will score much higher than an overcomplicated solution with weak justification. I’ve uploaded a sample report outline and a checklist you can use to review your work before submitting. I strongly recommend running your queries on the sample database we provided to verify they return the expected results. If anything is still unclear after reading the updated brief and checklist, please post your questions in the ‘Assignment 2 Q&A’ thread rather than emailing me individually so everyone can see the answers.",
+    "composition": {
+      "t1": 163,
+      "t2": 120,
+      "t3": 102,
+      "t4": 28,
+      "total": 413
     }
   },
   {
@@ -972,15 +2496,99 @@
     }
   },
   {
+    "id": "mountain-hiking-trail-xl",
+    "sizeVariant": "xlarge",
+    "text": "The trail winds up through thick forest before opening onto a wide ridge where the view reaches far in every direction. Above the trees the slope is covered in loose rock, and each step needs care as the stones shift underfoot. The summit looks close but the altitude makes every breath harder, and the hiker stops often to rest against a large stone. The path zigzags up the steepest parts, cutting across the slope to soften the climb. By midday the hiker reaches the top and stands looking down at forests, valleys, and ridges spread below. The descent is harder on the knees than the climb up, and the trail turns slippery where afternoon mist has settled on the rock. The hiker picks a careful way back down and into the shelter of the trees. Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. “You saved us,” they said. Pico realized that being different was not a weakness. A quiet student named Lila downloaded a school app where people posted anonymous confessions. At first, she just read them late at night, fascinated by how honest everyone seemed when no one knew their name. Eventually, she started posting too, small things at first, then sharper comments about people she barely knew. The likes came quickly. It felt good to be noticed, even invisibly. One day, a rumor appeared about a classmate. It spread faster than anything Lila had seen. Screenshots, whispers, sideways glances in class. The student stopped showing up. Lila realized the rumor had started from a post she had written as a joke. She stared at her phone, refreshing the feed, watching the damage grow. For the first time, the app felt heavy in her hands. That night, she typed a new post, fingers shaking, and hovered over the submit button. This time, it was not a joke.",
+    "composition": {
+      "t1": 124,
+      "t2": 86,
+      "t3": 98,
+      "t4": 45,
+      "total": 353
+    }
+  },
+  {
+    "id": "teen-ai-shortcuts-xl",
+    "sizeVariant": "xlarge",
+    "text": "Sophie discovered early that AI tools could do her assignments in seconds. Essays, summaries, even problem sets. She checked them quickly, submitted them, and watched her grades climb. Teachers praised her. Classmates asked for help. She smiled and played along. Months passed. The work got harder. One day, during a timed test without access to her usual tools, she stared at the questions. They looked familiar, but her mind felt blank. Her hand hovered over the page. Around her, pens scratched steadily. For the first time, she felt the gap between what she had submitted and what she actually knew. After school, she opened her laptop, but not to generate answers. She pulled up the basics, starting from the beginning. It felt slow and frustrating. But it was the first time the work felt like it belonged to her. When Alex transferred schools, he decided to be someone new. More confident, more interesting. He exaggerated stories, invented experiences, polished every detail. People liked him. He was invited to things quickly. But every conversation became a careful act. He had to remember what he had told each person. Small contradictions started slipping through. His new friends began asking questions that went deeper than his stories could handle. One afternoon, someone laughed and called out one of his inconsistencies. The group went quiet. Alex felt the weight of every lie at once. Later, sitting alone, he replayed everything in his head. The version of himself he had built felt fragile now. The next day, when someone asked him a simple question, he paused before answering. This time, he did not reach for a better story. Priya said yes to everything. Extra projects, helping friends, family responsibilities, clubs. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed. Then sleep slipped. Assignments piled up. She forgot small things, then bigger ones. One day, she missed a major deadline. Not because she did not care, but because she simply ran out of time. The disappointment hit harder than she expected. That evening, she sat with her list of commitments and realized it was impossible to do all of them well. Something had to change. The next time someone asked for help, she hesitated. Saying no felt uncomfortable, almost wrong. But also, a little relieving.",
+    "composition": {
+      "t1": 122,
+      "t2": 110,
+      "t3": 119,
+      "t4": 42,
+      "total": 393
+    }
+  },
+  {
+    "id": "teen-group-chat-xl",
+    "sizeVariant": "xlarge",
+    "text": "It started as a joke. A group chat without Sam, just for “fun. ” They shared memes, made light comments, nothing serious. At first. Over time, the tone shifted. Small jokes turned sharper. Screenshots were shared. Conversations about Sam replaced conversations with him. Meanwhile, in the main chat, everything seemed normal. One day, Sam stopped replying. Then stopped showing up to hang out. Someone in the group noticed. They scrolled back through the messages in the private chat, seeing them differently now. The jokes did not look harmless anymore. When they finally reached out, the silence on the other end felt heavier than expected. Lucas avoided anything he might fail at. New sports, harder classes, even small challenges. If he did not try, he could not mess up. It worked, in a way. He stayed comfortable. Then a group project forced him into unfamiliar territory. Presenting, building, speaking up. Things he had always sidestepped. He stumbled through it. Forgot lines, made mistakes, felt his face burn in front of the class. But something unexpected happened. It ended, and the world did not. Afterward, a classmate told him it was not as bad as he thought. That night, Lucas thought about how much energy he had spent avoiding moments like that. And how, despite everything, he was still standing. Emma had heard enough about Ryan to form a clear picture. Difficult, rude, not worth the effort. She avoided him without thinking twice. When they were assigned to work together, she was annoyed. At first, their conversations were short and stiff. But as the project went on, she noticed things that did not match the stories. He listened carefully. He put in effort. He was quieter than expected, not hostile. One afternoon, he mentioned something about his past that explained more than any rumor had. Emma realized how quickly she had accepted a version of him without ever checking if it was true. By the time the project ended, the person she thought she knew had been replaced by someone more real, and far more complex.",
+    "composition": {
+      "t1": 118,
+      "t2": 98,
+      "t3": 87,
+      "t4": 39,
+      "total": 342
+    }
+  },
+  {
+    "id": "real-apartment-traces-xl",
+    "sizeVariant": "xlarge",
+    "text": "The apartment was mostly clean, but not empty. In the back of a kitchen drawer, Alex found a single key with no label. In the wardrobe, a forgotten jacket, too small to be his. On the top shelf, a box of photos, left behind. He told himself he should throw them out. Instead, he sat on the floor and looked. A beach trip. A birthday cake. A blurry group shot in a living room that looked suspiciously like this one. The previous tenant had lived a full life here. Not in a dramatic way. Just in small, ordinary moments. Alex started noticing other things. A faint mark on the wall where something once hung. A loose tile near the sink. Evidence of routines he would never fully understand. At night, the apartment felt less like a blank space and more like a continuation. He wondered what traces he would leave behind. What someone else might find. Whether they would pause, like he had, and try to piece together a life from fragments. On Sunday, he packed the photos back into the box. He did not throw them away. Not yet. The conversation started as a joke. “We should get a dog,” Sam said, scrolling through photos. “Absolutely not,” Priya replied, without looking up. Ten minutes later, they were deep in discussion. Size, breed, apartment rules, walking schedules. “It’s a lot of responsibility,” Priya said. “So is everything,” Sam countered. That was the real conversation. A dog meant routine. Early mornings. Less spontaneity. It meant planning weekends differently. Thinking ahead. “Are we ready for that? ” Priya asked. Sam shrugged. “Are we ever ready for anything? ” They sat in silence for a moment. It was not really about the dog. It was about what came next. Stability, maybe. Or just a shift away from the flexibility they had quietly relied on. That night, Priya sent Sam a link. “Just looking,” she wrote. The next morning, Sam replied with another. They had not decided anything. But something had changed. The idea no longer felt abstract. Lucas spent three weeks perfecting it. A small, intricate 3D print. Designed from scratch. Tuned settings, tested materials, adjusted tolerances. It was for his friend Olivia. A custom phone stand based on a joke they had shared months ago. When he finally handed it to her, he felt a quiet pride. “That’s so cool,” she said, turning it over. “Did you buy this? ” Lucas paused. “I made it. ” “Oh wow,” she said, smiling. “That’s impressive. ” But the moment had already passed. She set it down gently, like any other object. Later, Lucas wondered why it bothered him. She liked it. She appreciated it.",
+    "composition": {
+      "t1": 145,
+      "t2": 116,
+      "t3": 123,
+      "t4": 51,
+      "total": 435
+    }
+  },
+  {
+    "id": "real-startup-pivot-xl",
+    "sizeVariant": "xlarge",
+    "text": "The numbers were not bad. But they were not good enough. Early traction had given Leo confidence. Now, growth had plateaued. “Maybe we pivot,” his co founder suggested. Leo resisted. The idea had been his. The direction, his vision. Changing it felt like admitting failure. But the data was clear. Users were not engaging the way they expected. “Are we building what we want,” his co founder asked, “or what people need? ” Leo did not answer immediately. That night, he reviewed everything. Feedback, metrics, assumptions. He realized how much of the product was shaped by preference, not evidence. The next morning, he said, “Let’s try something different. ” It was not a dramatic shift. Just a change in focus. But it felt significant. Letting go of the original idea was harder than starting from scratch. But it also felt more honest. It started with a comment on a forum. Then a reply. Then a conversation. Over months, messages became routine. Daily check ins. Shared thoughts. They knew each other’s habits, preferences, small details. But they had never met. “Maybe we should,” she suggested one day. He hesitated. Online, everything felt controlled. Curated. Meeting would make it real. And uncertain. “What if it’s different? ” he asked. “It probably will be,” she said. That was the point. They chose a date. A place. In the days leading up, he found himself overthinking. Replaying conversations. Imagining outcomes. When the day arrived, he almost canceled. But he did not. Seeing her in person was both familiar and new. The same voice. The same humor. Just present. The conversation picked up where it had left off. Not perfect. Not seamless. But real. And that was enough. “Alright team, let’s kick off planning. The main thing I want from this session is a realistic, agreed view of what we can deliver next sprint, not an aspirational wish list. Product has called out two priorities, improving onboarding conversion and stabilising the reporting backend. For onboarding, the new signup flow and the A B test framework are top of the list. For reporting, we need to address the timeout issues on the aggregated stats endpoint before we stack more features on it. As we go through the backlog, I’d like us to challenge anything that feels ambiguous or risky. If a ticket is under specified or touches unknown parts of the system, call it out and we’ll either refine it here or push it out. I’d rather we commit to fewer, well understood items than overfill the sprint and carry half of them. When you estimate, think about testing, code review, and potential integration hiccups, not just writing the code.",
+    "composition": {
+      "t1": 156,
+      "t2": 113,
+      "t3": 116,
+      "t4": 52,
+      "total": 437
+    }
+  },
+  {
+    "id": "msg-teacher-email-xl",
+    "sizeVariant": "xlarge",
+    "text": "“Dear Mr and Mrs Lee, I wanted to take a moment to update you on Emma’s progress in Year 4 and suggest a few ways you can support her learning at home. Overall, Emma is a curious and engaged student who participates well in class discussions and works cooperatively with her peers. In literacy, Emma reads fluently and shows good comprehension when we talk about stories, but she sometimes rushes through written responses and leaves out detail. At home, you might encourage her to slow down by asking follow up questions such as ‘why do you think that? ’ or ‘can you give an example from the story? ’ In mathematics, she has a solid grasp of addition and subtraction, and we are currently working on multiplication tables. Regular practice with times tables, even five to ten minutes a day, will help build her confidence. Socially, Emma is kind and inclusive, and other students enjoy working with her. I am very pleased with her attitude in class. If you have any questions or would like to schedule a meeting to discuss this in more detail, please let me know and we can arrange a suitable time. “Hi Maria, Thank you for reaching out and for taking the time to describe what happened. I’m really sorry that your experience with our latest software update has been frustrating, especially the crashes you described while preparing your client reports. That is not the level of reliability we aim to provide. I’ve reviewed your account and the error logs you attached. It looks like the issue is related to a conflict between the new reporting module and older saved templates. Our engineering team is already working on a fix, and we expect to include it in a patch early next week. In the meantime, there’s a workaround that should prevent further crashes, if you create a new template from scratch and copy your content into it, the reports should generate correctly. Given the impact this has had on your work, I’ve added a one month credit to your subscription and flagged your account so we can notify you as soon as the patch is live. I really appreciate your patience while we sort this out. If the workaround doesn’t help or you run into any other problems, please reply directly to this email and I’ll prioritise your case. “Alright Mr Thompson, before you go home I want to run through your discharge instructions and make sure everything is clear. I’ll also give you a printed copy, but please stop me and ask questions at any point. First, your medication.",
+    "composition": {
+      "t1": 187,
+      "t2": 119,
+      "t3": 90,
+      "t4": 32,
+      "total": 428
+    }
+  },
+  {
+    "id": "msg-release-notes-xl",
+    "sizeVariant": "xlarge",
+    "text": "“Release notes, Version 3. 4. 0 Thanks for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - CSV export for reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next. “Hi John, Thanks for coming in today. I’d like to walk through how your portfolio has performed over the past 12 months and what that means for our strategy going forward. Overall, your portfolio is up about 6 percent for the year. That’s slightly below the broader market, which returned around 8 percent, but broadly in line with the level of risk we’ve chosen. Your Australian equities have done reasonably well, particularly the larger, dividend paying companies. The area that has lagged is the international shares component, mainly due to currency movements and some volatility in the technology sector. Your defensive assets, like bonds and cash, have done their job of smoothing out the ups and downs, especially during the market dip earlier in the year. The key question is whether your current mix still matches your goals and comfort with risk. You mentioned that retirement is about eight years away and that you’d prefer to avoid big swings, even if that means slightly lower returns. With that in mind, I’d suggest shifting a small portion out of higher risk international shares into more stable income producing assets. I’ll prepare a short statement of advice outlining the proposed changes, the fees, and the risks, and send it to you for review. Once you’re comfortable, we can implement the changes over the next few weeks. “Dear Ms Collins, I am writing to update you on the current status of your employment dispute matter and outline the next steps.",
+    "composition": {
+      "t1": 160,
+      "t2": 114,
+      "t3": 110,
+      "t4": 37,
+      "total": 421
+    }
+  },
+  {
     "id": "coral-reef-biome-xl",
     "sizeVariant": "xlarge",
-    "text": "Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Storm-generated turbulence fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the plankton-rich thermocline, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest. Medieval masons dressed each block of ashlar with iron chisels, working each face to a flat and even surface before setting it in lime mortar. At corners, large quoins were laid in alternating stretcher and header bond to tie the wall and resist lateral thrust. Above doorways and window openings, a lintel of dressed stone or a row of wedge shaped voussoirs formed an arch that transferred the load to the piers on either side. Corbels of projecting masonry supported timber floor beams where no column could stand below. The mortar, mixed from quicklime and coarse sand, was allowed to cure slowly so that it hardened into a matrix binding each course to the next. Skilled stonecutters gauged the grain of each block before cutting, working with the natural bed of the stone to prevent future spalling under compressive stress. The blacksmith gripped the pig iron billet with heavy tongs and thrust it into the forge where the bellows fed the fire to a bright orange heat. When the metal reached a pale yellow glow, he carried it to the anvil and began to draw it out with firm hammer blows, working the fuller down the bar to thin and lengthen the stock. Slag fell away in bright sparks with each strike. He returned the piece to the fire twice, watching the colour rise. Then he dressed the edges on the hardy, used a swage to round the profile, and applied flux before a final weld heat. The quench came last, a sharp hiss as the wrought iron plunged into the brine trough. Correct temper showed in the pale straw colour that spread along the cooled blade.",
+    "text": "Beneath the photic zone of a coral reef, calcified skeletons of colonial polyps form intricate aragonite frameworks that accrete over millennia. Each polyp secretes a calcareous exoskeleton, anchoring itself to the substrate while symbiotic zooxanthellae photosynthesise within its gastrodermal tissue. When seawater temperatures rise anomalously, the polyps expel their endosymbiotic algae, triggering bleaching events that destabilise the entire biome. Coralline algae encrust the interstices between corallites, binding the reef matrix and resisting hydrodynamic scour. Turbulence from storms fragments branching acroporid colonies, yet these dislodged thalli can propagate vegetatively on rubble substrates. Parrotfish graze the epilithic algal matrix with fused beaklike dentition, excreting fine carbonate sediment that accumulates as biogenic sand. Sponges and crinoids filter particulate organic matter from the thermocline dense with plankton, while mantis shrimp excavate burrows in the unconsolidated calcareous substrate beneath the reef crest. Medieval masons dressed each block of ashlar with iron chisels, working each face to a flat and even surface before setting it in lime mortar. At corners, large quoins were laid in alternating stretcher and header bond to tie the wall and resist lateral thrust. Above doorways and window openings, a lintel of dressed stone or a row of wedge shaped voussoirs formed an arch that transferred the load to the piers on either side. Corbels of projecting masonry supported timber floor beams where no column could stand below. The mortar, mixed from quicklime and coarse sand, was allowed to cure slowly so that it hardened into a matrix binding each course to the next. Skilled stonecutters gauged the grain of each block before cutting, working with the natural bed of the stone to prevent future spalling under compressive stress. The blacksmith gripped the pig iron billet with heavy tongs and thrust it into the forge where the bellows fed the fire to a bright orange heat. When the metal reached a pale yellow glow, he carried it to the anvil and began to draw it out with firm hammer blows, working the fuller down the bar to thin and lengthen the stock. Slag fell away in bright sparks with each strike. He returned the piece to the fire twice, watching the colour rise. Then he dressed the edges on the hardy, used a swage to round the profile, and applied flux before a final weld heat. The quench came last, a sharp hiss as the wrought iron plunged into the brine trough. Correct temper showed in the pale straw colour that spread along the cooled blade.",
     "composition": {
-      "t1": 125,
+      "t1": 127,
       "t2": 49,
-      "t3": 106,
+      "t3": 107,
       "t4": 131,
-      "total": 411
+      "total": 414
     }
   },
   {
@@ -1005,6 +2613,90 @@
       "t3": 88,
       "t4": 115,
       "total": 381
+    }
+  },
+  {
+    "id": "glassblowing-xl",
+    "sizeVariant": "xlarge",
+    "text": "The glassblower gathers molten glass on the end of the blowing iron by rotating it in the furnace mouth. Once a sufficient gather has collected, the blower rolls it on the marver, a flat steel table, to chill the outer skin and centre the mass. A puff of air through the iron inflates the gather into a small bubble called the parison. The blower returns the piece to the glory hole to reheat it, then shapes the expanding form with wooden paddles and jacks while keeping the iron in constant rotation. A pontil rod is attached to the base so the blowing iron can be broken away, and the open rim is trimmed with shears. The finished piece goes into the annealing oven, where it cools slowly over several hours to relieve the internal stress that rapid cooling would leave in the glass. Luma was a small, fluffy cloud who never liked to move. While the other clouds drifted across the sky, exploring mountains, oceans, and cities, Luma stayed in the same quiet corner. “I like it here,” Luma would say. “It is safe. ” One day, a strong wind came rushing through the sky. It gently pushed Luma along. At first, Luma felt scared. “I do not want to go,” Luma whispered. But as Luma drifted, something surprising happened. Below, Luma saw sparkling rivers, tall green forests, and children flying kites. The world was bigger and more beautiful than Luma had ever imagined. Soon, Luma met other clouds who shared stories of where they had been. They laughed and floated together, and Luma began to enjoy the journey. By the time the wind slowed, Luma realized something important. “Moving is not so scary,” Luma said. “It helps me see new things and make new friends. ” From that day on, Luma no longer stayed in one place. Robo was a helpful robot who could clean, cook, and even solve puzzles. But there was one thing Robo could not do. Robo did not understand jokes. Whenever the children laughed, Robo would ask, “Why is that funny? ” but no one could explain it in a way Robo understood. So Robo set out on a journey. Robo listened carefully to people telling jokes. Robo watched smiles, giggles, and laughter. One day, Robo met a boy named Sam who said, “I will help you. ” Instead of explaining jokes, Sam showed Robo how people felt when they heard them. They laughed together, played games, and shared silly moments. Slowly, Robo began to notice something. Jokes were not just about words. They were about feelings. Then one day, Sam slipped on a pile of leaves and laughed.",
+    "composition": {
+      "t1": 158,
+      "t2": 74,
+      "t3": 125,
+      "t4": 78,
+      "total": 435
+    }
+  },
+  {
+    "id": "forest-after-the-storm-xl",
+    "sizeVariant": "xlarge",
+    "text": "In a peaceful forest, animals lived happily together. There was Mia the squirrel, Ben the beaver, and Leo the deer. One night, a great storm came. Wind howled, rain poured, and trees shook. When morning arrived, the forest was messy and broken. Mia’s tree was damaged. Ben’s dam had fallen apart. Leo’s favorite meadow was covered in branches. At first, everyone felt sad and overwhelmed. “We cannot fix this,” Mia said. But Ben spoke up. “We can, if we work together. ” So they began. Ben rebuilt the dam with help from Leo, who carried heavy branches. Mia gathered small twigs and leaves. Birds helped by finding lost materials. It was not easy, but little by little, the forest began to heal. Soon, the dam was strong again. Trees were cleared, and new homes were built. The animals looked around proudly. “We did this together,” Leo said. Tara loved inventing things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt. Tara quickly built a machine to water it perfectly. But the plant still looked weak. “I do not understand,” Tara said. Her grandmother smiled. “Some things need time. ” Tara watched the plant carefully. She gave it sunlight, water, and care each day. Slowly, the plant grew strong again. Tara realized that not every problem could be fixed with a quick invention. “Some things need patience,” she said. From then on, Tara still invented amazing things, but she also learned when to slow down. One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and alone. “I need to go home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry,” Lily said. “I will help you. ” Lily tried many things. She climbed a hill, built a tall stack of stones, and even made a kite to carry Nia upward. Nothing worked. Days passed, but Lily did not give up. Finally, they met an old owl who said, “Stars return when they are ready. Be patient. ” One quiet night, Nia began to glow brighter than ever. Slowly, Nia lifted into the sky. “Thank you,” Nia called. Lily waved. She felt happy, even though she would miss her new friend.",
+    "composition": {
+      "t1": 112,
+      "t2": 89,
+      "t3": 128,
+      "t4": 65,
+      "total": 394
+    }
+  },
+  {
+    "id": "dragon-who-could-not-fly-xl",
+    "sizeVariant": "xlarge",
+    "text": "Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small. ” Dax practiced jumping. Then gliding. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit. But one day, Dax flapped hard and lifted off the ground. “I am flying! ” Dax shouted. It was not perfect, but it was enough. Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “This way is better,” Lena said. “No, mine is,” Max replied. Soon, nothing was getting done. Finally, they decided to listen to each other. Lena designed the structure. Max gathered materials. As they worked together, the treehouse slowly took shape. When it was finished, they both smiled. “We did it together,” Max said. Ethan wanted to be known. Every video he posted had to be bigger than the last. At first it was harmless pranks and challenges, but views dropped unless he pushed further. Climbing higher, jumping farther, risking more. His followers loved it. Comments flooded in telling him to go even bigger. One afternoon, he set up his camera for a stunt he had barely practiced. The fall came fast. Pain replaced the rush, and the next thing he knew, he was in a hospital bed with a broken leg and a silent phone. Days passed. Then weeks. Without constant uploads, his followers moved on. The numbers dropped. Bored and restless, he started sketching, something he had not done in years. His sister joined him sometimes. They laughed more than he expected. When he finally picked up his phone again, he hesitated before recording. For the first time, he wondered who he was without the screen watching.",
+    "composition": {
+      "t1": 110,
+      "t2": 66,
+      "t3": 77,
+      "t4": 55,
+      "total": 308
+    }
+  },
+  {
+    "id": "teen-scholarship-xl",
+    "sizeVariant": "xlarge",
+    "text": "Maya and Jordan had been inseparable for years. When the final year scholarship was announced, they both applied, both confident. At first, they helped each other prepare. Shared notes, practiced interviews. Then small things changed. Maya “forgot” to send a document. Jordan gave vague advice instead of real help. Neither mentioned it. The tension grew quietly. They smiled in public, competed in private. By the time interviews came, both were more focused on beating the other than doing their best. When results were announced, neither of their names was called. They stood side by side in the hallway afterward, the silence louder than any argument. All the small choices added up, and now there was nothing to show for it. Maya finally spoke, but not about the scholarship. Noah felt unstoppable in the game. Online, he was a leader, respected, powerful. People listened to him. Real life felt smaller in comparison, slower and less forgiving. He spent every spare hour logged in. Then one morning, the servers went down. At first, it seemed temporary. Hours turned into days. An announcement finally confirmed it. The game was gone. Noah sat staring at his screen, refreshing out of habit. There was nowhere to log in. Without the game, time stretched awkwardly. He did not know what to do with himself. Conversations at school felt harder than any boss fight. One afternoon, he wandered outside and joined a group playing basketball. He missed shots, stumbled, laughed awkwardly. But no one kicked him out. They just kept playing. That night, he still reached for his computer, then paused. For the first time, he did not feel like he was logging out of his real life. On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed. Then again. And again. Users were posting screenshots. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It was not intentional. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He read comments. “Finally, software that feels human. ” “Please don’t remove this. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident.",
+    "composition": {
+      "t1": 161,
+      "t2": 91,
+      "t3": 120,
+      "t4": 68,
+      "total": 440
+    }
+  },
+  {
+    "id": "real-planned-spontaneity-xl",
+    "sizeVariant": "xlarge",
+    "text": "Maya suggested it casually. “Let’s do a proper weekend like we used to. No plans. Just vibes. ” By Saturday morning, they had a shared document, a grocery list, and three backup plans in case it rained. At 11 AM, they sat on the floor eating cereal, trying to recreate the effortless feeling of being nineteen. Back then, time stretched. Now, it felt scheduled. “Should we go out? ” Jess asked. “We could,” Maya said, already checking opening hours. They watched an old movie they used to love. Halfway through, they both reached for their phones. No one said anything. In the afternoon, they walked through a park, trying to be spontaneous. It turned into a conversation about rent increases, career moves, and whether anyone actually enjoyed their job or just tolerated it. By evening, they ordered takeaway and sat on the balcony. “It’s still nice,” Jess said. “Yeah,” Maya replied. “Just different. ” They realized it was not that fun had disappeared. It had just changed shape. Less chaotic, more intentional. Less loud, more layered. The weekend did not feel like the past. But it felt honest. Ethan had rehearsed the conversation three times before calling Liam into the meeting room. Liam was easy to like. Quick with jokes, always positive, never defensive. Which made this harder. “So,” Ethan began, “I wanted to talk about your recent work. ” Liam nodded, smiling. “Yeah, for sure. ” Ethan hesitated. The truth felt heavy. Deadlines missed. Details overlooked. Nothing catastrophic, just consistently not enough. “You’re great to work with,” Ethan said first, and immediately regretted it. It sounded like a preface. Liam’s smile tightened slightly. “But we need to see more consistency,” Ethan continued. “There have been a few things slipping through. ” There was a pause. Not awkward, just quiet. “Okay,” Liam said. “That’s fair. ” No defensiveness. No excuses. Just acceptance. That somehow made it worse. After the meeting, Ethan sat alone, replaying it. He wondered if he had been too soft. Or too vague. Later that afternoon, Liam sent a message. “Thanks for the feedback. I’ve started fixing a few things already. ” Ethan stared at the screen. Being honest had not broken anything. If anything, it had cleared something unspoken. He realized leadership was less about having the perfect words, and more about saying the necessary ones. Noah liked the quiet between deliveries. The brief walks from his car to someone else’s front door. The small glimpses into lives he would never fully see. A brightly lit house with music playing. A dim apartment where someone opened the door just enough to take the bag. “Thanks,” a woman said once, making eye contact longer than expected.",
+    "composition": {
+      "t1": 134,
+      "t2": 107,
+      "t3": 118,
+      "t4": 77,
+      "total": 436
+    }
+  },
+  {
+    "id": "real-app-detox-xl",
+    "sizeVariant": "xlarge",
+    "text": "Deleting the apps took less than a minute. Emma expected it to feel dramatic. It did not. Just a quiet absence. The first day, she reached for her phone constantly. Waiting in line. Sitting on the couch. Even during conversations. By day three, something shifted. She noticed how often she filled silence with scrolling. Without it, moments stretched. Sometimes uncomfortably. She started paying attention differently. To how long a walk actually felt. To how conversations unfolded without interruption. At dinner, she did not check her phone once. Her friend noticed. “You seem present,” he said. Emma laughed. “I deleted everything. ” “Everything? ” “Everything. ” By the end of the week, she felt both lighter and slightly disconnected. Like she had stepped out of a fast moving stream. When she reinstalled the apps, nothing had changed. Same posts. Same updates. But she had. She hesitated before opening them. For the first time, it felt like a choice. They had worked together for over a year, but only through messages. “Quick sync? ” “Looks good to me. ” “Pushed a fix. ” When they finally met in person, both smiled too formally. “You’re taller than I expected,” Jenna said. “You type faster than I thought,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation. On Slack, pauses meant thinking. In person, they felt like silence. “So,” Jenna said, “how was your flight? ” “Good,” Mark answered. “Yours? ” They both laughed. It felt scripted. Later, during a meeting, something clicked. They slipped back into familiar patterns. Finishing each other’s thoughts. Building ideas quickly. The medium had changed, but the connection was still there. Afterward, they grabbed coffee. This time, the conversation flowed more naturally. Less about filling space, more about continuing something already built. By the end, the awkwardness had faded. They were the same team. Just in a different format. Planning the trip was easy. Group chat, shared links, excited messages. Actually agreeing on details was not. “Let’s do something relaxed,” Tom said. “I want activities,” Sarah replied. “I just need a break,” Alex added. Dates shifted. Budgets stretched. Expectations diverged. By the time they booked anything, the excitement had dulled slightly. On the trip, the differences became clearer. Some woke early. Others slept in. Some wanted to explore. Others wanted to rest. Small tensions surfaced. Nothing dramatic, just subtle misalignments. One evening, they sat together, quieter than expected. “This is not what I pictured,” Sarah admitted. “Yeah,” Tom said. “Same. ” Alex shrugged. “It’s still good though. ” And it was. Just not in the way they imagined.",
+    "composition": {
+      "t1": 109,
+      "t2": 112,
+      "t3": 111,
+      "t4": 93,
+      "total": 425
+    }
+  },
+  {
+    "id": "real-no-spend-month-xl",
+    "sizeVariant": "xlarge",
+    "text": "The first week was easy. “No spending” sounded extreme, but manageable. Cook at home, skip coffee, avoid impulse buys. By week two, the cracks showed. Convenience had been invisible until it was gone. No quick lunches. No last minute purchases. Every decision required planning. Emma noticed how often she spent money to save time. Or effort. Cooking became routine. Slower, but satisfying. She also noticed boredom. Shopping had filled gaps she had not recognized. Without it, she had to find other ways to occupy herself. Reading. Walking. Calling friends. By the end of the month, she had saved more than expected. But more importantly, she understood her habits differently. Spending was not just about things. It was about structure. When the month ended, she allowed herself a small purchase. It felt deliberate. Not automatic. After the baby arrived, everything shifted. Time became fragmented. Sleep unpredictable. Ryan tried to hold onto his evening gaming sessions. A small piece of his old routine. At first, it worked. Short sessions, headphones on, volume low. But interruptions were constant. A cry. A bottle. A moment that could not wait. He found himself pausing mid game, often. At first, it was frustrating. Later, it became normal. One night, he realized he had not played in days. Instead, he had learned new rhythms. Small routines built around someone else’s needs. When he finally picked up the controller again, it felt different. Less urgent. Less necessary. Still enjoyable, just smaller. He did not mind as much as he expected. Something else had taken priority. Weddings were strange alone. Clara watched couples arrive together, effortlessly paired. She found her seat, smiled politely, and prepared for a long evening. At first, conversations were surface level. Names, jobs, how they knew the couple. Then, slowly, they deepened. A woman at her table spoke about changing careers at 29. A man shared a story about moving cities without knowing anyone. Clara listened, then shared her own experiences. Without a familiar group, she was more open. More willing to engage. By dessert, the table felt less like strangers. Just people, temporarily connected. As the night ended, they exchanged brief goodbyes. No promises to stay in touch. Just appreciation for the moment. Walking home, Clara felt unexpectedly full. Being alone had not meant being isolated. It had meant being available.",
+    "composition": {
+      "t1": 97,
+      "t2": 98,
+      "t3": 123,
+      "t4": 62,
+      "total": 380
     }
   }
 ]
