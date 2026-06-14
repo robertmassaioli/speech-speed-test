@@ -26,6 +26,7 @@ npm run dev        # dev server at http://localhost:5173/speech-speed-test/
 npm run build      # production build → dist/
 npm run preview    # serve dist/ locally to verify base-path behaviour
 npm run lint       # ESLint
+npm run storybook  # Storybook dev server at http://localhost:6006/
 ```
 
 ## Deployment

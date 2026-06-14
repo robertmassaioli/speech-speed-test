@@ -26,25 +26,3 @@ export const Running: Story = {
     await userEvent.click(canvas.getByText('Start Test'))
   },
 }
-
-// Shows matched (green) and mismatch (red) word states while dictating.
-// The partial text is from the first passage — if a different passage is
-// selected randomly it will show all-mismatch, which is still a valid
-// visual state to see.
-export const RunningWithPartialMatch: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByText('Start Test'))
-    const textarea = await canvas.findByRole('textbox')
-    await userEvent.type(textarea, 'Bella the bunny lived', { delay: 0 })
-  },
-}
-
-export const RunningWithMismatch: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByText('Start Test'))
-    const textarea = await canvas.findByRole('textbox')
-    await userEvent.type(textarea, 'this text does not match any passage', { delay: 0 })
-  },
-}
