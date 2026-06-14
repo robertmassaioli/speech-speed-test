@@ -255,3 +255,124 @@ gzipped if route splitting is not added first.
 2. **Then: add lazy route splitting** for HistoryScreen to contain the bundle impact.
 3. **Then: add KaTeX** if the improved prose still feels inadequate without proper math notation.
    The four target formulas are clear; integration is a half-day task.
+
+---
+
+## Part 3: Three options for a much better explainer
+
+### Option A — Rewritten prose with progressive disclosure (no new dependencies)
+
+Replace the current four-line summary with a layered narrative that mirrors the explanation in
+Part 1 of this document. The panel opens to a short "plain English" summary (two or three
+sentences), with a **"Go deeper"** expander below it that reveals the full explanation.
+
+**Top layer (always visible when open):**
+> Your T1–T4 speeds are estimates of how fast you dictate common vs. rare words. The headline
+> Real WPM answers: *"What would your speed be on a typical English passage?"* It is a weighted
+> average that puts 50% weight on T1 (the words that appear most often).
+
+**Second layer (expanded):**
+- A worked numeric example using the user's own speeds: *"50 T1 words at 181 WPM take 0.28 min.
+  50 T4 words at 72 WPM take 0.69 min. Total: 0.97 min for 100 words = 103 WPM — not the
+  arithmetic average of 127."* This is the harmonic-mean insight made concrete.
+- An explanation of why there is only one free parameter: natural English passages are almost
+  always ~50/40/9/1, so four independent tests would all look nearly identical. The app pins
+  T2–T4 to fixed ratios of T1 and fits only one number.
+- An explanation of the confidence dots: ●●● means your data spans all three difficulty bins,
+  which gives enough composition variation to pin down T1 accurately.
+
+**Why this works:** The explainer currently says *what* (the weights and formula) but not *why*
+(time adds, not speed; one free parameter; difficulty diversity matters). Answering the *why*
+is the highest-leverage change and requires zero new dependencies — only a rewrite of the JSX
+text content inside `ExplainBody`.
+
+**Cost:** Low. Half a day of writing and layout work, no library changes.
+
+---
+
+### Option B — Personalised step-by-step walkthrough using the user's own data
+
+Restructure the explainer as a three-step card sequence, each step driven by the user's real
+numbers. This turns a static paragraph into something that feels specific to them.
+
+**Step 1 — What your T1 speed means:**
+> *"You dictate the 100 most common English words at about **181 WPM**. These words — 'the',
+> 'of', 'and', 'is' — make up roughly half of everything you ever dictate."*
+
+**Step 2 — Why rare words are slower:**
+> *"Words outside the top 10,000 (T4) come in at **72 WPM** — 2.5× slower. That ratio is
+> borrowed from speech research on syllable frequency, and the app holds it fixed rather than
+> trying to measure it directly (there aren't enough rare words in any single passage to
+> estimate it reliably)."*
+
+**Step 3 — How the headline is built:**
+> *"A typical passage is 50% T1, 40% T2, 9% T3, 1% T4. Your headline is the speed you would
+> achieve on exactly that mix: **0.50 × 181 + 0.40 × 139 + 0.09 × 101 + 0.01 × 72 = 156
+> Real WPM.** It is a weighted average — but of speeds, not of times, which means it slightly
+> overstates reality (the harmonic mean would be lower). We use the arithmetic average here
+> because it matches how the original RealWPM paper reports scores."*
+
+Each step uses the user's actual v1–v4 values interpolated into the sentence. The component
+reads `realWpm.s.speed`, `realWpm.m.speed`, etc., and fills them in. When no data is available,
+example values are shown with a banner ("example values — complete more tests to see yours").
+
+**Why this works:** Personalised explanations are more memorable than generic ones. Seeing your
+own number appear in a sentence ("you dictate *the*, *of*, *and* at 181 WPM") makes the
+abstraction tangible. The step structure also avoids the wall-of-text problem.
+
+**Cost:** Medium. Requires restructuring `ExplainBody` into step cards, updating the JSX
+to thread user data into prose strings at multiple points, and writing the narrative. No new
+dependencies.
+
+---
+
+### Option C — Full KaTeX-typeset explainer with all three derivation layers
+
+Implement KaTeX (after adding lazy route splitting for `HistoryScreen`) and rewrite the
+explainer to show the complete mathematical story in three collapsible layers.
+
+**Layer 1 — The model (always visible):**
+
+Typeset equations for the two core identities:
+
+```
+1 / WPM_passage = p₁·(1/v₁) + p₂·(1/v₂) + p₃·(1/v₃) + p₄·(1/v₄)
+
+Real WPM = 0.50·v₁ + 0.40·v₂ + 0.09·v₃ + 0.01·v₄
+```
+
+With the user's numbers substituted live in the second equation.
+
+**Layer 2 — The estimation (expandable):**
+
+The β1 estimator shown as a proper fraction, so the division is visually unambiguous:
+
+```
+β₁ = (elapsed / words) / (p₁ + 1.3·p₂ + 1.8·p₃ + 2.5·p₄)
+```
+
+Followed by a one-paragraph explanation of why β2–β4 are fixed: collinearity makes the
+four-parameter system near-singular on natural English text. This is the hardest insight
+to grasp without the equation to anchor it.
+
+**Layer 3 — Your data (expandable):**
+
+A small table showing each of the user's N most recent results, their composition vector,
+the β1 estimate computed from each, and which one was chosen as the median. This lets the
+user inspect the estimation process directly rather than treating it as a black box.
+
+**Implementation notes:**
+- Add `React.lazy` for `HistoryScreen` before adding KaTeX (per the recommended order above).
+- Use `output: 'htmlAndMathml'` for screen-reader support.
+- Patch KaTeX's CSS with `color: inherit` on `.katex` so dark-mode tokens apply automatically.
+- The live formula is assembled with a helper function that takes `{v1, v2, v3, v4}` and
+  returns a valid LaTeX string; this avoids fragile template-string concatenation.
+
+**Why this works:** LaTeX compresses the harmonic-mean identity to one line that conveys
+the structure instantly to anyone with a quantitative background. The three-layer design
+keeps it accessible — non-technical users can read Layer 1 and stop; curious users can
+drill into Layers 2 and 3.
+
+**Cost:** High. Requires lazy-route splitting, KaTeX integration, CSS dark-mode patching,
+a β1-per-result table component, and a helper function for dynamic LaTeX strings. Two to
+three days of careful work.
