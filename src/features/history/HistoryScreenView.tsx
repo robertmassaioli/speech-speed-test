@@ -167,24 +167,40 @@ const ExplainSection = styled.div`
   font-size: 0.8rem;
 `
 
-const ExplainToggle = styled.button<{ $open: boolean }>`
+const SwitchRow = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--accent);
-  font-size: 0.8rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
   padding: 0;
+  color: var(--text-primary);
+  font-size: 0.85rem;
   user-select: none;
+`
 
-  &::before {
-    content: '▸';
-    display: inline-block;
-    transition: transform 0.15s;
-    transform: ${p => p.$open ? 'rotate(90deg)' : 'rotate(0deg)'};
-  }
+const SwitchTrack = styled.span<{ $on: boolean }>`
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: ${p => p.$on ? 'var(--accent-fill)' : 'var(--border)'};
+  transition: background 0.2s;
+  flex-shrink: 0;
+`
+
+const SwitchThumb = styled.span<{ $on: boolean }>`
+  position: absolute;
+  top: 3px;
+  left: ${p => p.$on ? '23px' : '3px'};
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  transition: left 0.2s;
 `
 
 const ExplainBody = styled.div`
@@ -696,9 +712,12 @@ export function HistoryScreenView({
           </StatsGrid>
 
           <ExplainSection>
-            <ExplainToggle $open={explainerOpen} onClick={onToggleExplainer}>
+            <SwitchRow onClick={onToggleExplainer}>
+              <SwitchTrack $on={explainerOpen}>
+                <SwitchThumb $on={explainerOpen} />
+              </SwitchTrack>
               How is this calculated?
-            </ExplainToggle>
+            </SwitchRow>
             {explainerOpen && (
               <ExplainBody>
                 {realWpm === null && (
