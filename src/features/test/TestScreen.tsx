@@ -453,6 +453,48 @@ export function TestScreen() {
 
   return (
     <div>
+      {/* Configuration controls — visible only before a test starts */}
+      {isIdle && (
+        <>
+          <FilterRow>
+            <span>Mode:</span>
+            <ToggleGroup>
+              {(['lexical', 'strict'] as MatchMode[]).map(m => (
+                <ToggleButton
+                  key={m}
+                  $active={mode === m}
+                  $disabled={false}
+                  onClick={() => setMode(m)}
+                >
+                  {m.charAt(0).toUpperCase() + m.slice(1)}
+                </ToggleButton>
+              ))}
+            </ToggleGroup>
+          </FilterRow>
+
+          <FilterRow>
+            <span>Difficulty:</span>
+            <ToggleGroup>
+              {(['all', ...DIFFICULTIES] as DifficultyFilter[]).map(d => {
+                const isEmpty = d !== 'all' && availablePerDifficulty[d as DifficultyBin] === 0
+                return (
+                  <ToggleButton
+                    key={d}
+                    $active={difficultyFilter === d}
+                    $disabled={isEmpty}
+                    onClick={() => handleFilterChange(d)}
+                    title={isEmpty ? 'No passages available at this difficulty' : undefined}
+                  >
+                    {DIFFICULTY_LABELS[d]}
+                  </ToggleButton>
+                )
+              })}
+            </ToggleGroup>
+          </FilterRow>
+        </>
+      )}
+
+      {/* Passage display */}
       <PassageMeta>
         <DiffBadge $diff={passage.difficulty}>{passage.difficulty}</DiffBadge>
         <MetaText>{passage.wordCount} words</MetaText>
@@ -483,6 +525,7 @@ export function TestScreen() {
         </ProgressTrack>
       )}
 
+      {/* Results card after completing a test */}
       {isCompleted && completedResult && (
         <ResultsCard>
           <MetricsGrid>
@@ -510,51 +553,13 @@ export function TestScreen() {
         </ResultsCard>
       )}
 
-      {isRunning && (
-        <Controls>
-          <AbandonLink onClick={handleNewPassage}>✕ Abandon</AbandonLink>
-        </Controls>
-      )}
-
+      {/* Action buttons below the passage */}
       {isIdle && (
         <>
           <Controls>
-            <ToggleGroup>
-              {(['lexical', 'strict'] as MatchMode[]).map(m => (
-                <ToggleButton
-                  key={m}
-                  $active={mode === m}
-                  $disabled={false}
-                  onClick={() => setMode(m)}
-                >
-                  {m.charAt(0).toUpperCase() + m.slice(1)}
-                </ToggleButton>
-              ))}
-            </ToggleGroup>
             <PrimaryButton onClick={handleStart}>Start Test</PrimaryButton>
             <OutlineButton onClick={handleNewPassage}>New Passage</OutlineButton>
           </Controls>
-
-          <FilterRow>
-            <span>Difficulty:</span>
-            <ToggleGroup>
-              {(['all', ...DIFFICULTIES] as DifficultyFilter[]).map(d => {
-                const isEmpty = d !== 'all' && availablePerDifficulty[d as DifficultyBin] === 0
-                return (
-                  <ToggleButton
-                    key={d}
-                    $active={difficultyFilter === d}
-                    $disabled={isEmpty}
-                    onClick={() => handleFilterChange(d)}
-                    title={isEmpty ? 'No passages available at this difficulty' : undefined}
-                  >
-                    {DIFFICULTY_LABELS[d]}
-                  </ToggleButton>
-                )
-              })}
-            </ToggleGroup>
-          </FilterRow>
-
           <ModeHint>{MODE_HINTS[mode]}</ModeHint>
         </>
       )}
@@ -570,6 +575,9 @@ export function TestScreen() {
             autoCorrect="off"
             autoCapitalize="off"
           />
+          <Controls>
+            <AbandonLink onClick={handleNewPassage}>✕ Abandon</AbandonLink>
+          </Controls>
         </>
       )}
     </div>
