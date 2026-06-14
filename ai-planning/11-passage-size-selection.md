@@ -120,6 +120,40 @@ Option C is the right long-term end state but requires the Gutenberg pipeline to
 
 ---
 
+## Impact on Real WPM calculation
+
+The Real WPM model back-calculates a β1 estimate from each test result using:
+
+```
+β1 = (elapsedSec / words) / (p1 + 1.3·p2 + 1.8·p3 + 2.5·p4)
+```
+
+This formula normalises by word count, so it is **mathematically correct for all passage sizes** — a 50-word Small result and a 400-word XL result both yield valid β1 estimates with no formula change.
+
+However, passage size does affect the **reliability** of each estimate:
+
+### Estimation noise scales with passage length
+
+A 50-word passage produces a β1 estimate with roughly twice the statistical noise of a 100-word passage (noise ∝ 1/√words). The current model takes an unweighted median of all β1 estimates, treating a Small test identically to an XL test. When many Small results are present, the median can be dominated by noisier estimates.
+
+**Recommended fix when implementing proposal 11:** switch from an unweighted median to a **word-count-weighted median** (or weighted mean after outlier trimming). Each result's β1 estimate is weighted by its word count, so larger passages contribute proportionally more to the final T1 speed.
+
+### Confidence model needs a size dimension
+
+The current confidence rating (●●●/●●○/●○○) is based solely on difficulty-bin diversity. With multiple passage sizes in play, Small-only results should not reach ●●● confidence even if they span all three difficulty bins, because their β1 estimates are too noisy to pin down T1 accurately.
+
+A simple fix: treat results with fewer than 70 words as contributing 0.5 towards bin coverage (rather than 1.0), so that three Small results from different bins only count as 1.5 covered bins — still "low" confidence.
+
+### Per-option implications
+
+**Option A (runtime assembly):** Recomputing the composition vector at runtime requires the frequency list in the browser. The frequency list is currently a build-time artifact (`data/frequency.json`, ~400 kB) that is not bundled into the front-end. Shipping it to the browser to support runtime composition calculation would significantly increase the initial bundle. This is an additional argument against Option A.
+
+**Option B (build-time variants, recommended):** Each size variant has its composition pre-computed and stored in `passages.json`. The composition flows into `StoredResult.composition` through the existing path. `computeRealWpm` requires **no interface changes** — it already accepts any `WpmInput[]` regardless of passage size. The only code change needed for proposal 11 is the weighted-median enhancement above.
+
+**Option C (authored pools):** Same as Option B — compositions are accurate and pre-computed. The weighted-median enhancement applies equally.
+
+---
+
 ## UI changes (all options)
 
 A **Size** filter row is added to the idle state of `TestScreen`, styled identically to the existing Difficulty row:
