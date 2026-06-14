@@ -25,3 +25,6 @@ pnpm-debug.log*
 # Misc
 tmp
 ai-planning/Scratch.md
+
+*storybook.log
+storybook-static
