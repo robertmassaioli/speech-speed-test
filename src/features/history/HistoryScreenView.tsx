@@ -162,28 +162,28 @@ const StatsGrid = styled.div`
 
 // ── Real WPM ─────────────────────────────────────────────────────────────────
 
-const ExplainDetails = styled.details`
+const ExplainSection = styled.div`
   margin-bottom: var(--space-3);
   font-size: 0.8rem;
+`
 
-  & > summary {
-    cursor: pointer;
-    color: var(--accent);
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    user-select: none;
+const ExplainToggle = styled.button<{ $open: boolean }>`
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  user-select: none;
 
-    &::before {
-      content: '▸';
-      display: inline-block;
-      transition: transform 0.15s;
-    }
-  }
-
-  &[open] > summary::before {
-    transform: rotate(90deg);
+  &::before {
+    content: '▸';
+    display: inline-block;
+    transition: transform 0.15s;
+    transform: ${p => p.$open ? 'rotate(90deg)' : 'rotate(0deg)'};
   }
 `
 
@@ -567,6 +567,8 @@ export interface HistoryScreenViewProps {
   bests: Partial<Record<DifficultyBin, number>>
   confirmClear: boolean
   importError: string | null
+  explainerOpen: boolean
+  onToggleExplainer: () => void
   onClear: () => void
   onCancelClear: () => void
   onExport: () => void
@@ -583,6 +585,8 @@ export function HistoryScreenView({
   bests,
   confirmClear,
   importError,
+  explainerOpen,
+  onToggleExplainer,
   onClear,
   onCancelClear,
   onExport,
@@ -691,60 +695,64 @@ export function HistoryScreenView({
             </div>
           </StatsGrid>
 
-          <ExplainDetails>
-            <summary>How is this calculated?</summary>
-            <ExplainBody>
-              {realWpm === null && (
-                <ExplainNote>
-                  Example numbers shown below — they will be replaced with your actual speeds
-                  once you have completed enough tests with composition data.
-                </ExplainNote>
-              )}
-              <p>
-                Each word in a passage belongs to one of four frequency tiers based on the
-                Google top-10,000 English words list. You speak faster on familiar words,
-                so each tier gets its own speed estimate:
-              </p>
-              <div style={{ margin: 'var(--space-1) 0' }}>
-                <ExplainTierRow>
-                  <TierLabel>T1</TierLabel>
-                  <span>top-100 words ("the", "is", "and"…)</span>
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.s.speed ?? EXAMPLE.s} WPM</span>
-                </ExplainTierRow>
-                <ExplainTierRow>
-                  <TierLabel>T2</TierLabel>
-                  <span>ranks 101–1,000 ("city", "answer"…)</span>
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.m.speed ?? EXAMPLE.m} WPM</span>
-                </ExplainTierRow>
-                <ExplainTierRow>
-                  <TierLabel>T3</TierLabel>
-                  <span>ranks 1,001–9,894 (less common)</span>
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.l.speed ?? EXAMPLE.l} WPM</span>
-                </ExplainTierRow>
-                <ExplainTierRow>
-                  <TierLabel>T4</TierLabel>
-                  <span>not in top 10,000 (rare / technical)</span>
-                  <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.f.speed ?? EXAMPLE.f} WPM</span>
-                </ExplainTierRow>
-              </div>
-              {realWpm !== null ? (
+          <ExplainSection>
+            <ExplainToggle $open={explainerOpen} onClick={onToggleExplainer}>
+              How is this calculated?
+            </ExplainToggle>
+            {explainerOpen && (
+              <ExplainBody>
+                {realWpm === null && (
+                  <ExplainNote>
+                    Example numbers shown below — they will be replaced with your actual speeds
+                    once you have completed enough tests with composition data.
+                  </ExplainNote>
+                )}
                 <p>
-                  T1 speed is estimated from your {realWpm.contributing} test
-                  result{realWpm.contributing !== 1 ? 's' : ''} using their word-frequency
-                  compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
+                  Each word in a passage belongs to one of four frequency tiers based on the
+                  Google top-10,000 English words list. You speak faster on familiar words,
+                  so each tier gets its own speed estimate:
                 </p>
-              ) : (
-                <p>
-                  T1 speed is estimated from your test results using their word-frequency
-                  compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
-                </p>
-              )}
-              <p>The headline is a weighted average matching typical passage composition:</p>
-              <ExplainFormula>
-                0.50 × {realWpm?.s.speed ?? EXAMPLE.s} + 0.40 × {realWpm?.m.speed ?? EXAMPLE.m} + 0.09 × {realWpm?.l.speed ?? EXAMPLE.l} + 0.01 × {realWpm?.f.speed ?? EXAMPLE.f} = {realWpm?.realWpm ?? EXAMPLE.headline}
-              </ExplainFormula>
-            </ExplainBody>
-          </ExplainDetails>
+                <div style={{ margin: 'var(--space-1) 0' }}>
+                  <ExplainTierRow>
+                    <TierLabel>T1</TierLabel>
+                    <span>top-100 words ("the", "is", "and"…)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.s.speed ?? EXAMPLE.s} WPM</span>
+                  </ExplainTierRow>
+                  <ExplainTierRow>
+                    <TierLabel>T2</TierLabel>
+                    <span>ranks 101–1,000 ("city", "answer"…)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.m.speed ?? EXAMPLE.m} WPM</span>
+                  </ExplainTierRow>
+                  <ExplainTierRow>
+                    <TierLabel>T3</TierLabel>
+                    <span>ranks 1,001–9,894 (less common)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.l.speed ?? EXAMPLE.l} WPM</span>
+                  </ExplainTierRow>
+                  <ExplainTierRow>
+                    <TierLabel>T4</TierLabel>
+                    <span>not in top 10,000 (rare / technical)</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{realWpm?.f.speed ?? EXAMPLE.f} WPM</span>
+                  </ExplainTierRow>
+                </div>
+                {realWpm !== null ? (
+                  <p>
+                    T1 speed is estimated from your {realWpm.contributing} test
+                    result{realWpm.contributing !== 1 ? 's' : ''} using their word-frequency
+                    compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
+                  </p>
+                ) : (
+                  <p>
+                    T1 speed is estimated from your test results using their word-frequency
+                    compositions. T2–T4 are derived from fixed ratios (×1.3, ×1.8, ×2.5 slower).
+                  </p>
+                )}
+                <p>The headline is a weighted average matching typical passage composition:</p>
+                <ExplainFormula>
+                  0.50 × {realWpm?.s.speed ?? EXAMPLE.s} + 0.40 × {realWpm?.m.speed ?? EXAMPLE.m} + 0.09 × {realWpm?.l.speed ?? EXAMPLE.l} + 0.01 × {realWpm?.f.speed ?? EXAMPLE.f} = {realWpm?.realWpm ?? EXAMPLE.headline}
+                </ExplainFormula>
+              </ExplainBody>
+            )}
+          </ExplainSection>
 
           <ChartSection>
             <SectionTitle>Trend</SectionTitle>

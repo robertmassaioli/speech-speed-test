@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { fn, userEvent, within } from 'storybook/test'
+import { fn } from 'storybook/test'
 import { computeRealWpm } from '../../corpus/realwpm'
 import type { DifficultyBin } from '../../corpus/tiers'
 import type { StoredResult } from '../../storage/history'
@@ -36,6 +36,7 @@ function personalBests(results: StoredResult[]): Partial<Record<DifficultyBin, n
 }
 
 const defaultCallbacks = {
+  onToggleExplainer: fn(),
   onClear: fn(),
   onCancelClear: fn(),
   onExport: fn(),
@@ -50,6 +51,7 @@ const emptyArgs: HistoryScreenViewProps = {
   bests: {},
   confirmClear: false,
   importError: null,
+  explainerOpen: false,
   ...defaultCallbacks,
 }
 
@@ -60,6 +62,7 @@ const withResultsArgs: HistoryScreenViewProps = {
   bests: personalBests(NINE_RESULTS_WITH_COMPOSITION),
   confirmClear: false,
   importError: null,
+  explainerOpen: false,
   ...defaultCallbacks,
 }
 
@@ -93,11 +96,7 @@ export const WithRealWpm: Story = {
 }
 
 export const ExplainerOpen: Story = {
-  args: withResultsArgs,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByText('How is this calculated?'))
-  },
+  args: { ...withResultsArgs, explainerOpen: true },
 }
 
 export const ConfirmingClear: Story = {

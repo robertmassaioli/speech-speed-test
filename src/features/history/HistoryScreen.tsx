@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { computeRealWpm } from '../../corpus/realwpm'
 import type { DifficultyBin } from '../../corpus/tiers'
@@ -10,6 +10,7 @@ import {
   loadResults,
   type StoredResult,
 } from '../../storage/history'
+import { loadSettings, saveSettings } from '../../storage/settings'
 import { HistoryScreenView } from './HistoryScreenView'
 
 function personalBests(results: StoredResult[]): Partial<Record<DifficultyBin, number>> {
@@ -28,7 +29,17 @@ export function HistoryScreen() {
   const [results, setResults] = useState<StoredResult[]>(() => loadResults())
   const [confirmClear, setConfirmClear] = useState(false)
   const [importError, setImportError] = useState<string | null>(null)
+  const [explainerOpen, setExplainerOpen] = useState(() => loadSettings().explainerOpen)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const handleToggleExplainer = useCallback(() => {
+    setExplainerOpen(prev => {
+      const next = !prev
+      const settings = loadSettings()
+      saveSettings({ ...settings, explainerOpen: next })
+      return next
+    })
+  }, [])
 
   const realWpm = computeRealWpm(results)
   const bests = personalBests(results)
@@ -75,6 +86,8 @@ export function HistoryScreen() {
       bests={bests}
       confirmClear={confirmClear}
       importError={importError}
+      explainerOpen={explainerOpen}
+      onToggleExplainer={handleToggleExplainer}
       onClear={handleClear}
       onCancelClear={() => setConfirmClear(false)}
       onExport={handleExport}
