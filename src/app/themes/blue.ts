@@ -17,7 +17,6 @@ export const blueTheme = `
 
   --word-matched:   #166534;
   --word-mismatch:  #991b1b;
-  --word-upcoming:  #aaaaaa;
 
   --diff-easy-bg:   #dcfce7;  --diff-easy-text: #166534;
   --diff-med-bg:    #fef9c3;  --diff-med-text:  #854d0e;
@@ -45,7 +44,6 @@ export const blueTheme = `
 
   --word-matched:   #4ade80;
   --word-mismatch:  #f87171;
-  --word-upcoming:  #3a4a60;
 
   --diff-easy-bg:   #14532d;  --diff-easy-text: #86efac;
   --diff-med-bg:    #78350f;  --diff-med-text:  #fde68a;

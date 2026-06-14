@@ -88,7 +88,7 @@ const Word = styled.span<{ $state: 'matched' | 'mismatch' | 'upcoming' | 'idle' 
   color: ${p =>
     p.$state === 'matched'  ? 'var(--word-matched)'  :
     p.$state === 'mismatch' ? 'var(--word-mismatch)' :
-    p.$state === 'upcoming' ? 'var(--word-upcoming)'  :
+    p.$state === 'upcoming' ? 'var(--text-primary)'   :
     'inherit'};
   text-decoration: ${p => p.$state === 'matched' ? 'underline' : 'none'};
   text-decoration-color: ${p => p.$state === 'matched' ? 'var(--word-matched)' : 'transparent'};
