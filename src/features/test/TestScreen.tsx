@@ -14,9 +14,9 @@ import { normalizeTokens } from '../../engine/normalize'
 import { tokenize } from '../../engine/tokenize'
 import type { MatchMode } from '../../engine/types'
 import { saveResult, FREQ_LIST_ID } from '../../storage/history'
+import { loadSettings, saveSettings, type DifficultyFilter } from '../../storage/settings'
 
 type TestState = 'idle' | 'running' | 'completed'
-type DifficultyFilter = 'all' | DifficultyBin
 
 interface CompletedResult {
   wpm: number
@@ -333,8 +333,8 @@ export function TestScreen() {
   const navigate = useNavigate()
   const [passage, setPassage] = useState<Passage>(() => getRandomPassage())
   const [testState, setTestState] = useState<TestState>('idle')
-  const [mode, setMode] = useState<MatchMode>('lexical')
-  const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>('all')
+  const [mode, setMode] = useState<MatchMode>(() => loadSettings().mode)
+  const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>(() => loadSettings().difficulty)
   const [input, setInput] = useState('')
   const [matchState, setMatchState] = useState<MatchState>(IDLE_MATCH)
   const [completedResult, setCompletedResult] = useState<CompletedResult | null>(null)
@@ -369,6 +369,10 @@ export function TestScreen() {
     }, 100)
     return () => clearInterval(id)
   }, [testState])
+
+  useEffect(() => {
+    saveSettings({ mode, difficulty: difficultyFilter })
+  }, [mode, difficultyFilter])
 
   const resetToIdle = useCallback((nextPassage: Passage) => {
     setPassage(nextPassage)

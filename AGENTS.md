@@ -87,6 +87,19 @@ Headline: `Real WPM = 0.50·v1 + 0.40·v2 + 0.09·v3 + 0.01·v4`
 
 Confidence for T1: `high` (3 bins with data) / `medium` (2) / `low` (1). T2–T4 always `low`.
 
+## Settings persistence
+
+All user preferences survive page reloads via `localStorage`:
+
+| Key | Values | Managed by |
+|---|---|---|
+| `sst-theme` | `purple` \| `blue` \| `orange` \| `red` | `useTheme.ts` |
+| `sst-dark` | `auto` \| `light` \| `dark` | `useTheme.ts` |
+| `sst-settings` | `{ mode, difficulty }` | `src/storage/settings.ts` |
+
+`sst-settings.mode`: `'lexical' | 'strict'` — match mode selected in TestScreen.
+`sst-settings.difficulty`: `'all' | 'easy' | 'medium' | 'hard'` — difficulty filter.
+
 ## Storage schema
 
 ```ts
