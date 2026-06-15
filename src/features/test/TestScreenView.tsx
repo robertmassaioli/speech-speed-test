@@ -266,6 +266,36 @@ const InfoIcon = styled.span`
   vertical-align: super;
   line-height: 1;
   user-select: none;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-primary);
+    color: var(--surface);
+    padding: 0.35em 0.65em;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    white-space: normal;
+    width: max-content;
+    max-width: 220px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 100;
+    line-height: 1.4;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
 `
 
 const Metric = styled.div`
