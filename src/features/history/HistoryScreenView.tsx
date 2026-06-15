@@ -286,7 +286,7 @@ const StepHighlight = styled.strong`
 function headlineLatex(v1: number, v2: number, v3: number, v4: number, headline: number): string {
   return [
     '\\begin{aligned}',
-    '\\text{Real WPM} &= \\frac{1}{\\dfrac{0.50}{T_1} + \\dfrac{0.40}{T_2} + \\dfrac{0.09}{T_3} + \\dfrac{0.01}{T_4}} \\\\[8pt]',
+    '\\text{Spoken WPM} &= \\frac{1}{\\dfrac{0.50}{T_1} + \\dfrac{0.40}{T_2} + \\dfrac{0.09}{T_3} + \\dfrac{0.01}{T_4}} \\\\[8pt]',
     `&= \\frac{1}{\\dfrac{0.50}{${v1}} + \\dfrac{0.40}{${v2}} + \\dfrac{0.09}{${v3}} + \\dfrac{0.01}{${v4}}} \\\\[4pt]`,
     `&\\approx ${headline}`,
     '\\end{aligned}',
@@ -516,6 +516,16 @@ const DiffBadgeSmall = styled.span<{ $diff: DifficultyBin }>`
   text-transform: capitalize;
 `
 
+const InfoIcon = styled.span`
+  cursor: help;
+  color: var(--text-secondary);
+  font-size: 0.75em;
+  margin-left: 0.25em;
+  vertical-align: super;
+  line-height: 1;
+  user-select: none;
+`
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function formatDate(ts: number): string {
@@ -707,7 +717,10 @@ export function HistoryScreenView({
           <StatsGrid>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <RealWpmHeader>
-                <SectionTitle style={{ margin: 0 }}>Your Real WPM</SectionTitle>
+                <SectionTitle style={{ margin: 0 }}>
+                  Your Spoken WPM
+                  <InfoIcon title="Spoken WPM: actual dictionary words per minute. This personalised estimate uses a weighted harmonic mean across difficulty tiers.">ⓘ</InfoIcon>
+                </SectionTitle>
                 <ExplainToggleRow onClick={onToggleExplainer}>
                   Explain
                   <SwitchTrack $on={explainerOpen}>
@@ -722,7 +735,7 @@ export function HistoryScreenView({
                   <>
                     <RealWpmHeadline>
                       <RealWpmValue>{realWpm.realWpm}</RealWpmValue>
-                      <RealWpmUnit>Real WPM</RealWpmUnit>
+                      <RealWpmUnit>Spoken WPM</RealWpmUnit>
                     </RealWpmHeadline>
                     <TierGrid>
                       {([
@@ -763,7 +776,9 @@ export function HistoryScreenView({
                         {bests[bin] !== undefined ? (
                           <>
                             <BestValue>{bests[bin]}</BestValue>
-                            <BestUnit>WPM</BestUnit>
+                            <BestUnit>
+                              WPM<InfoIcon title="Traditional WPM: 1 word = 5 characters. Comparable to Monkeytype and TypeRacer.">ⓘ</InfoIcon>
+                            </BestUnit>
                           </>
                         ) : (
                           <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>—</span>
@@ -808,7 +823,7 @@ export function HistoryScreenView({
                             <p>
                               Every passage has a pre-counted word composition. Your most
                               recent <strong style={{ color: 'var(--text-primary)' }}>{latest.difficultyBin}</strong> test
-                              ran at <StepHighlight>{latest.wpm} WPM</StepHighlight> on a passage
+                              ran at <StepHighlight>{latest.spokenWpm ?? Math.round(latest.words / latest.elapsedSec * 60)} Spoken WPM</StepHighlight> on a passage
                               that was{' '}
                               {pct(latest.composition![0])}% T1,{' '}
                               {pct(latest.composition![1])}% T2,{' '}
@@ -924,7 +939,8 @@ export function HistoryScreenView({
                   <Th>Passage</Th>
                   <Th>Difficulty</Th>
                   <Th>Mode</Th>
-                  <Th>WPM</Th>
+                  <Th title="Traditional WPM: 1 word = 5 characters. Comparable to Monkeytype and TypeRacer." style={{ cursor: 'help' }}>WPM ⓘ</Th>
+                  <Th title="Spoken WPM: actual dictionary words dictated per minute." style={{ cursor: 'help' }}>Spoken WPM ⓘ</Th>
                   <Th>CPM</Th>
                   <Th>Time</Th>
                 </tr>
@@ -941,6 +957,7 @@ export function HistoryScreenView({
                     </Td>
                     <Td>{r.mode}</Td>
                     <Td>{r.wpm}</Td>
+                    <Td>{r.spokenWpm ?? '—'}</Td>
                     <Td>{r.cpm}</Td>
                     <Td $dim>{formatElapsed(r.elapsedSec)}</Td>
                   </tr>

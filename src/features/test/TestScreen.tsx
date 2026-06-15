@@ -10,7 +10,7 @@ import {
   type SizeVariant,
 } from '../../corpus/passages'
 import { compareTokens } from '../../engine/match'
-import { calcCpm, calcWpm } from '../../engine/metrics'
+import { calcCpm, calcSpokenWpm, calcWpm } from '../../engine/metrics'
 import { normalizeTokens } from '../../engine/normalize'
 import { tokenize } from '../../engine/tokenize'
 import type { MatchMode } from '../../engine/types'
@@ -121,7 +121,8 @@ export function TestScreen() {
 
       if (result.isComplete) {
         const elapsedSec = (performance.now() - startTimeRef.current) / 1000
-        const wpm = calcWpm(passage.wordCount, elapsedSec)
+        const wpm = calcWpm(passage.charCount, elapsedSec)
+        const spokenWpm = calcSpokenWpm(passage.wordCount, elapsedSec)
         const cpm = calcCpm(passage.charCount, elapsedSec)
         saveResult({
           passageId: passage.id,
@@ -130,6 +131,7 @@ export function TestScreen() {
           words: passage.wordCount,
           charsRaw: passage.charCount,
           wpm,
+          spokenWpm,
           cpm,
           composition: [
             passage.composition.p1,
@@ -140,7 +142,7 @@ export function TestScreen() {
           difficultyBin: passage.difficulty,
           frequencyListId: FREQ_LIST_ID,
         })
-        setCompletedResult({ wpm, cpm, elapsedSec })
+        setCompletedResult({ wpm, spokenWpm, cpm, elapsedSec })
         setTestState('completed')
       }
     },

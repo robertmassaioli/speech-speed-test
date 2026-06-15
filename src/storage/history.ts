@@ -1,3 +1,4 @@
+import { calcWpm, calcSpokenWpm } from '../engine/metrics'
 import type { MatchMode } from '../engine/types'
 import type { DifficultyBin } from '../corpus/tiers'
 
@@ -13,6 +14,7 @@ export interface StoredResult {
   charsRaw: number
   wpm: number
   cpm: number
+  spokenWpm?: number
   // Added in Phase 2 — optional so old stored results remain valid.
   composition?: readonly [number, number, number, number]  // [p1, p2, p3, p4]
   difficultyBin?: DifficultyBin
@@ -63,7 +65,11 @@ export function saveResult(result: Omit<StoredResult, 'id' | 'ts'>): StoredResul
 }
 
 export function loadResults(): StoredResult[] {
-  return readStore().results.slice().reverse()
+  return readStore().results.slice().reverse().map(r => ({
+    ...r,
+    wpm: calcWpm(r.charsRaw, r.elapsedSec),
+    spokenWpm: r.spokenWpm ?? calcSpokenWpm(r.words, r.elapsedSec),
+  }))
 }
 
 export function clearHistory(): void {

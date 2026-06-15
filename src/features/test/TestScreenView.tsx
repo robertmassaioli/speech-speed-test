@@ -17,6 +17,7 @@ type TestState = 'idle' | 'running' | 'completed'
 
 export interface CompletedResult {
   wpm: number
+  spokenWpm: number
   cpm: number
   elapsedSec: number
 }
@@ -252,9 +253,19 @@ const ResultsCard = styled.div`
 
 const MetricsGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-3);
   margin-bottom: var(--space-2);
+`
+
+const InfoIcon = styled.span`
+  cursor: help;
+  color: var(--text-secondary);
+  font-size: 0.75em;
+  margin-left: 0.25em;
+  vertical-align: super;
+  line-height: 1;
+  user-select: none;
 `
 
 const Metric = styled.div`
@@ -487,7 +498,17 @@ export function TestScreenView({
           <MetricsGrid>
             <Metric>
               <MetricValue $primary>{completedResult.wpm}</MetricValue>
-              <MetricLabel>✓ WPM</MetricLabel>
+              <MetricLabel>
+                WPM
+                <InfoIcon title="Traditional WPM: 1 word = 5 characters. Comparable to Monkeytype and TypeRacer.">ⓘ</InfoIcon>
+              </MetricLabel>
+            </Metric>
+            <Metric>
+              <MetricValue>{completedResult.spokenWpm}</MetricValue>
+              <MetricLabel>
+                Spoken WPM
+                <InfoIcon title="Spoken WPM: actual dictionary words dictated per minute.">ⓘ</InfoIcon>
+              </MetricLabel>
             </Metric>
             <Metric>
               <MetricValue>{completedResult.cpm}</MetricValue>

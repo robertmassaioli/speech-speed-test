@@ -91,7 +91,7 @@ export const Completed: Story = {
   args: {
     ...defaultArgs,
     testState: 'completed',
-    // 132 words / 66 s × 60 = 120 WPM; 688 chars / 66 s × 60 ≈ 626 CPM
-    completedResult: { wpm: 120, cpm: 626, elapsedSec: 66 },
+    // 688 chars / 5 / 66 s × 60 ≈ 125 WPM; 132 words / 66 s × 60 = 120 Spoken WPM; 688 chars / 66 s × 60 ≈ 626 CPM
+    completedResult: { wpm: 125, spokenWpm: 120, cpm: 626, elapsedSec: 66 },
   },
 }
