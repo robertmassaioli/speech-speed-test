@@ -19,7 +19,7 @@ export interface RealWpmResult {
 
 export interface WpmInput {
   elapsedSec: number
-  words: number
+  charsRaw: number
   difficultyBin?: DifficultyBin
   composition?: readonly [number, number, number, number]  // [p1, p2, p3, p4]
 }
@@ -62,18 +62,19 @@ export function computeRealWpm(inputs: WpmInput[]): RealWpmResult | null {
   // With full prior system (β2=B2·β1, β3=B3·β1, β4=B4·β1):
   //   tpw ≈ (p1 + B2·p2 + B3·p3 + B4·p4) · β1
   //   → β1 ≈ tpw / effectiveWeight
+  // Uses traditional word units (1 word = 5 chars) so tier speeds are in traditional WPM.
   const β1Estimates = eligible.map(r => {
     const [p1, p2, p3, p4] = r.composition!
     const w = p1 + B2_RATIO * p2 + B3_RATIO * p3 + B4_RATIO * p4
-    return (r.elapsedSec / r.words) / w
+    return (r.elapsedSec / (r.charsRaw / 5)) / w
   })
 
-  // Word-count-weighted mean: larger passages contribute more since they produce
-  // more accurate β1 estimates (noise ∝ 1/√words).
-  const totalWeight = eligible.reduce((sum, r) => sum + r.words, 0)
+  // Traditional-word-weighted mean: larger passages contribute more since they produce
+  // more accurate β1 estimates (noise ∝ 1/√traditionalWords).
+  const totalWeight = eligible.reduce((sum, r) => sum + r.charsRaw / 5, 0)
   const β1 = Math.max(
     totalWeight > 0
-      ? β1Estimates.reduce((sum, est, i) => sum + est * eligible[i].words, 0) / totalWeight
+      ? β1Estimates.reduce((sum, est, i) => sum + est * (eligible[i].charsRaw / 5), 0) / totalWeight
       : β1Estimates[0],
     1 / 500,
   )
@@ -90,7 +91,7 @@ export function computeRealWpm(inputs: WpmInput[]): RealWpmResult | null {
   // β1 estimates carry higher variance and should not fully satisfy bin coverage.
   const binContributions = new Map<DifficultyBin, number>()
   for (const r of eligible) {
-    const contrib = r.words < SMALL_WORD_THRESHOLD ? SMALL_BIN_WEIGHT : 1.0
+    const contrib = r.charsRaw / 5 < SMALL_WORD_THRESHOLD ? SMALL_BIN_WEIGHT : 1.0
     const existing = binContributions.get(r.difficultyBin!) ?? 0
     binContributions.set(r.difficultyBin!, Math.max(existing, contrib))
   }

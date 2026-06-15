@@ -132,10 +132,17 @@ The history detail/expand view shows both with full labels.
 
 ### 6. Real WPM personalised model
 
-`realwpm.ts` works entirely in actual word counts and actual word rates —
-its `realWpm` headline is a Spoken WPM value. The label shown in the
-explainer UI should be updated from "Real WPM" to "Spoken WPM" for
-consistency with the new naming.
+`realwpm.ts` computes a personalised speed estimate. **Real WPM is a
+distinct third concept** — separate from both Traditional WPM and Spoken
+WPM. It uses traditional word units (1 word = 5 characters) as its
+measurement basis, so all tier speeds and the headline are in traditional
+WPM. The `WpmInput` interface uses `charsRaw` (not `words`) and divides by
+5 internally.
+
+The label "Real WPM" is **kept as-is** throughout the UI — it is not
+renamed to "Spoken WPM". The explainer's KaTeX formula now reads
+`\text{Real WPM}` and the step 1 description references the traditional
+WPM of the result (`r.wpm`), not the spoken WPM.
 
 ---
 
@@ -171,7 +178,7 @@ already present in the stored data.
    becomes redundant as a separate display value. It can be kept in storage
    for completeness but may not need a dedicated UI slot.
 
-3. **Real WPM explainer label** — the personalised explainer (Proposal 15)
-   currently uses "Real WPM". Renaming it to "Spoken WPM" aligns with the
-   new nomenclature, but is a visible label change that users familiar with
-   the current explainer would notice.
+3. **Real WPM explainer label** — **resolved**: "Real WPM" label is kept as
+   a distinct third concept. Its computation now uses traditional WPM units
+   (charsRaw/5) so the headline and tier speeds are directly comparable to
+   the traditional WPM shown in test results and history.

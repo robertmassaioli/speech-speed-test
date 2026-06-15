@@ -286,7 +286,7 @@ const StepHighlight = styled.strong`
 function headlineLatex(v1: number, v2: number, v3: number, v4: number, headline: number): string {
   return [
     '\\begin{aligned}',
-    '\\text{Spoken WPM} &= \\frac{1}{\\dfrac{0.50}{T_1} + \\dfrac{0.40}{T_2} + \\dfrac{0.09}{T_3} + \\dfrac{0.01}{T_4}} \\\\[8pt]',
+    '\\text{Real WPM} &= \\frac{1}{\\dfrac{0.50}{T_1} + \\dfrac{0.40}{T_2} + \\dfrac{0.09}{T_3} + \\dfrac{0.01}{T_4}} \\\\[8pt]',
     `&= \\frac{1}{\\dfrac{0.50}{${v1}} + \\dfrac{0.40}{${v2}} + \\dfrac{0.09}{${v3}} + \\dfrac{0.01}{${v4}}} \\\\[4pt]`,
     `&\\approx ${headline}`,
     '\\end{aligned}',
@@ -718,8 +718,8 @@ export function HistoryScreenView({
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <RealWpmHeader>
                 <SectionTitle style={{ margin: 0 }}>
-                  Your Spoken WPM
-                  <InfoIcon title="Spoken WPM: actual dictionary words per minute. This personalised estimate uses a weighted harmonic mean across difficulty tiers.">ⓘ</InfoIcon>
+                  Your Real WPM
+                  <InfoIcon title="Real WPM: your personalised speed estimate based on traditional WPM, using a weighted harmonic mean across word-frequency tiers.">ⓘ</InfoIcon>
                 </SectionTitle>
                 <ExplainToggleRow onClick={onToggleExplainer}>
                   Explain
@@ -735,7 +735,7 @@ export function HistoryScreenView({
                   <>
                     <RealWpmHeadline>
                       <RealWpmValue>{realWpm.realWpm}</RealWpmValue>
-                      <RealWpmUnit>Spoken WPM</RealWpmUnit>
+                      <RealWpmUnit>Real WPM</RealWpmUnit>
                     </RealWpmHeadline>
                     <TierGrid>
                       {([
@@ -823,7 +823,7 @@ export function HistoryScreenView({
                             <p>
                               Every passage has a pre-counted word composition. Your most
                               recent <strong style={{ color: 'var(--text-primary)' }}>{latest.difficultyBin}</strong> test
-                              ran at <StepHighlight>{latest.spokenWpm ?? Math.round(latest.words / latest.elapsedSec * 60)} Spoken WPM</StepHighlight> on a passage
+                              ran at <StepHighlight>{latest.wpm} WPM</StepHighlight> on a passage
                               that was{' '}
                               {pct(latest.composition![0])}% T1,{' '}
                               {pct(latest.composition![1])}% T2,{' '}
