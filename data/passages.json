@@ -1202,25 +1202,25 @@
   {
     "id": "real-accidental-feature-sm",
     "sizeVariant": "small",
-    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it.",
+    "text": "On a Friday afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. He was on the train home minutes later, already forgetting about it. That evening, his phone buzzed, and then buzzed again, and again after that.",
     "composition": {
       "t1": 17,
-      "t2": 12,
+      "t2": 13,
       "t3": 9,
-      "t4": 4,
-      "total": 42
+      "t4": 6,
+      "total": 45
     }
   },
   {
     "id": "real-accidental-feature",
     "sizeVariant": "medium",
-    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use.” “Please do not ever remove this delightful feature.” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak.” It was not entirely a lie.",
+    "text": "On a Friday afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. He was on the train home minutes later, already forgetting about it. That evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use.” “Please do not ever remove this delightful feature.” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak.” It was not entirely a lie.",
     "composition": {
-      "t1": 78,
-      "t2": 49,
-      "t3": 49,
-      "t4": 33,
-      "total": 209
+      "t1": 72,
+      "t2": 44,
+      "t3": 47,
+      "t4": 32,
+      "total": 195
     }
   },
   {
@@ -2378,13 +2378,13 @@
   {
     "id": "real-accidental-feature-lg",
     "sizeVariant": "large",
-    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use. ” “Please do not ever remove this delightful feature. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie.",
+    "text": "On a Friday afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. He was on the train home minutes later, already forgetting about it. That evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use. ” “Please do not ever remove this delightful feature. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie. They had worked together for over a year, but only through short messages and quick check-ins.",
     "composition": {
-      "t1": 78,
-      "t2": 49,
+      "t1": 77,
+      "t2": 52,
       "t3": 49,
       "t4": 33,
-      "total": 209
+      "total": 211
     }
   },
   {
@@ -2690,13 +2690,13 @@
   {
     "id": "penguin-who-found-his-strength-xl",
     "sizeVariant": "xlarge",
-    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. The penguins all cheered and told Pico he had saved them all from the storm. Pico realized that being different was not a weakness. On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use. ” “Please do not ever remove this delightful feature. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie. They had worked together for over a year, but only through short messages and quick check-ins. When they finally met in person at the conference, both smiled a little too formally. “You’re taller than I expected,” Jenna said. “You type even faster than I imagined,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation. On Slack, a pause meant someone was thinking. In person, the same pause felt like uncomfortable silence. Jenna asked how his flight had been, and Mark said fine and asked the same. They both laughed a little at how awkward and scripted it sounded. It all felt very stilted between them. Later, during a meeting, something finally clicked into place. They slipped back into the patterns they knew well from Slack. Finishing each other's thoughts and building on ideas quickly. The medium had changed, but the working connection was still there.",
+    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. The penguins all cheered and told Pico he had saved them all from the storm. Pico realized that being different was not a weakness. On a Friday afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. He was on the train home minutes later, already forgetting about it. That evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use. ” “Please do not ever remove this delightful feature. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie. They had worked together for over a year, but only through short messages and quick check-ins. When they finally met in person at the conference, both smiled a little too formally. “You’re taller than I expected,” Jenna said. “You type even faster than I imagined,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation. On Slack, a pause meant someone was thinking. In person, the same pause felt like uncomfortable silence. Jenna asked how his flight had been, and Mark said fine and asked the same. They both laughed a little at how awkward and scripted it sounded. It all felt very stilted between them. Later, during a meeting, something finally clicked into place. They slipped back into the patterns they knew well from Slack. Finishing each other's thoughts and building on ideas quickly. The medium had changed, but the working connection was still there. Afterward, they grabbed coffee together and talked more freely.",
     "composition": {
-      "t1": 156,
-      "t2": 113,
-      "t3": 103,
-      "t4": 70,
-      "total": 442
+      "t1": 153,
+      "t2": 109,
+      "t3": 104,
+      "t4": 71,
+      "total": 437
     }
   }
 ]
