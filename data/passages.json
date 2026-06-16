@@ -758,13 +758,13 @@
   {
     "id": "robot-who-learned-to-laugh",
     "sizeVariant": "medium",
-    "text": "Robo was a helpful robot who could clean, cook, and even solve puzzles. But there was one thing Robo could not do. But Robo simply did not understand jokes at all. Whenever the children laughed, Robo would ask, “Why is that funny?” but no one could explain it in a way Robo understood. So Robo decided to set out on a long journey. Robo listened very carefully to everyone who was telling jokes. Robo carefully watched all the smiles, giggles, and laughter. One day, Robo met a boy named Sam who said, “I will help you.” Instead of explaining jokes, Sam showed Robo how people felt when they heard them. They laughed together, played games, and shared silly moments. Over time, Robo slowly began to notice something important. Robo learned that jokes were not just about words. They were really about shared feelings between people. Then one day, Sam slipped on a pile of leaves and laughed. Robo paused, then let out a small surprised sound of delight. Sam looked up and smiled warmly. “You are learning.” Soon, Robo could laugh along with others, even if Robo did not understand every joke perfectly.",
+    "text": "Robo was a helpful robot who could clean, cook, and even solve puzzles. But there was one thing Robo could not do. But Robo simply did not understand jokes at all. Whenever the children laughed, Robo would ask, “Why is that funny?” but no one could explain it in a way Robo understood. So Robo decided to set out on a long journey. Robo listened very carefully to everyone who was telling jokes. Robo carefully watched all the smiles, giggles, and laughter. One day, Robo met a boy named Sam who said, “I will help you.” Instead of explaining jokes, Sam showed Robo how people felt when they heard them. They laughed together, played games, and shared silly moments. Over time, Robo slowly began to notice something important. Robo learned that jokes were not just about words. They were really about shared feelings between people. Then one day, Sam slipped on a pile of leaves and laughed. Robo paused, then let out a small surprised sound of delight. Sam looked up with a big warm smile. “You are really starting to learn,” he said. Soon, Robo could laugh along with others, even if Robo did not understand every joke perfectly.",
     "composition": {
-      "t1": 68,
-      "t2": 39,
-      "t3": 53,
-      "t4": 32,
-      "total": 192
+      "t1": 71,
+      "t2": 42,
+      "t3": 56,
+      "t4": 30,
+      "total": 199
     }
   },
   {
@@ -854,37 +854,37 @@
   {
     "id": "magical-garden",
     "sizeVariant": "medium",
-    "text": "Tom had always only liked plain and simple food. He refused to try anything that was new or unfamiliar. One day, while out walking alone, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me?” A strawberry added, “We might surprise you.” Tom hesitated but took a small bite. “That is sweet!” He tried more. Each food had a different taste and story. By the end of the day, Tom was smiling. “I did not know food could be this fun.” When he returned home, Tom asked to try new meals.",
+    "text": "Tom had always only liked plain and simple food. He refused to try anything that was new or unfamiliar. One day, while out walking alone, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me?” A strawberry added with a smile, “We could very well surprise you.” Tom hesitated for just a moment but took a small and tentative bite. Tom was surprised to find it wonderfully sweet and tried everything else in the garden. Each food had a different taste and story. By the end of the day, Tom was smiling. “I did not know food could be this fun.” When he returned home, Tom asked to try new meals.",
     "composition": {
-      "t1": 38,
-      "t2": 30,
-      "t3": 25,
-      "t4": 8,
-      "total": 101
+      "t1": 47,
+      "t2": 36,
+      "t3": 28,
+      "t4": 10,
+      "total": 121
     }
   },
   {
     "id": "dragon-who-could-not-fly-sm",
     "sizeVariant": "small",
-    "text": "Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small. ” Dax practiced jumping. Then he practised gliding from a low rock.",
+    "text": "Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. Ria, an older dragon, told Dax to start small, so he began by practicing short hops.",
     "composition": {
-      "t1": 10,
-      "t2": 11,
+      "t1": 12,
+      "t2": 9,
       "t3": 10,
-      "t4": 12,
-      "total": 43
+      "t4": 9,
+      "total": 40
     }
   },
   {
     "id": "dragon-who-could-not-fly",
     "sizeVariant": "medium",
-    "text": "Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small.” Dax practiced jumping. Then he practised gliding from a low rock. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit. But one day, Dax flapped hard and lifted off the ground. “I am actually flying!” Dax shouted with joy. It was not perfect, but it was enough.",
+    "text": "Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. Ria, an older dragon, told Dax to start small, so he began by practicing short hops. Then he practised gliding from a low rock. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit. But one day, Dax flapped hard and lifted off the ground. Dax let out a great joyful shout, “I am actually and truly flying!” It was not perfect, but it was enough.",
     "composition": {
-      "t1": 24,
-      "t2": 20,
+      "t1": 31,
+      "t2": 22,
       "t3": 20,
-      "t4": 20,
-      "total": 84
+      "t4": 21,
+      "total": 94
     }
   },
   {
@@ -950,13 +950,13 @@
   {
     "id": "penguin-who-found-his-strength",
     "sizeVariant": "medium",
-    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. “You saved us all from the storm!” they said. Pico realized that being different was not a weakness.",
+    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. The penguins all cheered and told Pico he had saved them all from the storm. Pico realized that being different was not a weakness.",
     "composition": {
-      "t1": 31,
-      "t2": 16,
+      "t1": 33,
+      "t2": 17,
       "t3": 16,
-      "t4": 9,
-      "total": 72
+      "t4": 12,
+      "total": 78
     }
   },
   {
@@ -1214,13 +1214,13 @@
   {
     "id": "real-accidental-feature",
     "sizeVariant": "medium",
-    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, software that feels human.” “Please don’t remove this.” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak.” It was not entirely a lie.",
+    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use.” “Please do not ever remove this delightful feature.” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak.” It was not entirely a lie.",
     "composition": {
-      "t1": 74,
+      "t1": 78,
       "t2": 49,
-      "t3": 47,
-      "t4": 31,
-      "total": 201
+      "t3": 49,
+      "t4": 33,
+      "total": 209
     }
   },
   {
@@ -1778,25 +1778,25 @@
   {
     "id": "msg-release-notes-sm",
     "sizeVariant": "small",
-    "text": "“Release notes, Version 3. 4. 0 Thanks for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header.",
+    "text": "“Release notes for version three point four, and thank you for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header.",
     "composition": {
-      "t1": 13,
-      "t2": 9,
-      "t3": 15,
-      "t4": 7,
-      "total": 44
+      "t1": 16,
+      "t2": 13,
+      "t3": 16,
+      "t4": 5,
+      "total": 50
     }
   },
   {
     "id": "msg-release-notes",
     "sizeVariant": "medium",
-    "text": "“Release notes, Version 3.4.0 Thanks for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - We have added CSV export support for all reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next.”",
+    "text": "“Release notes for version three point four, and thank you for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - We have added CSV export support for all reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next.”",
     "composition": {
-      "t1": 66,
-      "t2": 56,
-      "t3": 43,
-      "t4": 18,
-      "total": 183
+      "t1": 69,
+      "t2": 60,
+      "t3": 44,
+      "t4": 16,
+      "total": 189
     }
   },
   {
@@ -1982,73 +1982,73 @@
   {
     "id": "river-journey-by-small-boat-lg",
     "sizeVariant": "large",
-    "text": "The small boat moves with the current of the river, carried downstream at a gentle pace. Willows line both banks and their branches hang low over the water. A light stroke of the paddle from time to time keeps the boat on course. The river is wide and calm here, dark in the middle where it runs deepest. Birds stand in the shallows near the bank, watching the boat pass without moving. The air here is cool and perfectly still. Further along, the river bends and the land on either side opens up into flat fields. The water grows faster over a stretch of gravel and the person at the paddle works harder to keep the boat straight and clear of the rocks below the surface. Tom had always only liked plain and simple food. He refused to try anything that was new or unfamiliar. One day, while out walking alone, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me? ” A strawberry added, “We might surprise you. ” Tom hesitated but took a small bite. “That is sweet! ” He tried more. Each food had a different taste and story. By the end of the day, Tom was smiling. “I did not know food could be this fun.",
+    "text": "The small boat moves with the current of the river, carried downstream at a gentle pace. Willows line both banks and their branches hang low over the water. A light stroke of the paddle from time to time keeps the boat on course. The river is wide and calm here, dark in the middle where it runs deepest. Birds stand in the shallows near the bank, watching the boat pass without moving. The air here is cool and perfectly still. Further along, the river bends and the land on either side opens up into flat fields. The water grows faster over a stretch of gravel and the person at the paddle works harder to keep the boat straight and clear of the rocks below the surface. In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery. “This is exactly what I needed,” the child said. For the very first time, Pip felt truly proud.",
     "composition": {
-      "t1": 85,
-      "t2": 57,
-      "t3": 57,
-      "t4": 17,
-      "total": 216
-    }
-  },
-  {
-    "id": "forgotten-book-lg",
-    "sizeVariant": "large",
-    "text": "In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery. “This is exactly what I needed,” the child said. For the very first time, Pip felt truly proud. Priya said yes to absolutely everything people asked of her. Extra projects, helping friends, family responsibilities, and clubs all filled her days. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed to keep up with everything. Then her sleep began to slip, and assignments started piling up. She forgot small things at first, and then bigger ones. One day, she missed a major deadline entirely. Not because she did not care, but because she simply ran out of time. The disappointment hit harder than she expected. That evening, she sat with her list of commitments and realized it was impossible to do all of them well. Something about her approach absolutely had to change. The next time someone asked for help, she hesitated. Saying no felt deeply uncomfortable, almost like something was wrong with her. But it also felt a little relieving.",
-    "composition": {
-      "t1": 76,
-      "t2": 59,
-      "t3": 72,
+      "t1": 77,
+      "t2": 39,
+      "t3": 59,
       "t4": 12,
-      "total": 219
+      "total": 187
     }
   },
   {
-    "id": "real-apartment-traces-lg",
+    "id": "teen-overcommitted-lg",
     "sizeVariant": "large",
-    "text": "The apartment was mostly clean, but not entirely empty. In the back of a kitchen drawer, Alex found a single key with no label on it. In the wardrobe, he found a forgotten jacket that was too small to be his. On the top shelf, there was a box of old photos left behind. He told himself he should throw them out and move on. Instead, he sat down on the floor and looked through them. One showed a sunny beach trip with people smiling. Another showed a birthday cake with candles lit. A third was a blurry group shot taken in a living room that looked like this one. The previous tenant had lived a full life here. Not in a dramatic way, just in small and ordinary everyday moments. Alex started noticing other details around the apartment. A faint mark on the wall where something once hung. A loose tile near the sink. Evidence of routines he would never fully understand. At night, the apartment felt less like a blank space and more like a continuation. He wondered what traces he would leave behind when he eventually moved out. He thought about what someone else might one day find. He wondered whether they would pause, like he had, and try to piece together a life from fragments.",
-    "composition": {
-      "t1": 89,
-      "t2": 55,
-      "t3": 55,
-      "t4": 17,
-      "total": 216
-    }
-  },
-  {
-    "id": "msg-blood-test-results-lg",
-    "sizeVariant": "large",
-    "text": "“Hi Sarah, thanks for coming in today. I wanted to walk you through your recent blood test results and make sure you understand what they mean and what we should do next. Overall, most of your results are within the normal range, which is good news. Your kidney and liver function look fine, and your electrolytes are stable. There are two things I want to focus on. First, your cholesterol is higher than we’d like, particularly your LDL, which is sometimes called the ‘bad’ cholesterol. That doesn’t mean there’s an emergency, but it does increase your long term risk of heart disease if we leave it as is. Second, your fasting blood sugar is in the pre diabetic range. Again, not diabetes yet, but a clear warning sign. My recommendation is that we start with lifestyle changes, adjusting your diet, increasing physical activity, and looking at weight management if needed. I’ll give you some written guidance and a referral to a dietitian if you’d like. We’ll repeat these tests in about three months to see how things are tracking. If the numbers are still high at that point, we can talk about whether medication makes sense. How does that sound to you so far? “Thanks everyone for joining the status update.",
-    "composition": {
-      "t1": 91,
-      "t2": 56,
-      "t3": 46,
-      "t4": 15,
-      "total": 208
-    }
-  },
-  {
-    "id": "msg-property-inspection-lg",
-    "sizeVariant": "large",
-    "text": "“Hi James, just a quick update on the open home schedule for your property at 24 Oak Street. We’ve locked in two inspections for this weekend, Saturday at eleven in the morning and Sunday at two thirty in the afternoon. I’ll arrive about 20 minutes early each day to open up, turn on all the lights, and make sure everything is presented at its best. After each inspection, I’ll send you a summary of how many groups attended, the general level of interest, and any specific feedback on price, presentation, or concerns. If there are recurring themes, we can talk about small adjustments, such as tweaking the styling or revisiting the guide price. So far, the online listing has had solid views and a good number of saves, which is encouraging. I’ll also be following up directly with a few buyers who have requested more information to encourage them to attend this weekend. If you need to change any of the times, or if there’s anything you’d like me to highlight to buyers, just let me know today and I’ll incorporate it into my walkthrough. “Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best.",
-    "composition": {
-      "t1": 98,
-      "t2": 59,
-      "t3": 47,
-      "t4": 13,
-      "total": 217
-    }
-  },
-  {
-    "id": "msg-lecturer-assignment-lg",
-    "sizeVariant": "large",
-    "text": "“Hi everyone, I’ve seen a few questions about Assignment 2, so I’d like to clarify the requirements and deadlines here for everyone. The assignment is due at eleven fifty nine at night next Friday via the LMS submission link. Late submissions will incur a 5 percent penalty per day, up to a maximum of five days. After that, we can only accept work with an approved extension. If you need an extension, please email me at least two days before the due date, with a brief explanation. In terms of content, the key focus is on your ability to apply the concepts from Weeks 4 and 5, data modelling, normalisation, and basic query design. You do not need to build a full application. A well structured data model, clear assumptions, and correctly written SQL queries will score much higher than an overcomplicated solution with weak justification. I’ve uploaded a sample report outline and a checklist you can use to review your work before submitting. I strongly recommend running your queries on the sample database we provided to verify they return the expected results. If anything is still unclear after reading the updated brief and checklist, please post your questions in the ‘Assignment 2 Q&A’ thread rather than emailing me individually so everyone can see the answers.",
+    "text": "Priya said yes to absolutely everything people asked of her. Extra projects, helping friends, family responsibilities, and clubs all filled her days. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed to keep up with everything. Then her sleep began to slip, and assignments started piling up. She forgot small things at first, and then bigger ones. One day, she missed a major deadline entirely. Not because she did not care, but because she simply ran out of time. The disappointment hit harder than she expected. That evening, she sat with her list of commitments and realized it was impossible to do all of them well. Something about her approach absolutely had to change. The next time someone asked for help, she hesitated. Saying no felt deeply uncomfortable, almost like something was wrong with her. But it also felt a little relieving. The apartment was mostly clean, but not entirely empty. In the back of a kitchen drawer, Alex found a single key with no label on it. In the wardrobe, he found a forgotten jacket that was too small to be his. On the top shelf, there was a box of old photos left behind. He told himself he should throw them out and move on.",
     "composition": {
       "t1": 80,
-      "t2": 59,
-      "t3": 54,
+      "t2": 65,
+      "t3": 64,
       "t4": 13,
-      "total": 206
+      "total": 222
+    }
+  },
+  {
+    "id": "real-online-to-real-lg",
+    "sizeVariant": "large",
+    "text": "It started with a comment on a forum, then a reply, and eventually a full conversation. Over months, their messages became part of a daily routine. They exchanged check ins and openly shared their thoughts with each other. They knew each other's habits, preferences, and small details of their lives. But they had never actually met in person. “Maybe we should meet up,” she suggested one day out of the blue. He hesitated for a long moment at the thought. Online, everything had felt controlled and carefully curated by choice. Meeting in person would make it real, and suddenly uncertain. He asked her what it would be like if things felt different in person. “It probably will be,” she said, and that was exactly the point. They chose a date and picked a place together. In the days leading up to it, he found himself constantly overthinking everything. He kept replaying their past conversations and imagining every possible outcome. When the day finally arrived, he almost canceled at the last minute. But he did not go through with canceling. Seeing her in person was both familiar and completely new at the same time. She had the same voice and the same humor, just present right in front of him now. The conversation picked up right where it had left off before.",
+    "composition": {
+      "t1": 85,
+      "t2": 72,
+      "t3": 49,
+      "t4": 15,
+      "total": 221
+    }
+  },
+  {
+    "id": "msg-project-status-lg",
+    "sizeVariant": "large",
+    "text": "“Thanks everyone for joining the status update. I want to be transparent about where we are, what risks we’re facing, and what that means for our delivery dates. The short version is that we are about two weeks behind the original schedule, and we have one significant risk that could extend that further if we don’t address it. The delay is mainly due to the integration issues with the third party payment provider. Their API changed mid implementation, which forced us to rework parts of our integration layer and retest. The team has resolved the core issues, but we still have a backlog of regression tests to complete before I’m comfortable with a full launch. The key risk is load testing. We haven’t yet validated how the system behaves under peak traffic conditions. If we discover serious performance problems there, we’ll need time to fix them. My proposal is that we formally move the launch date out by two weeks and treat load testing as a top priority in the next sprint. In parallel, we’ll keep stakeholders updated with a short written summary twice a week so there are no surprises. I’d like to pause here for questions and to confirm you’re comfortable with this revised plan. “Hi James, just a quick update on the open home schedule for your property at 24 Oak Street.",
+    "composition": {
+      "t1": 96,
+      "t2": 59,
+      "t3": 53,
+      "t4": 14,
+      "total": 222
+    }
+  },
+  {
+    "id": "msg-sales-pricing-lg",
+    "sizeVariant": "large",
+    "text": "“Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best. Based on what you told me about having a team of around 15 people and wanting to roll this out across two departments, you’re right in between our Standard and Professional tiers. The Standard plan is 25 dollars per user per month and includes the core features, project boards, basic reporting, and email support. It works well for smaller teams that don’t need advanced permissions or integrations. The Professional plan is 40 dollars per user per month, but it adds single sign on, advanced reporting, and priority support, as well as the integrations with your existing CRM and Slack. Given your focus on visibility across departments and your need to integrate with your current tools, I’d recommend starting with the Professional plan for your core 15 users. We can then add or remove seats monthly as your usage becomes clearer. To reduce your risk, I can also offer a 30 day opt out clause on the annual contract so you can step back if it doesn’t meet expectations. How does that option sound compared to what you had in mind?",
+    "composition": {
+      "t1": 83,
+      "t2": 61,
+      "t3": 48,
+      "t4": 15,
+      "total": 207
+    }
+  },
+  {
+    "id": "msg-safety-briefing-lg",
+    "sizeVariant": "large",
+    "text": "“Alright team, before we start today I want to go over the new safety procedures and make sure we’re all on the same page. This will only take a few minutes, but it’s important. First, from today onward, high visibility vests and safety glasses are mandatory at all times on site, not just in the active work zones. We had a near miss last week when a delivery truck entered the site and a worker wasn’t clearly visible. That’s not acceptable, and we’re not going to wait for an actual injury before we change our behaviour. Second, for anyone working at height, harnesses must be clipped on at all times, with no exceptions. If you see someone not clipped in, call it out immediately, regardless of their role or level of experience. We’re all responsible for each other’s safety here. Third, if something looks unsafe, I want you to stop work and talk to your supervisor. You will not get in trouble for raising a safety concern, even if it turns out to be nothing. Finally, we’ll be doing a quick toolbox talk every Monday morning to review any incidents and lessons from the previous week. If you have suggestions for improving safety, bring them to me or your foreman at any time. “Thank you all very much for making the time today.",
+    "composition": {
+      "t1": 103,
+      "t2": 61,
+      "t3": 41,
+      "t4": 16,
+      "total": 221
     }
   },
   {
@@ -2114,13 +2114,13 @@
   {
     "id": "lost-star-lg",
     "sizeVariant": "large",
-    "text": "One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and very much alone in the dark. “I need to find my way back home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry, I will help you get home,” Lily said. Lily tried many different things to help Nia return to the sky. She climbed a hill, built a tall stack of stones, and even made a kite to carry Nia upward. Nothing she tried seemed to work at all. Days passed, but Lily did not give up on her small glowing friend. Finally, they met an old owl who told them that stars always return when they are ready and that patience is the only path. One quiet night, Nia began to glow brighter than she ever had before. Slowly and gently, Nia lifted up into the sky and rose back home. “Thank you for everything,” Nia called out from above. Lily stood there and waved goodbye with a smile. She felt happy, even though she would miss her new friend. Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said.",
+    "text": "One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and very much alone in the dark. “I need to find my way back home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry, I will help you get home,” Lily said. Lily tried many different things to help Nia return to the sky. She climbed a hill, built a tall stack of stones, and even made a kite to carry Nia upward. Nothing she tried seemed to work at all. Days passed, but Lily did not give up on her small glowing friend. Finally, they met an old owl who told them that stars always return when they are ready and that patience is the only path. One quiet night, Nia began to glow brighter than she ever had before. Slowly and gently, Nia lifted up into the sky and rose back home. “Thank you for everything,” Nia called out from above. Lily stood there and waved goodbye with a smile. She felt happy, even though she would miss her new friend. Tom had always only liked plain and simple food. He refused to try anything that was new or unfamiliar. One day, while out walking alone, he found a hidden garden.",
     "composition": {
-      "t1": 80,
-      "t2": 51,
-      "t3": 52,
-      "t4": 28,
-      "total": 211
+      "t1": 79,
+      "t2": 53,
+      "t3": 58,
+      "t4": 26,
+      "total": 216
     }
   },
   {
@@ -2258,13 +2258,13 @@
   {
     "id": "msg-release-notes-lg",
     "sizeVariant": "large",
-    "text": "“Release notes, Version 3. 4. 0 Thanks for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - We have added CSV export support for all reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next. “Hi John, Thanks for coming in today.",
+    "text": "“Release notes for version three point four, and thank you for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - We have added CSV export support for all reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next. “Hi John, Thanks for coming in today.",
     "composition": {
-      "t1": 69,
-      "t2": 57,
-      "t3": 44,
-      "t4": 20,
-      "total": 190
+      "t1": 72,
+      "t2": 61,
+      "t3": 45,
+      "t4": 18,
+      "total": 196
     }
   },
   {
@@ -2354,37 +2354,49 @@
   {
     "id": "young-inventor-lg",
     "sizeVariant": "large",
-    "text": "Tara had always loved inventing new and clever things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt badly in its pot. Tara quickly built a machine to water it perfectly. But the plant still looked weak and unhappy despite her efforts. “I do not understand why it is not working,” Tara said. Her grandmother simply smiled and waited quietly for Tara to think. “Some things need time,” she said at last. Tara watched the plant carefully from that day onward. She gave it sunlight, water, and care each day. Slowly, the plant grew strong again and came back to life. Tara realized that not every problem could be fixed with a quick invention. “Some things need patience,” she said thoughtfully. From then on, Tara still invented amazing things, but she also learned when to slow down. Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small. ” Dax practiced jumping. Then he practised gliding from a low rock. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit.",
+    "text": "Tara had always loved inventing new and clever things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt badly in its pot. Tara quickly built a machine to water it perfectly. But the plant still looked weak and unhappy despite her efforts. “I do not understand why it is not working,” Tara said. Her grandmother simply smiled and waited quietly for Tara to think. “Some things need time,” she said at last. Tara watched the plant carefully from that day onward. She gave it sunlight, water, and care each day. Slowly, the plant grew strong again and came back to life. Tara realized that not every problem could be fixed with a quick invention. “Some things need patience,” she said thoughtfully. From then on, Tara still invented amazing things, but she also learned when to slow down. Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. Ria, an older dragon, told Dax to start small, so he began by practicing short hops. Then he practised gliding from a low rock. Each day, Dax improved a little.",
     "composition": {
-      "t1": 57,
-      "t2": 65,
-      "t3": 55,
-      "t4": 43,
-      "total": 220
+      "t1": 59,
+      "t2": 63,
+      "t3": 52,
+      "t4": 42,
+      "total": 216
     }
   },
   {
     "id": "arguing-siblings-lg",
     "sizeVariant": "large",
-    "text": "Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “My way is clearly better here,” Lena said firmly. “No, my way will work better,” Max replied. Soon enough, nothing at all was getting done. Finally, they decided to listen to each other. Lena took charge and carefully designed the whole structure. Max went out and gathered all the materials they needed. As they worked together, the treehouse slowly took shape. When the treehouse was finally finished, they both smiled. “We actually built this thing together,” Max said. On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all.",
+    "text": "Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “My way is clearly better here,” Lena said firmly. “No, my way will work better,” Max replied. Soon enough, nothing at all was getting done. Finally, they decided to listen to each other. Lena took charge and carefully designed the whole structure. Max went out and gathered all the materials they needed. As they worked together, the treehouse slowly took shape. When the treehouse was finally finished, they both smiled. “We actually built this thing together,” Max said. Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. The penguins all cheered and told Pico he had saved them all from the storm. Pico realized that being different was not a weakness.",
     "composition": {
-      "t1": 82,
-      "t2": 53,
-      "t3": 52,
-      "t4": 35,
-      "total": 222
+      "t1": 69,
+      "t2": 43,
+      "t3": 42,
+      "t4": 27,
+      "total": 181
     }
   },
   {
-    "id": "real-online-colleague-lg",
+    "id": "real-accidental-feature-lg",
     "sizeVariant": "large",
-    "text": "They had worked together for over a year, but only through short messages and quick check-ins. When they finally met in person at the conference, both smiled a little too formally. “You’re taller than I expected,” Jenna said. “You type even faster than I imagined,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation. On Slack, a pause meant someone was thinking. In person, the same pause felt like uncomfortable silence. Jenna asked how his flight had been, and Mark said fine and asked the same. They both laughed a little at how awkward and scripted it sounded. It all felt very stilted between them. Later, during a meeting, something finally clicked into place. They slipped back into the patterns they knew well from Slack. Finishing each other's thoughts and building on ideas quickly. The medium had changed, but the working connection was still there. Afterward, they grabbed coffee together and talked more freely. This time, the conversation flowed much more naturally between them. Less about filling awkward space, more about continuing something already built. By the end of the conference, the awkwardness between them had completely faded. They were the same close team they had always been. Just meeting for the first time in a very different format.",
+    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use. ” “Please do not ever remove this delightful feature. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie.",
     "composition": {
-      "t1": 69,
-      "t2": 69,
+      "t1": 78,
+      "t2": 49,
+      "t3": 49,
+      "t4": 33,
+      "total": 209
+    }
+  },
+  {
+    "id": "real-group-trip-lg",
+    "sizeVariant": "large",
+    "text": "Planning the trip had seemed so easy at the start. A group chat full of shared links, excited messages, and big ideas. Actually agreeing on the details was a different story entirely. “Let’s do something completely relaxed this time,” Tom said firmly. “I actually want some proper activities to do,” Sarah replied. “I honestly just need a real break,” Alex added. Dates kept shifting and budgets stretched further than expected. Everyone{CA}s expectations began to quietly diverge. By the time they booked anything, the excitement had dulled slightly. On the trip, the differences between them became clearer. Some of them woke up early while others slept in. Some wanted to explore the area while others just wanted to rest. Small tensions began to surface between them. Nothing dramatic, just subtle misalignments in what they wanted. One evening, they sat together, quieter than any of them expected. “This is not quite what I pictured,” Sarah admitted quietly. Tom agreed that it was much the same for him, and Alex said it was still good in its own way. And it was still good, just not in the way any of them had imagined. The trip was less about shared experience and more about understanding how much they had each changed. The friendship between them had not disappeared at all. It had simply evolved into something different.",
+    "composition": {
+      "t1": 73,
+      "t2": 66,
       "t3": 48,
       "t4": 33,
-      "total": 219
+      "total": 220
     }
   },
   {
@@ -2426,49 +2438,49 @@
   {
     "id": "baker-making-bread-xl",
     "sizeVariant": "xlarge",
-    "text": "A baker puts flour and water into a large bowl. She adds a little yeast and some salt, then mixes it all until it comes together into a soft mass. She tips the mass onto the table and starts to press and fold it with her hands. She works it back and forth, over and over, until it feels smooth. Then she forms it into a round ball and leaves it in the bowl to rest. The ball grows in the warm kitchen and gets much bigger over time. When it has grown enough she presses it flat, shapes it into a loaf, and slides it into the hot oven. The bread turns a deep golden color as it bakes. The good warm smell of bread fills the whole room. She takes the loaf out and sets it on a rack to cool. The small boat moves with the current of the river, carried downstream at a gentle pace. Willows line both banks and their branches hang low over the water. A light stroke of the paddle from time to time keeps the boat on course. The river is wide and calm here, dark in the middle where it runs deepest. Birds stand in the shallows near the bank, watching the boat pass without moving. The air here is cool and perfectly still. Further along, the river bends and the land on either side opens up into flat fields. The water grows faster over a stretch of gravel and the person at the paddle works harder to keep the boat straight and clear of the rocks below the surface. Tom had always only liked plain and simple food. He refused to try anything that was new or unfamiliar. One day, while out walking alone, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me? ” A strawberry added, “We might surprise you. ” Tom hesitated but took a small bite. “That is sweet! ” He tried more. Each food had a different taste and story. By the end of the day, Tom was smiling. “I did not know food could be this fun. ” When he returned home, Tom asked to try new meals.",
+    "text": "A baker puts flour and water into a large bowl. She adds a little yeast and some salt, then mixes it all until it comes together into a soft mass. She tips the mass onto the table and starts to press and fold it with her hands. She works it back and forth, over and over, until it feels smooth. Then she forms it into a round ball and leaves it in the bowl to rest. The ball grows in the warm kitchen and gets much bigger over time. When it has grown enough she presses it flat, shapes it into a loaf, and slides it into the hot oven. The bread turns a deep golden color as it bakes. The good warm smell of bread fills the whole room. She takes the loaf out and sets it on a rack to cool. The small boat moves with the current of the river, carried downstream at a gentle pace. Willows line both banks and their branches hang low over the water. A light stroke of the paddle from time to time keeps the boat on course. The river is wide and calm here, dark in the middle where it runs deepest. Birds stand in the shallows near the bank, watching the boat pass without moving. The air here is cool and perfectly still. Further along, the river bends and the land on either side opens up into flat fields. The water grows faster over a stretch of gravel and the person at the paddle works harder to keep the boat straight and clear of the rocks below the surface. In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery. “This is exactly what I needed,” the child said. For the very first time, Pip felt truly proud.",
     "composition": {
-      "t1": 147,
-      "t2": 88,
-      "t3": 107,
-      "t4": 26,
-      "total": 368
+      "t1": 135,
+      "t2": 69,
+      "t3": 105,
+      "t4": 20,
+      "total": 329
     }
   },
   {
-    "id": "forgotten-book-xl",
+    "id": "teen-overcommitted-xl",
     "sizeVariant": "xlarge",
-    "text": "In a library, there was a book named Pip that no one ever chose. “I must not be interesting,” Pip thought. One day, a child searching for clues to a mystery picked Pip by accident. Inside, Pip held the exact information needed to solve the mystery. “This is exactly what I needed,” the child said. For the very first time, Pip felt truly proud. Priya said yes to absolutely everything people asked of her. Extra projects, helping friends, family responsibilities, and clubs all filled her days. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed to keep up with everything. Then her sleep began to slip, and assignments started piling up. She forgot small things at first, and then bigger ones. One day, she missed a major deadline entirely. Not because she did not care, but because she simply ran out of time. The disappointment hit harder than she expected. That evening, she sat with her list of commitments and realized it was impossible to do all of them well. Something about her approach absolutely had to change. The next time someone asked for help, she hesitated. Saying no felt deeply uncomfortable, almost like something was wrong with her. But it also felt a little relieving. The apartment was mostly clean, but not entirely empty. In the back of a kitchen drawer, Alex found a single key with no label on it. In the wardrobe, he found a forgotten jacket that was too small to be his. On the top shelf, there was a box of old photos left behind. He told himself he should throw them out and move on. Instead, he sat down on the floor and looked through them. One showed a sunny beach trip with people smiling. Another showed a birthday cake with candles lit. A third was a blurry group shot taken in a living room that looked like this one. The previous tenant had lived a full life here. Not in a dramatic way, just in small and ordinary everyday moments. Alex started noticing other details around the apartment. A faint mark on the wall where something once hung. A loose tile near the sink. Evidence of routines he would never fully understand. At night, the apartment felt less like a blank space and more like a continuation. He wondered what traces he would leave behind when he eventually moved out. He thought about what someone else might one day find. He wondered whether they would pause, like he had, and try to piece together a life from fragments. On Sunday, he packed the photos back into the box.",
+    "text": "Priya said yes to absolutely everything people asked of her. Extra projects, helping friends, family responsibilities, and clubs all filled her days. She liked being reliable, the person everyone could count on. Her calendar filled up until every hour had a purpose. At first, she managed to keep up with everything. Then her sleep began to slip, and assignments started piling up. She forgot small things at first, and then bigger ones. One day, she missed a major deadline entirely. Not because she did not care, but because she simply ran out of time. The disappointment hit harder than she expected. That evening, she sat with her list of commitments and realized it was impossible to do all of them well. Something about her approach absolutely had to change. The next time someone asked for help, she hesitated. Saying no felt deeply uncomfortable, almost like something was wrong with her. But it also felt a little relieving. The apartment was mostly clean, but not entirely empty. In the back of a kitchen drawer, Alex found a single key with no label on it. In the wardrobe, he found a forgotten jacket that was too small to be his. On the top shelf, there was a box of old photos left behind. He told himself he should throw them out and move on. Instead, he sat down on the floor and looked through them. One showed a sunny beach trip with people smiling. Another showed a birthday cake with candles lit. A third was a blurry group shot taken in a living room that looked like this one. The previous tenant had lived a full life here. Not in a dramatic way, just in small and ordinary everyday moments. Alex started noticing other details around the apartment. A faint mark on the wall where something once hung. A loose tile near the sink. Evidence of routines he would never fully understand. At night, the apartment felt less like a blank space and more like a continuation. He wondered what traces he would leave behind when he eventually moved out. He thought about what someone else might one day find. He wondered whether they would pause, like he had, and try to piece together a life from fragments. On Sunday, he packed the photos back into the box. He was not quite ready for that yet. It started with a comment on a forum, then a reply, and eventually a full conversation. Over months, their messages became part of a daily routine. They exchanged check ins and openly shared their thoughts with each other. They knew each other's habits, preferences, and small details of their lives.",
     "composition": {
-      "t1": 168,
-      "t2": 119,
-      "t3": 128,
+      "t1": 164,
+      "t2": 125,
+      "t3": 122,
       "t4": 30,
-      "total": 445
+      "total": 441
     }
   },
   {
-    "id": "real-online-to-real-xl",
+    "id": "msg-blood-test-results-xl",
     "sizeVariant": "xlarge",
-    "text": "It started with a comment on a forum, then a reply, and eventually a full conversation. Over months, their messages became part of a daily routine. They exchanged check ins and openly shared their thoughts with each other. They knew each other's habits, preferences, and small details of their lives. But they had never actually met in person. “Maybe we should meet up,” she suggested one day out of the blue. He hesitated for a long moment at the thought. Online, everything had felt controlled and carefully curated by choice. Meeting in person would make it real, and suddenly uncertain. He asked her what it would be like if things felt different in person. “It probably will be,” she said, and that was exactly the point. They chose a date and picked a place together. In the days leading up to it, he found himself constantly overthinking everything. He kept replaying their past conversations and imagining every possible outcome. When the day finally arrived, he almost canceled at the last minute. But he did not go through with canceling. Seeing her in person was both familiar and completely new at the same time. She had the same voice and the same humor, just present right in front of him now. The conversation picked up right where it had left off before. It was not perfect and not entirely seamless, but it was undeniably real. And that turned out to be more than enough for both of them. “Hi Sarah, thanks for coming in today. I wanted to walk you through your recent blood test results and make sure you understand what they mean and what we should do next. Overall, most of your results are within the normal range, which is good news. Your kidney and liver function look fine, and your electrolytes are stable. There are two things I want to focus on. First, your cholesterol is higher than we’d like, particularly your LDL, which is sometimes called the ‘bad’ cholesterol. That doesn’t mean there’s an emergency, but it does increase your long term risk of heart disease if we leave it as is. Second, your fasting blood sugar is in the pre diabetic range. Again, not diabetes yet, but a clear warning sign. My recommendation is that we start with lifestyle changes, adjusting your diet, increasing physical activity, and looking at weight management if needed. I’ll give you some written guidance and a referral to a dietitian if you’d like. We’ll repeat these tests in about three months to see how things are tracking. If the numbers are still high at that point, we can talk about whether medication makes sense.",
+    "text": "“Hi Sarah, thanks for coming in today. I wanted to walk you through your recent blood test results and make sure you understand what they mean and what we should do next. Overall, most of your results are within the normal range, which is good news. Your kidney and liver function look fine, and your electrolytes are stable. There are two things I want to focus on. First, your cholesterol is higher than we’d like, particularly your LDL, which is sometimes called the ‘bad’ cholesterol. That doesn’t mean there’s an emergency, but it does increase your long term risk of heart disease if we leave it as is. Second, your fasting blood sugar is in the pre diabetic range. Again, not diabetes yet, but a clear warning sign. My recommendation is that we start with lifestyle changes, adjusting your diet, increasing physical activity, and looking at weight management if needed. I’ll give you some written guidance and a referral to a dietitian if you’d like. We’ll repeat these tests in about three months to see how things are tracking. If the numbers are still high at that point, we can talk about whether medication makes sense. How does that sound to you so far? “Thanks everyone for joining the status update. I want to be transparent about where we are, what risks we’re facing, and what that means for our delivery dates. The short version is that we are about two weeks behind the original schedule, and we have one significant risk that could extend that further if we don’t address it. The delay is mainly due to the integration issues with the third party payment provider. Their API changed mid implementation, which forced us to rework parts of our integration layer and retest. The team has resolved the core issues, but we still have a backlog of regression tests to complete before I’m comfortable with a full launch. The key risk is load testing. We haven’t yet validated how the system behaves under peak traffic conditions. If we discover serious performance problems there, we’ll need time to fix them. My proposal is that we formally move the launch date out by two weeks and treat load testing as a top priority in the next sprint. In parallel, we’ll keep stakeholders updated with a short written summary twice a week so there are no surprises. I’d like to pause here for questions and to confirm you’re comfortable with this revised plan. “Hi James, just a quick update on the open home schedule for your property at 24 Oak Street.",
     "composition": {
       "t1": 185,
-      "t2": 128,
+      "t2": 113,
       "t3": 97,
-      "t4": 30,
-      "total": 440
+      "t4": 28,
+      "total": 423
     }
   },
   {
-    "id": "msg-property-inspection-xl",
+    "id": "msg-sales-pricing-xl",
     "sizeVariant": "xlarge",
-    "text": "“Hi James, just a quick update on the open home schedule for your property at 24 Oak Street. We’ve locked in two inspections for this weekend, Saturday at eleven in the morning and Sunday at two thirty in the afternoon. I’ll arrive about 20 minutes early each day to open up, turn on all the lights, and make sure everything is presented at its best. After each inspection, I’ll send you a summary of how many groups attended, the general level of interest, and any specific feedback on price, presentation, or concerns. If there are recurring themes, we can talk about small adjustments, such as tweaking the styling or revisiting the guide price. So far, the online listing has had solid views and a good number of saves, which is encouraging. I’ll also be following up directly with a few buyers who have requested more information to encourage them to attend this weekend. If you need to change any of the times, or if there’s anything you’d like me to highlight to buyers, just let me know today and I’ll incorporate it into my walkthrough. “Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best. Based on what you told me about having a team of around 15 people and wanting to roll this out across two departments, you’re right in between our Standard and Professional tiers. The Standard plan is 25 dollars per user per month and includes the core features, project boards, basic reporting, and email support. It works well for smaller teams that don’t need advanced permissions or integrations. The Professional plan is 40 dollars per user per month, but it adds single sign on, advanced reporting, and priority support, as well as the integrations with your existing CRM and Slack. Given your focus on visibility across departments and your need to integrate with your current tools, I’d recommend starting with the Professional plan for your core 15 users. We can then add or remove seats monthly as your usage becomes clearer. To reduce your risk, I can also offer a 30 day opt out clause on the annual contract so you can step back if it doesn’t meet expectations. How does that option sound compared to what you had in mind? “Hi everyone, I’ve seen a few questions about Assignment 2, so I’d like to clarify the requirements and deadlines here for everyone. The assignment is due at eleven fifty nine at night next Friday via the LMS submission link.",
+    "text": "“Hi Priya, thanks again for taking the time to speak today. I wanted to walk you through the pricing options in a bit more detail and help you decide which plan fits your team best. Based on what you told me about having a team of around 15 people and wanting to roll this out across two departments, you’re right in between our Standard and Professional tiers. The Standard plan is 25 dollars per user per month and includes the core features, project boards, basic reporting, and email support. It works well for smaller teams that don’t need advanced permissions or integrations. The Professional plan is 40 dollars per user per month, but it adds single sign on, advanced reporting, and priority support, as well as the integrations with your existing CRM and Slack. Given your focus on visibility across departments and your need to integrate with your current tools, I’d recommend starting with the Professional plan for your core 15 users. We can then add or remove seats monthly as your usage becomes clearer. To reduce your risk, I can also offer a 30 day opt out clause on the annual contract so you can step back if it doesn’t meet expectations. How does that option sound compared to what you had in mind? “Hi everyone, I’ve seen a few questions about Assignment 2, so I’d like to clarify the requirements and deadlines here for everyone. The assignment is due at eleven fifty nine at night next Friday via the LMS submission link. Late submissions will incur a 5 percent penalty per day, up to a maximum of five days. After that, we can only accept work with an approved extension. If you need an extension, please email me at least two days before the due date, with a brief explanation. In terms of content, the key focus is on your ability to apply the concepts from Weeks 4 and 5, data modelling, normalisation, and basic query design. You do not need to build a full application. A well structured data model, clear assumptions, and correctly written SQL queries will score much higher than an overcomplicated solution with weak justification. I’ve uploaded a sample report outline and a checklist you can use to review your work before submitting. I strongly recommend running your queries on the sample database we provided to verify they return the expected results. If anything is still unclear after reading the updated brief and checklist, please post your questions in the ‘Assignment 2 Q&A’ thread rather than emailing me individually so everyone can see the answers. Best wishes and good luck to all of you, Dr Patel.",
     "composition": {
-      "t1": 180,
-      "t2": 120,
-      "t3": 96,
-      "t4": 31,
-      "total": 427
+      "t1": 168,
+      "t2": 122,
+      "t3": 105,
+      "t4": 29,
+      "total": 424
     }
   },
   {
@@ -2510,13 +2522,13 @@
   {
     "id": "forest-after-the-storm-xl",
     "sizeVariant": "xlarge",
-    "text": "In a peaceful forest, animals lived happily together. There was Mia the squirrel, Ben the beaver, and Leo the deer. One night, a great storm came through the forest. Wind howled loudly, rain poured down hard, and trees shook. When morning arrived, the forest was messy and broken. The storm had badly damaged Mia’s favourite tree. Ben’s carefully built dam had completely fallen apart. Leo’s favourite meadow was buried under a thick layer of branches. At first, every animal in the forest felt sad and overwhelmed. “We cannot possibly fix all of this,” Mia said. But then Ben spoke up with a firm voice. “We can fix it all, if we work together. ” So they began working as a team. Ben rebuilt the dam with help from Leo, who carried the heavy branches. Mia gathered small twigs, leaves, and other materials to help rebuild. Birds helped the group by finding lost pieces of the dam. It was not easy, but little by little, the forest began to heal. Soon enough, the dam was strong and sturdy once more. Trees were cleared, and new homes were built for everyone. The animals looked around their restored forest with great pride. “We built this all back together,” Leo said proudly. One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and very much alone in the dark. “I need to find my way back home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry, I will help you get home,” Lily said. Lily tried many different things to help Nia return to the sky. She climbed a hill, built a tall stack of stones, and even made a kite to carry Nia upward. Nothing she tried seemed to work at all. Days passed, but Lily did not give up on her small glowing friend. Finally, they met an old owl who told them that stars always return when they are ready and that patience is the only path. One quiet night, Nia began to glow brighter than she ever had before. Slowly and gently, Nia lifted up into the sky and rose back home. “Thank you for everything,” Nia called out from above. Lily stood there and waved goodbye with a smile. She felt happy, even though she would miss her new friend. Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm.",
+    "text": "In a peaceful forest, animals lived happily together. There was Mia the squirrel, Ben the beaver, and Leo the deer. One night, a great storm came through the forest. Wind howled loudly, rain poured down hard, and trees shook. When morning arrived, the forest was messy and broken. The storm had badly damaged Mia’s favourite tree. Ben’s carefully built dam had completely fallen apart. Leo’s favourite meadow was buried under a thick layer of branches. At first, every animal in the forest felt sad and overwhelmed. “We cannot possibly fix all of this,” Mia said. But then Ben spoke up with a firm voice. “We can fix it all, if we work together. ” So they began working as a team. Ben rebuilt the dam with help from Leo, who carried the heavy branches. Mia gathered small twigs, leaves, and other materials to help rebuild. Birds helped the group by finding lost pieces of the dam. It was not easy, but little by little, the forest began to heal. Soon enough, the dam was strong and sturdy once more. Trees were cleared, and new homes were built for everyone. The animals looked around their restored forest with great pride. “We built this all back together,” Leo said proudly. One night, a small star named Nia fell from the sky and landed softly on Earth. Nia felt scared and very much alone in the dark. “I need to find my way back home,” Nia whispered. A child named Lily found Nia glowing gently in the grass. “Do not worry, I will help you get home,” Lily said. Lily tried many different things to help Nia return to the sky. She climbed a hill, built a tall stack of stones, and even made a kite to carry Nia upward. Nothing she tried seemed to work at all. Days passed, but Lily did not give up on her small glowing friend. Finally, they met an old owl who told them that stars always return when they are ready and that patience is the only path. One quiet night, Nia began to glow brighter than she ever had before. Slowly and gently, Nia lifted up into the sky and rose back home. “Thank you for everything,” Nia called out from above. Lily stood there and waved goodbye with a smile. She felt happy, even though she would miss her new friend. Tom had always only liked plain and simple food. He refused to try anything that was new or unfamiliar. One day, while out walking alone, he found a hidden garden. To his surprise, the fruits and vegetables could talk. A carrot said, “Why will you not try me?",
     "composition": {
       "t1": 158,
-      "t2": 90,
-      "t3": 131,
-      "t4": 55,
-      "total": 434
+      "t2": 94,
+      "t3": 136,
+      "t4": 52,
+      "total": 440
     }
   },
   {
@@ -2606,13 +2618,13 @@
   {
     "id": "msg-nurse-discharge-xl",
     "sizeVariant": "xlarge",
-    "text": "“Alright Mr Thompson, before you go home I want to run through your discharge instructions and make sure everything is clear. I’ll also give you a printed copy, but please stop me and ask questions at any point. First, let us go through your medication in detail. You’ll be taking the new blood pressure tablet once a day in the morning, ideally at the same time each day. Take it with a glass of water, with or without food. If you ever miss a dose, just take the next one at the usual time, don’t double up. Keep an eye out for dizziness when you stand up quickly, especially in the first week. Second, let us talk about your wound care at home. Keep the dressing clean and dry for the next 48 hours, and then you can gently shower over it. When you dry it, pat it gently and do not rub. If you notice increased redness, swelling, warmth, or any discharge with an unpleasant smell, call your GP or come back to the emergency department. Finally, if you develop chest pain, shortness of breath, or feel faint, call emergency services immediately. For anything less urgent, use the phone number on this sheet to reach the ward or contact your GP. Can you tell me, in your own words, how you’ll take the new medication? “Release notes, Version 3. 4. 0 Thanks for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - We have added CSV export support for all reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next. “Hi John, Thanks for coming in today.",
+    "text": "“Alright Mr Thompson, before you go home I want to run through your discharge instructions and make sure everything is clear. I’ll also give you a printed copy, but please stop me and ask questions at any point. First, let us go through your medication in detail. You’ll be taking the new blood pressure tablet once a day in the morning, ideally at the same time each day. Take it with a glass of water, with or without food. If you ever miss a dose, just take the next one at the usual time, don’t double up. Keep an eye out for dizziness when you stand up quickly, especially in the first week. Second, let us talk about your wound care at home. Keep the dressing clean and dry for the next 48 hours, and then you can gently shower over it. When you dry it, pat it gently and do not rub. If you notice increased redness, swelling, warmth, or any discharge with an unpleasant smell, call your GP or come back to the emergency department. Finally, if you develop chest pain, shortness of breath, or feel faint, call emergency services immediately. For anything less urgent, use the phone number on this sheet to reach the ward or contact your GP. Can you tell me, in your own words, how you’ll take the new medication? “Release notes for version three point four, and thank you for using our app. This release focuses on improving reliability and adding a few highly requested features. New features, - Saved filters for dashboards. You can now create and name custom filter sets and switch between them from the dashboard header. This should make it easier to jump between different views of your data without reconfiguring filters each time. - We have added CSV export support for all reports. From any report, click the new ‘Export’ button to download the data as a CSV file for use in Excel or other tools. Improvements, - Faster loading times when opening large projects, especially for teams with many active tasks. - Clearer error messages when an integration connection fails, including steps to reconnect. Known limitations, - Saved filters are currently only available on the web app. We’re working on bringing this to mobile in a future release. - CSV export is limited to 50,000 rows per download. If you run into any issues after updating, please reach out via the in app support chat or email support, and include screenshots if possible. Your feedback helps us decide what to prioritise next. “Hi John, Thanks for coming in today.",
     "composition": {
-      "t1": 169,
-      "t2": 111,
-      "t3": 92,
-      "t4": 40,
-      "total": 412
+      "t1": 172,
+      "t2": 115,
+      "t3": 93,
+      "t4": 38,
+      "total": 418
     }
   },
   {
@@ -2666,25 +2678,25 @@
   {
     "id": "young-inventor-xl",
     "sizeVariant": "xlarge",
-    "text": "Tara had always loved inventing new and clever things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt badly in its pot. Tara quickly built a machine to water it perfectly. But the plant still looked weak and unhappy despite her efforts. “I do not understand why it is not working,” Tara said. Her grandmother simply smiled and waited quietly for Tara to think. “Some things need time,” she said at last. Tara watched the plant carefully from that day onward. She gave it sunlight, water, and care each day. Slowly, the plant grew strong again and came back to life. Tara realized that not every problem could be fixed with a quick invention. “Some things need patience,” she said thoughtfully. From then on, Tara still invented amazing things, but she also learned when to slow down. Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. An older dragon named Ria said, “Start small. ” Dax practiced jumping. Then he practised gliding from a low rock. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit. But one day, Dax flapped hard and lifted off the ground. “I am actually flying! ” Dax shouted with joy. It was not perfect, but it was enough. Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “My way is clearly better here,” Lena said firmly. “No, my way will work better,” Max replied. Soon enough, nothing at all was getting done. Finally, they decided to listen to each other. Lena took charge and carefully designed the whole structure. Max went out and gathered all the materials they needed. As they worked together, the treehouse slowly took shape. When the treehouse was finally finished, they both smiled. “We actually built this thing together,” Max said.",
+    "text": "Tara had always loved inventing new and clever things. If her shoes were untied, she made self tying laces. If her room was messy, she built a cleaning robot. But Tara wanted to solve every problem instantly. One day, her plant began to wilt badly in its pot. Tara quickly built a machine to water it perfectly. But the plant still looked weak and unhappy despite her efforts. “I do not understand why it is not working,” Tara said. Her grandmother simply smiled and waited quietly for Tara to think. “Some things need time,” she said at last. Tara watched the plant carefully from that day onward. She gave it sunlight, water, and care each day. Slowly, the plant grew strong again and came back to life. Tara realized that not every problem could be fixed with a quick invention. “Some things need patience,” she said thoughtfully. From then on, Tara still invented amazing things, but she also learned when to slow down. Dax was a young dragon who could not fly. While others soared high, Dax stayed on the ground. “I will never fly,” Dax said sadly. Ria, an older dragon, told Dax to start small, so he began by practicing short hops. Then he practised gliding from a low rock. Each day, Dax improved a little. It was hard, and sometimes Dax wanted to quit. But one day, Dax flapped hard and lifted off the ground. Dax let out a great joyful shout, “I am actually and truly flying! ” It was not perfect, but it was enough. Lena and Max argued about everything. One day, they were given a challenge to build a treehouse together. At first, they fought about every decision. “My way is clearly better here,” Lena said firmly. “No, my way will work better,” Max replied. Soon enough, nothing at all was getting done. Finally, they decided to listen to each other. Lena took charge and carefully designed the whole structure. Max went out and gathered all the materials they needed. As they worked together, the treehouse slowly took shape. When the treehouse was finally finished, they both smiled. “We actually built this thing together,” Max said.",
     "composition": {
-      "t1": 103,
-      "t2": 96,
+      "t1": 110,
+      "t2": 98,
       "t3": 87,
-      "t4": 63,
-      "total": 349
+      "t4": 64,
+      "total": 359
     }
   },
   {
-    "id": "real-accidental-feature-xl",
+    "id": "penguin-who-found-his-strength-xl",
     "sizeVariant": "xlarge",
-    "text": "On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, software that feels human. ” “Please don’t remove this. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie. They had worked together for over a year, but only through short messages and quick check-ins. When they finally met in person at the conference, both smiled a little too formally. “You’re taller than I expected,” Jenna said. “You type even faster than I imagined,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation. On Slack, a pause meant someone was thinking. In person, the same pause felt like uncomfortable silence. Jenna asked how his flight had been, and Mark said fine and asked the same. They both laughed a little at how awkward and scripted it sounded. It all felt very stilted between them. Later, during a meeting, something finally clicked into place. They slipped back into the patterns they knew well from Slack. Finishing each other's thoughts and building on ideas quickly. The medium had changed, but the working connection was still there. Afterward, they grabbed coffee together and talked more freely. This time, the conversation flowed much more naturally between them. Less about filling awkward space, more about continuing something already built. By the end of the conference, the awkwardness between them had completely faded. They were the same close team they had always been. Just meeting for the first time in a very different format. Planning the trip had seemed so easy at the start. A group chat full of shared links, excited messages, and big ideas.",
+    "text": "Pico was a penguin who could not swim well. The others were fast and graceful in the water. “I am not good at anything,” Pico said. One day, a strong wind blew, and a group of penguins got lost in a snowstorm. Pico, who was excellent at walking long distances, led them safely back home. The penguins all cheered and told Pico he had saved them all from the storm. Pico realized that being different was not a weakness. On Friday at four fifty two in the afternoon, Daniel pushed what he thought was a harmless fix. A small edge case, barely worth a comment. By five oh three in the afternoon, he was on the train home, already forgetting about it. At seven fourteen in the evening, his phone buzzed, and then buzzed again, and again after that. Soon, users all over were posting screenshots of it. The “fix” had turned a quiet feature into something oddly delightful. A loading spinner now bounced in a way that felt intentional, almost playful. People were sharing it, praising the “personality” of the app. Daniel sat on his couch, laptop open, staring at the diff. It had not been intentional at all. It was a miscalculation, a side effect of a timing change he barely understood. All weekend, he hovered over the rollback button. He sat there and read through the comments. “Finally, this app actually feels genuinely human to use. ” “Please do not ever remove this delightful feature. ” By Sunday night, he realized something uncomfortable. The most loved thing he had ever shipped was an accident. On Monday morning, his manager asked about it. Daniel hesitated, then said, “We experimented with a small interaction tweak. ” It was not entirely a lie. They had worked together for over a year, but only through short messages and quick check-ins. When they finally met in person at the conference, both smiled a little too formally. “You’re taller than I expected,” Jenna said. “You type even faster than I imagined,” Mark replied, immediately regretting it. They sat across from each other, unsure how to translate their digital rhythm into real conversation. On Slack, a pause meant someone was thinking. In person, the same pause felt like uncomfortable silence. Jenna asked how his flight had been, and Mark said fine and asked the same. They both laughed a little at how awkward and scripted it sounded. It all felt very stilted between them. Later, during a meeting, something finally clicked into place. They slipped back into the patterns they knew well from Slack. Finishing each other's thoughts and building on ideas quickly. The medium had changed, but the working connection was still there.",
     "composition": {
-      "t1": 149,
-      "t2": 127,
-      "t3": 100,
-      "t4": 65,
-      "total": 441
+      "t1": 156,
+      "t2": 113,
+      "t3": 103,
+      "t4": 70,
+      "total": 442
     }
   }
 ]
