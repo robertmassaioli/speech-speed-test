@@ -18,15 +18,15 @@ const tierMap = buildTierMap(
 const INLINE_SOURCES: RawSource[] = [
   {
     id: 'bunny-and-duck',
-    text: 'Bella the bunny lived at the edge of a wide green meadow. Every morning she would hop down to the pond to watch the sun rise over the water. One day she found a small duck sitting alone on the bank. His name was Pip, and he looked very sad. So the two of them set off together. Bella hopped through the tall grass and Pip waddled along beside her. They crossed a little wooden bridge and followed the stream around a bend. Then Pip stopped. He lifted his head and listened. From somewhere ahead came the soft sound of splashing and quacking. Bella smiled and waved her paw. From that day on, the bunny and the duck met every morning at the pond, and neither of them was ever lonely again.',
+    text: 'Bella the bunny lived at the edge of a wide green meadow. Every morning she would hop down to the pond to watch the sun rise over the water. One day she found a small duck sitting alone on the bank. His name was Pip, and he looked very sad. So the two of them set off together. Bella hopped through the tall grass and Pip waddled along beside her. They crossed a little wooden bridge and followed the stream around a bend. Then Pip came to a sudden stop on the path. He raised his head and listened with great care. From somewhere ahead came the soft sound of splashing and quacking. Bella smiled and waved her paw. From that day on, the bunny and the duck met every morning at the pond, and neither of them was ever lonely again.',
   },
   {
     id: 'sunny-hillside-stream',
-    text: 'The sun comes up slowly over the green hills and light falls across the wide field below. A soft wind moves through the long grass and the tops of the trees begin to sway. Birds sit in the high branches and call out into the clear air. A small stream runs along the far edge of the field where the ground is wet and dark. Tall reeds grow by the water and bend when the wind picks up. The sky turns a deep blue and the few white clouds drift toward the far hills. The whole place feels still and calm. Now and then a leaf falls and turns as it goes down to the ground.',
+    text: 'The sun comes up slowly over the green hills and light falls across the wide field below. A soft wind moves through the long grass and the tops of the trees begin to sway. Birds sit in the high branches and call out into the clear air. A small stream runs along the far edge of the field where the ground is wet and dark. Tall reeds grow by the water and bend when the wind picks up. The sky turns a deep blue and the few white clouds drift toward the far hills. The whole place feels remarkably still and calm. Now and then a leaf falls and turns as it goes down to the ground.',
   },
   {
     id: 'morning-tea-table',
-    text: 'Every morning she makes a cup of tea and sits at the table by the window. She puts her hands around the warm cup and looks out at the street. The light comes in slow and soft. After a few minutes she gets up and goes to the kitchen to make some food. She takes bread from the bag on the counter and puts it in the pan. When the bread is ready she puts it on a plate and takes it back to the table. She sits down again and eats in the quiet of the room. Then she picks up her book and reads for a while before the day gets going.',
+    text: 'Every morning she makes a cup of tea and sits at the table by the window. She puts her hands around the warm cup and looks out at the street. The morning light comes in slow and soft through the glass. After a few minutes she gets up and goes to the kitchen to make some food. She takes bread from the bag on the counter and puts it in the pan. When the bread is ready she puts it on a plate and takes it back to the table. She sits down again and eats in the quiet of the room. Then she picks up her book and reads for a while before the day gets going.',
   },
   {
     id: 'harbour-morning',
@@ -40,7 +40,7 @@ const INLINE_SOURCES: RawSource[] = [
   // ── Batch 2 — easy ────────────────────────────────────────────────────────
   {
     id: 'quiet-night-sky',
-    text: 'The sky grows dark and the stars come out one by one. The moon is low and its light falls soft on the land below. A cold wind moves through the long grass and the trees stand still at the edge of the field. Far above, the deep black of night stretches wide from one end of the sky to the other. No clouds pass and no birds call. The air is clear and the stars shine bright and hard. The moon moves slow across the sky and its pale light covers the ground in a thin white glow. All things rest and the world is still and quiet under the wide night sky.',
+    text: 'The sky grows dark and the stars come out one by one. The moon is low and its light falls soft on the land below. A cold wind moves through the long grass and the trees stand still at the edge of the field. Far above, the deep black of night stretches wide from one end of the sky to the other. Not a single cloud passes and not a bird calls out. The air is clear and the stars shine bright and hard. The moon moves slow across the sky and its pale light covers the ground in a thin white glow. All things rest and the world is still and quiet under the wide night sky.',
   },
   {
     id: 'children-in-the-park',
@@ -48,11 +48,11 @@ const INLINE_SOURCES: RawSource[] = [
   },
   {
     id: 'cat-at-the-window',
-    text: 'The cat walks slowly across the floor and finds a warm spot near the window. It turns around once and then lies down in the soft light. Its eyes close and it rests there for a long time. Now and then its ears move when a sound comes from outside. In the afternoon it gets up and stretches out its front legs, then its back legs. It walks to the kitchen and sits near its bowl. After it eats it goes back to the window and sits up tall, looking out at the garden. A bird lands on the grass and the cat watches it very closely. Its tail moves from side to side. The bird flies away and the cat turns and walks down the hall to find another quiet place to sleep.',
+    text: 'The cat walks slowly across the floor and finds a warm spot near the window. It turns around once and then lies down in the soft light. Its eyes close and it rests there for a long time. Now and then its ears move when a sound comes from outside. In the afternoon it gets up and stretches out its front legs, then its back legs. It walks to the kitchen and sits near its bowl. After it eats it goes back to the window and sits up tall, looking out at the garden. A bird lands on the grass and the cat watches it very closely. Its tail sweeps slowly from one side to the other. The bird flies away and the cat turns and walks down the hall to find another quiet place to sleep.',
   },
   {
     id: 'garden-rain',
-    text: 'Rain falls soft and steady on the garden. Each drop lands on a leaf and runs down to the ground below. The soil turns dark as it gets wet and water starts to pool in the low spots. Flowers bend their heads under the weight of the drops. The air feels cool and clean. A light mist rises from the earth where the rain hits the dry ground hard. The sound is soft at first, then grows as more rain comes down fast. Puddles form along the edges of the path. The garden looks greener and fresher with each passing moment. Every plant drinks in the water and the whole place feels alive again after a long dry spell.',
+    text: 'Rain falls soft and steady on the garden. Each drop lands on a leaf and runs down to the ground below. The soil turns dark as it gets wet and water starts to pool in the low spots. Flowers bend their heads under the weight of the drops. The air feels cool and clean after the rain. A light mist rises from the earth where the rain hits the dry ground hard. The sound is soft at first, then grows as more rain comes down fast. Puddles form along the edges of the path. The garden looks greener and fresher with each passing moment. Every plant drinks in the water and the whole place feels alive again after a long dry spell.',
   },
   // ── Batch 2 — medium ──────────────────────────────────────────────────────
   {
@@ -99,7 +99,7 @@ const INLINE_SOURCES: RawSource[] = [
   },
   {
     id: 'watching-snow-fall',
-    text: 'Snow falls slowly outside the window. The flakes are soft and white, drifting down from a grey sky. Inside the room it is warm, and the light is low and still. The glass is cold to the touch, but the air behind it feels safe and good. Each flake turns as it falls, catching a little light before it lands on the ground below. The snow covers everything it touches, layer by layer, building up into a thick white sheet. The street is quiet now, and no one is walking out there. From here, the whole world looks clean and still. It is a slow and peaceful thing to watch the snow fall.',
+    text: 'Snow falls slowly and quietly outside the window. The flakes are soft and white, drifting down from a grey sky. Inside the room it is warm, and the light is low and still. The glass is cold to the touch, but the air behind it feels safe and good. Each flake turns as it falls, catching a little light before it lands on the ground below. The snow covers everything it touches, layer by layer, building up into a thick white sheet. The street is quiet now, and no one is walking out there. From here, the whole world looks clean and still. It is a slow and peaceful thing to watch the snow fall.',
   },
   {
     id: 'dog-playing-fetch',
@@ -107,7 +107,7 @@ const INLINE_SOURCES: RawSource[] = [
   },
   {
     id: 'baker-making-bread',
-    text: 'A baker puts flour and water into a large bowl. She adds a little yeast and some salt, then mixes it all until it comes together into a soft mass. She tips the mass onto the table and starts to press and fold it with her hands. She works it back and forth, over and over, until it feels smooth. Then she forms it into a round ball and leaves it in the bowl to rest. The ball grows in the warm kitchen and gets much bigger over time. When it has grown enough she presses it flat, shapes it into a loaf, and slides it into the hot oven. The bread turns a deep golden color as it bakes. The good smell fills the whole room. She takes the loaf out and sets it on a rack to cool.',
+    text: 'A baker puts flour and water into a large bowl. She adds a little yeast and some salt, then mixes it all until it comes together into a soft mass. She tips the mass onto the table and starts to press and fold it with her hands. She works it back and forth, over and over, until it feels smooth. Then she forms it into a round ball and leaves it in the bowl to rest. The ball grows in the warm kitchen and gets much bigger over time. When it has grown enough she presses it flat, shapes it into a loaf, and slides it into the hot oven. The bread turns a deep golden color as it bakes. The good warm smell of bread fills the whole room. She takes the loaf out and sets it on a rack to cool.',
   },
   // ── Batch 3 — medium ──────────────────────────────────────────────────────
   {
@@ -116,11 +116,11 @@ const INLINE_SOURCES: RawSource[] = [
   },
   {
     id: 'painter-in-the-studio',
-    text: 'The painter stands at her canvas, studying the scene before her. She has laid out her palette with colours she mixed earlier in the morning, working pigment into pigment until each shade felt right. She lifts her brush and draws it slowly across the surface, letting the tint spread and settle into the grain. The composition is almost there. A stroke of ochre in the lower corner gives the earth more weight. She steps back and looks at the whole thing, noticing where the light falls short and where the shadow needs more depth. Outside the studio window, the afternoon is turning golden, and she wants to catch that warmth before it fades from the scene.',
+    text: 'The painter stands at her canvas, studying the scene before her. She has laid out her palette with colours she mixed earlier in the morning, working pigment into pigment until each shade felt right. She lifts her brush and draws it slowly across the surface, letting the tint spread and settle into the grain. The composition is almost exactly where she wants it. A stroke of ochre in the lower corner gives the earth more weight. She steps back and looks at the whole thing, noticing where the light falls short and where the shadow needs more depth. Outside the studio window, the afternoon is turning golden, and she wants to catch that warmth before it fades from the scene.',
   },
   {
     id: 'river-journey-by-small-boat',
-    text: 'The small boat moves with the current of the river, carried downstream at a gentle pace. Willows line both banks and their branches hang low over the water. A light stroke of the paddle from time to time keeps the boat on course. The river is wide and calm here, dark in the middle where it runs deepest. Birds stand in the shallows near the bank, watching the boat pass without moving. The air is cool and still. Further along, the river bends and the land on either side opens up into flat fields. The water grows faster over a stretch of gravel and the person at the paddle works harder to keep the boat straight and clear of the rocks below the surface.',
+    text: 'The small boat moves with the current of the river, carried downstream at a gentle pace. Willows line both banks and their branches hang low over the water. A light stroke of the paddle from time to time keeps the boat on course. The river is wide and calm here, dark in the middle where it runs deepest. Birds stand in the shallows near the bank, watching the boat pass without moving. The air here is cool and perfectly still. Further along, the river bends and the land on either side opens up into flat fields. The water grows faster over a stretch of gravel and the person at the paddle works harder to keep the boat straight and clear of the rocks below the surface.',
   },
   {
     id: 'mountain-hiking-trail',
@@ -173,7 +173,7 @@ function countWords(text: string): number {
 function splitSentences(text: string): string[] {
   // Split at sentence boundaries: period/bang/question followed by a space and uppercase
   const parts: string[] = []
-  const re = /[^.!?]+[.!?]+/g
+  const re = /[^.!?]+[.!?]+["""''']?/g
   let m: RegExpExecArray | null
   while ((m = re.exec(text)) !== null) {
     const s = m[0].trim()
